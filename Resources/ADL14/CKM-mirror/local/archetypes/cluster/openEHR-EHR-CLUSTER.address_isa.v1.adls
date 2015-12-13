@@ -1,0 +1,143 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.address_isa.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"freshEHR Clinical Informatics">
+		["email"] = <"ian@freshehr.com">
+		["date"] = <"2014-07-11">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record address details compliant with European ISA Standard.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B57E4A1B668AA091230C201E1BE46884">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Address (ISA)
+		items matches {
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Full Address
+				value matches {
+					DV_PARSABLE[id13] matches {
+						formalism matches {"text/plain", "text/rtf", "text/html", "text/xml"}
+					}
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- PO Box
+				value matches {
+					DV_TEXT[id14] 
+				}
+			}
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Thoroughfare
+				value matches {
+					DV_TEXT[id15] 
+				}
+			}
+			ELEMENT[id5] occurrences matches {0..1} matches {	-- Locator Designator (street name)
+				value matches {
+					DV_TEXT[id16] 
+				}
+			}
+			ELEMENT[id12] occurrences matches {0..1} matches {	-- Locator Name (street number)
+				value matches {
+					DV_TEXT[id17] 
+				}
+			}
+			ELEMENT[id6] occurrences matches {0..1} matches {	-- Address Area
+				value matches {
+					DV_TEXT[id18] 
+				}
+			}
+			ELEMENT[id7] occurrences matches {0..1} matches {	-- Post Name (city)
+				value matches {
+					DV_TEXT[id19] 
+				}
+			}
+			ELEMENT[id8] occurrences matches {0..1} matches {	-- Admin Unit 2 (county/region/state)
+				value matches {
+					DV_TEXT[id20] 
+				}
+			}
+			ELEMENT[id9] occurrences matches {0..1} matches {	-- Admin Unit 1 (country)
+				value matches {
+					DV_TEXT[id21] 
+				}
+			}
+			ELEMENT[id10] occurrences matches {0..1} matches {	-- Postcode
+				value matches {
+					DV_TEXT[id22] 
+				}
+			}
+			ELEMENT[id11] occurrences matches {0..1} matches {	-- Address ID
+				value matches {
+					DV_TEXT[id23] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Address (ISA)">
+				description = <"Address details compliant with European ISA Standard.">
+			>
+			["id2"] = <
+				text = <"Full Address">
+				description = <"The complete address written as a string, with or without formatting.">
+			>
+			["id3"] = <
+				text = <"PO Box">
+				description = <"The Post Office Box number.">
+			>
+			["id4"] = <
+				text = <"Thoroughfare">
+				description = <"An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.">
+			>
+			["id5"] = <
+				text = <"Locator Designator (street name)">
+				description = <"this is the building number, apartment number, etc.">
+			>
+			["id6"] = <
+				text = <"Address Area">
+				description = <"The name of the property or complex, of the building or part of the building, or the name of a room inside a building.">
+			>
+			["id7"] = <
+				text = <"Post Name (city)">
+				description = <"The key postal division of the address, usually the city.">
+			>
+			["id8"] = <
+				text = <"Admin Unit 2 (county/region/state)">
+				description = <"The region of the address, usually a county, state or other such area that typically encompasses several localities.">
+			>
+			["id9"] = <
+				text = <"Admin Unit 1 (country)">
+				description = <"The uppermost administrative unit for the address, almost always a country.">
+			>
+			["id10"] = <
+				text = <"Postcode">
+				description = <"The post code (a.k.a postal code, zip code etc).">
+			>
+			["id11"] = <
+				text = <"Address ID">
+				description = <"A globally unique identifier for each instance of an address.">
+			>
+			["id12"] = <
+				text = <"Locator Name (street number)">
+				description = <"The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.">
+			>
+		>
+	>

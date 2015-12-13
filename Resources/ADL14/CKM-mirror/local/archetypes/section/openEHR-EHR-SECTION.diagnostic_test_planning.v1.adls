@@ -1,0 +1,91 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-SECTION.diagnostic_test_planning.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-05-26">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Gestionar el proceso de programación y preparación de las pruabas diagnósticas necesarias para determinar al diagnóstico de una enfermedad específica.">
+			use = <"">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Manage the process of scheduling and preparing diagnostic tests necessary to determine a diagnose for a specific disease.">
+			use = <"*(es)">
+			keywords = <"diagnostic tests", "instruction", "planning">
+			misuse = <"*(es)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"3D9601AC1DFEB84D05027845E0386524">
+	>
+
+definition
+	SECTION[id1] matches {	-- Diagnostic test planning
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype INSTRUCTION[id2] matches {	-- Referral request
+				include
+					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-referral(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype INSTRUCTION[id3] matches {	-- Imaging examination request
+				include
+					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-imaging_exam(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Diagnostic test planning">
+				description = <"Programa citas para cada paciente en las pruebas diagósticas necesarias para evaluar una enfermedad específica.">
+			>
+			["id2"] = <
+				text = <"Solicitud de volante">
+				description = <"Solicitud para la prestación de un servicio especificado por otro proveedor de salud u organización.">
+			>
+			["id3"] = <
+				text = <"Solicitud de examen imagenológico">
+				description = <"Solicitud genérica para programar un examen imagenológico.">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Diagnostic test planning">
+				description = <"Schedules each patient to perform the diagnostic tests necessary to assess a specific disease.">
+			>
+			["id2"] = <
+				text = <"Referral request">
+				description = <"Request for provision of a specified service by another healthcare provider or organisation.">
+			>
+			["id3"] = <
+				text = <"Imaging examination request">
+				description = <"Generic request for an imaging examination request.">
+			>
+		>
+	>

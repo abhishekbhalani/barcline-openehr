@@ -1,0 +1,574 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.exam_posterior_chamber.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-03-18">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar detalles clínicos observados en el estudio de la cámara posterior del ojo.">
+			use = <"Se puede utilizar anidado a arquetipos de tipo OBSERVATION relacionados con pruebas clínicas que estudien la cámara posterior del ojo. 
+
+Por ejemplo, adjunto a \"OBSERVATION.fundoscopic_examination\" aportaría información adicional acerca de los hallazgos al examinar un fondo de ojo.
+También podría utilizarse con \"OBSERVATION.ophthalmic_tomography_examination\", aportando información acerca de los hallazgos durante la prueba de OCT.
+
+Este arquetipo se aplica a los hallazgos estructurales detectados de forma objetiva al revisar imágenes de la cámara posterior del ojo. 
+Por tanto, su fin es recoger síntomas de trastornos oculares que puedan resultar de interés diagnóstico.">
+			keywords = <"ojo", "cámara posterior">
+			misuse = <"No debe utilizarse para registrar los resultados del examen de otras estructuras del ojo que no sean la cámara posterior. 
+No debe confundirse con los arquetipos \"examination_details\" que revogen información relativa a la captura de las pruebas, calidad,artefactos,... 
+No debe ser usado para incluir hallazgos subjetivos. Existen arquetipos específicos de tipo EVALUATION para este cometido.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the clinical findings on examination of the posterior chamber of the eye.">
+			use = <"It can be attached to an OBSERVATION type archetypes whenever thay are related to clinical tests studying the posterior chamber of the eye.
+
+For example, attached to \"OBSERVATION.fundoscopic_examination\" it would provide additional information about the findings when examining an eye fundus.
+Could also be used with \"OBSERVATION.ophthalmic_tomography_examination\", providing information about findings during an OCT study.
+
+This archetype is applied to describe structural findings detected objectively when reviewing images from the posterior chamber of the eye.
+Therefore, the aim is registering symptoms concerning eye disorders that could have diagnostic interest.">
+			keywords = <"eye", "posterior chamber", "examination">
+			misuse = <"Not to be used to record findings of the examination of other parts of the eye besides the posterior chamber.
+Do not get confused with \"examination_details\" archetypes, which register information about test acquisition, quality, artifacts, ... 
+It should not be used to include subjective findings. There are specific EVALUATION type archetypes for this purpose.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"CCF202D669778AFE5FF32C119EEF56A8">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Examination Findings – Posterior Chamber of eye
+		items matches {
+			CLUSTER[id30] occurrences matches {0..1} matches {	-- Macula
+				items matches {
+					ELEMENT[id2] occurrences matches {0..1} matches {	-- Macular description
+						value matches {
+							DV_TEXT[id40] 
+						}
+					}
+				}
+			}
+			CLUSTER[id32] occurrences matches {0..1} matches {	-- Optic disc
+				items matches {
+					ELEMENT[id4] occurrences matches {0..1} matches {	-- Optic Disc description
+						value matches {
+							DV_TEXT[id41] 
+						}
+					}
+				}
+			}
+			CLUSTER[id31] occurrences matches {0..1} matches {	-- Retinal background
+				items matches {
+					ELEMENT[id3] occurrences matches {0..1} matches {	-- Retinal background description
+						value matches {
+							DV_TEXT[id42] 
+						}
+					}
+					ELEMENT[id35] occurrences matches {0..1} matches {	-- Hard exudates
+						value matches {
+							DV_BOOLEAN[id43] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					ELEMENT[id9] occurrences matches {0..1} matches {	-- 'Cotton Wool' artefacts
+						value matches {
+							DV_BOOLEAN[id44] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					ELEMENT[id28] occurrences matches {0..1} matches {	-- Traction retinal detachment
+						value matches {
+							DV_BOOLEAN[id45] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					ELEMENT[id29] occurrences matches {0..1} matches {	-- Photocoagulation scars
+						value matches {
+							DV_BOOLEAN[id46] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[id23] occurrences matches {0..1} matches {	-- Retinal vascular
+				items matches {
+					ELEMENT[id6] occurrences matches {0..1} matches {	-- Retinal arteries description
+						value matches {
+							DV_TEXT[id47] 
+						}
+					}
+					ELEMENT[id7] occurrences matches {0..1} matches {	-- Retinal veins description
+						value matches {
+							DV_TEXT[id48] 
+						}
+					}
+					ELEMENT[id34] occurrences matches {0..1} matches {	-- Microaneurism
+						value matches {
+							DV_BOOLEAN[id49] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					CLUSTER[id38] occurrences matches {0..1} matches {	-- IRMA
+						items matches {
+							ELEMENT[id25] occurrences matches {0..1} matches {	-- Unspecified IRMA
+								value matches {
+									DV_BOOLEAN[id50] matches {
+										value matches {True, False; False}
+									}
+								}
+							}
+							ELEMENT[id24] occurrences matches {0..1} matches {	-- Diabetic venous beading
+								value matches {
+									DV_BOOLEAN[id51] matches {
+										value matches {True, False; False}
+									}
+								}
+							}
+							ELEMENT[id39] occurrences matches {0..1} matches {	-- Venous Loops
+								value matches {
+									DV_BOOLEAN[id52] matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[id26] occurrences matches {0..1} matches {	-- Retinal neovascularization 
+								value matches {
+									DV_BOOLEAN[id53] matches {
+										value matches {True, False; False}
+									}
+								}
+							}
+							ELEMENT[id36] occurrences matches {0..1} matches {	-- Retinal pallor
+								value matches {
+									DV_BOOLEAN[id54] matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[id37] occurrences matches {0..1} matches {	-- White lines
+								value matches {
+									DV_BOOLEAN[id55] matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[id12] occurrences matches {0..1} matches {	-- Retinal haemorrhages (macrovascular)
+						value matches {
+							DV_CODED_TEXT[id56] matches {
+								defining_code matches {[ac1]}		-- Retinal haemorrhages (macrovascular) (synthesised)
+							}
+						}
+					}
+					CLUSTER[id16] occurrences matches {0..1} matches {	-- Edema
+						items matches {
+							ELEMENT[id5] occurrences matches {0..1} matches {	-- Papilledema
+								value matches {
+									DV_BOOLEAN[id57] matches {
+										value matches {True, False; False}
+									}
+								}
+							}
+							ELEMENT[id17] occurrences matches {0..1} matches {	-- Diabetic macular edema
+								value matches {
+									DV_CODED_TEXT[id58] matches {
+										defining_code matches {[ac2]}		-- Diabetic macular edema (synthesised)
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[id33] occurrences matches {0..1} matches {	-- Vitreous
+				items matches {
+					ELEMENT[id8] occurrences matches {0..1} matches {	-- Vitreous description
+						value matches {
+							DV_TEXT[id59] 
+						}
+					}
+					ELEMENT[id27] occurrences matches {0..1} matches {	-- Vitreous bleeding
+						value matches {
+							DV_BOOLEAN[id60] matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Hallazgos Clínicos - Cámara Posterior del ojo">
+				description = <"Hallazgos identificados durante el estudio de la cámara posterior del ojo que podrían tener relevancia clínica">
+			>
+			["id2"] = <
+				text = <"Descripción mácula">
+				description = <"Descripción narrativa de los hallazgos en la mácula">
+			>
+			["id3"] = <
+				text = <"Descripción fondo retiniano">
+				description = <"Descripción narrativa de los hallazgos en el fondo de la retina">
+			>
+			["id4"] = <
+				text = <"Descripción disco óptico">
+				description = <"Descripción narrativa de los hallazgos en el disco óptico">
+			>
+			["id5"] = <
+				text = <"Papiloedema">
+				description = <"Verdadero si presenta edema en la papila">
+			>
+			["id6"] = <
+				text = <"Descripción arterias retinianas">
+				description = <"Descripción narrativa de los hallazgos en las arterias situadas en la retina">
+			>
+			["id7"] = <
+				text = <"Descripción venas retinianas">
+				description = <"Descripción narrativa de los hallazgos en las venas situadas en la retina">
+			>
+			["id8"] = <
+				text = <"Descripción vítreo">
+				description = <"Descripción narrativa de los hallazgos en el humor vítreo">
+			>
+			["id9"] = <
+				text = <"Exudados algodonosos">
+				description = <"Verdadero si presenta exudados de tipo algodonoso">
+			>
+			["id12"] = <
+				text = <"Hemorragias retinianas (macrovascular)">
+				description = <"Identificación de las hemorragias retinianas si las hay">
+			>
+			["at13"] = <
+				text = <"Sin hemorragia">
+				description = <"Aparentemente no hay hemorragia retiniana">
+			>
+			["at14"] = <
+				text = <"Hemorragia en llama">
+				description = <"Presenta hemorragia superficial o en llama ">
+			>
+			["at15"] = <
+				text = <"Hemorragia profunda">
+				description = <"Presenta hemorragia profunda">
+			>
+			["id16"] = <
+				text = <"Edema">
+				description = <"Detección y clasificación de edemas en caso de haberlos">
+			>
+			["id17"] = <
+				text = <"Edema macular diabético">
+				description = <"Clasificación en base a la escala internacional del Edema Macular Diabético (EMD)">
+			>
+			["at18"] = <
+				text = <"EMD aparentemente ausente">
+				description = <"No se aprecia engrosamiento retiniano o exudados duros en el polo posterior">
+			>
+			["at19"] = <
+				text = <"EMD leve">
+				description = <"Algo de engrosamiento retiniano o exudados duros en polo posterior, pero distantes del centro de la mácula (edema clínicamente no significativo)">
+			>
+			["at20"] = <
+				text = <"EMD moderado">
+				description = <"Engrosamiento de la retina o exudados duros cercanos al centro de la mácula, pero sin comprometer el centro (edema clínicamente significativo)">
+			>
+			["at21"] = <
+				text = <"EMD severo">
+				description = <"Engrosamiento de la retina o exudados duros que comprometen el centro de la mácula (edema clínicamente significativo) ">
+			>
+			["id23"] = <
+				text = <"Retinal vascular">
+				description = <"Detección de los trastornos en la estructura vascular de la retina">
+			>
+			["id24"] = <
+				text = <"Arrosariamientos venosos">
+				description = <"Verdadero si presenta arrosariamientos venosos">
+			>
+			["id25"] = <
+				text = <"AMIR sin especificar">
+				description = <"Verdadero si presenta anomalias microvasculares intraretinianas">
+			>
+			["id26"] = <
+				text = <"Neovascularización intrarretiniana">
+				description = <"Verdadero si presenta nuevos vasos en la retina">
+			>
+			["id27"] = <
+				text = <"Hemorragia vítrea">
+				description = <"Verdadero si presenta hemorragia vítrea">
+			>
+			["id28"] = <
+				text = <"Desprendimiento de retina por tracción">
+				description = <"Verdadero si presenta desprendimiento de retina por tracción">
+			>
+			["id29"] = <
+				text = <"Cicatrices de fotocoagulación ">
+				description = <"Verdadero si presenta cicatrices de fotocoagulación">
+			>
+			["id30"] = <
+				text = <"Mácula">
+				description = <"Detección de los trastornos en la mácula">
+			>
+			["id31"] = <
+				text = <"Fondo retiniano">
+				description = <"Detección de los trastornos en el fondo retiniano">
+			>
+			["id32"] = <
+				text = <"Disco óptico">
+				description = <"Detección de los trastornos en el disco óptico">
+			>
+			["id33"] = <
+				text = <"Vítreo">
+				description = <"Detección de los trastornos en el vítreo">
+			>
+			["id34"] = <
+				text = <"Microaneurisma">
+				description = <"Verdadero si presenta microaneurismas">
+			>
+			["id35"] = <
+				text = <"Exudados duros">
+				description = <"Verdadero si presenta exudados duros">
+			>
+			["id36"] = <
+				text = <"Palidez retiniana">
+				description = <"Característica no específica que se aprecia mejor en retrospectivamente en fotografías libres de rojo y en la angiografía con fluoresceína, suele manifestarse temporal a la mácula en pacientes que presentan nuevos vasos inexplicablemente. ">
+			>
+			["id37"] = <
+				text = <"Líneas blancas">
+				description = <"Las líneas blancas pueden representar tinción de la pared vascular o arteriolas trombosadas, que a menudo acompañan a la palidez retiniana y que se encuentran de manera similar en las áreas extensas de oclusión capilar.">
+			>
+			["id38"] = <
+				text = <"AMIR">
+				description = <"Detección y clasificación de anomalias microvasculares intraretinianas">
+			>
+			["id39"] = <
+				text = <"Bucles venosos">
+				description = <"Los bucles venosos son poco frecuentes. Se desarrollan debido a la oclusión de pequeños vasos, que en consecuencia abren una circulación alternativa.">
+			>
+			["ac1"] = <
+				text = <"Hemorragias retinianas (macrovascular) (synthesised)">
+				description = <"Identificación de las hemorragias retinianas si las hay (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Edema macular diabético (synthesised)">
+				description = <"Clasificación en base a la escala internacional del Edema Macular Diabético (EMD) (synthesised)">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Examination Findings – Posterior Chamber of eye">
+				description = <"Findings on examination of the posterior chamber of the eye which could have clinical relevance">
+			>
+			["id2"] = <
+				text = <"Macular description">
+				description = <"Narrative description of findings within the macula">
+			>
+			["id3"] = <
+				text = <"Retinal background description">
+				description = <"Narrative description of findings within the retinal background">
+			>
+			["id4"] = <
+				text = <"Optic Disc description">
+				description = <"Narrative description of findings within the optic disc">
+			>
+			["id5"] = <
+				text = <"Papilledema">
+				description = <"True if papilledema present">
+			>
+			["id6"] = <
+				text = <"Retinal arteries description">
+				description = <"Narrative description of findings within the retinal arteries">
+			>
+			["id7"] = <
+				text = <"Retinal veins description">
+				description = <"Narrative description of findings within the retinal veins">
+			>
+			["id8"] = <
+				text = <"Vitreous description">
+				description = <"Narrative description of findings within the vitreous humour">
+			>
+			["id9"] = <
+				text = <"'Cotton Wool' artefacts">
+				description = <"True if 'cotton wool' artefacts are present">
+			>
+			["id12"] = <
+				text = <"Retinal haemorrhages (macrovascular)">
+				description = <"Identification of retinal haemorrhages if present">
+			>
+			["at13"] = <
+				text = <"No haemorrhage">
+				description = <"Aparently no retinal haemorrhage">
+			>
+			["at14"] = <
+				text = <"Flame haemorrhage ">
+				description = <"Flame or superficial retinal haemorrhage is present">
+			>
+			["at15"] = <
+				text = <"Deep haemorrhage">
+				description = <"Deep retinal haemorrhage is present">
+			>
+			["id16"] = <
+				text = <"Edema">
+				description = <"Detection and classification of found edemas">
+			>
+			["id17"] = <
+				text = <"Diabetic macular edema">
+				description = <"International clinical Diabetic Macular Edema (DME) scale">
+			>
+			["at18"] = <
+				text = <"DME apparently absent">
+				description = <"No apparent retinal thickening or hard exudates in posterior pole">
+			>
+			["at19"] = <
+				text = <"Mild DME">
+				description = <"Some retinal  thickening or hard exudates in posterior pole but distant from the center of the macula (not clinically significant edema)">
+			>
+			["at20"] = <
+				text = <"Moderate DME">
+				description = <"Retinal thickening or hard exudates approaching the center of the macula but not involving the center (clinically significant edema)">
+			>
+			["at21"] = <
+				text = <"Severe DME">
+				description = <"Retinal thickening or hard exudates involving the center of the macula (clinically significant edema)">
+			>
+			["id23"] = <
+				text = <"Retinal vascular">
+				description = <"Detection of disorders in arteries or veins">
+			>
+			["id24"] = <
+				text = <"Diabetic venous beading">
+				description = <"True if diabetic venous beading is present">
+			>
+			["id25"] = <
+				text = <"Unspecified IRMA">
+				description = <"True if intraretinal microvascular abnormalities are present">
+			>
+			["id26"] = <
+				text = <"Retinal neovascularization ">
+				description = <"True if new vessels are present">
+			>
+			["id27"] = <
+				text = <"Vitreous bleeding">
+				description = <"True if vitreous bleeding is present">
+			>
+			["id28"] = <
+				text = <"Traction retinal detachment">
+				description = <"True if traction retinal detachment is present">
+			>
+			["id29"] = <
+				text = <"Photocoagulation scars">
+				description = <"True if photocoagulation scars are present">
+			>
+			["id30"] = <
+				text = <"Macula">
+				description = <"Detection of disorders in macula">
+			>
+			["id31"] = <
+				text = <"Retinal background">
+				description = <"Detection of disorders in retinal background">
+			>
+			["id32"] = <
+				text = <"Optic disc">
+				description = <"Detection of disorders in optic disc">
+			>
+			["id33"] = <
+				text = <"Vitreous">
+				description = <"Detection of disorders in vitreous">
+			>
+			["id34"] = <
+				text = <"Microaneurism">
+				description = <"True if microaneurism is present">
+			>
+			["id35"] = <
+				text = <"Hard exudates">
+				description = <"True if hard exudates are present">
+			>
+			["id36"] = <
+				text = <"Retinal pallor">
+				description = <"A non-specific feature that is best appreciated in hindsight on red-free photographs and on fluorescein angiography, particularly temporal to the macula in patients who appear to have the unexplained presence of new vessels.">
+			>
+			["id37"] = <
+				text = <"White lines">
+				description = <"White lines may represent vessel wall staining or thrombosed arterioles , which often accompany retinal pallor and are similarly found in areas of extensive capillary closure.">
+			>
+			["id38"] = <
+				text = <"IRMA">
+				description = <"Detection and classification of intraretinal microvascular abnormalities.">
+			>
+			["id39"] = <
+				text = <"Venous Loops">
+				description = <"Venous loops are infrequent and though to develop due to small vessel occlusion and opening of alternative circulation.">
+			>
+			["ac1"] = <
+				text = <"Retinal haemorrhages (macrovascular) (synthesised)">
+				description = <"Identification of retinal haemorrhages if present (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Diabetic macular edema (synthesised)">
+				description = <"International clinical Diabetic Macular Edema (DME) scale (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			["id5"] = <http://snomed.info/id/423488006>
+			["id9"] = <http://snomed.info/id/39832008>
+			["id12"] = <http://snomed.info/id/28998008>
+			["at14"] = <http://snomed.info/id/247132001>
+			["at15"] = <http://snomed.info/id/48742005>
+			["id16"] = <http://snomed.info/id/6141006>
+			["id17"] = <http://snomed.info/id/312912001>
+			["at19"] = <http://snomed.info/id/399864000>
+			["at20"] = <http://snomed.info/id/312911008>
+			["id23"] = <http://snomed.info/id/57534004>
+			["id24"] = <http://snomed.info/id/399866003>
+			["id25"] = <http://snomed.info/id/247136003>
+			["id26"] = <http://snomed.info/id/61267008>
+			["id27"] = <http://snomed.info/id/31341008>
+			["id28"] = <http://snomed.info/id/34711008>
+			["id29"] = <http://snomed.info/id/247193008>
+			["id31"] = <http://snomed.info/id/181171005>
+			["id32"] = <http://snomed.info/id/362518006>
+			["id33"] = <http://snomed.info/id/181170006>
+			["id34"] = <http://snomed.info/id/34037000>
+			["id35"] = <http://snomed.info/id/163988000>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at13", "at14", "at15">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at18", "at19", "at20", "at21">
+		>
+	>

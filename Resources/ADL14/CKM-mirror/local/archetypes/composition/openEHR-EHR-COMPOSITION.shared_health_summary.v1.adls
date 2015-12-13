@@ -1,0 +1,73 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-COMPOSITION.shared_health_summary.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Sistine Barretto-Daniels">
+		["organisation"] = <"Ocean Informatics Pty Ltd">
+		["email"] = <"Sistine.Barretto-Daniels@oceaninformatics.com">
+		["date"] = <"30/01/2012">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a summary or overview of a patient's health and welfare status, created by a healthcare provider who knows the patient well, and with the intent of being made available to multiple providers within a shared health record environment.">
+			use = <"Use to record a summary or overview of a patient's health and welfare for viewing or exchange within a shared health record environment, supporting other event-based clinical documents that might be represent specific periods or episodes of care such as discharge summaries, emergency encounters, other clinical visits or encounters, or event summaries.">
+			keywords = <"shared health summary", "health summary">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"45F8DF61028973A71D3C3314292F0DF4">
+	>
+
+definition
+	COMPOSITION[id1] matches {	-- Shared Health Summary
+		category matches {
+			DV_CODED_TEXT[id4] matches {
+				defining_code matches {[at1]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT[id5] matches {
+				other_context matches {
+					ITEM_TREE[id2] matches {
+						items matches {
+							allow_archetype CLUSTER[id3] matches {	-- Extension
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.document_entry_metadata(-a-zA-Z0-9_]+)*\.v1/}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Shared Health Summary">
+				description = <"Summary document containing key pieces of clinical information, in order to provide an overview of a patient's health and welfare status.">
+			>
+			["id3"] = <
+				text = <"Extension">
+				description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+			>
+			["at1"] = <
+				text = <"event">
+				description = <"event">
+			>
+		>
+	>
+	term_bindings = <
+		["openehr"] = <
+			["at1"] = <http://openehr.org/id/433>
+		>
+	>

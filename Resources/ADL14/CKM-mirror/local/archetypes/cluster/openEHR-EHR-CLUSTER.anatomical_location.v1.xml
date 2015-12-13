@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">heather.leslie@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics</original_author>
+    <original_author id="name">Heather Leslie</original_author>
+    <original_author id="date">2008-11-10</original_author>
+    <other_contributors>Tomas Alme, DIPS, Norway</other_contributors>
+    <other_contributors>Vebjoern Arntzen, Oslo university hospital, Norway</other_contributors>
+    <other_contributors>Koray Atalag, University of Auckland, New Zealand</other_contributors>
+    <other_contributors>Silje Ljosland Bakke, Bergen Hospital Trust, Norway</other_contributors>
+    <other_contributors>Lars Bitsch-Larsen, Haukeland University hospital, Norway</other_contributors>
+    <other_contributors>Rong Chen, Cambio Healthcare Systems, Sweden</other_contributors>
+    <other_contributors>Stephen Chu, Queensland Health, Australia</other_contributors>
+    <other_contributors>Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain</other_contributors>
+    <other_contributors>Shahla Foozonkhah, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway</other_contributors>
+    <other_contributors>Sebastian Garde, Ocean Informatics, Germany</other_contributors>
+    <other_contributors>Heather Grain, Llewelyn Grain Informatics, Australia</other_contributors>
+    <other_contributors>Sam Heard, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Ingrid Heitmann, NTNU, Norway</other_contributors>
+    <other_contributors>Dunmail Hodkinson, Black Pear Software Ltd, UK</other_contributors>
+    <other_contributors>Lars Karlsen, DIPS ASA, Norway</other_contributors>
+    <other_contributors>Shinji Kobayashi, Kyoto University, Japan</other_contributors>
+    <other_contributors>Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway</other_contributors>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Vesna Levasic, Orthopaedic Hospital Valdoltra, Slovenia</other_contributors>
+    <other_contributors>Hallvard Lærum, Oslo University Hospital, Norway</other_contributors>
+    <other_contributors>Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway</other_contributors>
+    <other_contributors>Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)</other_contributors>
+    <other_contributors>Erik Nissen, Cambio Healthcare Systems AB, Sweden</other_contributors>
+    <other_contributors>Rowan Thomas, St. Vincent's Hospital Melbourne, Australia</other_contributors>
+    <other_contributors>Richard Townley-O'Neill, NEHTA, Australia</other_contributors>
+    <other_contributors>Dmitri Wall, Irish Skin Foundation, Ireland</other_contributors>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="references">Anatomy Mapper website [Internet]. Matt Molenda, [cited 2015 Apr 27]. Available from: http://www.anatomymapper.com/.</other_details>
+    <other_details id="MD5-CAM-1.0.1">375D840051D39CEFB5C970EAAA19B42E</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ar-sy</code_string>
+      </language>
+      <purpose>تسجيل المكان التشريحي بالتفصيل</purpose>
+      <keywords>الموقع</keywords>
+      <keywords>المكان</keywords>
+      <keywords>تشريحي</keywords>
+      <use />
+      <misuse>لا يستخدم لتحديد حالات الحدوث في جانب واحد أو في الجانبين - حيث إن ذلك متعلق بتقييم قد يتضمن العديد من الأماكن</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>sl</code_string>
+      </language>
+      <purpose>*To record details about anatomical location.(en)</purpose>
+      <keywords>*location(en)</keywords>
+      <keywords>*site(en)</keywords>
+      <keywords>*anatomical(en)</keywords>
+      <use />
+      <misuse>*Not for specifiying unilateral/bilateral occurence - this is related to an evaluation which perhaps includes multiple locations.(en)</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.</purpose>
+      <keywords>location</keywords>
+      <keywords>site</keywords>
+      <keywords>anatomical</keywords>
+      <keywords>anatomic region</keywords>
+      <keywords>topographic anatomy</keywords>
+      <keywords>macroscopic</keywords>
+      <keywords>anatomic</keywords>
+      <keywords>anatomy</keywords>
+      <use>Use to record structured and consistent details about a single identified physical site on, or within, the human body. As a fundamental part of clinical practice, humans can describe anatomical locations in a myriad of complex and variable ways.
+
+In practice, some archetypes carry a single data element for carrying a simple description of body site - for example, OBSERVATION.blood_pressure and CLUSTER.symptom when describing ear pain. In this situation, where the value set is predictable and simple to define, this single data element is a very accurate and pragmatic way to record the site in the body and to query at a later date. However in the situation where the anatomical location is not well defined or needs to be determined at run-time, it may be more flexible to use this structured archetype. For example, in the situation where any symptom can be recorded without any predefined scope of the type of symptom, then allowing the use of this archetype to specifically define an anatomical location in the body may be useful. In this case the CLUSTER.symptom archetype also carries a SLOT for 'Structured anatomical location' which can include this archetype to support maximal flexibility in recording anatomical location data.
+
+This archetype is specifically designed to be used within the context of any appropriate ENTRY or CLUSTER archetypes which supply the context of the anatomical location. 
+
+'Body site name' is the only mandated data point and should be used as the primary data point to record an anatomical location. 
+
+In addition, the 'Body structure' data element permits recording of a less precise context for the identified body site, for example, a limb or a digit. This can be useful to allow clinicians to describe the presence of gout to be located in the 'distal interphalangeal joint' of the 'great toe'. 
+
+Similarly, the data elements 'Laterality', 'Aspect', 'Region', 'Anatomical line' and 'Description' allow for more precise detail to be recorded about the body site. For example, the apex beat oif the heart is typically found at the fifth left intercostal space in the mid-clavicular line, tenderness at McBurney's point on the abdominal wall or a laceration on the palmar aspect of the proximal right thumb.
+
+The archetype contains an 'Alternative structure' SLOT which allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.relative_location or CLUSTER.precise_location, should this be required. In the situation where this archetype can only be used to name a large and/or non-specific body part, the additional use of the CLUSTER.relative_location archetype will support recording of a more precise location - for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below R costal margin on the chest wall in the mid-clavicular line.
+
+A combination of the data elements in this archetype can be used to individually record each component of a postcoordinated terminology expression that represents the anatomical site.
+
+If this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in-utero, then the anatomical location will be identifying a body site on or within the fetus.</use>
+      <misuse>Not to be used for specifiying unilateral/bilateral occurrences of an anatomical feature.
+
+Not to be used to record details about an anatomical location or body site that requires any form of magnification for identification.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>nb</code_string>
+      </language>
+      <purpose>For registrering av detaljer om et anatomisk sted.</purpose>
+      <keywords>sted</keywords>
+      <keywords>lokasjon</keywords>
+      <keywords>anatomisk</keywords>
+      <keywords>site</keywords>
+      <use />
+      <misuse>Anvendes ikke for spesifisering av unilateral/bilateral forekomst - dette relateres til en vurdering som kanskje omfatter flere steder.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>sl</code_string>
+    </language>
+    <author id="name">Biljana Princic</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <author id="organisation">Haukeland University Hospital of Bergen, Norway</author>
+    <author id="name">Lars Bitsch-Larsen</author>
+    <accreditation>MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ar-sy</code_string>
+    </language>
+    <author id="name">Mona Saleh</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.anatomical_location.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0066</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0002</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0003</code_list>
+                <code_list>at0004</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>2</upper>
+        </occurrences>
+        <node_id>at0064</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0067</code_list>
+                <code_list>at0068</code_list>
+                <code_list>at0069</code_list>
+                <code_list>at0070</code_list>
+                <code_list>at0071</code_list>
+                <code_list>at0072</code_list>
+                <code_list>at0073</code_list>
+                <code_list>at0074</code_list>
+                <code_list>at0075</code_list>
+                <code_list>at0076</code_list>
+                <code_list>at0077</code_list>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0065</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0055</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0062</code_list>
+                <code_list>at0056</code_list>
+                <code_list>at0057</code_list>
+                <code_list>at0058</code_list>
+                <code_list>at0059</code_list>
+                <code_list>at0060</code_list>
+                <code_list>at0063</code_list>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0023</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0053</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.precise_location(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.precise_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0054</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="ar-sy">
+      <items code="at0000">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*A physical site on or within the human body.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Body site name(en)</items>
+        <items id="description">*Identification of a single physical site either on, or within, the human body.(en)</items>
+        <items id="comment">*This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. (en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Laterality(en)</items>
+        <items id="description">*The side of the identified body site.(en)</items>
+        <items id="comment">*If the identified body site has no laterality, this data element should not have a value selected. 
+If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Left(en)</items>
+        <items id="description">*Left side of the body.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">*Right(en)</items>
+        <items id="description">*Right side of the body.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description that can be used to further refine and support the 'Body site name'.(en)</items>
+        <items id="comment">*For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.(en)</items>
+      </items>
+      <items code="at0053">
+        <items id="text">*Alternative structure(en)</items>
+        <items id="description">*Additional detail about the anatomical site using alternative approaches to describe the same body site.(en)</items>
+        <items id="comment">*For example, relative location or precise locations using coordinates. (en)</items>
+      </items>
+      <items code="at0054">
+        <items id="text">*Multimedia representation(en)</items>
+        <items id="description">*Image or other media used to support identification of the body site.(en)</items>
+      </items>
+      <items code="at0055">
+        <items id="text">*Anatomical Line(en)</items>
+        <items id="description">*Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.(en)</items>
+        <items id="comment">*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Midaxillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the apex of the axilla.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Anterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the anterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Posterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the posterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Mid-clavicular line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.(en)</items>
+      </items>
+      <items code="at0060">
+        <items id="text">*Mid-pupillary line(en)</items>
+        <items id="description">*Line running vertically down the face through the midpoint of the pupil when looking directly forward.(en)</items>
+      </items>
+      <items code="at0062">
+        <items id="text">*Midline(en)</items>
+        <items id="description">*Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Mid-scapular line(en)</items>
+        <items id="description">*Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.(en)</items>
+      </items>
+      <items code="at0064">
+        <items id="text">*Aspect(en)</items>
+        <items id="description">*Qualifying detail about the more specific aspect of the identified body site.(en)</items>
+        <items id="comment">*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.(en)</items>
+      </items>
+      <items code="at0065">
+        <items id="text">*Region(en)</items>
+        <items id="description">*Detail about the more specific region or point on, or within, the identified body site.(en)</items>
+        <items id="comment">*For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.(en)</items>
+      </items>
+      <items code="at0066">
+        <items id="text">*Body structure(en)</items>
+        <items id="description">*Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.(en)</items>
+        <items id="comment">*Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.(en)</items>
+      </items>
+      <items code="at0067">
+        <items id="text">*Medial(en)</items>
+        <items id="description">*Towards the midline of the body site.(en)</items>
+      </items>
+      <items code="at0068">
+        <items id="text">*Lateral(en)</items>
+        <items id="description">*Towards the side, or edge, of the body site.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Superior(en)</items>
+        <items id="description">*Above the body site, often meaning towards the head.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Inferior(en)</items>
+        <items id="description">*Below the body site, often meaning towards the feet.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Anterior(en)</items>
+        <items id="description">*Towrds the front, or ventral surface, of  the body site.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Posterior(en)</items>
+        <items id="description">*Towards the back, or dorsal surface, of the body site.(en)</items>
+      </items>
+      <items code="at0073">
+        <items id="text">*Proximal(en)</items>
+        <items id="description">*More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0074">
+        <items id="text">*Distal(en)</items>
+        <items id="description">*More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0075">
+        <items id="text">*Palmar(en)</items>
+        <items id="description">*Towards the palm of the hand.(en)</items>
+      </items>
+      <items code="at0076">
+        <items id="text">*Plantar(en)</items>
+        <items id="description">*Towards the sole of the foot.(en)</items>
+      </items>
+      <items code="at0077">
+        <items id="text">*Mid(en)</items>
+        <items id="description">*In the middle of the body site.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="sl">
+      <items code="at0000">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*A physical site on or within the human body.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Body site name(en)</items>
+        <items id="description">*Identification of a single physical site either on, or within, the human body.(en)</items>
+        <items id="comment">*This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. (en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Laterality(en)</items>
+        <items id="description">*The side of the identified body site.(en)</items>
+        <items id="comment">*If the identified body site has no laterality, this data element should not have a value selected. 
+If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Left(en)</items>
+        <items id="description">*Left side of the body.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">*Right(en)</items>
+        <items id="description">*Right side of the body.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description that can be used to further refine and support the 'Body site name'.(en)</items>
+        <items id="comment">*For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.(en)</items>
+      </items>
+      <items code="at0053">
+        <items id="text">*Alternative structure(en)</items>
+        <items id="description">*Additional detail about the anatomical site using alternative approaches to describe the same body site.(en)</items>
+        <items id="comment">*For example, relative location or precise locations using coordinates. (en)</items>
+      </items>
+      <items code="at0054">
+        <items id="text">*Multimedia representation(en)</items>
+        <items id="description">*Image or other media used to support identification of the body site.(en)</items>
+      </items>
+      <items code="at0055">
+        <items id="text">*Anatomical Line(en)</items>
+        <items id="description">*Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.(en)</items>
+        <items id="comment">*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Midaxillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the apex of the axilla.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Anterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the anterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Posterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the posterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Mid-clavicular line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.(en)</items>
+      </items>
+      <items code="at0060">
+        <items id="text">*Mid-pupillary line(en)</items>
+        <items id="description">*Line running vertically down the face through the midpoint of the pupil when looking directly forward.(en)</items>
+      </items>
+      <items code="at0062">
+        <items id="text">*Midline(en)</items>
+        <items id="description">*Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Mid-scapular line(en)</items>
+        <items id="description">*Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.(en)</items>
+      </items>
+      <items code="at0064">
+        <items id="text">*Aspect(en)</items>
+        <items id="description">*Qualifying detail about the more specific aspect of the identified body site.(en)</items>
+        <items id="comment">*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.(en)</items>
+      </items>
+      <items code="at0065">
+        <items id="text">*Region(en)</items>
+        <items id="description">*Detail about the more specific region or point on, or within, the identified body site.(en)</items>
+        <items id="comment">*For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.(en)</items>
+      </items>
+      <items code="at0066">
+        <items id="text">*Body structure(en)</items>
+        <items id="description">*Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.(en)</items>
+        <items id="comment">*Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.(en)</items>
+      </items>
+      <items code="at0067">
+        <items id="text">*Medial(en)</items>
+        <items id="description">*Towards the midline of the body site.(en)</items>
+      </items>
+      <items code="at0068">
+        <items id="text">*Lateral(en)</items>
+        <items id="description">*Towards the side, or edge, of the body site.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Superior(en)</items>
+        <items id="description">*Above the body site, often meaning towards the head.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Inferior(en)</items>
+        <items id="description">*Below the body site, often meaning towards the feet.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Anterior(en)</items>
+        <items id="description">*Towrds the front, or ventral surface, of  the body site.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Posterior(en)</items>
+        <items id="description">*Towards the back, or dorsal surface, of the body site.(en)</items>
+      </items>
+      <items code="at0073">
+        <items id="text">*Proximal(en)</items>
+        <items id="description">*More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0074">
+        <items id="text">*Distal(en)</items>
+        <items id="description">*More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0075">
+        <items id="text">*Palmar(en)</items>
+        <items id="description">*Towards the palm of the hand.(en)</items>
+      </items>
+      <items code="at0076">
+        <items id="text">*Plantar(en)</items>
+        <items id="description">*Towards the sole of the foot.(en)</items>
+      </items>
+      <items code="at0077">
+        <items id="text">*Mid(en)</items>
+        <items id="description">*In the middle of the body site.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Anatomical location</items>
+        <items id="description">A physical site on or within the human body.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Body site name</items>
+        <items id="description">Identification of a single physical site either on, or within, the human body.</items>
+        <items id="comment">This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Laterality</items>
+        <items id="description">The side of the identified body site.</items>
+        <items id="comment">If the identified body site has no laterality, this data element should not have a value selected. 
+If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Left</items>
+        <items id="description">Left side of the body.</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Right</items>
+        <items id="description">Right side of the body.</items>
+      </items>
+      <items code="at0023">
+        <items id="text">Description</items>
+        <items id="description">Narrative description that can be used to further refine and support the 'Body site name'.</items>
+        <items id="comment">For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.</items>
+      </items>
+      <items code="at0053">
+        <items id="text">Alternative structure</items>
+        <items id="description">Additional detail about the anatomical site using alternative approaches to describe the same body site.</items>
+        <items id="comment">For example, relative location or precise locations using coordinates.</items>
+      </items>
+      <items code="at0054">
+        <items id="text">Multimedia representation</items>
+        <items id="description">Image or other media used to support identification of the body site.</items>
+      </items>
+      <items code="at0055">
+        <items id="text">Anatomical Line</items>
+        <items id="description">Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.</items>
+        <items id="comment">Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">Midaxillary line</items>
+        <items id="description">Line running vertically down the surface of the body, passing through the apex of the axilla.</items>
+      </items>
+      <items code="at0057">
+        <items id="text">Anterior axillary line</items>
+        <items id="description">Line running vertically down the surface of the body, passing through the anterior axillary skinfold.</items>
+      </items>
+      <items code="at0058">
+        <items id="text">Posterior axillary line</items>
+        <items id="description">Line running vertically down the surface of the body, passing through the posterior axillary skinfold.</items>
+      </items>
+      <items code="at0059">
+        <items id="text">Mid-clavicular line</items>
+        <items id="description">Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.</items>
+      </items>
+      <items code="at0060">
+        <items id="text">Mid-pupillary line</items>
+        <items id="description">Line running vertically down the face through the midpoint of the pupil when looking directly forward.</items>
+      </items>
+      <items code="at0062">
+        <items id="text">Midline</items>
+        <items id="description">Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit.</items>
+      </items>
+      <items code="at0063">
+        <items id="text">Mid-scapular line</items>
+        <items id="description">Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.</items>
+      </items>
+      <items code="at0064">
+        <items id="text">Aspect</items>
+        <items id="description">Qualifying detail about the more specific aspect of the identified body site.</items>
+        <items id="comment">Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.</items>
+      </items>
+      <items code="at0065">
+        <items id="text">Region</items>
+        <items id="description">Detail about the more specific region or point on, or within, the identified body site.</items>
+        <items id="comment">For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.</items>
+      </items>
+      <items code="at0066">
+        <items id="text">Body structure</items>
+        <items id="description">Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.</items>
+        <items id="comment">Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.</items>
+      </items>
+      <items code="at0067">
+        <items id="text">Medial</items>
+        <items id="description">Towards the midline of the body site.</items>
+      </items>
+      <items code="at0068">
+        <items id="text">Lateral</items>
+        <items id="description">Towards the side, or edge, of the body site.</items>
+      </items>
+      <items code="at0069">
+        <items id="text">Superior</items>
+        <items id="description">Above the body site, often meaning towards the head.</items>
+      </items>
+      <items code="at0070">
+        <items id="text">Inferior</items>
+        <items id="description">Below the body site, often meaning towards the feet.</items>
+      </items>
+      <items code="at0071">
+        <items id="text">Anterior</items>
+        <items id="description">Towrds the front, or ventral surface, of  the body site.</items>
+      </items>
+      <items code="at0072">
+        <items id="text">Posterior</items>
+        <items id="description">Towards the back, or dorsal surface, of the body site.</items>
+      </items>
+      <items code="at0073">
+        <items id="text">Proximal</items>
+        <items id="description">More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.</items>
+      </items>
+      <items code="at0074">
+        <items id="text">Distal</items>
+        <items id="description">More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.</items>
+      </items>
+      <items code="at0075">
+        <items id="text">Palmar</items>
+        <items id="description">Towards the palm of the hand.</items>
+      </items>
+      <items code="at0076">
+        <items id="text">Plantar</items>
+        <items id="description">Towards the sole of the foot.</items>
+      </items>
+      <items code="at0077">
+        <items id="text">Mid</items>
+        <items id="description">In the middle of the body site.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="nb">
+      <items code="at0000">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*A physical site on or within the human body.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Body site name(en)</items>
+        <items id="description">*Identification of a single physical site either on, or within, the human body.(en)</items>
+        <items id="comment">*This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. (en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Laterality(en)</items>
+        <items id="description">*The side of the identified body site.(en)</items>
+        <items id="comment">*If the identified body site has no laterality, this data element should not have a value selected. 
+If the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Left(en)</items>
+        <items id="description">*Left side of the body.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">*Right(en)</items>
+        <items id="description">*Right side of the body.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description that can be used to further refine and support the 'Body site name'.(en)</items>
+        <items id="comment">*For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.(en)</items>
+      </items>
+      <items code="at0053">
+        <items id="text">*Alternative structure(en)</items>
+        <items id="description">*Additional detail about the anatomical site using alternative approaches to describe the same body site.(en)</items>
+        <items id="comment">*For example, relative location or precise locations using coordinates. (en)</items>
+      </items>
+      <items code="at0054">
+        <items id="text">*Multimedia representation(en)</items>
+        <items id="description">*Image or other media used to support identification of the body site.(en)</items>
+      </items>
+      <items code="at0055">
+        <items id="text">*Anatomical Line(en)</items>
+        <items id="description">*Detail about the anatomical site described by the theoretical lines drawn through anatomical structures used to provide a consistent reference point.(en)</items>
+        <items id="comment">*Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Midaxillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the apex of the axilla.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Anterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the anterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Posterior axillary line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, passing through the posterior axillary skinfold.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Mid-clavicular line(en)</items>
+        <items id="description">*Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.(en)</items>
+      </items>
+      <items code="at0060">
+        <items id="text">*Mid-pupillary line(en)</items>
+        <items id="description">*Line running vertically down the face through the midpoint of the pupil when looking directly forward.(en)</items>
+      </items>
+      <items code="at0062">
+        <items id="text">*Midline(en)</items>
+        <items id="description">*Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Mid-scapular line(en)</items>
+        <items id="description">*Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.(en)</items>
+      </items>
+      <items code="at0064">
+        <items id="text">*Aspect(en)</items>
+        <items id="description">*Qualifying detail about the more specific aspect of the identified body site.(en)</items>
+        <items id="comment">*Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described if required. For example: left anterior, lateral (anterolateral) chest wall.(en)</items>
+      </items>
+      <items code="at0065">
+        <items id="text">*Region(en)</items>
+        <items id="description">*Detail about the more specific region or point on, or within, the identified body site.(en)</items>
+        <items id="comment">*For example, the upper right quadrant of the abdomen; the lumbar region of the lower back; McBurney's point; anticubital fossa; or nasolabial fold.(en)</items>
+      </items>
+      <items code="at0066">
+        <items id="text">*Body structure(en)</items>
+        <items id="description">*Additional identification of a larger or less precise anatomical structure, of which the identified body site is a component.(en)</items>
+        <items id="comment">*Use this data element when the 'Body site name' requires additional anatomical context, for example if body site is recorded as 'distal interphalangeal joint', this data element allows for specification of 'great toe'.(en)</items>
+      </items>
+      <items code="at0067">
+        <items id="text">*Medial(en)</items>
+        <items id="description">*Towards the midline of the body site.(en)</items>
+      </items>
+      <items code="at0068">
+        <items id="text">*Lateral(en)</items>
+        <items id="description">*Towards the side, or edge, of the body site.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Superior(en)</items>
+        <items id="description">*Above the body site, often meaning towards the head.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Inferior(en)</items>
+        <items id="description">*Below the body site, often meaning towards the feet.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Anterior(en)</items>
+        <items id="description">*Towrds the front, or ventral surface, of  the body site.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Posterior(en)</items>
+        <items id="description">*Towards the back, or dorsal surface, of the body site.(en)</items>
+      </items>
+      <items code="at0073">
+        <items id="text">*Proximal(en)</items>
+        <items id="description">*More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0074">
+        <items id="text">*Distal(en)</items>
+        <items id="description">*More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.(en)</items>
+      </items>
+      <items code="at0075">
+        <items id="text">*Palmar(en)</items>
+        <items id="description">*Towards the palm of the hand.(en)</items>
+      </items>
+      <items code="at0076">
+        <items id="text">*Plantar(en)</items>
+        <items id="description">*Towards the sole of the foot.(en)</items>
+      </items>
+      <items code="at0077">
+        <items id="text">*Mid(en)</items>
+        <items id="description">*In the middle of the body site.(en)</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="at0002">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>272741003</code_string>
+        </value>
+      </items>
+      <items code="at0003">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>419161000</code_string>
+        </value>
+      </items>
+      <items code="at0004">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>419465000</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">ian.mcnicoll@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics, United Kingdom</original_author>
+    <original_author id="name">Dr Ian McNicoll</original_author>
+    <original_author id="date">2013-05-29</original_author>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Hugh Leslie, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Sam Heard, Ocean Informatics, Australia</other_contributors>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="MD5-CAM-1.0.1">B302D2C353B8DFD6407C76E8A183E13F</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>sl</code_string>
+      </language>
+      <purpose>Za zapisovanje različnih statusov, ki se ponavadi uporablja za aplikacijskimi in kliničnimi sporočili, ki so odvisna od definirane vsebine</purpose>
+      <keywords>problem</keywords>
+      <keywords>aktiven</keywords>
+      <keywords>ni aktiven</keywords>
+      <use>Za dodeljevanje pravic EVALUATION.problem_diagnosis.v1 archetype, dodaja informacije za povezovanje.</use>
+      <misuse>It should not be assumed that these qualifiers are safely interoperable unless further definition and alignment is agreed between all sharing parties. A problem which has been defined as 'Inactive' during a hospital admission cannot be assumed to be regarded as 'Inactive' in a primary care setting , where a much longer term perspective is being taken. Similarly terms such as Initial, Interim and Final, whilst helpful to the human observer are unlikely to be precisely enough defined to be safely computable e.g. for decision support.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record various status and context qualifiers which though commonly used within applications and in clinical messages but which are  highly contextually dependent or variably defined and used in practice.</purpose>
+      <keywords>problem</keywords>
+      <keywords>active</keywords>
+      <keywords>inactive</keywords>
+      <keywords>status</keywords>
+      <keywords>episode</keywords>
+      <use>Use to qualify an EVALUATION.problem_diagnosis.v1 archetype, adding context and state specific information.  These qualifiers should be used with care as they are variably used in practice and interopaerablility cannot be assured unless usage is clearly defined within the community of sharing.</use>
+      <misuse>It should not be assumed that these qualifiers are safely interoperable unless further definition and alignment is agreed between all sharing parties. A problem which has been defined as 'Inactive' during a hospital admission cannot be assumed to be regarded as 'Inactive' in a primary care setting , where a much longer term perspective is being taken. Similarly terms such as Initial, Interim and Final, whilst helpful to the human observer are unlikely to be precisely enough defined to be safely computable e.g. for decision support.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>sl</code_string>
+    </language>
+    <author id="email">biljana.princic@marand.si</author>
+    <author id="organisation">Marand d.o.o., Ljubljana, Slovenija</author>
+    <author id="name">mag. Biljana Prinčič</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.problem_status.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0029</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0045</code_list>
+                <code_list>at0046</code_list>
+                <code_list>at0047</code_list>
+                <code_list>at0048</code_list>
+                <code_list>at0049</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0024</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0036</code_list>
+                <code_list>at0037</code_list>
+                <code_list>at0038</code_list>
+                <code_list>at0039</code_list>
+                <code_list>at0044</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0051</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0052</code_list>
+                <code_list>at0053</code_list>
+                <code_list>at0054</code_list>
+                <code_list>at0055</code_list>
+                <code_list>at0056</code_list>
+                <code_list>at0057</code_list>
+                <code_list>at0058</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0003</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0026</code_list>
+                <code_list>at0027</code_list>
+                <code_list>at0028</code_list>
+                <code_list>at0059</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0043</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0004</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0016</code_list>
+                <code_list>at0017</code_list>
+                <code_list>at0018</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0060</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0061</code_list>
+                <code_list>at0062</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0033</code_list>
+                <code_list>at0034</code_list>
+                <code_list>at0035</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0063</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0064</code_list>
+                <code_list>at0069</code_list>
+                <code_list>at0066</code_list>
+                <code_list>at0067</code_list>
+                <code_list>at0068</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0006</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_COUNT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0007</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_BOOLEAN</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>BOOLEAN</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_BOOLEAN">
+                  <true_valid>true</true_valid>
+                  <false_valid>true</false_valid>
+                </item>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Problem context qualifiers</items>
+        <items id="description">Additional status and contextual qualifiers factors related to a problem/diagnosis.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Episodicity</items>
+        <items id="description">Episodicity is used within a primary care context to distinguish between ongoing and new episodes of a problem or diagnosis, primarily for public health or quality assessment purposes.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Active status</items>
+        <items id="description">The degree to which the problem is active and relevant within the current clinical context.</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Evolution</items>
+        <items id="description">Records temporal/evidential progress towards identification of the problem or diagnosis, recognising that precise identification may take time to evolve as increasing amounts of evidence become available.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Priority</items>
+        <items id="description">A numeric or textual representation of the priority assigned to the problem, relative to other problems in a list. This may be used to sort items according to perceived clinical priority or to filter problems felt to be of greater /lesser significance.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Summarisation</items>
+        <items id="description">A flag or text/ coded item recording whether this problem/diagnosis should be presented in a patient summary. Applications may implement this in a variety of ways.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Initial assessment</items>
+        <items id="description">The diagnosis has been made at the outset of the diagnostic process with limited evidence available.</items>
+      </items>
+      <items code="at0017">
+        <items id="text">Interim/working assessment</items>
+        <items id="description">The problem or diagnosis has been identified with some confidence but further evidence has yet to be considered.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Final assessment</items>
+        <items id="description">The problem or diagnosis is made at the end of the diagnostic process taking into account all available significant evidence. It is not expected to change.</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Impact</items>
+        <items id="description">Description of the impact of the problem or diagnosis on the patient as a whole. Unlike 'severity' this can be used to compare the clinical impact of different problems.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Active</items>
+        <items id="description">The problem or diagnosis is currently active and clinically relevant.</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Inactive</items>
+        <items id="description">The problem or diagnosis is not completely resolved but is inactive or felt less relevant to the current clinical context.</items>
+      </items>
+      <items code="at0028">
+        <items id="text">Resolved</items>
+        <items id="description">The problem or diagnosis is completely resolved and therefore not relevant to the current clinical context.</items>
+      </items>
+      <items code="at0029">
+        <items id="text">Certainty</items>
+        <items id="description">The level of confidence in the identification of the problem or diagnosis.</items>
+      </items>
+      <items code="at0033">
+        <items id="text">First ever</items>
+        <items id="description">The first ever occurence of this problem or diagnosis.</items>
+      </items>
+      <items code="at0034">
+        <items id="text">New</items>
+        <items id="description">A new occurence of an existing problem or diagnosis.</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Ongoing</items>
+        <items id="description">Part of an ongoing occurence of an existing problem or diagnosis.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">None</items>
+        <items id="description">The problem has had no impact on the subject.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Insignificant</items>
+        <items id="description">The problem has had very little overall impact on the subject's life or health.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Significant</items>
+        <items id="description">The problem has had considerable overall impact on the subject's life or health.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Life-threatening</items>
+        <items id="description">The problem has threatened the subject's life.</items>
+      </items>
+      <items code="at0043">
+        <items id="text">Active status comment</items>
+        <items id="description">A text comment on the active status e.g describing the circumstances or evidence for resolution of a problem.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">Fatal</items>
+        <items id="description">The problem was fatal to the subject.</items>
+      </items>
+      <items code="at0045">
+        <items id="text">Possible</items>
+        <items id="description">The probem has been identified with a low level of certainty.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">Equivocal</items>
+        <items id="description">The probem has been identified with only a moderate level of certainty.</items>
+      </items>
+      <items code="at0047">
+        <items id="text">Probable</items>
+        <items id="description">The probem has been identified with a high level of certainty.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Definite</items>
+        <items id="description">The probem has been identified with a very-high level of certainty.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Confirmed</items>
+        <items id="description">The probem has been identified and confirmed against recognised criteria.</items>
+      </items>
+      <items code="at0051">
+        <items id="text">Category</items>
+        <items id="description">Cateories of problem/ diagnosis/issue.</items>
+      </items>
+      <items code="at0052">
+        <items id="text">Condition</items>
+        <items id="description">The issue is a condition.</items>
+      </items>
+      <items code="at0053">
+        <items id="text">Symptom</items>
+        <items id="description">The issue is a symptom.</items>
+      </items>
+      <items code="at0054">
+        <items id="text">Finding</items>
+        <items id="description">The issue is a clinical finding.</items>
+      </items>
+      <items code="at0055">
+        <items id="text">Complaint</items>
+        <items id="description">The issue is a patient complaint.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">Functional limitation</items>
+        <items id="description">The issue is a functional limitation.</items>
+      </items>
+      <items code="at0057">
+        <items id="text">Problem</items>
+        <items id="description">The issue is recognised to be causing a problem.</items>
+      </items>
+      <items code="at0058">
+        <items id="text">Diagnosis</items>
+        <items id="description">The issue is regarded as a biomedical diagnosis.</items>
+      </items>
+      <items code="at0059">
+        <items id="text">In remission</items>
+        <items id="description">The problem or issue is of a recurring nature but is currently quiescent.</items>
+      </items>
+      <items code="at0060">
+        <items id="text">Temporal context</items>
+        <items id="description">Temporal context indicator aligned with SNOMEDCT.</items>
+      </items>
+      <items code="at0061">
+        <items id="text">Past</items>
+        <items id="description">An issue occuring in the past.</items>
+      </items>
+      <items code="at0062">
+        <items id="text">Current</items>
+        <items id="description">An issue which ocurred at present.</items>
+      </items>
+      <items code="at0063">
+        <items id="text">Episodic care status</items>
+        <items id="description">In episodic care contexts (commonly  secondary care) it is common to categorise/ organise problems according to their relationship to the principal problem or diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes.</items>
+      </items>
+      <items code="at0064">
+        <items id="text">Primary diagnosis</items>
+        <items id="description">The main condition treated or investigated during the relevant episode of care.</items>
+      </items>
+      <items code="at0066">
+        <items id="text">Co-morbidity</items>
+        <items id="description">A co-morbidity is a condition that exists at the start of the episode of care, which requires treatment, diagnostic procedures or increased clinical care/monitoring.</items>
+      </items>
+      <items code="at0067">
+        <items id="text">Complication</items>
+        <items id="description">A complication is a condition not present at the start of the episode of care which arises during the episode of care, or is a result of a procedure or treatment during that episode.</items>
+      </items>
+      <items code="at0068">
+        <items id="text">Other current problem</items>
+        <items id="description">Any other problem or issue deemed significant to the patient's care which does not fall into the one of other categories.</items>
+      </items>
+      <items code="at0069">
+        <items id="text">Primary procedure</items>
+        <items id="description">The main procedure performed during the relevant episode of care.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="sl">
+      <items code="at0000">
+        <items id="text">*Problem context qualifiers(en)</items>
+        <items id="description">*Additional status and contextual qualifiers factors related to a problem/diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Epizoda</items>
+        <items id="description">Epizoda problema</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Aktivnost</items>
+        <items id="description">Stopnja aktivnosti problema</items>
+      </items>
+      <items code="at0004">
+        <items id="text">*Evolution(en)</items>
+        <items id="description">*Records temporal/evidential progress towards identification of the problem or diagnosis, recognising that precise identification may take time to evolve as increasing amounts of evidence become available.(en)</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Prioriteta</items>
+        <items id="description">Prioriteta problema</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Povzetek</items>
+        <items id="description">Povzetek opisa</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Začetna diagnoza</items>
+        <items id="description">Opredelitev začetne diagnoze</items>
+      </items>
+      <items code="at0017">
+        <items id="text">Vmesna diagnoza</items>
+        <items id="description">Opredelitev vmesne diagnoze</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Končna diagnoza</items>
+        <items id="description">Opredelitev končne diagnoze</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Vpliv</items>
+        <items id="description">Opis vpliva problema/diagnoze</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Aktiven</items>
+        <items id="description">Problem je trenutno aktiven in klinično relevanten</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Ni aktiven</items>
+        <items id="description">Problem trenutno ni aktiven</items>
+      </items>
+      <items code="at0028">
+        <items id="text">Razrešen</items>
+        <items id="description">Problem j erazrešen</items>
+      </items>
+      <items code="at0029">
+        <items id="text">Zanesljivost</items>
+        <items id="description">Zanesljivost opredeljenega problema oz. posatvljene diagnoze</items>
+      </items>
+      <items code="at0033">
+        <items id="text">Prvič</items>
+        <items id="description">Problem se je pojavil prvič</items>
+      </items>
+      <items code="at0034">
+        <items id="text">Nova</items>
+        <items id="description">Nova ponovitev starega problema/ ali diagnoze</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Sedanja</items>
+        <items id="description">Del epizode postavljene diagnoze lai problema</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Ni vpliva</items>
+        <items id="description">Problem oz. diagnoza nima vpliva</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Nepomemben</items>
+        <items id="description">Problem ima nepomemben vpliv</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Pomemben</items>
+        <items id="description">Problem ima pomemben vpliv</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Življensko nevaren</items>
+        <items id="description">Problem ogroža življenje pacienta</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Active status comment(en)</items>
+        <items id="description">*A text comment on the active status e.g describing the circumstances or evidence for resolution of a problem.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">Fatalen</items>
+        <items id="description">Diagnoz aoz problem je fatalen za pacienta</items>
+      </items>
+      <items code="at0045">
+        <items id="text">*Possible(en)</items>
+        <items id="description">*The probem has been identified with a low level of certainty.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Equivocal(en)</items>
+        <items id="description">*The probem has been identified with only a moderate level of certainty.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Probable(en)</items>
+        <items id="description">*The probem has been identified with a high level of certainty.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Definite(en)</items>
+        <items id="description">*The probem has been identified with a very-high level of certainty.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Confirmed(en)</items>
+        <items id="description">*The probem has been identified and confirmed against recognised criteria.(en)</items>
+      </items>
+      <items code="at0051">
+        <items id="text">*Category(en)</items>
+        <items id="description">*Cateories of problem/ diagnosis/issue.(en)</items>
+      </items>
+      <items code="at0052">
+        <items id="text">*Condition(en)</items>
+        <items id="description">*The issue is a condition.(en)</items>
+      </items>
+      <items code="at0053">
+        <items id="text">*Symptom(en)</items>
+        <items id="description">*The issue is a symptom.(en)</items>
+      </items>
+      <items code="at0054">
+        <items id="text">*Finding(en)</items>
+        <items id="description">*The issue is a clinical finding.(en)</items>
+      </items>
+      <items code="at0055">
+        <items id="text">*Complaint(en)</items>
+        <items id="description">*The issue is a patient complaint.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Functional limitation(en)</items>
+        <items id="description">*The issue is a functional limitation.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Problem(en)</items>
+        <items id="description">*The issue is recognised to be causing a problem.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Diagnosis(en)</items>
+        <items id="description">*The issue is regarded as a biomedical diagnosis.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*In remission(en)</items>
+        <items id="description">*The problem or issue is of a recurring nature but is currently quiescent.(en)</items>
+      </items>
+      <items code="at0060">
+        <items id="text">*Temporal context(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0061">
+        <items id="text">*Past(en)</items>
+        <items id="description">*An issue occuring in the past.(en)</items>
+      </items>
+      <items code="at0062">
+        <items id="text">*Current(en)</items>
+        <items id="description">*An issue which ocurred at present.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*New element(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0064">
+        <items id="text">*Primary diagnosis(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0066">
+        <items id="text">*Co-morbidity(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0067">
+        <items id="text">*Complication(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0068">
+        <items id="text">*Other/ ongoing Problem(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Primary procedure(en)</items>
+        <items id="description">*The main procedure performed during the relevant episode of care.(en)</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

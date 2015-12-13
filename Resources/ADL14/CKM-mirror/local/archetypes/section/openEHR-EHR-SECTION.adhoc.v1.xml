@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">ian.mcnicoll@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics, United Kingdom</original_author>
+    <original_author id="name">Dr Ian McNicoll</original_author>
+    <original_author id="date">2010-07-03</original_author>
+    <other_contributors>Tomas Alme, DIPS, Norway</other_contributors>
+    <other_contributors>Koray Atalag, University of Auckland, New Zealand</other_contributors>
+    <other_contributors>Silje Bakke, Bergen Hospital Trust, Norway</other_contributors>
+    <other_contributors>Rong Chen, Cambio Healthcare Systems, Sweden</other_contributors>
+    <other_contributors>Stephen Chu, NeHTA, Australia</other_contributors>
+    <other_contributors>Konstantinos Kalliamvakos, Cambio Healthcare Systems, Sweden</other_contributors>
+    <other_contributors>Lars Karlsen, DIPS ASA, Norway</other_contributors>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)</other_contributors>
+    <lifecycle_state>Published</lifecycle_state>
+    <other_details id="current_contact">Ian McNicoll, freshEHR Clinical Informatics UK, ian@freshEHR.com</other_details>
+    <other_details id="MD5-CAM-1.0.1">1EDDC99B0C6EA2B163D98A9FEE10417B</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To provide a generic section header which will be renamed in a template to suit a specific clinical context.</purpose>
+      <use>Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: "Ad hoc heading" renamed to "Examination findings".</use>
+      <misuse>Not to be left unchanged in a template.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ru</code_string>
+      </language>
+      <purpose>Базовый заголовок раздела, должен быть переименован в локальном шаблоне</purpose>
+      <keywords>раздел</keywords>
+      <keywords>шаблон</keywords>
+      <keywords>заготовка</keywords>
+      <keywords>название</keywords>
+      <keywords>образец</keywords>
+      <use>используется для создания и именования разделов в локальных шаблонах</use>
+      <misuse />
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es-ar</code_string>
+      </language>
+      <purpose>Proporcionar un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico.</purpose>
+      <use>Utilizar para construir un encabezado de sección en una plantilla y que será renombrado para su empleo en un contexto clínico específico. Por ejemplo, "Encabezado ad hoc" puede renombrarse como "Hallazgos de examen".</use>
+      <misuse>No debe mantenerse sin cambios en una plantilla.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>sl</code_string>
+      </language>
+      <purpose>*To provide a generic section header which will be renamed in a template to suit a specific clinical context.(en)</purpose>
+      <use>*Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: "Ad hoc heading" renamed to "Examination findings".(en)</use>
+      <misuse>*Not to be left unchanged in a template.(en)</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>sl</code_string>
+    </language>
+    <author id="name">?</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>es-ar</code_string>
+    </language>
+    <author id="organisation">Hospital Universitario Austral, Buenos Aires, Argentina</author>
+    <author id="name">Alan March</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ru</code_string>
+    </language>
+    <author id="organisation">RusBITech РусБИТех, Москва</author>
+    <author id="name">Art Latyp Латыпов Артур Шамилевич</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-SECTION.adhoc.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>SECTION</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+  </definition>
+  <ontology>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Ad hoc heading</items>
+        <items id="description">A generic section header which should be renamed in a template to suit a specific clinical context.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="ru">
+      <items code="at0000">
+        <items id="text">*Ad hoc heading(en)</items>
+        <items id="description">*A generic section header which should be renamed in a template to suit a specific clinical context.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="es-ar">
+      <items code="at0000">
+        <items id="text">Encabezado ad hoc</items>
+        <items id="description">Un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="sl">
+      <items code="at0000">
+        <items id="text">Naslov sekcije</items>
+        <items id="description">Naslov sekcije</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

@@ -1,0 +1,66 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-OBSERVATION.intravascular_pressure-cvp.v1.0.0
+
+specialize
+	openEHR-EHR-OBSERVATION.intravascular_pressure.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"sam.heard@oceaninformatics.com">
+		["date"] = <"2006-06-28">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل الضغط الوريدي المركزي, عادة عن طريق الإقناء (إدخال القُنَيَّة) في الوريد الرقبي (الوداجي) الداخلي.">
+			use = <"">
+			keywords = <"الضغط", "داخل الوعاء الدموي", "الضغط الوريدي المركزي">
+			misuse = <"لا يستخدم في لقياس ضغط الدم المجموعي.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record central venous pressure, normally via cannulation of the internal jugular vein.">
+			use = <"">
+			keywords = <"pressure", "intravascular", "cvp">
+			misuse = <"Not to be used for systemic blood pressure. Use 'observation.blood_pressure' for this.">
+		>
+	>
+	other_contributors = <"Ian McNicoll, Ocean Informatics, United Kingdom", ...>
+	other_details = <
+		["references"] = <"http://www.wwl.nhs.uk/library/foi/clin_pols/cvpprocedures.pdf">
+		["MD5-CAM-1.0.1"] = <"20B7BEF29249E4D157B6965BE8E33277">
+	>
+
+definition
+	OBSERVATION[id1.1] occurrences matches {0..1} 	-- Central venous pressure
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1.1"] = <
+				text = <"Central venous pressure">
+				description = <"The central venous pressure (CVP) measures the filling pressure of the right ventricle normally performed by cannulation of the internal jugular vein.">
+			>
+		>
+		["ar-sy"] = <
+			["id1.1"] = <
+				text = <"الضغط الوريدي المركزي">
+				description = <"الضغط الوريدي المركزي يقيس الضغط الذي يملأ البطين الأيمن, و يتم عادة عن طريقة إقناء (إدخال القُنَيَّة) في الوريد الرقبي (الوداجي) الداخلي.">
+			>
+		>
+	>

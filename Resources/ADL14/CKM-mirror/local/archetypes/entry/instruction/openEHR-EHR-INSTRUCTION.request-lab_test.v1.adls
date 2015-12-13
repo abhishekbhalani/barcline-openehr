@@ -1,0 +1,136 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-INSTRUCTION.request-lab_test.v1.0.0
+
+specialize
+	openEHR-EHR-INSTRUCTION.request.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Alan March">
+				["organisation"] = <"Hospital Universitario Austral, Buenos Aires, Argentina">
+				["email"] = <"amarch@cas.austral.edu.ar">
+			>
+			accreditation = <"MD">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-08">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل طلب إجراء اختبار معملي للمريض و توصيل التفاصيل السريرية الخاصة بالمريض.">
+			use = <"يستخدم في غالبية طلبات اختبار المعمل التي يتم إجراؤها للمريض. 
+إذا كان هناك المزيد من التفاصيل الخاصة بالاختبار و/أو العينة, فينبغي أن يتم تضمين ذلك في عنقود أكثر تفصيلا في نموذج مناسب لهذا الغرض.">
+			keywords = <"الطلب", "يُحيل", "الأمر", "الخدمة", "المُزَوِّد", "المعمل/المختبر", "الباثولوجيا/المَرَضية", "الميكروبيولوجيا", "الدمويات", "تشخيصي">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To request a laboratory test to be performed and convey supporting clinical details.">
+			use = <"Use in most requests for a laboratory test to be conducted on a patient.
+If there are more specific details about the test and/or specimen include this information in more detailed CLUSTER archetypes appropriate for the purpose.">
+			keywords = <"request", "refer", "order", "service", "provide", "laboratory", "pathology", "microbiology", "haematology", "diagnostic">
+			misuse = <"">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para solicitar la realización de una prueba de laboratorio y transmitir los detalles clínicos de apoyo.">
+			use = <"Uso en la mayoría de las pruebas de laboratorio a ser realizadas sobre un paciente.
+Si existen detalles mas específicos acerca de la prueba o de la muestra, incluir esta información en un arquetipo CLUSTER de mayor detalle, apropiado al propósito.">
+			keywords = <"solicitud", "derivar", "referir", "orden", "servicio", "proveer", "laboratorio", "patología", "microbiología", "hematología", "diagnóstico">
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"3D2186771DC2666AF39652CC7E76E684">
+	>
+
+definition
+	INSTRUCTION[id1.1] matches {	-- Laboratory Test request
+		/activities[id2]/description[id10]/items matches {
+			before [id63]
+			allow_archetype CLUSTER[id0.145] matches {	-- Specimen details
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id41.1] 	-- DateTime test preferred
+			ELEMENT[id145.1] 	-- Latest DateTime test required
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id0.145"] = <
+				text = <"Specimen details">
+				description = <"Structured detail defining the specimen.">
+			>
+			["id1.1"] = <
+				text = <"Laboratory Test request">
+				description = <"Generic request for a laboratory request.">
+			>
+			["id41.1"] = <
+				text = <"DateTime test preferred">
+				description = <"The preferred date and time by which the service should be performed or completed.">
+			>
+			["id145.1"] = <
+				text = <"Latest DateTime test required">
+				description = <"The latest date that is acceptable for the service to be completed.">
+			>
+		>
+		["ar-sy"] = <
+			["id0.145"] = <
+				text = <"تفاصيل العينة">
+				description = <"تفاصيل مُرَكَّبة لتعريف العينة.">
+			>
+			["id1.1"] = <
+				text = <"طلب إجراء تحليل معملي">
+				description = <"طلب جنيس (غير محدود الملكية) لطلب تحليل معملي.">
+			>
+			["id41.1"] = <
+				text = <"تاريخ و توقيت الخدمة المطلوبة">
+				description = <"التاريخ و التوقيت الذي ينبغي إجراء أو إتمام الخدمة فيه">
+			>
+			["id145.1"] = <
+				text = <"آخر تاريخ لاتزال الخدمة مطلوبة في أثناءه">
+				description = <"آخر تاريخ لا يزال فيه مقبولا أن يتم إكمال/إتمام الخدمة.">
+			>
+		>
+		["es-ar"] = <
+			["id0.145"] = <
+				text = <"Detalles de la muestra">
+				description = <"Información estructurada detallada que define a la muestra.">
+			>
+			["id1.1"] = <
+				text = <"Solicitud de prueba de laboratorio">
+				description = <"Solicitud genérica para una prueba de laboratorio.">
+			>
+			["id41.1"] = <
+				text = <"Fecha y/o hora preferida para la prueba">
+				description = <"La fecha y hora preferidas en la que el servicio debería ser realizado o cumplido.">
+			>
+			["id145.1"] = <
+				text = <"Fecha y hora límites para la prueba solicitada">
+				description = <"La fecha mas tardía aceptable para el cumplimiento del servicio.">
+			>
+		>
+	>

@@ -1,0 +1,274 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-OBSERVATION.dermatology_therapy_summary.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2015-02-09">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record summaries of dermatology therapy for registry use.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"132F7C383AC124B5F478DA27A9F45ADD">
+	>
+
+definition
+	OBSERVATION[id1] matches {	-- Dermatology therapy summary
+		data matches {
+			HISTORY[id2] matches {
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[id3] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[id4] matches {
+								items matches {
+									ELEMENT[id5] occurrences matches {0..1} matches {	-- Therapy category
+										value matches {
+											DV_CODED_TEXT[id48] matches {
+												defining_code matches {[ac1]}		-- Therapy category (synthesised)
+											}
+										}
+									}
+									ELEMENT[id39] occurrences matches {0..1} matches {	-- Therapy category used?
+										value matches {
+											DV_BOOLEAN[id49] matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[id40] occurrences matches {0..1} matches {	-- Current therapy?
+										value matches {
+											DV_BOOLEAN[id50] matches {
+												value matches {True, False}
+											}
+										}
+									}
+									CLUSTER[id10] matches {	-- Specific therapy
+										items matches {
+											allow_archetype CLUSTER[id47] occurrences matches {0..1} matches {	-- Therapy details
+												include
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[id12] occurrences matches {0..1} matches {	-- Start date
+												value matches {
+													DV_DATE_TIME[id51] 
+												}
+											}
+											ELEMENT[id13] occurrences matches {0..1} matches {	-- Duration of therapy
+												value matches {
+													DV_DURATION[id52] matches {
+														value matches {PYMWDTHM/|>=PT0S|}
+													}
+												}
+											}
+											ELEMENT[id38] occurrences matches {0..1} matches {	-- Number of treatments
+												value matches {
+													DV_COUNT[id53] matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[id14] occurrences matches {0..1} matches {	-- Frequency of therapy
+												value matches {
+													DV_QUANTITY[id54] matches {
+														property matches {[at38]}
+														[magnitude, units, precision] matches {
+															[{|>=0.0|}, {"/d"}, {|>=0|}],
+															[{|>=0.0|}, {"/wk"}, {|>=0|}],
+															[{|>=0.0|}, {"/mo"}, {|>=0|}],
+															[{|>=0.0|}, {"/yr"}, {0}]
+														}
+													}
+												}
+											}
+											ELEMENT[id17] occurrences matches {0..1} matches {	-- Effectiveness
+												value matches {
+													DV_CODED_TEXT[id55] matches {
+														defining_code matches {[ac2]}		-- Effectiveness (synthesised)
+													}
+													DV_TEXT[id56] 
+												}
+											}
+											ELEMENT[id22] occurrences matches {0..1} matches {	-- Reason for stopping
+												value matches {
+													DV_CODED_TEXT[id57] matches {
+														defining_code matches {[ac3]}		-- Reason for stopping (synthesised)
+													}
+													DV_TEXT[id58] 
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Dermatology therapy summary">
+				description = <"Summarised dermatology therapy for registry use.">
+			>
+			["id3"] = <
+				text = <"Any event">
+				description = <"*">
+			>
+			["id5"] = <
+				text = <"Therapy category">
+				description = <"The general category of therapy.">
+			>
+			["at6"] = <
+				text = <"Phototherapy">
+				description = <"Phototherapy.">
+			>
+			["at7"] = <
+				text = <"Systemic therapy">
+				description = <"Systemic therapy.">
+			>
+			["at8"] = <
+				text = <"Hospitalisation">
+				description = <"Hospitalisation.">
+			>
+			["id10"] = <
+				text = <"Specific therapy">
+				description = <"Details of specific therapies within a category.">
+			>
+			["id12"] = <
+				text = <"Start date">
+				description = <"The start date of the therapy.">
+			>
+			["id13"] = <
+				text = <"Duration of therapy">
+				description = <"The duration of the therapy.">
+			>
+			["id14"] = <
+				text = <"Frequency of therapy">
+				description = <"The frequency of the therapy.">
+			>
+			["id17"] = <
+				text = <"Effectiveness">
+				description = <"An estimate of the effectivemess of the therapy.">
+			>
+			["at18"] = <
+				text = <"Good">
+				description = <"*">
+			>
+			["at19"] = <
+				text = <"Moderate">
+				description = <"*">
+			>
+			["at20"] = <
+				text = <"None (primary)">
+				description = <"*">
+			>
+			["at21"] = <
+				text = <"None (secondary)">
+				description = <"*">
+			>
+			["id22"] = <
+				text = <"Reason for stopping">
+				description = <"The reason for stopping the therapy.">
+			>
+			["at23"] = <
+				text = <"Daycare treatment">
+				description = <"Daycare treatment.">
+			>
+			["at24"] = <
+				text = <"Topical therapy">
+				description = <"Topical therapy.">
+			>
+			["at25"] = <
+				text = <"Emollients">
+				description = <"Emollients.">
+			>
+			["at26"] = <
+				text = <"Antihistamines">
+				description = <"Antihistamines.">
+			>
+			["at27"] = <
+				text = <"Antibiotics">
+				description = <"Antibiotics.">
+			>
+			["at35"] = <
+				text = <"Sanata">
+				description = <"Sanata.">
+			>
+			["at36"] = <
+				text = <"Adverse event">
+				description = <"Adverse event.">
+			>
+			["at37"] = <
+				text = <"Ineffective">
+				description = <"Ineffective.">
+			>
+			["id38"] = <
+				text = <"Number of treatments">
+				description = <"The total number of treatments.">
+			>
+			["id39"] = <
+				text = <"Therapy category used?">
+				description = <"Has the therapy category been used?">
+			>
+			["id40"] = <
+				text = <"Current therapy?">
+				description = <"Is this a currently used treatment?">
+			>
+			["id47"] = <
+				text = <"Therapy details">
+				description = <"To record details of specific therapies.">
+			>
+			["at38"] = <
+				text = <"Frequency">
+				description = <"Frequency">
+			>
+			["ac1"] = <
+				text = <"Therapy category (synthesised)">
+				description = <"The general category of therapy. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Effectiveness (synthesised)">
+				description = <"An estimate of the effectivemess of the therapy. (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Reason for stopping (synthesised)">
+				description = <"The reason for stopping the therapy. (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["openehr"] = <
+			["at38"] = <http://openehr.org/id/382>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at6", "at7", "at8", "at23", "at24", "at25", "at26", "at27">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at18", "at19", "at20", "at21">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at35", "at36", "at37">
+		>
+	>

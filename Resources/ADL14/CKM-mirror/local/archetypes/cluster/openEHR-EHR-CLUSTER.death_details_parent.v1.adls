@@ -1,0 +1,71 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.death_details_parent.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2015-02-17">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of person's death aligned with PARENT Common Data Elements for registry use.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"BB015AB1339D0A00FEBE87CA2BEEAE03">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Death details (PARENT)
+		items matches {
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Date of death
+				value matches {
+					DV_DATE_TIME[id5] 
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Death due to primary diagnosis?
+				value matches {
+					DV_BOOLEAN[id6] matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Cause of death
+				value matches {
+					DV_TEXT[id7] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Death details (PARENT)">
+				description = <"Details of person's death aligned with PARENT Common Data Elements for registry use.">
+			>
+			["id2"] = <
+				text = <"Date of death">
+				description = <"The date of the subject's death.">
+			>
+			["id3"] = <
+				text = <"Death due to primary diagnosis?">
+				description = <"Was the death due to the primary diagnosis?">
+			>
+			["id4"] = <
+				text = <"Cause of death">
+				description = <"The cause of death.">
+			>
+		>
+	>

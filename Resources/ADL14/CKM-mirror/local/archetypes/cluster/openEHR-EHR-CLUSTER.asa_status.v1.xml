@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">heather.leslie@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics</original_author>
+    <original_author id="name">Heather Leslie</original_author>
+    <original_author id="date">2010-06-25</original_author>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="references">American Society for Anesthesiologists: http://www.asahq.org/clinical/physicalstatus.htm
+Cleveland Clinic (provided examples of each state): http://my.clevelandclinic.org/services/Anesthesia/hic_ASA_Physical_Classification_System.aspx</other_details>
+    <other_details id="MD5-CAM-1.0.1">76575A6A3B720EDD812A00380EC8810B</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record the degree of 'sickness' or 'physical state' prior to selecting the anaesthetic or prior to performing surgery.</purpose>
+      <keywords>ASA</keywords>
+      <keywords>pre-operative</keywords>
+      <keywords>surgery</keywords>
+      <use>Used for recordkeeping, for communicating between colleagues, and to create a uniform system for statistical analysis.
+
+This archetype has been designed to be used within a variety of ENTRY archetypes - for example an EVALUATION for a pre-operative anaesthetic assessment or an infection control investigation.</use>
+      <misuse>Not intended for use as a measure to predict operative risk.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.asa_status.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0003</code_list>
+                <code_list>at0004</code_list>
+                <code_list>at0005</code_list>
+                <code_list>at0006</code_list>
+                <code_list>at0007</code_list>
+                <code_list>at0008</code_list>
+                <code_list>at0009</code_list>
+                <code_list>at0010</code_list>
+                <code_list>at0011</code_list>
+                <code_list>at0012</code_list>
+                <code_list>at0013</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0014</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">ASA Physical Status Classification</items>
+        <items id="description">Classification system adopted by the American Society of Anesthesiologists for assessing preoperative physical status.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">ASA patient status</items>
+        <items id="description">Assessed pre-operative status of a patient.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">1 - A normal healthy patient</items>
+        <items id="description">No organic, physiologic, or psychiatric disturbance; excludes the very young and very old; healthy with good exercise tolerance.</items>
+      </items>
+      <items code="at0004">
+        <items id="text">2 - A patient with mild systemic disease</items>
+        <items id="description">No functional limitations; has a well-controlled disease of one body system; controlled hypertension or diabetes without systemic effects, cigarette smoking without chronic obstructive pulmonary disease (COPD); mild obesity, pregnancy.</items>
+      </items>
+      <items code="at0005">
+        <items id="text">3 - A patient with severe systemic disease</items>
+        <items id="description">Some functional limitation; has a controlled disease of more than one body system or one major system; no immediate danger of death; controlled congestive heart failure (CHF), stable angina, old heart attack, poorly controlled hypertension, morbid obesity, chronic renal failure; bronchospastic disease with intermittent symptoms.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">4 - A patient with severe systemic disease that is a constant threat to life</items>
+        <items id="description">Has at least one severe disease that is poorly controlled or at end stage; possible risk of death; unstable angina, symptomatic COPD, symptomatic CHF, hepatorenal failure.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">5 - A moribund patient who is not expected to survive without the operation</items>
+        <items id="description">Not expected to survive &gt; 24 hours without surgery; imminent risk of death; multiorgan failure, sepsis syndrome with hemodynamic instability, hypothermia, poorly controlled coagulopathy.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">6 - A declared brain-dead patient whose organs are being removed for donor purposes</items>
+        <items id="description">6 - A declared brain-dead patient whose organs are being removed for donor purposes.</items>
+      </items>
+      <items code="at0009">
+        <items id="text">1E - A normal healthy patient (Emergency)</items>
+        <items id="description">ASA status 1, in an emergency situation.</items>
+      </items>
+      <items code="at0010">
+        <items id="text">2E - A patient with mild systemic disease (Emergency)</items>
+        <items id="description">ASA status 2, in an emergency situation.</items>
+      </items>
+      <items code="at0011">
+        <items id="text">3E - A patient with severe systemic disease (Emergency)</items>
+        <items id="description">ASA status 3, in an emergency situation.</items>
+      </items>
+      <items code="at0012">
+        <items id="text">4E - A patient with severe systemic disease that is a constant threat to life (Emergency)</items>
+        <items id="description">ASA status 4, in an emergency situation.</items>
+      </items>
+      <items code="at0013">
+        <items id="text">5E - A moribund patient who is not expected to survive without the operation (Emergency)</items>
+        <items id="description">ASA status 5, in an emergency situation.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Comment</items>
+        <items id="description">Narrative comment about the ASA patient status assessment.</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">heather.leslie@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics</original_author>
+    <original_author id="name">Heather Leslie</original_author>
+    <original_author id="date">2013-04-11</original_author>
+    <lifecycle_state>CommitteeDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="MD5-CAM-1.0.1">8B4B47A6D77BE7AD1E821306C1B1A03B</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record details of health-related events that have occurred as part of the subject's care, and/or the subject's health status, findings, opinions and plans that are current at the time of recording.</purpose>
+      <keywords>progress note</keywords>
+      <use>Use to record details of health-related events that have occurred as part of the subject's care, and/or the subject's health status, findings, opinions and plans that are current at the time of recording. Progress notes are more typically used to record ongoing care notes by various providers participating in aspects of care during some kind of healthcare episode, as distinct from a one-off face-to-face meeting in a clinic which is typically recorded as a COMPOSITION.encounter. A progress note may not include a face-to-face meeting between a clinician and the subject, but may be used to record health information remotely from the patient or report on a follow-up telephone conversation or liaison between healthcare providers without the subject present.
+
+A typical nursing progress note during a hospital episode might include EVALUATION.reason_for_encounter, EVALUATION.progress_note to record the narrative summary of the nursing shift, a combination of OBSERVATIONS for recording vital signs measurements and/or ACTIONS to record the tasks or procedures carried out.</use>
+      <misuse />
+      <copyright>© National E-Health Transition Authority</copyright>
+    </details>
+  </description>
+  <archetype_id>
+    <value>openEHR-EHR-COMPOSITION.progress_note.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>COMPOSITION</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>category</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>DV_CODED_TEXT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id />
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>defining_code</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_CODE_PHRASE">
+            <rm_type_name>CODE_PHRASE</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <terminology_id>
+              <value>openehr</value>
+            </terminology_id>
+            <code_list>433</code_list>
+          </children>
+        </attributes>
+      </children>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Progress Note</items>
+        <items id="description">Document used to record details of health-related events that have occurred as part of the subject's care, and/or the subject's health status, findings, opinions and plans that are current at the time of recording.</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

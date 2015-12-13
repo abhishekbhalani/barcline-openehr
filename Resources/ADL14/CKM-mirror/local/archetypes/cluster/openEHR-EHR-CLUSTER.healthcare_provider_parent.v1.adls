@@ -1,0 +1,95 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.healthcare_provider_parent.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"freshEHR Clinical Informatics">
+		["email"] = <"ian@freshehr.com">
+		["date"] = <"2014-07-11">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of a healthcare provider organisation compliant withe the PARENT Framework.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"DABDB6247145103B067D2DAF31B22D5E">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Healthcare provider (PARENT)
+		items matches {
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Organisation name
+				value matches {
+					DV_TEXT[id8] 
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Organisation identifier
+				value matches {
+					DV_IDENTIFIER[id9] 
+				}
+			}
+			allow_archetype CLUSTER[id4] occurrences matches {0..1} matches {	-- Organisation Address
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id6] occurrences matches {0..1} matches {	-- Department name
+				value matches {
+					DV_TEXT[id10] 
+				}
+			}
+			ELEMENT[id7] occurrences matches {0..1} matches {	-- Department identifier
+				value matches {
+					DV_IDENTIFIER[id11] 
+				}
+			}
+			ELEMENT[id5] matches {	-- Contact details
+				value matches {
+					DV_TEXT[id12] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Healthcare provider (PARENT)">
+				description = <"Details of a healthcare provider organisation.">
+			>
+			["id2"] = <
+				text = <"Organisation name">
+				description = <"The name of the organisation.">
+			>
+			["id3"] = <
+				text = <"Organisation identifier">
+				description = <"The unique identifier of the organisation.">
+			>
+			["id4"] = <
+				text = <"Organisation Address">
+				description = <"The address of the organisation.">
+			>
+			["id5"] = <
+				text = <"Contact details">
+				description = <"Contact details for the organisation.">
+			>
+			["id6"] = <
+				text = <"Department name">
+				description = <"The name of a specific department within the organisation.">
+			>
+			["id7"] = <
+				text = <"Department identifier">
+				description = <"The identifier of a specific department.">
+			>
+		>
+	>

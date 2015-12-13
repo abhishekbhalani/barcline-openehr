@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44DAEC09-8E4B-4BF3-A6CB-21C635B95E6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Barcline.OpenEhr.Forms</RootNamespace>
+    <AssemblyName>Barcline.OpenEhr.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ScintillaNET">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.5.4\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\BarclineAssemblyInfo.cs">
+      <Link>Properties\BarclineAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ArchetypeStorageToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchetypeStorageToolWindow.Designer.cs">
+      <DependentUpon>ArchetypeStorageToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchetypeVisualizer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArchetypeVisualizer.Designer.cs">
+      <DependentUpon>ArchetypeVisualizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchetypeVisualizerToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchetypeVisualizerToolWindow.Designer.cs">
+      <DependentUpon>ArchetypeVisualizerToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StorageVisualizer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StorageVisualizer.Designer.cs">
+      <DependentUpon>StorageVisualizer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ArchetypeStorageToolWindow.resx">
+      <DependentUpon>ArchetypeStorageToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchetypeVisualizer.resx">
+      <DependentUpon>ArchetypeVisualizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchetypeVisualizerToolWindow.resx">
+      <DependentUpon>ArchetypeVisualizerToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorageVisualizer.resx">
+      <DependentUpon>StorageVisualizer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Barcline.Core\Barcline.Core.csproj">
+      <Project>{71b9414a-10d0-4f45-8fae-4cec57a91f0b}</Project>
+      <Name>Barcline.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Barcline.OpenEhr.Generator\Barcline.OpenEhr.Generator.csproj">
+      <Project>{4baf3e70-1a37-4c22-a091-7c9550539248}</Project>
+      <Name>Barcline.OpenEhr.Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Barcline.OpenEhr.Storage\Barcline.OpenEhr.Storage.csproj">
+      <Project>{78b6ad99-0beb-4238-acbb-7d440a5cc441}</Project>
+      <Name>Barcline.OpenEhr.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Barcline.OpenEHR\Barcline.OpenEhr.csproj">
+      <Project>{67fd94de-1e52-4138-9e6c-2756ad92bf29}</Project>
+      <Name>Barcline.OpenEhr</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOpen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormRunHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

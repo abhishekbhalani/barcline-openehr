@@ -1,0 +1,1910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">sam.heard@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics</original_author>
+    <original_author id="name">Sam Heard</original_author>
+    <original_author id="date">2006-04-23</original_author>
+    <other_contributors>Tomas Alme, DIPS, Norway</other_contributors>
+    <other_contributors>Nadim Anani, Karolinska Institutet, Sweden</other_contributors>
+    <other_contributors>Koray Atalag, University of Auckland, New Zealand</other_contributors>
+    <other_contributors>Silje Ljosland Bakke, Bergen Hospital Trust, Norway (Editor)</other_contributors>
+    <other_contributors>John Bennett, NEHTA, Australia</other_contributors>
+    <other_contributors>Steve Bentley, Allscripts, United Kingdom</other_contributors>
+    <other_contributors>Lars Bitsch-Larsen, Haukeland University hospital, Norway</other_contributors>
+    <other_contributors>Ian Bull, ACT Health, Australia</other_contributors>
+    <other_contributors>Sergio Carmona, Chile</other_contributors>
+    <other_contributors>Rong Chen, Cambio Healthcare Systems, Sweden</other_contributors>
+    <other_contributors>Stephen Chu, Queensland Health, Australia</other_contributors>
+    <other_contributors>Ed Conley, Cardiff University, United Kingdom</other_contributors>
+    <other_contributors>Matthew Cordell, NEHTA, Australia</other_contributors>
+    <other_contributors>Paul Donaldson, Nursing Informatics Australia, Australia</other_contributors>
+    <other_contributors>Gail Easterbrook, Flinders Medical Centre, Australia</other_contributors>
+    <other_contributors>Aitor Eguzkitza, UPNA (Public University of Navarre) - CHN (Complejo Hospitalario de Navarra), Spain</other_contributors>
+    <other_contributors>David Evans, Queensland Health, Australia</other_contributors>
+    <other_contributors>Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway</other_contributors>
+    <other_contributors>Peter Garcia-Webb, Australia</other_contributors>
+    <other_contributors>Sebastian Garde, Ocean Informatics, Germany</other_contributors>
+    <other_contributors>Andrew Goodchild, NEHTA, Australia</other_contributors>
+    <other_contributors>Anneke Goossen, Results 4 Care, Netherlands</other_contributors>
+    <other_contributors>Heather Grain, Llewelyn Grain Informatics, Australia</other_contributors>
+    <other_contributors>Trina Gregory, cpc, Australia</other_contributors>
+    <other_contributors>Sam Heard, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Evelyn Hovenga, EJSH Consulting, Australia</other_contributors>
+    <other_contributors>Eugene Igras, IRIS Systems, Inc., Canada</other_contributors>
+    <other_contributors>Lars Karlsen, DIPS ASA, Norway</other_contributors>
+    <other_contributors>Mary Kelaher, NEHTA, Australia</other_contributors>
+    <other_contributors>Eizen Kimura, Ehime Univ., Japan</other_contributors>
+    <other_contributors>Shinji Kobayashi, Kyoto University, Japan</other_contributors>
+    <other_contributors>Robert L'egan, NEHTA, Australia</other_contributors>
+    <other_contributors>Sabine Leh, Haukeland University Hospital, Department of Pathology, Norway</other_contributors>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Hugh Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Rohan Martin, Ambulance Victoria, Australia</other_contributors>
+    <other_contributors>David McKillop, NEHTA, Australia</other_contributors>
+    <other_contributors>Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)</other_contributors>
+    <other_contributors>Chris Mitchell, RACGP, Australia</other_contributors>
+    <other_contributors>Stewart Morrison, NEHTA, Australia</other_contributors>
+    <other_contributors>Jörg Niggemann, compugroup, Germany</other_contributors>
+    <other_contributors>Andrej Orel, Marand d.o.o., Slovenia</other_contributors>
+    <other_contributors>Chris Pearce, Melbourne East GP Network, Australia</other_contributors>
+    <other_contributors>Camilla Preeston, Royal Australian College of General Practitioners, Australia</other_contributors>
+    <other_contributors>Margaret Prichard, NEHTA, Australia</other_contributors>
+    <other_contributors>Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia</other_contributors>
+    <other_contributors>Cathy Richardson, NEHTA, Australia</other_contributors>
+    <other_contributors>Robyn Richards, NEHTA - Clinical Terminology, Australia</other_contributors>
+    <other_contributors>Thilo Schuler, Australia</other_contributors>
+    <other_contributors>Anoop Shah, University College London, United Kingdom</other_contributors>
+    <other_contributors>Gordon Tomes, Australian Institute of Health and Welfare, Australia</other_contributors>
+    <other_contributors>Richard Townley-O'Neill, NEHTA, Australia</other_contributors>
+    <other_contributors>Donna Truran, ACCTI-UoW, Australia</other_contributors>
+    <other_contributors>Kylie Young, The Royal Australian College of General Practitioners, Australia</other_contributors>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="references">Problem/Diagnosis, Draft Archetype [Internet]. National eHealth Transition Authority, NEHTA Clinical Knowledge Manager [cited: 2015-03-12]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.89.
+
+ISO/DIS 13940 Health informatics -- System of concepts to support continuity of care., International Standards Organisation [Internet]. Available at: http://www.iso.org/iso/catalogue_detail.htm?csnumber=58102  (accessed 09 Apr 2015).
+
+Common Terminology Criteria for Adverse Events (CTCAE)[Internet]. National Cancer Institute, USA. [cited: 2015-04-09]. Available from: http://evs.nci.nih.gov/ftp1/CTCAE/About.html
+
+Weed LL. Medical records that guide and teach. &lt;http://www.ncbi.nlm.nih.gov/pubmed/5637758&gt;  N Engl J Med. 1968 Mar 14;278(11):593-600. PubMed PMID: 5637758.</other_details>
+    <other_details id="MD5-CAM-1.0.1">0A630553DD9FF77127F84FA95FFAA131</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>pt-br</code_string>
+      </language>
+      <purpose>Para registrar detalhes sobre um caso ou obstáculo que tenha impactos sobre o bem estar físico, mental e/ou social de um indivíduo.</purpose>
+      <keywords>caso</keywords>
+      <keywords>circunstância</keywords>
+      <keywords>problema</keywords>
+      <keywords>obstáculo</keywords>
+      <use>Usado para registrar qualquer informação sobre qualquer problema relacionado a saúde em geral.
+O Arquétipo contém múltiplas datas, então pode registrar problemas presentes e/ou passados.
+Um problema pode ser determinado tanto pelo próprio indivíduo como pelo profissional de saúde.
+Alguns exemplos:
+- Uma coleção de sintomas que estão sob investigação, mas pré-diagnose
+- Desejo de perder peso, sem diagnóstico formal de Obesidade
+- Desejo de parar de fumar pelo indivíduo
+- Problemas de relacionamento com membro familiar</use>
+      <misuse>Não deve ser usado para registro de diagnósticos formais - usar a especialização deste arquétipo, EVALUATION.problem-diagnosis.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es-ar</code_string>
+      </language>
+      <purpose>Para el registro de datos acerca de un asunto u obstáculo que incide sobre el bienestar físico, psíquico o social de un individuo.</purpose>
+      <keywords>asunto</keywords>
+      <keywords>condición</keywords>
+      <keywords>problema</keywords>
+      <keywords>obstáculo</keywords>
+      <use>Úsese para registrar cualquier tipo de información acerca de problemas generales relativos a la salud.
+
+El arquetipo contiene múltiples fechas, por lo cual puede registrar problemas actuales y/o pasados.
+
+Un problema puede ser determinado tanto por el individuo mismo como por un proveedor de servicios de salud.
+
+Algunos ejemplos:
+
+-Un rango de síntomas que se encuentran bajo investigación, en estado pre-diagnóstico.
+
+-El deseo de disminuir de peso, sin el diagnóstico formal de Obesidad.
+
+-El deseo de dejar de fumar por parte del individuo.
+
+-Problema de relación con un miembro de la familia.</use>
+      <misuse />
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>de</code_string>
+      </language>
+      <purpose>Zur Dokumentation eines Problems, eines Zustandes oder eines Sachverhalts mit anhaltender Bedeutung für die Gesundheit der Person</purpose>
+      <keywords>Sachverhalt</keywords>
+      <keywords>Zustand</keywords>
+      <use>Zur Dokumentation eines ehemaligen oder aktuellen Problems - also zur Dokumentation ehemaliger Entwicklungen, sowie derzeitiger Probleme.  Mit wechselndem 'Subjekt der Daten' zur Dokumentation von Problemen Verwandter, und somit für die Familienanamnese.</use>
+      <misuse>Spezialisierungen 'openEHR-EHR-EVALUATION.problem-diagnosis' für medizinische Diagnosen und 'openEHR-EHR-EVALUATION.problem-diagnosis-histological' für histologische Diagnosen benutzen.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>For recording details about a single, identified health problem or diagnosis. 
+
+The intended scope of a health problem is deliberately kept loose in the context of clinical documentation, so as to capture any real or perceived concerns that may adversely affect an individual's wellbeing to any degree. A health problem may be identified by the individual, a carer or a healthcare professional. However, a diagnosis is additionally defined based on objective clinical criteria, and usually determined only by a healthcare professional.</purpose>
+      <keywords>issue</keywords>
+      <keywords>condition</keywords>
+      <keywords>problem</keywords>
+      <keywords>diagnosis</keywords>
+      <keywords>concern</keywords>
+      <keywords>injury</keywords>
+      <use>Use for recording details about a single, identified health problem or diagnosis. 
+
+Clear definitions that enable differentiation between a 'problem' and a 'diagnosis' are almost impossible in practice - we cannot reliably tell when a problem should be regarded as a diagnosis. When diagnostic criteria are successfully met, then we can confidently call the condition a formal diagnosis, but prior to these conditions being met and while there is supportive evidence available, it can also be valid to use the term 'diagnosis'. The amount of supportive evidence required for the label of diagnosis is not easy to define and in reality probably varies from condition to condition. Many standards committees have grappled with this definitional conundrum for years without clear resolution.
+
+For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'. In this archetype it is not neccessary to classify the condition as a 'problem' or 'diagnosis'. The data requirements to support documentation of either are identical, with additional data structure required to support inclusion of the evidence if and when it becomes available. Examples of problems include: the individual's expressed desire to lose weight, but without a formal diagnosis of Obesity; or a relationship problem with a family member. Examples of formal diagnoses would include a cancer that is supported by historical information, examination findings, histopathological findings, radiological findings and meets all requirements for known diagnostic criteria. In practice, most problems or diagnoses do not sit at either end of the problem-diagnosis spectrum, but somewhere in between.
+
+This archetype can be used within many contexts. For example, recording a problem or a clinical diagnosis during a clinical consultation; populating a persistent Problem List; or to provide a summary statement within a Discharge Summary document.
+
+In practice, clinicians use many context-specific qualifiers such as past/present, primary/secondary, active/inactive, admission/discharge etc. The contexts can be location-, specialisation-, episode- or workflow-specific, and these can cause confusion or even potential safety issues if perpetuated in Problem Lists or shared in documents that are outside of the original context. These qualifiers can be archetyped separately and included in the ‘Status’ slot, because their use varies in different settings. It is expected that these will be used mostly within the appropriate context and not shared out of that context without clear understanding of potential consequences. For example, a primary diagnosis to one clinician may be a secondary one to another specialist; an active problem can become inactive (or vice versa) and this can impact the safe use of clinical decision support. In general these qualifiers should be applied locally within the context of the clinical system, and in practice these statuses should be manually curated by clinicians to ensure that lists of Current/Past, Active/Inactive or Primary/Secondary Problems are clinically accurate. 
+
+This archetype will be used as a component within the Problem Oriented Medical Record as described by Larry Weed. Additional archetypes, representing clinical concepts such as condition as an overarching orgnaniser for diagnoses etc, will need to be developed to support this approach.
+
+In some situations, it may be assumed that identification of a diagnosis fits only within the expertise of physicians, but this is not the intent for this archetype. Diagnoses can be recorded using this archetype by any healthcare professional.</use>
+      <misuse>Not to be used to record symptoms as described by the individual - use the CLUSTER.symptom archetype, usually within the OBSERVATION.story archetype.
+
+Not to be used to record examination findings - use the family of examination-related CLUSTER archetypes, usually nested within the OBSERVATION.exam archetype.
+
+Not to be used to record laboratory test results or Pathological Diagnoses - use an appropriate archetype from the laboratory family of OBSERVATION archetypes.
+
+Not to be used to record imaging examination results or Radiological Diagnoses - use an appropriate archetype from the imaging family of OBSERVATION archetypes.
+
+Not to be used to record 'Differential Diagnoses' - use the EVALUATION.differential_diagnosis archetype.
+
+Not to be used to record 'Reason for Encounter' or 'Presenting Complaint' - use the EVALUATION.reason_for_encounter archetype.
+
+Not to be used to record procedures - use the ACTION.Procedure archetype.
+
+Not to be used to record details about pregnancy - use the EVALUATION.pregnancy_bf_status and EVALUATION.pregnancy and related archetypes.
+
+Not to be used to record statements about health risk or potential problems - use the EVALUATION.health_risk archetype.
+
+Not to be used to record statements about adverse reactions, allergies or intolerances - use the EVALUATION.adverse_reaction archetype.
+
+Not to be used for the explicit recording of an absence (or negative presence) of a problem or diagnosis, for example ‘No known problem or diagnoses’ or ‘No known diabetes’. Use the EVALUATION. exclusion-problem_diagnosis archetype to express a positive statement about exclusion of a problem or diagnosis.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ar-sy</code_string>
+      </language>
+      <purpose>لتسجيل تفاصيل حول قضية أو عقبة تؤثر على السلامة البدنية, العقلية و/أو الاجتماعية لشخص ما</purpose>
+      <keywords>القضية</keywords>
+      <keywords>الظرف الصحي</keywords>
+      <keywords>المشكلة</keywords>
+      <keywords>العقبة</keywords>
+      <use>يستخدم لتسجيل المعلومات العامة حول المشكلات المتعلقة بالصحة.
+يحتوي النموذج على معلومات متعددة,و يمكن استخدامه في تسجيل المشكلات الحاضرة و السابقة.
+و يمكن تحديد المشكلة بواسطة المريض نفسه أو من يقوم بتقديم الرعاية الصحية.
+بعض الأمثلة تتضمن ما يلي:
+- بعض الأعراض التي لا تزال تحت الملاحظة و لكنها تمثل تشخيصات مبدأية
+- الرغبة لفقد الوزن دون تشخيص مؤكد بالسمنة
+- الرغبة بالإقلاع عن التدخين بواسطة الشخص
+- مشكلة في العلاقة مع أحد أفراد العائلة</use>
+      <misuse>لا يستخدم لتسجيل التشخيصات المؤكدة. استخدم بدلا من ذلك النموذج المخصص من هذا النموذج, تقييم.المشكلة - التشخيص</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>nb</code_string>
+      </language>
+      <purpose>For registrering av detaljer og et emne eller en hindring, der har betydning for et individs fysiske, mentale og/eller sosial trivsel, inkludert diagnose, sykepleie diagnose eller annen problem.</purpose>
+      <keywords>emne</keywords>
+      <keywords>problem</keywords>
+      <keywords>tilstand</keywords>
+      <keywords>hindring</keywords>
+      <keywords>diagnose</keywords>
+      <keywords>sykepleie</keywords>
+      <keywords>sykepleie diagnose</keywords>
+      <use>Brukes til registrering av informasjon om generelle helsemessige problemer, diagnose og sykepleie diagnoser. Arketypen inneholder flere datoer, så der kan registreres nåværende og / eller tidligere problemer. Et problem kan bestemmes av den enkelte selv eller av helsepersonell. 
+
+Noen eksempler: 
+
+- En rekke symptomer som er under etterforskning, men pre-diagnose 
+
+- Ønske om å gå ned i vekt, uten formell diagnose av fedme 
+
+- Individets ønske om å slutte å røyke 
+
+- Forholdet problem med familiemedlem.</use>
+      <misuse />
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es</code_string>
+      </language>
+      <purpose>Este arquetipo se utilizará para registrar un único problema de salud o diagnóstico identificado para el paciente.
+
+El alcance del arquetipo se dejó deliberadamente abierto, para poder capturar cualquier inquietud real o percibida que afecte en cualquier grado la salud de un paciente. Independientemente de quién detecte el problema, el diagnóstico debe ser definido basado en criterios clínicos objetivos, determinados por un profesional clínico.</purpose>
+      <keywords>problema</keywords>
+      <keywords>diagnóstico</keywords>
+      <keywords>preocupación</keywords>
+      <keywords>condición</keywords>
+      <keywords>enfermedad</keywords>
+      <use>Este arquetipo se utilizará para registrar un único problema de salud o diagnóstico identificado para el paciente.</use>
+      <misuse>No se debe utilizar para registrar síntomas descritos por el paciente, para eso utilizar el arquetipo CLUSTER.symtom.
+
+No se debe utilizar para registrar hallazgos, para eso utilizar arquetipos relacionados con la examinación, usualmente relacionados con el arquetipo OBSERVATION.exam
+
+No se debe utilizar para registrar diagnósticos realizados sobre resultados de estudios diagnósticos como laboratorio o imagenología.
+
+No se debe utilizar para registrar el motivo de consulta o problema presentado por el paciente, para eso utilizar el arquetipo EVALUATION.reason_for_encounter
+
+No se debe utilizar para registrar riesgos o problemas potenciales, para eso utilizar el arquetipo EVALUATION.health_risk
+
+No se debe utilizar para registrar la ausencia de un problema, para eso utilizar el arquetipo EVALUATION.exclusion-problem_diagnosis</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>de</code_string>
+    </language>
+    <author id="organisation">University of Heidelberg, Central Queensland University</author>
+    <author id="name">Jasmin Buck, Sebastian Garde</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <author id="email">lbla@helse-bergen.no</author>
+    <author id="organisation">Haukeland University Hospital of Bergen, Norway</author>
+    <author id="name">Lars Bitsch-Larsen</author>
+    <accreditation>MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>es-ar</code_string>
+    </language>
+    <author id="email">Correo electrónico</author>
+    <author id="organisation">Hospital Universitario Austral, Buenos Aires, Argentina</author>
+    <author id="name">Alan March</author>
+    <accreditation>Acreditación</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ar-sy</code_string>
+    </language>
+    <author id="name">Mona Saleh</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>es</code_string>
+    </language>
+    <author id="organisation">CaboLabs</author>
+    <author id="name">Pablo Pazos</author>
+    <accreditation>Computer Engineer</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>pt-br</code_string>
+    </language>
+    <author id="email">marco.borges@p2d.com.br</author>
+    <author id="organisation">P2D</author>
+    <author id="name">Marco Borges</author>
+    <accreditation>P2D Health Advisor Council</accreditation>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-EVALUATION.problem_diagnosis.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>EVALUATION</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>data</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ITEM_TREE</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0002</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0009</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0012</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0039</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0003</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_DATE_TIME</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0005</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>defining_code</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_CODE_PHRASE">
+                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_list>at0047</code_list>
+                    <code_list>at0048</code_list>
+                    <code_list>at0049</code_list>
+                  </children>
+                </attributes>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0043</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/.*/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>.*</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0072</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0030</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_DATE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0027</node_id>
+            <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+              <rm_attribute_name>items</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ELEMENT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0029</node_id>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>value</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>defining_code</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_CODE_PHRASE">
+                        <rm_type_name>CODE_PHRASE</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <terminology_id>
+                          <value>local</value>
+                        </terminology_id>
+                        <code_list>at0040</code_list>
+                        <code_list>at0041</code_list>
+                      </children>
+                    </attributes>
+                  </children>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ELEMENT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0028</node_id>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>value</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_TEXT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_URI</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                  </children>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ELEMENT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0044</node_id>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>value</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_TEXT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                  </children>
+                </attributes>
+              </children>
+              <cardinality>
+                <is_ordered>false</is_ordered>
+                <is_unique>false</is_unique>
+                <interval>
+                  <lower_included>true</lower_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>true</upper_unbounded>
+                  <lower>1</lower>
+                </interval>
+              </cardinality>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0046</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/.*/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>.*</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+            <excludes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.problem_status(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.problem_status(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </excludes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0069</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <cardinality>
+            <is_ordered>true</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+    </attributes>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>protocol</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ITEM_TREE</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0032</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0070</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_DATE_TIME</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0071</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/.*/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>.*</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="pt-br">
+      <items code="at0000">
+        <items id="text">*Problem/diagnosis(en)</items>
+        <items id="description">*Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.(en)</items>
+        <items id="comment">*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">structure</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Problem/diagnosis name(en)</items>
+        <items id="description">*Identification, by name and or code, of the problem or diagnosis.(en)</items>
+        <items id="comment">*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Date/time clinically recognised(en)</items>
+        <items id="description">*Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0005">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*An assessment of the overall severity of the problem or diagnosis.(en)</items>
+        <items id="comment">*If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Clinical description(en)</items>
+        <items id="description">*Narrative description about the problem or diagnosis.(en)</items>
+        <items id="comment">*Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.(en)</items>
+      </items>
+      <items code="at0012">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple body site where the problem or diagnosis was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. (en)</items>
+      </items>
+      <items code="at0027">
+        <items id="text">*Related item(en)</items>
+        <items id="description">*Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Item(en)</items>
+        <items id="description">*Identification of the related problem or diagnosis.(en)</items>
+        <items id="comment">*Record as text, coded text or a link within the EHR.(en)</items>
+      </items>
+      <items code="at0029">
+        <items id="text">*Relationship(en)</items>
+        <items id="description">*The type of relationship that this problem or diagnosis has to the item.(en)</items>
+        <items id="comment">*Where no causality or sequence of events is known, this relationship type should be left blank.(en)</items>
+      </items>
+      <items code="at0030">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Tree(en)</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*Structured anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*Caused by(en)</items>
+        <items id="description">*This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.(en)</items>
+      </items>
+      <items code="at0041">
+        <items id="text">*Following(en)</items>
+        <items id="description">*This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.(en)</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)</items>
+        <items id="comment">*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description about the item.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Status(en)</items>
+        <items id="description">*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)</items>
+        <items id="comment">*Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The problem or diagnosis does not interfere with normal activity.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The problem or diagnosis causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The problem or diagnosis prevents normal activity.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the problem or diagnosis not captured in other fields.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Last updated(en)</items>
+        <items id="description">*The date this problem or diagnosis was last updated.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local content or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the problem or diagnosis since onset.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="es-ar">
+      <items code="at0000">
+        <items id="text">*Problem/diagnosis(en)</items>
+        <items id="description">*Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.(en)</items>
+        <items id="comment">*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*structure(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Problem/diagnosis name(en)</items>
+        <items id="description">*Identification, by name and or code, of the problem or diagnosis.(en)</items>
+        <items id="comment">*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Date/time clinically recognised(en)</items>
+        <items id="description">*Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0005">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*An assessment of the overall severity of the problem or diagnosis.(en)</items>
+        <items id="comment">*If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Clinical description(en)</items>
+        <items id="description">*Narrative description about the problem or diagnosis.(en)</items>
+        <items id="comment">*Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.(en)</items>
+      </items>
+      <items code="at0012">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple body site where the problem or diagnosis was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. (en)</items>
+      </items>
+      <items code="at0027">
+        <items id="text">*Related item(en)</items>
+        <items id="description">*Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Item(en)</items>
+        <items id="description">*Identification of the related problem or diagnosis.(en)</items>
+        <items id="comment">*Record as text, coded text or a link within the EHR.(en)</items>
+      </items>
+      <items code="at0029">
+        <items id="text">*Relationship(en)</items>
+        <items id="description">*The type of relationship that this problem or diagnosis has to the item.(en)</items>
+        <items id="comment">*Where no causality or sequence of events is known, this relationship type should be left blank.(en)</items>
+      </items>
+      <items code="at0030">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0032">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*Structured anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*Caused by(en)</items>
+        <items id="description">*This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.(en)</items>
+      </items>
+      <items code="at0041">
+        <items id="text">*Following(en)</items>
+        <items id="description">*This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.(en)</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)</items>
+        <items id="comment">*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description about the item.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Status(en)</items>
+        <items id="description">*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)</items>
+        <items id="comment">*Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The problem or diagnosis does not interfere with normal activity.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The problem or diagnosis causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The problem or diagnosis prevents normal activity.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the problem or diagnosis not captured in other fields.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Last updated(en)</items>
+        <items id="description">*The date this problem or diagnosis was last updated.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local content or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the problem or diagnosis since onset.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="de">
+      <items code="at0000">
+        <items id="text">*Problem/diagnosis(en)</items>
+        <items id="description">*Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.(en)</items>
+        <items id="comment">*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Structure</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Problem/diagnosis name(en)</items>
+        <items id="description">*Identification, by name and or code, of the problem or diagnosis.(en)</items>
+        <items id="comment">*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Date/time clinically recognised(en)</items>
+        <items id="description">*Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0005">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*An assessment of the overall severity of the problem or diagnosis.(en)</items>
+        <items id="comment">*If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Clinical description(en)</items>
+        <items id="description">*Narrative description about the problem or diagnosis.(en)</items>
+        <items id="comment">*Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.(en)</items>
+      </items>
+      <items code="at0012">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple body site where the problem or diagnosis was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. (en)</items>
+      </items>
+      <items code="at0027">
+        <items id="text">*Related item(en)</items>
+        <items id="description">*Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Item(en)</items>
+        <items id="description">*Identification of the related problem or diagnosis.(en)</items>
+        <items id="comment">*Record as text, coded text or a link within the EHR.(en)</items>
+      </items>
+      <items code="at0029">
+        <items id="text">*Relationship(en)</items>
+        <items id="description">*The type of relationship that this problem or diagnosis has to the item.(en)</items>
+        <items id="comment">*Where no causality or sequence of events is known, this relationship type should be left blank.(en)</items>
+      </items>
+      <items code="at0030">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*Structured anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*Caused by(en)</items>
+        <items id="description">*This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.(en)</items>
+      </items>
+      <items code="at0041">
+        <items id="text">*Following(en)</items>
+        <items id="description">*This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.(en)</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)</items>
+        <items id="comment">*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description about the item.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Status(en)</items>
+        <items id="description">*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)</items>
+        <items id="comment">*Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The problem or diagnosis does not interfere with normal activity.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The problem or diagnosis causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The problem or diagnosis prevents normal activity.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the problem or diagnosis not captured in other fields.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Last updated(en)</items>
+        <items id="description">*The date this problem or diagnosis was last updated.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local content or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the problem or diagnosis since onset.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Problem/diagnosis</items>
+        <items id="description">Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.</items>
+        <items id="comment">Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">structure</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Problem/diagnosis name</items>
+        <items id="description">Identification, by name and or code, of the problem or diagnosis.</items>
+        <items id="comment">Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Date/time clinically recognised</items>
+        <items id="description">Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.</items>
+        <items id="comment">Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Severity</items>
+        <items id="description">An assessment of the overall severity of the problem or diagnosis.</items>
+        <items id="comment">If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Clinical description</items>
+        <items id="description">Narrative description about the problem or diagnosis.</items>
+        <items id="comment">Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Anatomical location</items>
+        <items id="description">Record of a simple body site where the problem or diagnosis was located.</items>
+        <items id="comment">Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant.</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Related item</items>
+        <items id="description">Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.</items>
+      </items>
+      <items code="at0028">
+        <items id="text">Item</items>
+        <items id="description">Identification of the related problem or diagnosis.</items>
+        <items id="comment">Record as text, coded text or a link within the EHR.</items>
+      </items>
+      <items code="at0029">
+        <items id="text">Relationship</items>
+        <items id="description">The type of relationship that this problem or diagnosis has to the item.</items>
+        <items id="comment">Where no causality or sequence of events is known, this relationship type should be left blank.</items>
+      </items>
+      <items code="at0030">
+        <items id="text">Date/time of resolution</items>
+        <items id="description">Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.</items>
+        <items id="comment">Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Structured anatomical location</items>
+        <items id="description">Slot to contain detailed and structured anatomical location details.</items>
+        <items id="comment">If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.</items>
+      </items>
+      <items code="at0040">
+        <items id="text">Caused by</items>
+        <items id="description">This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.</items>
+      </items>
+      <items code="at0041">
+        <items id="text">Following</items>
+        <items id="description">This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.</items>
+      </items>
+      <items code="at0043">
+        <items id="text">Specific details</items>
+        <items id="description">Details that are additionally required to record as unique attributes of this problem or diagnosis.</items>
+        <items id="comment">May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">Description</items>
+        <items id="description">Narrative description about the item.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">Status</items>
+        <items id="description">Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.</items>
+        <items id="comment">Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.</items>
+      </items>
+      <items code="at0047">
+        <items id="text">Mild</items>
+        <items id="description">The problem or diagnosis does not interfere with normal activity.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Moderate</items>
+        <items id="description">The problem or diagnosis causes interference with normal activity.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Severe</items>
+        <items id="description">The problem or diagnosis prevents normal activity.</items>
+      </items>
+      <items code="at0069">
+        <items id="text">Comment</items>
+        <items id="description">Additional narrative about the problem or diagnosis not captured in other fields.</items>
+      </items>
+      <items code="at0070">
+        <items id="text">Last updated</items>
+        <items id="description">The date this problem or diagnosis was last updated.</items>
+      </items>
+      <items code="at0071">
+        <items id="text">Extension</items>
+        <items id="description">Additional information required to capture local content or to align with other reference models/formalisms.</items>
+        <items id="comment">For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.</items>
+      </items>
+      <items code="at0072">
+        <items id="text">Course description</items>
+        <items id="description">Narrative description about the course of the problem or diagnosis since onset.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="ar-sy">
+      <items code="at0000">
+        <items id="text">*Problem/diagnosis(en)</items>
+        <items id="description">*Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.(en)</items>
+        <items id="comment">*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*structure(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Problem/diagnosis name(en)</items>
+        <items id="description">*Identification, by name and or code, of the problem or diagnosis.(en)</items>
+        <items id="comment">*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Date/time clinically recognised(en)</items>
+        <items id="description">*Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0005">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*An assessment of the overall severity of the problem or diagnosis.(en)</items>
+        <items id="comment">*If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Clinical description(en)</items>
+        <items id="description">*Narrative description about the problem or diagnosis.(en)</items>
+        <items id="comment">*Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.(en)</items>
+      </items>
+      <items code="at0012">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple body site where the problem or diagnosis was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. (en)</items>
+      </items>
+      <items code="at0027">
+        <items id="text">*Related item(en)</items>
+        <items id="description">*Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Item(en)</items>
+        <items id="description">*Identification of the related problem or diagnosis.(en)</items>
+        <items id="comment">*Record as text, coded text or a link within the EHR.(en)</items>
+      </items>
+      <items code="at0029">
+        <items id="text">*Relationship(en)</items>
+        <items id="description">*The type of relationship that this problem or diagnosis has to the item.(en)</items>
+        <items id="comment">*Where no causality or sequence of events is known, this relationship type should be left blank.(en)</items>
+      </items>
+      <items code="at0030">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0032">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*Structured anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*Caused by(en)</items>
+        <items id="description">*This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.(en)</items>
+      </items>
+      <items code="at0041">
+        <items id="text">*Following(en)</items>
+        <items id="description">*This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.(en)</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)</items>
+        <items id="comment">*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description about the item.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Status(en)</items>
+        <items id="description">*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)</items>
+        <items id="comment">*Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The problem or diagnosis does not interfere with normal activity.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The problem or diagnosis causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The problem or diagnosis prevents normal activity.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the problem or diagnosis not captured in other fields.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Last updated(en)</items>
+        <items id="description">*The date this problem or diagnosis was last updated.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local content or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the problem or diagnosis since onset.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="nb">
+      <items code="at0000">
+        <items id="text">*Problem/diagnosis(en)</items>
+        <items id="description">*Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.(en)</items>
+        <items id="comment">*Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">structure</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Problem/diagnosis name(en)</items>
+        <items id="description">*Identification, by name and or code, of the problem or diagnosis.(en)</items>
+        <items id="comment">*Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Date/time clinically recognised(en)</items>
+        <items id="description">*Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0005">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*An assessment of the overall severity of the problem or diagnosis.(en)</items>
+        <items id="comment">*If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Clinical description(en)</items>
+        <items id="description">*Narrative description about the problem or diagnosis.(en)</items>
+        <items id="comment">*Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.(en)</items>
+      </items>
+      <items code="at0012">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple body site where the problem or diagnosis was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. (en)</items>
+      </items>
+      <items code="at0027">
+        <items id="text">*Related item(en)</items>
+        <items id="description">*Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Item(en)</items>
+        <items id="description">*Identification of the related problem or diagnosis.(en)</items>
+        <items id="comment">*Record as text, coded text or a link within the EHR.(en)</items>
+      </items>
+      <items code="at0029">
+        <items id="text">*Relationship(en)</items>
+        <items id="description">*The type of relationship that this problem or diagnosis has to the item.(en)</items>
+        <items id="comment">*Where no causality or sequence of events is known, this relationship type should be left blank.(en)</items>
+      </items>
+      <items code="at0030">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.(en)</items>
+        <items id="comment">*Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.(en)</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*Structured anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*Caused by(en)</items>
+        <items id="description">*This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.(en)</items>
+      </items>
+      <items code="at0041">
+        <items id="text">*Following(en)</items>
+        <items id="description">*This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.(en)</items>
+      </items>
+      <items code="at0043">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Details that are additionally required to record as unique attributes of this problem or diagnosis.(en)</items>
+        <items id="comment">*May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description about the item.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*Status(en)</items>
+        <items id="description">*Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.(en)</items>
+        <items id="comment">*Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.(en)</items>
+      </items>
+      <items code="at0047">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The problem or diagnosis does not interfere with normal activity.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The problem or diagnosis causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The problem or diagnosis prevents normal activity.(en)</items>
+      </items>
+      <items code="at0069">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the problem or diagnosis not captured in other fields.(en)</items>
+      </items>
+      <items code="at0070">
+        <items id="text">*Last updated(en)</items>
+        <items id="description">*The date this problem or diagnosis was last updated.(en)</items>
+      </items>
+      <items code="at0071">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local content or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.(en)</items>
+      </items>
+      <items code="at0072">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the problem or diagnosis since onset.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="es">
+      <items code="at0000">
+        <items id="text">Problema/diagnóstico</items>
+        <items id="description">Detalles de una condición o problema de salud que puede afectar física, mental o socialmente al paciente y es identificado por un profesional clínico.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">structure</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Nombre del problema/diagnóstico</items>
+        <items id="description">Identificación por nombre y/o código del problema/diagnóstico</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Momento de reconocimiento del problema</items>
+        <items id="description">Fecha y hora, estimado o real, cuándo el problema/diagnóstico es detectado por un profesional de la salud</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Severidad</items>
+        <items id="description">Valoración de la severidad del problema/diagnóstico</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Descripción clínica</items>
+        <items id="description">Descripción narrativa del problema/diagnóstico</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Ubicación anatómica</items>
+        <items id="description">Lugar del cuerpo donde se detecta el problema/diagnóstico</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Elemento relacionado</items>
+        <items id="description">Identificación de otros problemas/diagnósticos que están relacionados al problema/diagnóstico actual</items>
+      </items>
+      <items code="at0028">
+        <items id="text">Elemento</items>
+        <items id="description">Identificación del problema/diagnóstico relacionado</items>
+      </items>
+      <items code="at0029">
+        <items id="text">Relación</items>
+        <items id="description">Tipo de relación que este problema/diagnóstico tiene con el elemento relacionado</items>
+      </items>
+      <items code="at0030">
+        <items id="text">Momento de resolución</items>
+        <items id="description">Día y hora, estimado o real, en que el problema/diagnóstico fue resuelto o entró en remisión</items>
+      </items>
+      <items code="at0032">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0039">
+        <items id="text">Ubicación anatómica estructurada</items>
+        <items id="description">Este espacio permite registrar información estructurada sobre la ubicación anatómica</items>
+      </items>
+      <items code="at0040">
+        <items id="text">Causa</items>
+        <items id="description">Causa directa o indirecta del problema/diagnóstico</items>
+      </items>
+      <items code="at0041">
+        <items id="text">Secuencia</items>
+        <items id="description">Este valor identifica la secuencia de eventos entre elementos relacionados, y puede ser utilizado para describir secuelas o efectos tardíos</items>
+      </items>
+      <items code="at0043">
+        <items id="text">Detalles específicos</items>
+        <items id="description">Detalles adicionales para el problema/diagnóstico</items>
+      </items>
+      <items code="at0044">
+        <items id="text">Descripción</items>
+        <items id="description">Descripción narrativa del elemento relacionado</items>
+      </items>
+      <items code="at0046">
+        <items id="text">Estatus</items>
+        <items id="description">Detalles estructurados de la ubicación, dominio, episodio o flujo de trabajo de aspectos específicos del proceso diagnóstico</items>
+      </items>
+      <items code="at0047">
+        <items id="text">Leve</items>
+        <items id="description">El problema tiene severidad leve</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Moderada</items>
+        <items id="description">El problema tiene severidad moderada</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Severo</items>
+        <items id="description">El problema tiene severidad severo</items>
+      </items>
+      <items code="at0069">
+        <items id="text">Comentario</items>
+        <items id="description">Comentario narrativo adicional sobre el problema/diagnóstico no capturado en otros campos</items>
+      </items>
+      <items code="at0070">
+        <items id="text">Última actualización</items>
+        <items id="description">Fecha en la que el problema/diagnóstico fue actualizado</items>
+      </items>
+      <items code="at0071">
+        <items id="text">Extensión</items>
+        <items id="description">Información adicional requerida para capturar el contenido local o alinear con otros modelos o formalismos para el problema/diagnóstico</items>
+      </items>
+      <items code="at0072">
+        <items id="text">Progreso</items>
+        <items id="description">Descripción narrativa del progreso del problema/diagnóstico desde su comienzo</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

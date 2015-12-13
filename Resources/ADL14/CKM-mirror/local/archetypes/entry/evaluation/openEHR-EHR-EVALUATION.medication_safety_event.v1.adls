@@ -1,0 +1,1851 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-EVALUATION.medication_safety_event.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"25/06/2012">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a summary of a patient safety event associated with medication for reporting purposes.">
+			use = <"">
+			misuse = <"">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To record a summary of a patient safety event associated with medication for reporting purposes.(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+	>
+	other_contributors = <"Anže Droljc, Marand s.i.i, Slovenia", ...>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"DE77C8A5A958AD6D3C30B89716CBF495">
+	>
+
+definition
+	EVALUATION[id1] matches {	-- Medication safety event
+		data matches {
+			ITEM_TREE[id2] matches {
+				items matches {
+					ELEMENT[id236] occurrences matches {0..1} matches {	-- Main event for case?
+						value matches {
+							DV_BOOLEAN[id355] matches {
+								value matches {True}
+							}
+						}
+					}
+					ELEMENT[id3] occurrences matches {0..1} matches {	-- Safety event type
+						value matches {
+							DV_CODED_TEXT[id356] matches {
+								defining_code matches {[ac10]}		-- New constraint
+							}
+						}
+					}
+					ELEMENT[id4] occurrences matches {0..1} matches {	-- MEDRA classification
+						value matches {
+							DV_CODED_TEXT[id357] matches {
+								defining_code matches {[ac2]}		-- *New constraint(sl)
+							}
+						}
+					}
+					ELEMENT[id5] occurrences matches {0..1} matches {	-- DateTime of event onset
+						value matches {
+							DV_DATE_TIME[id358] 
+						}
+					}
+					ELEMENT[id42] occurrences matches {0..1} matches {	-- Description of event
+						value matches {
+							DV_TEXT[id359] 
+						}
+					}
+					CLUSTER[id234] matches {	-- Cause of event
+						items matches {
+							ELEMENT[id63] occurrences matches {0..1} matches {	-- Estimated cause of event
+								value matches {
+									DV_CODED_TEXT[id360] matches {
+										defining_code matches {[ac11]}		-- Estimated cause of event (synthesised)
+									}
+								}
+							}
+							ELEMENT[id235] occurrences matches {0..1} matches {	-- Comment
+								value matches {
+									DV_TEXT[id361] 
+								}
+							}
+						}
+					}
+					ELEMENT[id21] occurrences matches {0..1} matches {	-- Related trigger
+						value matches {
+							DV_CODED_TEXT[id362] matches {
+								defining_code matches {[ac12]}		-- Related trigger (synthesised)
+							}
+							DV_TEXT[id363] 
+						}
+					}
+					CLUSTER[id19] matches {	-- Adverse effect
+						items matches {
+							CLUSTER[id346] matches {	-- Reaction details
+								items matches {
+									ELEMENT[id22] occurrences matches {0..1} matches {	-- Reaction
+										value matches {
+											DV_CODED_TEXT[id364] matches {
+												defining_code matches {[ac4]}		-- *New constraint(sl)
+											}
+										}
+									}
+									ELEMENT[id347] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT[id365] 
+										}
+									}
+								}
+							}
+							ELEMENT[id109] occurrences matches {0..1} matches {	-- DateTime of reaction onset
+								value matches {
+									DV_DATE_TIME[id366] 
+								}
+							}
+							ELEMENT[id223] occurrences matches {0..1} matches {	-- Severity
+								value matches {
+									DV_CODED_TEXT[id367] matches {
+										defining_code matches {[ac13]}		-- Severity (synthesised)
+									}
+								}
+							}
+							ELEMENT[id23] occurrences matches {0..1} matches {	-- Liklihood of causation
+								value matches {
+									DV_CODED_TEXT[id368] matches {
+										defining_code matches {[ac14]}		-- Liklihood of causation (synthesised)
+									}
+								}
+							}
+							CLUSTER[id237] matches {	-- Intervention details
+								items matches {
+									CLUSTER[id348] matches {	-- Intervention additional details
+										items matches {
+											ELEMENT[id13] occurrences matches {0..1} matches {	-- Intervention
+												value matches {
+													DV_CODED_TEXT[id369] matches {
+														defining_code matches {[ac15]}		-- Intervention (synthesised)
+													}
+												}
+											}
+											ELEMENT[id349] occurrences matches {0..1} matches {	-- Comment
+												value matches {
+													DV_TEXT[id370] 
+												}
+											}
+										}
+									}
+									ELEMENT[id15] matches {	-- Intervention result
+										value matches {
+											DV_CODED_TEXT[id371] matches {
+												defining_code matches {[ac16]}		-- Intervention result (synthesised)
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[id354] occurrences matches {0..1} matches {	-- Side effect recurrence
+						value matches {
+							DV_CODED_TEXT[id372] matches {
+								defining_code matches {[ac17]}		-- Side effect recurrence (synthesised)
+							}
+						}
+					}
+					CLUSTER[id350] matches {	-- Actual patient outcome details
+						items matches {
+							ELEMENT[id43] occurrences matches {0..1} matches {	-- Actual patient outcome
+								value matches {
+									DV_CODED_TEXT[id373] matches {
+										defining_code matches {[ac18]}		-- Actual patient outcome (synthesised)
+									}
+								}
+							}
+							ELEMENT[id351] occurrences matches {0..1} matches {	-- Comment
+								value matches {
+									DV_TEXT[id374] 
+								}
+							}
+						}
+					}
+					ELEMENT[id232] occurrences matches {0..1} matches {	-- Potential patient outcome
+						value matches {
+							DV_CODED_TEXT[id375] matches {
+								defining_code matches {[ac19]}		-- Potential patient outcome (synthesised)
+							}
+						}
+					}
+					ELEMENT[id44] matches {	-- Patient outcome category
+						value matches {
+							DV_CODED_TEXT[id376] matches {
+								defining_code matches {[ac20]}		-- Patient outcome category (synthesised)
+							}
+						}
+					}
+					ELEMENT[id233] occurrences matches {0..1} matches {	-- Additional comment
+						value matches {
+							DV_TEXT[id377] 
+						}
+					}
+					CLUSTER[id238] occurrences matches {0..1} matches {	-- Summary details
+						items matches {
+							ELEMENT[id239] occurrences matches {0..1} matches {	-- Admission diagnosis classification
+								value matches {
+									DV_CODED_TEXT[id378] matches {
+										defining_code matches {[ac7]}		-- *New constraint(sl)
+									}
+								}
+							}
+							ELEMENT[id240] occurrences matches {0..1} matches {	-- Discharge diagnosis classification
+								value matches {
+									DV_CODED_TEXT[id379] matches {
+										defining_code matches {[ac8]}		-- *New constraint(sl)
+									}
+								}
+							}
+							ELEMENT[id250] occurrences matches {0..1} matches {	-- Link to main event
+								value matches {
+									DV_EHR_URI[id380] 
+								}
+							}
+							CLUSTER[id242] occurrences matches {0..1} matches {	-- Oncological case details
+								items matches {
+									ELEMENT[id241] occurrences matches {0..1} matches {	-- TNM classification
+										value matches {
+											DV_CODED_TEXT[id381] matches {
+												defining_code matches {[ac9]}		-- *New constraint(sl)
+											}
+										}
+									}
+									ELEMENT[id245] occurrences matches {0..1} matches {	-- Effectiveness of therapy
+										value matches {
+											DV_CODED_TEXT[id382] matches {
+												defining_code matches {[ac21]}		-- Effectiveness of therapy (synthesised)
+											}
+										}
+									}
+									ELEMENT[id243] occurrences matches {0..1} matches {	-- Order of treatment
+										value matches {
+											DV_TEXT[id383] 
+										}
+									}
+									ELEMENT[id244] occurrences matches {0..1} matches {	-- Reason for case closure
+										value matches {
+											DV_CODED_TEXT[id384] matches {
+												defining_code matches {[ac22]}		-- Reason for case closure (synthesised)
+											}
+										}
+									}
+									ELEMENT[id269] occurrences matches {0..1} matches {	-- Reason treatment aborted
+										value matches {
+											DV_TEXT[id385] 
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[id352] matches {	-- Medications involved
+						value matches {
+							DV_TEXT[id386] 
+						}
+					}
+					ELEMENT[id353] matches {	-- Medications administered
+						value matches {
+							DV_TEXT[id387] 
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Medication safety event">
+				description = <"Summary of a patient safety event associated with medication for reporting purposes.">
+			>
+			["id3"] = <
+				text = <"Safety event type">
+				description = <"The type of event reported.">
+			>
+			["id4"] = <
+				text = <"MEDRA classification">
+				description = <"The category of event reported using MedDRA classification.">
+			>
+			["id5"] = <
+				text = <"DateTime of event onset">
+				description = <"The date and/or time that the adverse event took place.">
+			>
+			["id13"] = <
+				text = <"Intervention">
+				description = <"The clinical intervention undertaken to resolve or ameliorate the adverse effect, uses PCNE terminology.">
+			>
+			["id15"] = <
+				text = <"Intervention result">
+				description = <"The result(s) of any interventions undertaken, recorded using MEDRA classification subset.">
+			>
+			["id19"] = <
+				text = <"Adverse effect">
+				description = <"Details of one or more side effects.">
+			>
+			["id21"] = <
+				text = <"Related trigger">
+				description = <"Triggers thought to be related to this safety event recorded using IHCI classification.">
+			>
+			["id22"] = <
+				text = <"Reaction">
+				description = <"Description of the side-effect reported or observed using MEDRA or ATC codes.">
+			>
+			["id23"] = <
+				text = <"Liklihood of causation">
+				description = <"An estimate of how likely the side-effects noted are due to the safety event.">
+			>
+			["id42"] = <
+				text = <"Description of event">
+				description = <"A narrative description of the medication safety event.">
+			>
+			["id43"] = <
+				text = <"Actual patient outcome">
+				description = <"The overall impact actually experienced by the patient.">
+			>
+			["id44"] = <
+				text = <"Patient outcome category">
+				description = <"The caetgory of impact on the patient's life.">
+			>
+			["at54"] = <
+				text = <"[A] Circumstances or events that have the capacity to cause error">
+				description = <"*">
+			>
+			["at55"] = <
+				text = <"[B] An error that did not reach the patient">
+				description = <"*">
+			>
+			["at56"] = <
+				text = <"[C] An error that reached the patient but did not cause harm">
+				description = <"*">
+			>
+			["at57"] = <
+				text = <"[D] An error that reache the patient and reqired monitoring or intervention to confirm that it resulted in no harm to the patient">
+				description = <"*">
+			>
+			["at58"] = <
+				text = <"[E] Temporary harm to the patient and required intervention">
+				description = <"*">
+			>
+			["at59"] = <
+				text = <"[F] Temporary harm to the patient and required initial or prolonged hospitalization">
+				description = <"*">
+			>
+			["at60"] = <
+				text = <"[G] Permanent patient harm">
+				description = <"*">
+			>
+			["at61"] = <
+				text = <"[H] Intervention required to sustain life">
+				description = <"*">
+			>
+			["at62"] = <
+				text = <"[I] Patient death">
+				description = <"*">
+			>
+			["id63"] = <
+				text = <"Estimated cause of event">
+				description = <"The reason suspected for this event occurring.">
+			>
+			["at64"] = <
+				text = <"Clinical">
+				description = <"*">
+			>
+			["at65"] = <
+				text = <"Personal">
+				description = <"*">
+			>
+			["at66"] = <
+				text = <"Economic">
+				description = <"*">
+			>
+			["at68"] = <
+				text = <"Verbal miscommunication">
+				description = <"Verbal understanding">
+			>
+			["at69"] = <
+				text = <"Written miscomunication-Illegible handwritting">
+				description = <"Written understanding">
+			>
+			["at70"] = <
+				text = <"Written miscomunication-Abbreviations">
+				description = <"Illegible writing">
+			>
+			["at72"] = <
+				text = <"Written miscomunication-Non metric units of measurement">
+				description = <"*">
+			>
+			["at73"] = <
+				text = <"Written miscomunication-Decimal point">
+				description = <"*">
+			>
+			["at74"] = <
+				text = <"Misread or didnt read">
+				description = <"*">
+			>
+			["at75"] = <
+				text = <"Misinterpretation of the order">
+				description = <"*">
+			>
+			["at76"] = <
+				text = <"Sound-alike drug name">
+				description = <"*">
+			>
+			["at77"] = <
+				text = <"Look-alike drug name">
+				description = <"*">
+			>
+			["at78"] = <
+				text = <"Packaging-Inappropriate Packaging or Design">
+				description = <"*">
+			>
+			["at79"] = <
+				text = <"Packing-Dosage form">
+				description = <"*">
+			>
+			["at80"] = <
+				text = <"Packaging-Error due to similarity to another drug (colour, form, size)">
+				description = <"*">
+			>
+			["at81"] = <
+				text = <"Packaging-Error due different strength">
+				description = <"*">
+			>
+			["at82"] = <
+				text = <"Human factors-Lack of information/knowledge">
+				description = <"*">
+			>
+			["at83"] = <
+				text = <"Work not accomplished">
+				description = <"*">
+			>
+			["at84"] = <
+				text = <"Incomplete documentation">
+				description = <"*">
+			>
+			["at85"] = <
+				text = <"Work overload, burn out syndrome">
+				description = <"*">
+			>
+			["at86"] = <
+				text = <"Fatigue/Lack of sleep">
+				description = <"*">
+			>
+			["at87"] = <
+				text = <"Confrontational or intimidating behaviour">
+				description = <"*">
+			>
+			["at88"] = <
+				text = <"Inappropriate lighting">
+				description = <"*">
+			>
+			["at89"] = <
+				text = <"Inappropriate temperature/humidity">
+				description = <"*">
+			>
+			["at90"] = <
+				text = <"Frequent interuptions and distractions">
+				description = <"*">
+			>
+			["at91"] = <
+				text = <"Lack of staff">
+				description = <"*">
+			>
+			["at92"] = <
+				text = <"Other">
+				description = <"*">
+			>
+			["id109"] = <
+				text = <"DateTime of reaction onset">
+				description = <"The datetime at which the side effects began.">
+			>
+			["id223"] = <
+				text = <"Severity">
+				description = <"The severity of the reaction.">
+			>
+			["at224"] = <
+				text = <"Low">
+				description = <"*">
+			>
+			["at225"] = <
+				text = <"Medium">
+				description = <"*">
+			>
+			["at226"] = <
+				text = <"High">
+				description = <"*">
+			>
+			["id232"] = <
+				text = <"Potential patient outcome">
+				description = <"An assessment of potential impact on the patient if interventions had been unsuccesful. Uses the MERP index. other remediation had not occured.">
+			>
+			["id233"] = <
+				text = <"Additional comment">
+				description = <"Any additional comment or narrative.">
+			>
+			["id234"] = <
+				text = <"Cause of event">
+				description = <"Details of the estimated cause of the event.">
+			>
+			["id235"] = <
+				text = <"Comment">
+				description = <"An additional comment on the estimated cause of the event.">
+			>
+			["id236"] = <
+				text = <"Main event for case?">
+				description = <"Is this the principal or main event recorded during the case?">
+			>
+			["id237"] = <
+				text = <"Intervention details">
+				description = <"Details of interventions.">
+			>
+			["id238"] = <
+				text = <"Summary details">
+				description = <"Details included only in Case Summary.">
+			>
+			["id239"] = <
+				text = <"Admission diagnosis classification">
+				description = <"Admission diagnosis using ICD classification.">
+			>
+			["id240"] = <
+				text = <"Discharge diagnosis classification">
+				description = <"Discharge diagnosis using ICD classification.">
+			>
+			["id241"] = <
+				text = <"TNM classification">
+				description = <"Malignant disease classification using TNM.">
+			>
+			["id242"] = <
+				text = <"Oncological case details">
+				description = <"Details required for oncological cases.">
+			>
+			["id243"] = <
+				text = <"Order of treatment">
+				description = <"???????">
+			>
+			["id244"] = <
+				text = <"Reason for case closure">
+				description = <"Reason for the case being closed.">
+			>
+			["id245"] = <
+				text = <"Effectiveness of therapy">
+				description = <"*">
+			>
+			["at246"] = <
+				text = <"Completely effective">
+				description = <"The therapy has been fully effective.">
+			>
+			["at247"] = <
+				text = <"Partially effective">
+				description = <"The therpay has been partially effective.">
+			>
+			["at248"] = <
+				text = <"Disease status unchanged">
+				description = <"*">
+			>
+			["at249"] = <
+				text = <"Ineffective - disease progressing unchecked.">
+				description = <"The therapy has been ineffective and the disease is progressing unchecked.">
+			>
+			["id250"] = <
+				text = <"Link to main event">
+				description = <"A link to the main case event.">
+			>
+			["at267"] = <
+				text = <"Treatment complete">
+				description = <"*">
+			>
+			["at268"] = <
+				text = <"Treatment aborted">
+				description = <"*">
+			>
+			["id269"] = <
+				text = <"Reason treatment aborted">
+				description = <"The reason why the treatment was  aborted.">
+			>
+			["at271"] = <
+				text = <"Transfusion of Blood or Use of Blood Products">
+				description = <"**(en)">
+			>
+			["at272"] = <
+				text = <"Acute Dialysis">
+				description = <"**(en)">
+			>
+			["at273"] = <
+				text = <"Positive Blood Culture">
+				description = <"**(en)">
+			>
+			["at274"] = <
+				text = <"X-Ray or Doppler Studies for Emboli or Deep Vein Thrombosis">
+				description = <"**(en)">
+			>
+			["at275"] = <
+				text = <"Decrease in Hemoglobin or Hematocrit of 25% or Greater">
+				description = <"**(en)">
+			>
+			["at276"] = <
+				text = <"Patient Fall">
+				description = <"**(en)">
+			>
+			["at277"] = <
+				text = <"Pressure Ulcers">
+				description = <"**(en)">
+			>
+			["at278"] = <
+				text = <"Readmission within 30 Days">
+				description = <"**(en)">
+			>
+			["at279"] = <
+				text = <"Restraint Use">
+				description = <"**(en)">
+			>
+			["at280"] = <
+				text = <"Healthcare-Associated Infections">
+				description = <"**(en)">
+			>
+			["at281"] = <
+				text = <"In-Hospital Stroke">
+				description = <"**(en)">
+			>
+			["at282"] = <
+				text = <"Clostridium difficile Positive Stool">
+				description = <"**(en)">
+			>
+			["at283"] = <
+				text = <"Partial Thromboplastin Time (PTT) Greater than 100 Seconds">
+				description = <"**(en)">
+			>
+			["at284"] = <
+				text = <"International Normalized Ratio (INR) Greater than 6">
+				description = <"**(en)">
+			>
+			["at285"] = <
+				text = <"Glucose Less than 50 mg/dl">
+				description = <"**(en)">
+			>
+			["at286"] = <
+				text = <"Rising BUN or Serum Creatinine Two Times (2x) over Baseline">
+				description = <"**(en)">
+			>
+			["at287"] = <
+				text = <"Vitamin K Administration">
+				description = <"**(en)">
+			>
+			["at288"] = <
+				text = <"Diphenhydramine (Benadryl) Administration">
+				description = <"**(en)">
+			>
+			["at289"] = <
+				text = <"Romazicon (Flumazenil) Administration">
+				description = <"**(en)">
+			>
+			["at290"] = <
+				text = <"Naloxone (Narcan) Administration">
+				description = <"**(en)">
+			>
+			["at291"] = <
+				text = <"Anti-Emetic Administration">
+				description = <"**(en)">
+			>
+			["at292"] = <
+				text = <"Over-Sedation/Hypotension">
+				description = <"**(en)">
+			>
+			["at293"] = <
+				text = <"Abrupt Medication Stop">
+				description = <"**(en)">
+			>
+			["at294"] = <
+				text = <"Intra- or Post-Operative Death">
+				description = <"**(en)">
+			>
+			["at295"] = <
+				text = <"Mechanical Ventilation Greater than 24 Hours Post-Operatively">
+				description = <"**(en)">
+			>
+			["at296"] = <
+				text = <"Intra-Operative Administration of Epinephrine, Norepinephrine, Naloxone, or Romazicon">
+				description = <"**(en)">
+			>
+			["at297"] = <
+				text = <"Pneumonia Onset">
+				description = <"**(en)">
+			>
+			["at298"] = <
+				text = <"Readmission to the Intensive Care Unit">
+				description = <"**(en)">
+			>
+			["at299"] = <
+				text = <"Terbutaline Use">
+				description = <"**(en)">
+			>
+			["at300"] = <
+				text = <"Platelet Count Less than 50,000">
+				description = <"**(en)">
+			>
+			["at301"] = <
+				text = <"Administration of Oxytocic Agents (such as oxytocin, methylergonovine, and 15-methyl-prostaglandin in the post-partum period)">
+				description = <"**(en)">
+			>
+			["at302"] = <
+				text = <"Administration of General Anesthesia">
+				description = <"**(en)">
+			>
+			["at303"] = <
+				text = <"Readmission to the ED within 48 Hours">
+				description = <"**(en)">
+			>
+			["at304"] = <
+				text = <"Time in ED Greater than 6 Hours">
+				description = <"**(en)">
+			>
+			["at305"] = <
+				text = <"Prescriber informed">
+				description = <"**(en)">
+			>
+			["at306"] = <
+				text = <"Nurse informed/instructed">
+				description = <"**(en)">
+			>
+			["at307"] = <
+				text = <"Dispensing rejected">
+				description = <"**(en)">
+			>
+			["at308"] = <
+				text = <"Drug recalled from the ward">
+				description = <"**(en)">
+			>
+			["at309"] = <
+				text = <"Dietary regime changed">
+				description = <"**(en)">
+			>
+			["at310"] = <
+				text = <"Food supplement discontinued">
+				description = <"**(en)">
+			>
+			["at311"] = <
+				text = <"Food supplement initiated">
+				description = <"**(en)">
+			>
+			["at312"] = <
+				text = <"Reconstitution solvent changed">
+				description = <"**(en)">
+			>
+			["at313"] = <
+				text = <"Diluent changed">
+				description = <"**(en)">
+			>
+			["at315"] = <
+				text = <"Drug changed">
+				description = <"**(en)">
+			>
+			["at316"] = <
+				text = <"Dose increased">
+				description = <"**(en)">
+			>
+			["at317"] = <
+				text = <"Dose decreased">
+				description = <"**(en)">
+			>
+			["at318"] = <
+				text = <"Dosage form changed">
+				description = <"**(en)">
+			>
+			["at319"] = <
+				text = <"Administration interval changed">
+				description = <"**(en)">
+			>
+			["at320"] = <
+				text = <"Drug discontinued">
+				description = <"**(en)">
+			>
+			["at321"] = <
+				text = <"Drug initiated">
+				description = <"**(en)">
+			>
+			["at322"] = <
+				text = <"Drug administration rate changed">
+				description = <"**(en)">
+			>
+			["at323"] = <
+				text = <"Route of administration changed">
+				description = <"**(en)">
+			>
+			["at324"] = <
+				text = <"Resuscitation required">
+				description = <"**(en)">
+			>
+			["at325"] = <
+				text = <"Heamodialysis required">
+				description = <"**(en)">
+			>
+			["at326"] = <
+				text = <"Transplantation required">
+				description = <"**(en)">
+			>
+			["at327"] = <
+				text = <"Transfusion required">
+				description = <"**(en)">
+			>
+			["at328"] = <
+				text = <"Operating procedure required">
+				description = <"**(en)">
+			>
+			["at329"] = <
+				text = <"Additional laboratory test(s) required">
+				description = <"**(en)">
+			>
+			["at330"] = <
+				text = <"Physiotherapy required">
+				description = <"**(en)">
+			>
+			["at331"] = <
+				text = <"Psychotherapy required">
+				description = <"**(en)">
+			>
+			["at332"] = <
+				text = <"Other">
+				description = <"**(en)">
+			>
+			["at333"] = <
+				text = <"Unknown">
+				description = <"**(en)">
+			>
+			["at336"] = <
+				text = <"*Intervencija preprečila, da bi zaplet dosegel pacienta(en)">
+				description = <"*(en)">
+			>
+			["at337"] = <
+				text = <"*Intervencija popolnoma odpravila posledice, ki jih je zaplet povzročil pacientu(en)">
+				description = <"*(en)">
+			>
+			["at338"] = <
+				text = <"*Intervencija delno odpravila posledice, ki jih je zaplet povzročil pacientu(en)">
+				description = <"*(en)">
+			>
+			["at339"] = <
+				text = <"*Intervencija ni odpravila posledic, ki jih je zaplet povzročil pacientu(en)">
+				description = <"*(en)">
+			>
+			["at340"] = <
+				text = <"*Intervencija ni bila možna(en)">
+				description = <"*(en)">
+			>
+			["at341"] = <
+				text = <"*Rezultat intervencije ni poznan(en)">
+				description = <"*(en)">
+			>
+			["at342"] = <
+				text = <"*Zmanjšanje stroškov zdravljenja(en)">
+				description = <"*(en)">
+			>
+			["at343"] = <
+				text = <"*Skrajšan čas hospitalizacije(en)">
+				description = <"*(en)">
+			>
+			["at344"] = <
+				text = <"*Pacient je bil odpuščen(en)">
+				description = <"*(en)">
+			>
+			["at345"] = <
+				text = <"*Izboljšana kvaliteta življenja(en)">
+				description = <"*(en)">
+			>
+			["id346"] = <
+				text = <"Reaction details">
+				description = <"Details of reaction">
+			>
+			["id347"] = <
+				text = <"Comment">
+				description = <"An additional comment on the Reaction details.">
+			>
+			["id348"] = <
+				text = <"Intervention additional details">
+				description = <"*">
+			>
+			["id349"] = <
+				text = <"Comment">
+				description = <"*">
+			>
+			["id350"] = <
+				text = <"Actual patient outcome details">
+				description = <"*">
+			>
+			["id351"] = <
+				text = <"Comment">
+				description = <"An additional comment on the Actual patient outcome comment.">
+			>
+			["id352"] = <
+				text = <"Medications involved">
+				description = <"The medicine, vaccine or other therapetic good being ordered, administered to or used by the subject">
+			>
+			["id353"] = <
+				text = <"Medications administered">
+				description = <"Medications administered is used to enter wrongly administered drug for Safety event type 
+*at0254	Pacient dobil drugo zdravilo od predpisanega* 	Wrong drug administered to a patient">
+			>
+			["id354"] = <
+				text = <"Side effect recurrence">
+				description = <"This information is aplicable when at least one Intervention is Dose decreased or Drug discontinued">
+			>
+			["at355"] = <
+				text = <"Yes">
+				description = <"*">
+			>
+			["at356"] = <
+				text = <"No">
+				description = <"*">
+			>
+			["at357"] = <
+				text = <"NA">
+				description = <"*">
+			>
+			["at358"] = <
+				text = <"No trigger">
+				description = <"*">
+			>
+			["at359"] = <
+				text = <"Characteristics of the medicine">
+				description = <"*">
+			>
+			["at360"] = <
+				text = <"Error corrected">
+				description = <"*">
+			>
+			["at361"] = <
+				text = <"Monitoring required">
+				description = <"*">
+			>
+			["at362"] = <
+				text = <"Abnormal laboratory parameter">
+				description = <"*">
+			>
+			["at363"] = <
+				text = <"Falsely abnormal laboratory parameter">
+				description = <"*">
+			>
+			["at364"] = <
+				text = <"Patient informed">
+				description = <"*">
+			>
+			["at366"] = <
+				text = <"Control not carried out">
+				description = <"*">
+			>
+			["at367"] = <
+				text = <"Medical device (or change) suggested">
+				description = <"*">
+			>
+			["ac2"] = <
+				text = <"*New constraint(sl)">
+				description = <"**(sl)">
+			>
+			["ac4"] = <
+				text = <"*New constraint(sl)">
+				description = <"**(sl)">
+			>
+			["ac7"] = <
+				text = <"*New constraint(sl)">
+				description = <"**(sl)">
+			>
+			["ac8"] = <
+				text = <"*New constraint(sl)">
+				description = <"**(sl)">
+			>
+			["ac9"] = <
+				text = <"*New constraint(sl)">
+				description = <"**(sl)">
+			>
+			["ac10"] = <
+				text = <"New constraint">
+				description = <"*">
+			>
+			["ac11"] = <
+				text = <"Estimated cause of event (synthesised)">
+				description = <"The reason suspected for this event occurring. (synthesised)">
+			>
+			["ac12"] = <
+				text = <"Related trigger (synthesised)">
+				description = <"Triggers thought to be related to this safety event recorded using IHCI classification. (synthesised)">
+			>
+			["ac13"] = <
+				text = <"Severity (synthesised)">
+				description = <"The severity of the reaction. (synthesised)">
+			>
+			["ac14"] = <
+				text = <"Liklihood of causation (synthesised)">
+				description = <"An estimate of how likely the side-effects noted are due to the safety event. (synthesised)">
+			>
+			["ac15"] = <
+				text = <"Intervention (synthesised)">
+				description = <"The clinical intervention undertaken to resolve or ameliorate the adverse effect, uses PCNE terminology. (synthesised)">
+			>
+			["ac16"] = <
+				text = <"Intervention result (synthesised)">
+				description = <"The result(s) of any interventions undertaken, recorded using MEDRA classification subset. (synthesised)">
+			>
+			["ac17"] = <
+				text = <"Side effect recurrence (synthesised)">
+				description = <"This information is aplicable when at least one Intervention is Dose decreased or Drug discontinued (synthesised)">
+			>
+			["ac18"] = <
+				text = <"Actual patient outcome (synthesised)">
+				description = <"The overall impact actually experienced by the patient. (synthesised)">
+			>
+			["ac19"] = <
+				text = <"Potential patient outcome (synthesised)">
+				description = <"An assessment of potential impact on the patient if interventions had been unsuccesful. Uses the MERP index. other remediation had not occured. (synthesised)">
+			>
+			["ac20"] = <
+				text = <"Patient outcome category (synthesised)">
+				description = <"The caetgory of impact on the patient's life. (synthesised)">
+			>
+			["ac21"] = <
+				text = <"Effectiveness of therapy (synthesised)">
+				description = <"* (synthesised)">
+			>
+			["ac22"] = <
+				text = <"Reason for case closure (synthesised)">
+				description = <"Reason for the case being closed. (synthesised)">
+			>
+		>
+		["sl"] = <
+			["id1"] = <
+				text = <"*Medication safety event(en)">
+				description = <"*Summary of a patient safety event associated with medication for reporting purposes.(en)">
+			>
+			["id3"] = <
+				text = <"Tip zapleta">
+				description = <"*The type of event reported.(en)">
+			>
+			["id4"] = <
+				text = <"Zaplet podrobno ">
+				description = <"*The category of event reported using MedDRA classification.(en)">
+			>
+			["id5"] = <
+				text = <"Datum in ura zapleta">
+				description = <"*The date and/or time that the adverse event took place.(en)">
+			>
+			["id13"] = <
+				text = <"Intervencija">
+				description = <"*The clinical intervention undertaken to resolve or ameliorate the adverse effect, uses PCNE terminology.(en)">
+			>
+			["id15"] = <
+				text = <"Rezultat intervencije">
+				description = <"*The result(s) of any interventions undertaken, recorded using MEDRA classification subset.(en)">
+			>
+			["id19"] = <
+				text = <"Posledica zapleta">
+				description = <"*Details of one or more side effects.(en)">
+			>
+			["id21"] = <
+				text = <"Pokazatelj zapleta">
+				description = <"*Triggers thought to be related to this safety event recorded using IHCI classification.(en)">
+			>
+			["id22"] = <
+				text = <"Posledica">
+				description = <"*Description of the side-effect reported or observed using MEDRA or ATC codes.(en)">
+			>
+			["id23"] = <
+				text = <"Verjetnost">
+				description = <"*An estimate of how likely the side-effects noted are due to the safety event.(en)">
+			>
+			["id42"] = <
+				text = <"Opis zapleta">
+				description = <"*A narrative description of the medication safety event.(en)">
+			>
+			["id43"] = <
+				text = <"Izid za pacienta">
+				description = <"*The overall impact actually experienced by the patient.(en)">
+			>
+			["id44"] = <
+				text = <"Tip vpliva">
+				description = <"*The caetgory of impact on the patient's life.(en)">
+			>
+			["at54"] = <
+				text = <"[A] Okoliščine ali dogodki, ki lahko vodijo v zaplet">
+				description = <"**(en)">
+			>
+			["at55"] = <
+				text = <"[B] Zaplet se je pojavil, vendar je bil ustavljen, preden je prišel do pacienta">
+				description = <"**(en)">
+			>
+			["at56"] = <
+				text = <"[C] Zaplet se je pojavil, dosegel pacienta, vendar ni povzročil škode">
+				description = <"**(en)">
+			>
+			["at57"] = <
+				text = <"[D] Zaplet je dosegel pacienta, potrebno je spremljanje, da se dokaže, da ni bilo storjene škode">
+				description = <"**(en)">
+			>
+			["at58"] = <
+				text = <"[E] Zaplet je lahko vplival ali je vzrok za začasno škodo pri pacientu in zahteva intervencijo">
+				description = <"**(en)">
+			>
+			["at59"] = <
+				text = <"[F] Zaplet je lahko vplival ali je vzrok za začasno škodo pri pacientu in zahteva podaljšano hospitalizacijo">
+				description = <"**(en)">
+			>
+			["at60"] = <
+				text = <"[G] Zaplet je lahko vplival ali je vzrok za trajno škodo pri pacientu">
+				description = <"**(en)">
+			>
+			["at61"] = <
+				text = <"[H] Zaplet zahteva intervencijo, da se ohrani pacienta pri življenju">
+				description = <"**(en)">
+			>
+			["at62"] = <
+				text = <"[I] Pojavil se je zaplet, ki je lahko vplival ali je bil vzrok smrti pacienta">
+				description = <"**(en)">
+			>
+			["id63"] = <
+				text = <"Vzrok">
+				description = <"*The reason suspected for this event occurring.(en)">
+			>
+			["at64"] = <
+				text = <"Klinični">
+				description = <"**(en)">
+			>
+			["at65"] = <
+				text = <"Humanistični">
+				description = <"**(en)">
+			>
+			["at66"] = <
+				text = <"Ekonomski">
+				description = <"**(en)">
+			>
+			["at68"] = <
+				text = <"Verbalno nerazumevanje">
+				description = <"*Verbal understanding(en)">
+			>
+			["at69"] = <
+				text = <"Pisno nerazumevanje-nečitljiva pisava">
+				description = <"*Written understanding(en)">
+			>
+			["at70"] = <
+				text = <"Pisno nerazumevanje-uporaba okrajšav">
+				description = <"*Illegible writing(en)">
+			>
+			["at72"] = <
+				text = <"Pisno nerazumevanje-merske enote">
+				description = <"**(en)">
+			>
+			["at73"] = <
+				text = <"Pisno nerazumevanje-decimalke">
+				description = <"**(en)">
+			>
+			["at74"] = <
+				text = <"Ni prebral ali nepravilno prebral">
+				description = <"**(en)">
+			>
+			["at75"] = <
+				text = <"Napačna interpretacija naročila">
+				description = <"**(en)">
+			>
+			["at76"] = <
+				text = <"Podobno zveneča imena zdravila">
+				description = <"**(en)">
+			>
+			["at77"] = <
+				text = <"Imena podobnega izgleda">
+				description = <"**(en)">
+			>
+			["at78"] = <
+				text = <"Ovojnina-neprimerna ovojnina ali oblika ovojnine">
+				description = <"**(en)">
+			>
+			["at79"] = <
+				text = <"Ovojnina-farmacevtska oblika">
+				description = <"**(en)">
+			>
+			["at80"] = <
+				text = <"Ovojnina-napake zaradi podobnosti z drugim zdravilom (barva, oblika, velikost)">
+				description = <"**(en)">
+			>
+			["at81"] = <
+				text = <"Ovojnina-napaka zaradi podobnosti z enakim zdravilom vendar druge jakosti">
+				description = <"**(en)">
+			>
+			["at82"] = <
+				text = <"Pomanjkanje informacij / znanja">
+				description = <"**(en)">
+			>
+			["at83"] = <
+				text = <"Neizvršeno delo">
+				description = <"**(en)">
+			>
+			["at84"] = <
+				text = <"Pomankljiva dokumentacija">
+				description = <"**(en)">
+			>
+			["at85"] = <
+				text = <"Preobremenjenost, izgorelost">
+				description = <"**(en)">
+			>
+			["at86"] = <
+				text = <"Utrujenost, neprespanost">
+				description = <"**(en)">
+			>
+			["at87"] = <
+				text = <"Psihološki pritisk">
+				description = <"**(en)">
+			>
+			["at88"] = <
+				text = <"Neustrezna svetloba">
+				description = <"**(en)">
+			>
+			["at89"] = <
+				text = <"Neustrezna temperatura / vlažnost">
+				description = <"**(en)">
+			>
+			["at90"] = <
+				text = <"Pogoste motnje med delom (prekinitev dela, različni vzroki)">
+				description = <"**(en)">
+			>
+			["at91"] = <
+				text = <"Pomanjkanje osebja (zdravstvenih delavcev)">
+				description = <"**(en)">
+			>
+			["at92"] = <
+				text = <"Drugo">
+				description = <"**(en)">
+			>
+			["id109"] = <
+				text = <"Datum in ura posledice">
+				description = <"*The datetime at which the side effects began.(en)">
+			>
+			["id223"] = <
+				text = <"Resnost">
+				description = <"*The severity of the reaction.(en)">
+			>
+			["at224"] = <
+				text = <"Nizka">
+				description = <"**(en)">
+			>
+			["at225"] = <
+				text = <"Srednja">
+				description = <"**(en)">
+			>
+			["at226"] = <
+				text = <"Visoka">
+				description = <"**(en)">
+			>
+			["id232"] = <
+				text = <"Potencialni izid za pacienta">
+				description = <"*An assessment of potential impact on the patient if interventions had been unsuccesful. Uses the MERP index. other remediation had not occured.(en)">
+			>
+			["id233"] = <
+				text = <"Dodatne opombe">
+				description = <"*Any additional comment or narrative.(en)">
+			>
+			["id234"] = <
+				text = <"Vzrok za zaplet">
+				description = <"*Details of the estimated cause of the event.(en)">
+			>
+			["id235"] = <
+				text = <"Opomba">
+				description = <"*An additional comment on the estimated cause of the event.(en)">
+			>
+			["id236"] = <
+				text = <"Prijavitelj">
+				description = <"*Is this the principal or main event recorded during the case?(en)">
+			>
+			["id237"] = <
+				text = <"Podrobnosti intervencije">
+				description = <"*Details of interventions.(en)">
+			>
+			["id238"] = <
+				text = <"Podrobnosti primera">
+				description = <"*Details included only in Case Summary.(en)">
+			>
+			["id239"] = <
+				text = <"Sprejemna diagnoza">
+				description = <"*Admission diagnosis using ICD classification.(en)">
+			>
+			["id240"] = <
+				text = <"Odpustna diagnoza">
+				description = <"*Discharge diagnosis using ICD classification.(en)">
+			>
+			["id241"] = <
+				text = <"TNM">
+				description = <"*Malignant disease classification using TNM.(en)">
+			>
+			["id242"] = <
+				text = <"Onkološke podrobnosti">
+				description = <"*Details required for oncological cases.(en)">
+			>
+			["id243"] = <
+				text = <"Red zdravljenja">
+				description = <"*???????(en)">
+			>
+			["id244"] = <
+				text = <"Razlog zaključka primera">
+				description = <"*Reason for the case being closed.(en)">
+			>
+			["id245"] = <
+				text = <"Ustreznost terapije">
+				description = <"**(en)">
+			>
+			["at246"] = <
+				text = <"Popolnoma učinkovita">
+				description = <"*The therapy has been fully effective.(en)">
+			>
+			["at247"] = <
+				text = <"Delno učinkovita">
+				description = <"*The therpay has been partially effective.(en)">
+			>
+			["at248"] = <
+				text = <"Nespremenjeno stanje bolezni">
+				description = <"**(en)">
+			>
+			["at249"] = <
+				text = <"Neučinkovita-bolezen napreduje nenadzorovano">
+				description = <"*The therapy has been ineffective and the disease is progressing unchecked.(en)">
+			>
+			["id250"] = <
+				text = <"Povezava na glavni zaplet">
+				description = <"*A link to the main case event.(en)">
+			>
+			["at267"] = <
+				text = <"Zdravljenje zaključeno">
+				description = <"**(en)">
+			>
+			["at268"] = <
+				text = <"Zdravljenje prekinjeno">
+				description = <"**(en)">
+			>
+			["id269"] = <
+				text = <"Opomba">
+				description = <"*The reason why the treatment was  aborted.(en)">
+			>
+			["at271"] = <
+				text = <"Transfuzija krvi ali krvnih derivatov">
+				description = <"*">
+			>
+			["at272"] = <
+				text = <"Akutna dializa">
+				description = <"*">
+			>
+			["at273"] = <
+				text = <"Pozitivna hemokultura">
+				description = <"*">
+			>
+			["at274"] = <
+				text = <"Diagnostični postopki in preiskave na strdke ali globoko vensko trombozo">
+				description = <"*">
+			>
+			["at275"] = <
+				text = <"Padec hemoglobina ali hematokrita za 25% ali več">
+				description = <"*">
+			>
+			["at276"] = <
+				text = <"Padec pacienta">
+				description = <"*">
+			>
+			["at277"] = <
+				text = <"Preležanina">
+				description = <"*">
+			>
+			["at278"] = <
+				text = <"Ponovni sprejem v roku 30 dni">
+				description = <"*">
+			>
+			["at279"] = <
+				text = <"Uporaba ovirnic">
+				description = <"*">
+			>
+			["at280"] = <
+				text = <"Bolnišnična okužba">
+				description = <"*">
+			>
+			["at281"] = <
+				text = <"Kap v bolnišničnem okolju">
+				description = <"*">
+			>
+			["at282"] = <
+				text = <"Blato pozitivno na Clostridium difficile">
+				description = <"*">
+			>
+			["at283"] = <
+				text = <"PTT višji od 100 sek.">
+				description = <"*">
+			>
+			["at284"] = <
+				text = <"INR višji od 6">
+				description = <"*">
+			>
+			["at285"] = <
+				text = <"Glukoza nižja od 50 mg/dl*">
+				description = <"*">
+			>
+			["at286"] = <
+				text = <"Porast dušika ali kreatinina za več kot 2X">
+				description = <"*">
+			>
+			["at287"] = <
+				text = <"Aplikacija vitamina K">
+				description = <"*">
+			>
+			["at288"] = <
+				text = <"Aplikacija difenhidramina">
+				description = <"*">
+			>
+			["at289"] = <
+				text = <"Aplikacija flumazenila">
+				description = <"*">
+			>
+			["at290"] = <
+				text = <"Aplikacija naloksona">
+				description = <"*">
+			>
+			["at291"] = <
+				text = <"Aplikacija antiemetika">
+				description = <"*">
+			>
+			["at292"] = <
+				text = <"Prekomerna sedacija/hipotenzija">
+				description = <"*">
+			>
+			["at293"] = <
+				text = <"Nenadna prekinitev terapije">
+				description = <"*">
+			>
+			["at294"] = <
+				text = <"Intra-ali post-operativna smrt">
+				description = <"*">
+			>
+			["at295"] = <
+				text = <"Mehanska ventilacija več kot 24 ur po operaciji">
+				description = <"*">
+			>
+			["at296"] = <
+				text = <"Intraoperativna aplikacija adrenalina, noradrenalina, naloksona ali flumazenila">
+				description = <"*">
+			>
+			["at297"] = <
+				text = <"Pljučnica">
+				description = <"*">
+			>
+			["at298"] = <
+				text = <"Ponovni sprejem na intenzivno enoto">
+				description = <"*">
+			>
+			["at299"] = <
+				text = <"Uporaba terbutalina">
+				description = <"*">
+			>
+			["at300"] = <
+				text = <"Trombocitopenija pod 50.000">
+				description = <"*">
+			>
+			["at301"] = <
+				text = <"Aplikacija oksitocinskih derivatov (oksitocin, metilergonovin, 15-metil-prostaglandin) v poporodni dobi">
+				description = <"*">
+			>
+			["at302"] = <
+				text = <"Uvedba splošne anestezije">
+				description = <"*">
+			>
+			["at303"] = <
+				text = <"Ponovni sprejem na enoto nujne pomoči v roku 48 ur">
+				description = <"*">
+			>
+			["at304"] = <
+				text = <"Obravnava na enoti nujne medicinske pomoči več kot 6 ur">
+				description = <"*">
+			>
+			["at305"] = <
+				text = <"Obvestilo zdravniku">
+				description = <"*">
+			>
+			["at306"] = <
+				text = <"Informacija/navodilo sestri">
+				description = <"*">
+			>
+			["at307"] = <
+				text = <"Zavrnitev izdaje zdravila">
+				description = <"*">
+			>
+			["at308"] = <
+				text = <"Odpoklic zdravila z oddelka">
+				description = <"*">
+			>
+			["at309"] = <
+				text = <"Nasvet za spremembo prehrane">
+				description = <"*">
+			>
+			["at310"] = <
+				text = <"Ukinitev prehranskega dopolnila">
+				description = <"*">
+			>
+			["at311"] = <
+				text = <"Uvedba prehranskega dopolnila">
+				description = <"*">
+			>
+			["at312"] = <
+				text = <"Zamenjano topilo za rekonstitucijo zdravila">
+				description = <"*">
+			>
+			["at313"] = <
+				text = <"Zamenjana nosilna raztopina">
+				description = <"*">
+			>
+			["at315"] = <
+				text = <"Zamenjano zdravilo">
+				description = <"*">
+			>
+			["at316"] = <
+				text = <"Povišan odmerek">
+				description = <"*">
+			>
+			["at317"] = <
+				text = <"Znižan odmerek">
+				description = <"*">
+			>
+			["at318"] = <
+				text = <"Zamenjana farmacevtska oblika">
+				description = <"*">
+			>
+			["at319"] = <
+				text = <"Spremenjen odmerni interval">
+				description = <"*">
+			>
+			["at320"] = <
+				text = <"Ukinjeno zdravilo">
+				description = <"*">
+			>
+			["at321"] = <
+				text = <"Uvedeno novo zdravilo">
+				description = <"*">
+			>
+			["at322"] = <
+				text = <"Sprememba hitrosti aplikacije">
+				description = <"*">
+			>
+			["at323"] = <
+				text = <"Sprememba poti aplikacije">
+				description = <"*">
+			>
+			["at324"] = <
+				text = <"Potrebno oživljanje">
+				description = <"*">
+			>
+			["at325"] = <
+				text = <"Hemodializa">
+				description = <"*">
+			>
+			["at326"] = <
+				text = <"Transplantacija">
+				description = <"*">
+			>
+			["at327"] = <
+				text = <"Transfuzija">
+				description = <"*">
+			>
+			["at328"] = <
+				text = <"Operacija">
+				description = <"*">
+			>
+			["at329"] = <
+				text = <"Dodatne laboratorijske preiskave">
+				description = <"*">
+			>
+			["at330"] = <
+				text = <"Fizioterapija">
+				description = <"*">
+			>
+			["at331"] = <
+				text = <"Psihoterapija">
+				description = <"*">
+			>
+			["at332"] = <
+				text = <"Drugo">
+				description = <"*">
+			>
+			["at333"] = <
+				text = <"Nepoznan">
+				description = <"*">
+			>
+			["at336"] = <
+				text = <"Intervencija preprečila, da bi zaplet dosegel pacienta">
+				description = <"*">
+			>
+			["at337"] = <
+				text = <"Intervencija popolnoma odpravila posledice, ki jih je zaplet povzročil pacientu">
+				description = <"*">
+			>
+			["at338"] = <
+				text = <"Intervencija delno odpravila posledice, ki jih je zaplet povzročil pacientu">
+				description = <"*">
+			>
+			["at339"] = <
+				text = <"Intervencija ni odpravila posledic, ki jih je zaplet povzročil pacientu">
+				description = <"*">
+			>
+			["at340"] = <
+				text = <"Intervencija ni bila možna">
+				description = <"*">
+			>
+			["at341"] = <
+				text = <"Rezultat intervencije ni poznan">
+				description = <"*">
+			>
+			["at342"] = <
+				text = <"Zmanjšanje stroškov zdravljenja">
+				description = <"*">
+			>
+			["at343"] = <
+				text = <"Skrajšan čas hospitalizacije">
+				description = <"*">
+			>
+			["at344"] = <
+				text = <"Pacient je bil odpuščen">
+				description = <"*">
+			>
+			["at345"] = <
+				text = <"Izboljšana kvaliteta življenja">
+				description = <"*">
+			>
+			["id346"] = <
+				text = <"Podrobnosti posledice">
+				description = <"*Details of reaction(en)">
+			>
+			["id347"] = <
+				text = <"Opomba">
+				description = <"*An additional comment on the Reaction details.(en)">
+			>
+			["id348"] = <
+				text = <"Dodatne podrobnosti intervencije">
+				description = <"**(en)">
+			>
+			["id349"] = <
+				text = <"Opomba">
+				description = <"**(en)">
+			>
+			["id350"] = <
+				text = <"Podrobnosti izida za pacienta">
+				description = <"*">
+			>
+			["id351"] = <
+				text = <"Opomba">
+				description = <"*">
+			>
+			["id352"] = <
+				text = <"Udeležena zdravila">
+				description = <"*Medications involved(en)">
+			>
+			["id353"] = <
+				text = <"Aplicirana zdravila">
+				description = <"*Medications administered is used to enter wrongly administered drug for Safety event type 
+*at0254	Pacient dobil drugo zdravilo od predpisanega* 	Wrong drug administered to a patient(en)">
+			>
+			["id354"] = <
+				text = <"Ponovitev stranskih učinkov">
+				description = <"**(en)">
+			>
+			["at355"] = <
+				text = <"Da">
+				description = <"*">
+			>
+			["at356"] = <
+				text = <"Ne">
+				description = <"*">
+			>
+			["at357"] = <
+				text = <"Navedba ni smiselna">
+				description = <"*">
+			>
+			["at358"] = <
+				text = <"Ni pokazatelja">
+				description = <"*">
+			>
+			["at359"] = <
+				text = <"Lastnost zdravila">
+				description = <"*">
+			>
+			["at360"] = <
+				text = <"Napaka odpravljena">
+				description = <"*">
+			>
+			["at361"] = <
+				text = <"Spremljanje">
+				description = <"*">
+			>
+			["at362"] = <
+				text = <"Laboratorijski izvid odstopa">
+				description = <"*">
+			>
+			["at363"] = <
+				text = <"Laboratorijski izvid lažno odstopa">
+				description = <"*">
+			>
+			["at364"] = <
+				text = <"Obvestilo bolniku">
+				description = <"*">
+			>
+			["at366"] = <
+				text = <"Neizvršena kontrola">
+				description = <"*">
+			>
+			["at367"] = <
+				text = <"Dodan ali zamenjan medicinski pripomoček">
+				description = <"*">
+			>
+			["ac2"] = <
+				text = <"MedDRA classification">
+				description = <"*">
+			>
+			["ac4"] = <
+				text = <"MEDRA or ATC codes">
+				description = <"*">
+			>
+			["ac7"] = <
+				text = <"ICD classification">
+				description = <"*">
+			>
+			["ac8"] = <
+				text = <" ICD classification">
+				description = <"*">
+			>
+			["ac9"] = <
+				text = <"TNM">
+				description = <"*">
+			>
+			["ac10"] = <
+				text = <"*New constraint(en)">
+				description = <"**(en)">
+			>
+			["ac11"] = <
+				text = <"Vzrok (synthesised)">
+				description = <"*The reason suspected for this event occurring.(en) (synthesised)">
+			>
+			["ac12"] = <
+				text = <"Pokazatelj zapleta (synthesised)">
+				description = <"*Triggers thought to be related to this safety event recorded using IHCI classification.(en) (synthesised)">
+			>
+			["ac13"] = <
+				text = <"Resnost (synthesised)">
+				description = <"*The severity of the reaction.(en) (synthesised)">
+			>
+			["ac14"] = <
+				text = <"Verjetnost (synthesised)">
+				description = <"*An estimate of how likely the side-effects noted are due to the safety event.(en) (synthesised)">
+			>
+			["ac15"] = <
+				text = <"Intervencija (synthesised)">
+				description = <"*The clinical intervention undertaken to resolve or ameliorate the adverse effect, uses PCNE terminology.(en) (synthesised)">
+			>
+			["ac16"] = <
+				text = <"Rezultat intervencije (synthesised)">
+				description = <"*The result(s) of any interventions undertaken, recorded using MEDRA classification subset.(en) (synthesised)">
+			>
+			["ac17"] = <
+				text = <"Ponovitev stranskih učinkov (synthesised)">
+				description = <"**(en) (synthesised)">
+			>
+			["ac18"] = <
+				text = <"Izid za pacienta (synthesised)">
+				description = <"*The overall impact actually experienced by the patient.(en) (synthesised)">
+			>
+			["ac19"] = <
+				text = <"Potencialni izid za pacienta (synthesised)">
+				description = <"*An assessment of potential impact on the patient if interventions had been unsuccesful. Uses the MERP index. other remediation had not occured.(en) (synthesised)">
+			>
+			["ac20"] = <
+				text = <"Tip vpliva (synthesised)">
+				description = <"*The caetgory of impact on the patient's life.(en) (synthesised)">
+			>
+			["ac21"] = <
+				text = <"Ustreznost terapije (synthesised)">
+				description = <"**(en) (synthesised)">
+			>
+			["ac22"] = <
+				text = <"Razlog zaključka primera (synthesised)">
+				description = <"*Reason for the case being closed.(en) (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["SafetyEventType"] = <
+			["ac10"] = <terminology:SafetyEventType>
+		>
+	>
+	value_sets = <
+		["ac22"] = <
+			id = <"ac22">
+			members = <"at267", "at268">
+		>
+		["ac11"] = <
+			id = <"ac11">
+			members = <"at68", "at69", "at70", "at72", "at73", "at74", "at75", "at76", "at77", "at78", "at79", "at80", "at81", "at359", "at82", "at83", "at84", "at85", "at86", "at87", "at366", "at88", "at89", "at90", "at91", "at92">
+		>
+		["ac12"] = <
+			id = <"ac12">
+			members = <"at271", "at272", "at273", "at274", "at275", "at276", "at277", "at278", "at279", "at280", "at281", "at282", "at283", "at284", "at285", "at286", "at287", "at288", "at289", "at290", "at291", "at292", "at293", "at294", "at295", "at296", "at297", "at298", "at299", "at300", "at301", "at302", "at303", "at304", "at362", "at363", "at333", "at358">
+		>
+		["ac13"] = <
+			id = <"ac13">
+			members = <"at224", "at225", "at226">
+		>
+		["ac14"] = <
+			id = <"ac14">
+			members = <"at224", "at225", "at226">
+		>
+		["ac15"] = <
+			id = <"ac15">
+			members = <"at305", "at306", "at307", "at308", "at309", "at310", "at311", "at312", "at313", "at367", "at315", "at316", "at317", "at318", "at319", "at320", "at321", "at322", "at323", "at324", "at325", "at326", "at327", "at328", "at329", "at330", "at331", "at360", "at361", "at364", "at332">
+		>
+		["ac16"] = <
+			id = <"ac16">
+			members = <"at336", "at337", "at338", "at339", "at340", "at341", "at342", "at343", "at344", "at345">
+		>
+		["ac17"] = <
+			id = <"ac17">
+			members = <"at355", "at356", "at357">
+		>
+		["ac18"] = <
+			id = <"ac18">
+			members = <"at54", "at55", "at56", "at57", "at58", "at59", "at60", "at61", "at62">
+		>
+		["ac19"] = <
+			id = <"ac19">
+			members = <"at54", "at55", "at56", "at57", "at58", "at59", "at60", "at61", "at62">
+		>
+		["ac20"] = <
+			id = <"ac20">
+			members = <"at64", "at65", "at66">
+		>
+		["ac21"] = <
+			id = <"ac21">
+			members = <"at246", "at247", "at248", "at249">
+		>
+	>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">ian.mcnicoll@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics, United Kingdom</original_author>
+    <original_author id="name">Dr Ian McNicoll</original_author>
+    <original_author id="date">19/08/2009</original_author>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="references">Davis N, Newland R. The reporting of colorectal cancer: The Australian clinico-pathological staging system. ANZ Journal of Surgery. 1982 ;52(4):395-397.
+
+Royal College of Pathologists. Dataset for colorectal cancer (2nd edition) [Internet]. 2007 Dec 4;[cited 2009 Jul 29 ]
+Available from: http://www.rcpath.org/index.asp?PageID=1153</other_details>
+    <other_details id="MD5-CAM-1.0.1">7B91C01ED83E6504C8AFC02B1BFDD236</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record non-TNM staging scores for colorectal cancer.</purpose>
+      <keywords>staging</keywords>
+      <keywords>cancer</keywords>
+      <keywords>tumour</keywords>
+      <keywords>histo-pathology</keywords>
+      <keywords>malignancy</keywords>
+      <use>Use in conjunction with a suite of histo-pathology related archetypes or with a Diagnosis archetype.</use>
+      <misuse />
+      <copyright>copyright (c) 2009 openEHR Foundation</copyright>
+    </details>
+  </description>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.tumour_colorectal_staging_non_tnm.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0007</code_list>
+                <code_list>at0008</code_list>
+                <code_list>at0009</code_list>
+                <code_list>at0010</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0002</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0011</code_list>
+                <code_list>at0012</code_list>
+                <code_list>at0013</code_list>
+                <code_list>at0014</code_list>
+                <code_list>at0015</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0016</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0017</code_list>
+                <code_list>at0018</code_list>
+                <code_list>at0019</code_list>
+                <code_list>at0020</code_list>
+                <code_list>at0021</code_list>
+                <code_list>at0022</code_list>
+                <code_list>at0023</code_list>
+                <code_list>at0024</code_list>
+                <code_list>at0025</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Tumour - Colorectal staging (non-TNM)</items>
+        <items id="description">Non-TNM staging scores for colorectal cancer.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Dukes Score</items>
+        <items id="description">Dukes classification for colorectal cancer (Dukes and Bussey modification)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">ACPS Score</items>
+        <items id="description">Australian clinicopathological staging (ACPS) system.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Dukes A</items>
+        <items id="description">Tumour limited to the wall of the bowel, lymph nodes negative.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Dukes B</items>
+        <items id="description">Tumour spread beyond muscularis propria, lymph nodes negative.</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Dukes C1</items>
+        <items id="description">Lymph nodes positive but highest node spared.</items>
+      </items>
+      <items code="at0010">
+        <items id="text">Dukes C2</items>
+        <items id="description">Highest lymph node involved.</items>
+      </items>
+      <items code="at0011">
+        <items id="text">Stage A0</items>
+        <items id="description">Mucosa involved.</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Stage A</items>
+        <items id="description">Submucosa involved.</items>
+      </items>
+      <items code="at0013">
+        <items id="text">Stage B</items>
+        <items id="description">Muscularis propria involved.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Stage C</items>
+        <items id="description">Local nodes involved.</items>
+      </items>
+      <items code="at0015">
+        <items id="text">Stage D</items>
+        <items id="description">Tumour transected (histological).</items>
+      </items>
+      <items code="at0016">
+        <items id="text">ACPS Concord variant</items>
+        <items id="description">Concord substage variant of Australian clinicopathological staging (ACPS) system.</items>
+      </items>
+      <items code="at0017">
+        <items id="text">Stage A1</items>
+        <items id="description">Mucosa involved.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Stage A2</items>
+        <items id="description">Submucosa involved.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Stage A3</items>
+        <items id="description">Muscularis propria involved</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Stage B1</items>
+        <items id="description">Involvement beyond muscularis propria.</items>
+      </items>
+      <items code="at0021">
+        <items id="text">Stage B2</items>
+        <items id="description">Involvement of free serosal surface.</items>
+      </items>
+      <items code="at0022">
+        <items id="text">Stage C1</items>
+        <items id="description">Local nodes involved</items>
+      </items>
+      <items code="at0023">
+        <items id="text">Stage C2</items>
+        <items id="description">Apical nodes involved.</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Stage D1</items>
+        <items id="description">Tumour transected (histological)</items>
+      </items>
+      <items code="at0025">
+        <items id="text">Stage D2</items>
+        <items id="description">Distant metastases (clinical or histological).</items>
+      </items>
+    </term_definitions>
+  </ontology>
+</archetype>
+

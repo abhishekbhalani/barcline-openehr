@@ -1,0 +1,1151 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-ACTION.procedure-revision_hip_arthroplasty_res.v1.0.0
+
+specialize
+	openEHR-EHR-ACTION.procedure.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"Uroš Rajkovič, Biljana Prinčič">
+				["organisation"] = <"Slovenia">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Art Latyp; Латыпов Артур">
+				["organisation"] = <"RusBITech; РусБИТех, Москва">
+			>
+			accreditation = <"hmm">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Thiago F. F. Dias">
+				["organisation"] = <"FMRP-USP">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-03">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Para registrar os detalhes sobre um procedimento realizado.">
+			use = <"Usado para registrar informações detalhadas sobre o procedimento realizado em um indivíduo.
+Informações sobre atividades relacionadas ao procedimento, como a anestesia ou a administração de medicamentos, devem ser registrados em arquétipos de ACTION separados.">
+			keywords = <"procedimento", ...>
+			misuse = <"">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Za beleženje podrobnosti o izvedeni aktivnosti">
+			use = <"Za beleženje podrobnosto o izvedeni aktivnosti, ki zadeva posameznega pacienta/subjekt">
+			keywords = <"aktivnosti", "postopek">
+			misuse = <"Podrobnosti o aktivnostih povezani z opisano kativnostjo, kot npr. dajanje zdravil, se zabeleži v arhetipih tipa ACTION">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Details of a revision hip arthroplasty aligned with Slovenian RES registry.">
+			use = <"Use to record detailed information about the procedure that has been carried out on an individual. 
+Information about activities related to the procedure, such as anaesthesia or administration of medications, should be recorded in separate ACTION archetypes.">
+			keywords = <"procedure", ...>
+			misuse = <"">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول إجراء طبي تم بالفعل إجراؤه">
+			use = <"لتسجيل معلومات تفصيلية حول إجراء طبي تم تنفيذه على شخص ما. و ينبغي تسجيل المعلومات حول النشاطات المتعلقة بالنشاطات المتعلقة بالإجراء الطبي, مثل التخدير أو إعطاء الأدوية في نماذج (فعل) منفردة.">
+			keywords = <"الإجراء الطبي", ...>
+			misuse = <"">
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для записи сведений об проведенной процедуре">
+			use = <"Используется для записи подробной информации о процедуре, выполненной пациенту.
+Информация о действиях, связанных с выполнением процедуры, таких как анестезия или применение лекарств, долдно быть записано в отдельных архетипах типа ДЕЙСТВИЕ">
+			keywords = <"процедура, выполнение", ...>
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2BD7B82FC817667FAF7DAB8F4A517FAA">
+	>
+
+definition
+	ACTION[id1.1] matches {	-- Revision hip arthroplasty
+		/ism_transition matches {
+			after [id44]
+			ISM_TRANSITION[id45] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.1] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.2] matches {
+						defining_code matches {[at45]}
+					}
+				}
+			}
+			ISM_TRANSITION[id46] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.3] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.4] matches {
+						defining_code matches {[at46]}
+					}
+				}
+			}
+			ISM_TRANSITION[id47] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.5] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.6] matches {
+						defining_code matches {[at47]}
+					}
+				}
+			}
+		}
+		/description[id2]/items[id3.1]/value matches {
+			DV_CODED_TEXT[id85.1] matches {
+				defining_code matches {[ac0.1]}		-- Revison procedure (synthesised)
+			}
+			DV_TEXT[id85] 
+		}
+		/description[id2]/items[id15.1]/value matches {
+			DV_CODED_TEXT[id95.1] matches {
+				defining_code matches {[ac0.2]}		-- Reason/s for procedure (synthesised)
+			}
+			DV_TEXT[id95] 
+		}
+		/description[id2]/items matches {
+			ELEMENT[id52.1] occurrences matches {0..1} matches {	-- Prosthesis fixation
+				value matches {
+					DV_CODED_TEXT[id0.7] matches {
+						defining_code 
+					}
+				}
+			}
+			before [id50]
+			ELEMENT[id52.2] occurrences matches {0..1} matches {	-- Approach
+				value matches {
+					DV_CODED_TEXT[id0.8] matches {
+						defining_code matches {[ac0.3]}		-- Approach (synthesised)
+					}
+				}
+			}
+			after [id4]
+			allow_archetype CLUSTER[id51] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+			before [id49]
+			CLUSTER[id31] occurrences matches {0..1} matches {
+				items matches {
+					ELEMENT[id53] occurrences matches {0..1} matches {
+						value matches {
+							DV_TEXT[id0.9] 
+						}
+					}
+					ELEMENT[id32] matches {
+						value matches {
+							DV_TEXT[id0.10] 
+						}
+					}
+					ELEMENT[id33] matches {
+						value matches {
+							DV_EHR_URI[id0.11] 
+						}
+					}
+				}
+			}
+			after [id49]
+			ELEMENT[id5] occurrences matches {0..1} matches {
+				value matches {
+					DV_BOOLEAN[id0.12] matches {
+						value matches {True}
+					}
+				}
+			}
+			ELEMENT[id19] occurrences matches {0..1} 
+			before [id7]
+			ELEMENT[id16] matches {
+				value matches {
+					DV_TEXT[id0.13] 
+				}
+			}
+			after [id6]
+			ELEMENT[id14] matches {
+				value matches {
+					DV_MULTIMEDIA[id0.15] matches {
+						media_type 
+					}
+				}
+			}
+		}
+		/description[id2]/items[id59]/value matches {
+			DV_BOOLEAN[id0.14] matches {
+				value matches {True, False}
+			}
+		}
+		/protocol[id54]/items matches {
+			allow_archetype CLUSTER[id58] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["at0.100"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.101"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.102"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.103"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.108"] = <
+				text = <"*Replacement of femoral neck(en)">
+				description = <"*Femoral neck revised.(en)">
+			>
+			["at0.109"] = <
+				text = <"*Osteotomy of femur(en)">
+				description = <"*Osteotomy of femur.(en)">
+			>
+			["at0.110"] = <
+				text = <"*Osteotomy of acetabulum(en)">
+				description = <"*Osteotomy of acetabulum.(en)">
+			>
+			["at0.111"] = <
+				text = <"*Athrodesis(en)">
+				description = <"*Athrodesis.(en)">
+			>
+			["at0.112"] = <
+				text = <"*Extended anterior approach(en)">
+				description = <"*Extended anterior approach.(en)">
+			>
+			["at0.113"] = <
+				text = <"*Osteolysis both parts(en)">
+				description = <"*Osteolysis both parts.(en)">
+			>
+			["at0.114"] = <
+				text = <"*Replacement of acetabular ring(en)">
+				description = <"*Replacement of acetabular ring.(en)">
+			>
+			["at0.115"] = <
+				text = <"*Replacement of neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["at0.59"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Replacement of acetabular component(en)">
+				description = <"*Replacement of acetabular component.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of femoral component(en)">
+				description = <"*Replacement of femoral component.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of head(en)">
+				description = <"*Replacement of head.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Totalisation of bipolar/partial Implant(en)">
+				description = <"*Totalisation of bipolar/partial Implant.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Osteosynthesis after fracture(en)">
+				description = <"*Osteosynthesis after fracture.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone) procedure.(en)">
+			>
+			["at0.67"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone procedure.(en)">
+			>
+			["at0.82"] = <
+				text = <"*Loosening acetabular component(en)">
+				description = <"*Loosening acetabular component.(en)">
+			>
+			["at0.83"] = <
+				text = <"*Loosening femoral component(en)">
+				description = <"*Loosening femoral component.(en)">
+			>
+			["at0.84"] = <
+				text = <"*Loosening of both components(en)">
+				description = <"*Loosening of both components.(en)">
+			>
+			["at0.85"] = <
+				text = <"*Luxation(en)">
+				description = <"*ICD: M24.3 M24.4(en)">
+			>
+			["at0.86"] = <
+				text = <"*Early infection (less than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.87"] = <
+				text = <"*Chronic infection (more than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.88"] = <
+				text = <"*Periprosthetic fracture of acetabulum(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.89"] = <
+				text = <"*Periprosthetic fracture of femur(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.90"] = <
+				text = <"*Osteolysis of acetabulum(en)">
+				description = <"*Osteolysis of acetabulum.(en)">
+			>
+			["at0.91"] = <
+				text = <"*Osteolysis of femur(en)">
+				description = <"*Osteolysis of femur.(en)">
+			>
+			["at0.93"] = <
+				text = <"*Implant broken(en)">
+				description = <"*Implant broken.(en)">
+			>
+			["at0.94"] = <
+				text = <"*Wear of Inlay(en)">
+				description = <"*Wear of Inlay.(en)">
+			>
+			["at0.95"] = <
+				text = <"*Paraarticular ossification(en)">
+				description = <"*Paraarticular ossification.(en)">
+			>
+			["at0.96"] = <
+				text = <"*Condition after Girdlestone(en)">
+				description = <"*Condition after Girdlestone.(en)">
+			>
+			["at0.97"] = <
+				text = <"*Pain(en)">
+				description = <"*Pain.(en)">
+			>
+			["at0.99"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty(en)">
+				description = <"*Details of a revision hip arthroplasty aligned with Slovenian RES registry.(en)">
+			>
+			["id3.1"] = <
+				text = <"*! - Procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*! - Reason/s for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*! - Procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*! - Reason/s for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["sl"] = <
+			["at0.100"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.101"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.102"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.103"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.108"] = <
+				text = <"*Replacement of femoral neck(en)">
+				description = <"*Femoral neck revised.(en)">
+			>
+			["at0.109"] = <
+				text = <"*Osteotomy of femur(en)">
+				description = <"*Osteotomy of femur.(en)">
+			>
+			["at0.110"] = <
+				text = <"*Osteotomy of acetabulum(en)">
+				description = <"*Osteotomy of acetabulum.(en)">
+			>
+			["at0.111"] = <
+				text = <"*Athrodesis(en)">
+				description = <"*Athrodesis.(en)">
+			>
+			["at0.112"] = <
+				text = <"*Extended anterior approach(en)">
+				description = <"*Extended anterior approach.(en)">
+			>
+			["at0.113"] = <
+				text = <"*Osteolysis both parts(en)">
+				description = <"*Osteolysis both parts.(en)">
+			>
+			["at0.114"] = <
+				text = <"*Replacement of acetabular ring(en)">
+				description = <"*Replacement of acetabular ring.(en)">
+			>
+			["at0.115"] = <
+				text = <"*Replacement of neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["at0.59"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Replacement of acetabular component(en)">
+				description = <"*Replacement of acetabular component.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of femoral component(en)">
+				description = <"*Replacement of femoral component.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of head(en)">
+				description = <"*Replacement of head.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Totalisation of bipolar/partial Implant(en)">
+				description = <"*Totalisation of bipolar/partial Implant.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Osteosynthesis after fracture(en)">
+				description = <"*Osteosynthesis after fracture.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone) procedure.(en)">
+			>
+			["at0.67"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone procedure.(en)">
+			>
+			["at0.82"] = <
+				text = <"*Loosening acetabular component(en)">
+				description = <"*Loosening acetabular component.(en)">
+			>
+			["at0.83"] = <
+				text = <"*Loosening femoral component(en)">
+				description = <"*Loosening femoral component.(en)">
+			>
+			["at0.84"] = <
+				text = <"*Loosening of both components(en)">
+				description = <"*Loosening of both components.(en)">
+			>
+			["at0.85"] = <
+				text = <"*Luxation(en)">
+				description = <"*ICD: M24.3 M24.4(en)">
+			>
+			["at0.86"] = <
+				text = <"*Early infection (less than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.87"] = <
+				text = <"*Chronic infection (more than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.88"] = <
+				text = <"*Periprosthetic fracture of acetabulum(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.89"] = <
+				text = <"*Periprosthetic fracture of femur(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.90"] = <
+				text = <"*Osteolysis of acetabulum(en)">
+				description = <"*Osteolysis of acetabulum.(en)">
+			>
+			["at0.91"] = <
+				text = <"*Osteolysis of femur(en)">
+				description = <"*Osteolysis of femur.(en)">
+			>
+			["at0.93"] = <
+				text = <"*Implant broken(en)">
+				description = <"*Implant broken.(en)">
+			>
+			["at0.94"] = <
+				text = <"*Wear of Inlay(en)">
+				description = <"*Wear of Inlay.(en)">
+			>
+			["at0.95"] = <
+				text = <"*Paraarticular ossification(en)">
+				description = <"*Paraarticular ossification.(en)">
+			>
+			["at0.96"] = <
+				text = <"*Condition after Girdlestone(en)">
+				description = <"*Condition after Girdlestone.(en)">
+			>
+			["at0.97"] = <
+				text = <"*Pain(en)">
+				description = <"*Pain.(en)">
+			>
+			["at0.99"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty(en)">
+				description = <"*Details of a revision hip arthroplasty aligned with Slovenian RES registry.(en)">
+			>
+			["id3.1"] = <
+				text = <"*! - Procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*! - Reason/s for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*! - Procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*! - Reason/s for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["en"] = <
+			["at0.100"] = <
+				text = <"Anterolateral">
+				description = <"Anterolateral.">
+			>
+			["at0.101"] = <
+				text = <"Direct lateral">
+				description = <"Direct lateral.">
+			>
+			["at0.102"] = <
+				text = <"Posterolateral">
+				description = <"Posterolateral.">
+			>
+			["at0.103"] = <
+				text = <"Minimally Invasive">
+				description = <"Minimally Invasive.">
+			>
+			["at0.108"] = <
+				text = <"Replacement of femoral neck">
+				description = <"Femoral neck revised.">
+			>
+			["at0.109"] = <
+				text = <"Osteotomy of femur">
+				description = <"Osteotomy of femur.">
+			>
+			["at0.110"] = <
+				text = <"Osteotomy of acetabulum">
+				description = <"Osteotomy of acetabulum.">
+			>
+			["at0.111"] = <
+				text = <"Athrodesis">
+				description = <"Athrodesis.">
+			>
+			["at0.112"] = <
+				text = <"Extended anterior approach">
+				description = <"Extended anterior approach.">
+			>
+			["at0.113"] = <
+				text = <"Osteolysis both parts">
+				description = <"Osteolysis both parts.">
+			>
+			["at0.114"] = <
+				text = <"Replacement of acetabular ring">
+				description = <"Replacement of acetabular ring.">
+			>
+			["at0.115"] = <
+				text = <"Replacement of neck">
+				description = <"Replacement of neck.">
+			>
+			["at0.59"] = <
+				text = <"Replacement of whole system">
+				description = <"Replacement of whole system.">
+			>
+			["at0.60"] = <
+				text = <"Replacement of acetabular component">
+				description = <"Replacement of acetabular component.">
+			>
+			["at0.61"] = <
+				text = <"Replacement of femoral component">
+				description = <"Replacement of femoral component.">
+			>
+			["at0.62"] = <
+				text = <"Replacement of head">
+				description = <"Replacement of head.">
+			>
+			["at0.63"] = <
+				text = <"Replacement of Inlay">
+				description = <"Replacement of Inlay.">
+			>
+			["at0.64"] = <
+				text = <"Totalisation of bipolar/partial Implant">
+				description = <"Totalisation of bipolar/partial Implant.">
+			>
+			["at0.65"] = <
+				text = <"Osteosynthesis after fracture">
+				description = <"Osteosynthesis after fracture.">
+			>
+			["at0.66"] = <
+				text = <"Prosthesis removal (Girdlestone)">
+				description = <"Prosthesis removal (Girdlestone) procedure.">
+			>
+			["at0.67"] = <
+				text = <"Re-implantation after Girdlestone">
+				description = <"Re-implantation after Girdlestone procedure.">
+			>
+			["at0.82"] = <
+				text = <"Loosening acetabular component">
+				description = <"Loosening acetabular component.">
+			>
+			["at0.83"] = <
+				text = <"Loosening femoral component">
+				description = <"Loosening femoral component.">
+			>
+			["at0.84"] = <
+				text = <"Loosening of both components">
+				description = <"Loosening of both components.">
+			>
+			["at0.85"] = <
+				text = <"Luxation">
+				description = <"ICD: M24.3 M24.4">
+			>
+			["at0.86"] = <
+				text = <"Early infection (less than 3 months after primary)">
+				description = <"ICD: T84.7 T84.7">
+			>
+			["at0.87"] = <
+				text = <"Chronic infection (more than 3 months after primary)">
+				description = <"ICD: T84.7 T84.7">
+			>
+			["at0.88"] = <
+				text = <"Periprosthetic fracture of acetabulum">
+				description = <"ICD: M96.6">
+			>
+			["at0.89"] = <
+				text = <"Periprosthetic fracture of femur">
+				description = <"ICD: M96.6">
+			>
+			["at0.90"] = <
+				text = <"Osteolysis of acetabulum">
+				description = <"Osteolysis of acetabulum.">
+			>
+			["at0.91"] = <
+				text = <"Osteolysis of femur">
+				description = <"Osteolysis of femur.">
+			>
+			["at0.93"] = <
+				text = <"Implant broken">
+				description = <"Implant broken.">
+			>
+			["at0.94"] = <
+				text = <"Wear of Inlay">
+				description = <"Wear of Inlay.">
+			>
+			["at0.95"] = <
+				text = <"Paraarticular ossification">
+				description = <"Paraarticular ossification.">
+			>
+			["at0.96"] = <
+				text = <"Condition after Girdlestone">
+				description = <"Condition after Girdlestone.">
+			>
+			["at0.97"] = <
+				text = <"Pain">
+				description = <"Pain.">
+			>
+			["at0.99"] = <
+				text = <"Anterior">
+				description = <"Anterior.">
+			>
+			["id1.1"] = <
+				text = <"Revision hip arthroplasty">
+				description = <"Details of a revision hip arthroplasty aligned with Slovenian RES registry.">
+			>
+			["id3.1"] = <
+				text = <"Revison procedure">
+				description = <"The name of the procedure.">
+			>
+			["id15.1"] = <
+				text = <"Reason/s for procedure">
+				description = <"The reason or indication for the procedure.">
+			>
+			["id52.1"] = <
+				text = <"Prosthesis fixation">
+				description = <"Identification of specific method or technique used for procedure.">
+			>
+			["id52.2"] = <
+				text = <"Approach">
+				description = <"Identification of specific method or technique used for procedure.">
+			>
+			["ac0.1"] = <
+				text = <"Revison procedure (synthesised)">
+				description = <"The name of the procedure. (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"Reason/s for procedure (synthesised)">
+				description = <"The reason or indication for the procedure. (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"Approach (synthesised)">
+				description = <"Identification of specific method or technique used for procedure. (synthesised)">
+			>
+		>
+		["pt-br"] = <
+			["at0.100"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.101"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.102"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.103"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.108"] = <
+				text = <"*Replacement of femoral neck(en)">
+				description = <"*Femoral neck revised.(en)">
+			>
+			["at0.109"] = <
+				text = <"*Osteotomy of femur(en)">
+				description = <"*Osteotomy of femur.(en)">
+			>
+			["at0.110"] = <
+				text = <"*Osteotomy of acetabulum(en)">
+				description = <"*Osteotomy of acetabulum.(en)">
+			>
+			["at0.111"] = <
+				text = <"*Athrodesis(en)">
+				description = <"*Athrodesis.(en)">
+			>
+			["at0.112"] = <
+				text = <"*Extended anterior approach(en)">
+				description = <"*Extended anterior approach.(en)">
+			>
+			["at0.113"] = <
+				text = <"*Osteolysis both parts(en)">
+				description = <"*Osteolysis both parts.(en)">
+			>
+			["at0.114"] = <
+				text = <"*Replacement of acetabular ring(en)">
+				description = <"*Replacement of acetabular ring.(en)">
+			>
+			["at0.115"] = <
+				text = <"*Replacement of neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["at0.59"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Replacement of acetabular component(en)">
+				description = <"*Replacement of acetabular component.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of femoral component(en)">
+				description = <"*Replacement of femoral component.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of head(en)">
+				description = <"*Replacement of head.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Totalisation of bipolar/partial Implant(en)">
+				description = <"*Totalisation of bipolar/partial Implant.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Osteosynthesis after fracture(en)">
+				description = <"*Osteosynthesis after fracture.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone) procedure.(en)">
+			>
+			["at0.67"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone procedure.(en)">
+			>
+			["at0.82"] = <
+				text = <"*Loosening acetabular component(en)">
+				description = <"*Loosening acetabular component.(en)">
+			>
+			["at0.83"] = <
+				text = <"*Loosening femoral component(en)">
+				description = <"*Loosening femoral component.(en)">
+			>
+			["at0.84"] = <
+				text = <"*Loosening of both components(en)">
+				description = <"*Loosening of both components.(en)">
+			>
+			["at0.85"] = <
+				text = <"*Luxation(en)">
+				description = <"*ICD: M24.3 M24.4(en)">
+			>
+			["at0.86"] = <
+				text = <"*Early infection (less than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.87"] = <
+				text = <"*Chronic infection (more than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.88"] = <
+				text = <"*Periprosthetic fracture of acetabulum(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.89"] = <
+				text = <"*Periprosthetic fracture of femur(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.90"] = <
+				text = <"*Osteolysis of acetabulum(en)">
+				description = <"*Osteolysis of acetabulum.(en)">
+			>
+			["at0.91"] = <
+				text = <"*Osteolysis of femur(en)">
+				description = <"*Osteolysis of femur.(en)">
+			>
+			["at0.93"] = <
+				text = <"*Implant broken(en)">
+				description = <"*Implant broken.(en)">
+			>
+			["at0.94"] = <
+				text = <"*Wear of Inlay(en)">
+				description = <"*Wear of Inlay.(en)">
+			>
+			["at0.95"] = <
+				text = <"*Paraarticular ossification(en)">
+				description = <"*Paraarticular ossification.(en)">
+			>
+			["at0.96"] = <
+				text = <"*Condition after Girdlestone(en)">
+				description = <"*Condition after Girdlestone.(en)">
+			>
+			["at0.97"] = <
+				text = <"*Pain(en)">
+				description = <"*Pain.(en)">
+			>
+			["at0.99"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty(en)">
+				description = <"*Details of a revision hip arthroplasty aligned with Slovenian RES registry.(en)">
+			>
+			["id3.1"] = <
+				text = <"*! - Procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*! - Reason/s for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*! - Procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*! - Reason/s for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["ru"] = <
+			["at0.100"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.101"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.102"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.103"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.108"] = <
+				text = <"*Replacement of femoral neck(en)">
+				description = <"*Femoral neck revised.(en)">
+			>
+			["at0.109"] = <
+				text = <"*Osteotomy of femur(en)">
+				description = <"*Osteotomy of femur.(en)">
+			>
+			["at0.110"] = <
+				text = <"*Osteotomy of acetabulum(en)">
+				description = <"*Osteotomy of acetabulum.(en)">
+			>
+			["at0.111"] = <
+				text = <"*Athrodesis(en)">
+				description = <"*Athrodesis.(en)">
+			>
+			["at0.112"] = <
+				text = <"*Extended anterior approach(en)">
+				description = <"*Extended anterior approach.(en)">
+			>
+			["at0.113"] = <
+				text = <"*Osteolysis both parts(en)">
+				description = <"*Osteolysis both parts.(en)">
+			>
+			["at0.114"] = <
+				text = <"*Replacement of acetabular ring(en)">
+				description = <"*Replacement of acetabular ring.(en)">
+			>
+			["at0.115"] = <
+				text = <"*Replacement of neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["at0.59"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Replacement of acetabular component(en)">
+				description = <"*Replacement of acetabular component.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of femoral component(en)">
+				description = <"*Replacement of femoral component.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of head(en)">
+				description = <"*Replacement of head.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Totalisation of bipolar/partial Implant(en)">
+				description = <"*Totalisation of bipolar/partial Implant.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Osteosynthesis after fracture(en)">
+				description = <"*Osteosynthesis after fracture.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone) procedure.(en)">
+			>
+			["at0.67"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone procedure.(en)">
+			>
+			["at0.82"] = <
+				text = <"*Loosening acetabular component(en)">
+				description = <"*Loosening acetabular component.(en)">
+			>
+			["at0.83"] = <
+				text = <"*Loosening femoral component(en)">
+				description = <"*Loosening femoral component.(en)">
+			>
+			["at0.84"] = <
+				text = <"*Loosening of both components(en)">
+				description = <"*Loosening of both components.(en)">
+			>
+			["at0.85"] = <
+				text = <"*Luxation(en)">
+				description = <"*ICD: M24.3 M24.4(en)">
+			>
+			["at0.86"] = <
+				text = <"*Early infection (less than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.87"] = <
+				text = <"*Chronic infection (more than 3 months after primary)(en)">
+				description = <"*ICD: T84.7 T84.7(en)">
+			>
+			["at0.88"] = <
+				text = <"*Periprosthetic fracture of acetabulum(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.89"] = <
+				text = <"*Periprosthetic fracture of femur(en)">
+				description = <"*ICD: M96.6(en)">
+			>
+			["at0.90"] = <
+				text = <"*Osteolysis of acetabulum(en)">
+				description = <"*Osteolysis of acetabulum.(en)">
+			>
+			["at0.91"] = <
+				text = <"*Osteolysis of femur(en)">
+				description = <"*Osteolysis of femur.(en)">
+			>
+			["at0.93"] = <
+				text = <"*Implant broken(en)">
+				description = <"*Implant broken.(en)">
+			>
+			["at0.94"] = <
+				text = <"*Wear of Inlay(en)">
+				description = <"*Wear of Inlay.(en)">
+			>
+			["at0.95"] = <
+				text = <"*Paraarticular ossification(en)">
+				description = <"*Paraarticular ossification.(en)">
+			>
+			["at0.96"] = <
+				text = <"*Condition after Girdlestone(en)">
+				description = <"*Condition after Girdlestone.(en)">
+			>
+			["at0.97"] = <
+				text = <"*Pain(en)">
+				description = <"*Pain.(en)">
+			>
+			["at0.99"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty(en)">
+				description = <"*Details of a revision hip arthroplasty aligned with Slovenian RES registry.(en)">
+			>
+			["id3.1"] = <
+				text = <"*! - Procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*! - Reason/s for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*! - Procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*! - Reason/s for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac0.1"] = <
+			id = <"ac0.1">
+			members = <"at0.59", "at0.60", "at0.114", "at0.61", "at0.108", "at0.62", "at0.63", "at0.115", "at0.64", "at0.66", "at0.67", "at0.65", "at0.109", "at0.110", "at0.111">
+		>
+		["ac0.2"] = <
+			id = <"ac0.2">
+			members = <"at0.82", "at0.83", "at0.84", "at0.85", "at0.86", "at0.87", "at0.89", "at0.88", "at0.97", "at0.93", "at0.90", "at0.91", "at0.113", "at0.95", "at0.94", "at0.96">
+		>
+		["ac0.3"] = <
+			id = <"ac0.3">
+			members = <"at0.99", "at0.100", "at0.101", "at0.102", "at0.103", "at0.112">
+		>
+	>

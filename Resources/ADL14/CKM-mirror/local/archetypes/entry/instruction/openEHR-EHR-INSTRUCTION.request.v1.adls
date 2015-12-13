@@ -1,0 +1,631 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-INSTRUCTION.request.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Lars Bitsch-Larsen">
+				["organisation"] = <"Haukeland University Hospital of Bergen, Norway">
+				["email"] = <"lbla@helse-bergen.no">
+			>
+			accreditation = <"MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Alan March">
+				["organisation"] = <"Hospital Universitario Austral, Buenos Aires, Argentina">
+				["email"] = <"amarch@cas.austral.edu.ar">
+			>
+			accreditation = <"MD">
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-08">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"*To record a request for any or all healthcare services.(en)">
+			use = <"*To record a request for any or all healthcare services. 
+
+Commonly used requests may be specialised and based on this archetype. (en)">
+			keywords = <"الطلب", "يُحيل", "الأمر", "الخدمة", "المُزَوِّد">
+			misuse = <"*Not to be used for requests for which an explicit specialisation exists - for example:
+- Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
+- Imaging examination request - use the INSTRUCTION.request-imaging_exam archetype;
+- Procedure request - use the INSTRUCTION.request-procedure archetype; and 
+- Referral request - use the INSTRUCTION.request-referral archetype.(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a request for any or all healthcare services.">
+			use = <"To record a request for any or all healthcare services. 
+
+Commonly used requests may be specialised and based on this archetype.">
+			keywords = <"request", "refer", "order", "service">
+			misuse = <"Not to be used for requests for which an explicit specialisation exists - for example:
+- Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
+- Imaging examination request - use the INSTRUCTION.request-imaging_exam archetype;
+- Procedure request - use the INSTRUCTION.request-procedure archetype; and 
+- Referral request - use the INSTRUCTION.request-referral archetype.">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"*To record a request for any or all healthcare services.(en)">
+			use = <"*To record a request for any or all healthcare services. 
+
+Commonly used requests may be specialised and based on this archetype.(en)">
+			keywords = <"solicitud", "derivar", "referir", "orden", "servicio", "proveer">
+			misuse = <"*Not to be used for requests for which an explicit specialisation exists - for example:
+- Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
+- Imaging examination request - use the INSTRUCTION.request-imaging_exam archetype;
+- Procedure request - use the INSTRUCTION.request-procedure archetype; and 
+- Referral request - use the INSTRUCTION.request-referral archetype.(en)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"*To record a request for any or all healthcare services.(en)">
+			use = <"*To record a request for any or all healthcare services. 
+
+Commonly used requests may be specialised and based on this archetype.(en)">
+			keywords = <"rekvisisjon", "henvisning", "ordre", "service", "forsyne", "bestilling">
+			misuse = <"*Not to be used for requests for which an explicit specialisation exists - for example:
+- Laboratory test request - use the INSTRUCTION.request-laboratory_test archetype;
+- Imaging examination request - use the INSTRUCTION.request-imaging_exam archetype;
+- Procedure request - use the INSTRUCTION.request-procedure archetype; and 
+- Referral request - use the INSTRUCTION.request-referral archetype.(en)">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"0933A2B5D75AC3B356E62F2013700513">
+	>
+
+definition
+	INSTRUCTION[id1] matches {	-- Healthcare service request
+		activities matches {
+			ACTIVITY[id2] occurrences matches {1..*} matches {	-- Request
+				description matches {
+					ITEM_TREE[id10] matches {
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[id122] matches {	-- Service name
+								value matches {
+									DV_TEXT[id146] 
+								}
+							}
+							ELEMENT[id136] occurrences matches {0..1} matches {	-- Description
+								value matches {
+									DV_TEXT[id147] 
+								}
+							}
+							allow_archetype CLUSTER[id133] matches {	-- Specific details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.catheter(-a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-a-zA-Z0-9_]+)*\.v1/}
+							}
+							ELEMENT[id63] occurrences matches {0..1} matches {	-- Reason for request
+								value matches {
+									DV_TEXT[id148] 
+								}
+							}
+							ELEMENT[id65] occurrences matches {0..1} matches {	-- Reason description
+								value matches {
+									DV_TEXT[id149] 
+								}
+							}
+							ELEMENT[id66] occurrences matches {0..1} matches {	-- Intent
+								value matches {
+									DV_TEXT[id150] 
+								}
+							}
+							ELEMENT[id69] occurrences matches {0..1} matches {	-- Urgency
+								value matches {
+									DV_CODED_TEXT[id151] matches {
+										defining_code matches {[ac1]}		-- Urgency (synthesised)
+									}
+								}
+							}
+							ELEMENT[id41] occurrences matches {0..1} matches {	-- Date/time service due
+								value matches {
+									DV_DATE_TIME[id152] 
+								}
+							}
+							ELEMENT[id145] occurrences matches {0..1} matches {	-- Latest date service required
+								value matches {
+									DV_DATE_TIME[id153] 
+								}
+							}
+							ELEMENT[id77] occurrences matches {0..1} matches {	-- Supplementary information to follow
+								value matches {
+									DV_BOOLEAN[id154] matches {
+										value matches {True}
+									}
+								}
+							}
+							ELEMENT[id79] occurrences matches {0..1} matches {	-- Supplementary information expected
+								value matches {
+									DV_TEXT[id155] 
+								}
+							}
+							allow_archetype CLUSTER[id117] matches {	-- Patient requirements
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id9] matches {
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[id11] occurrences matches {0..1} matches {	-- Requestor Identifier
+						value matches {
+							DV_TEXT[id156] 
+						}
+					}
+					allow_archetype CLUSTER[id142] matches {	-- Requestor
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[id12] occurrences matches {0..1} matches {	-- Receiver identifier
+						value matches {
+							DV_TEXT[id157] 
+						}
+					}
+					allow_archetype CLUSTER[id143] matches {	-- Receiver
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[id128] occurrences matches {0..1} matches {	-- Request status
+						value matches {
+							DV_TEXT[id158] 
+						}
+					}
+					allow_archetype CLUSTER[id129] matches {	-- Distribution list for response
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution\.v1/}
+					}
+					allow_archetype CLUSTER[id113] matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["id1"] = <
+				text = <"طلب الخدمة الطبية">
+				description = <"*Request for a healthcare service to be supplied by another healthcare provider or support agency.(en)">
+			>
+			["id2"] = <
+				text = <"الطلب">
+				description = <"النشاط الحالي">
+			>
+			["id11"] = <
+				text = <"العنصر التعريفي الخاص بطالب الخدمة">
+				description = <"العنصر التعريفي المحلي الذي تم تعيينه للأمر بواسطة مُزَوِّد الخدمة الصحية أو المؤسسة الصحية التي قامت بطلب الخدمة. و يتم الإشارة إليه أيضا بأنه العنصر التعريفي لمن قام بالأمر.">
+			>
+			["id12"] = <
+				text = <"العتصر التعريفي الخاص بمُستقبِل الطلب">
+				description = <"العنصر التعريفي الذي تم تعيينه للأمر بواسطة مُزَوِّد الخدمة الصحية أو المؤسسة الصحية التي تستقبل الأمر لإجراء الخدمة. و يتم الإشارة إليه أيضا بالعنصر التعريفي لمُنَفِّذ الأمر.">
+			>
+			["id41"] = <
+				text = <"*Date/time service due(en)">
+				description = <"*The date and/or time when the service is due.(en)">
+			>
+			["id63"] = <
+				text = <"سبب الطلب">
+				description = <"*Phrase or code providing the reason or indication for the request.(en)">
+			>
+			["id65"] = <
+				text = <"وصف السبب">
+				description = <"*Narrative description about the reason or indication for request.(en)">
+			>
+			["id66"] = <
+				text = <"القصد">
+				description = <"القصد الذي تم تبيينه عن الطلب الذي تم بواسطة من قام بإحالة المريض.">
+			>
+			["id69"] = <
+				text = <"الإلحاح">
+				description = <"إلحاح الطلب">
+			>
+			["id77"] = <
+				text = <"معلومات تكميلية ينبغي اتباعها">
+				description = <"إذا كانت هذه المعلومة صحيحة فذلك يشير إلى أنه تم التعرف على معلومات إضافية و سيتم إحالتها حينما تكون متاحة, مثلا: نتائج غير مكتملة لاختبار خاص بالباثولوجيا/المَرَضية.">
+			>
+			["id79"] = <
+				text = <"المعلومات التكميلية المُتَوَقَّعة">
+				description = <"تفاصيل حول طبيعة المعلومات التكميلية التي ينبغي اتباعها, مثل اسم الاختبارات المعملية.">
+			>
+			["id113"] = <
+				text = <"*Extension(en)">
+				description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+			>
+			["id117"] = <
+				text = <"مُتطلبات المريض">
+				description = <"اللغة, وسيلة الانتقال, أو المتطلبات الشخصية الأخرى لدعم حضور و مشاركة المريض في أثناء تقديم الخدمة.">
+			>
+			["id122"] = <
+				text = <"*Service name(en)">
+				description = <"*Identification of the service requested, by name.(en)">
+			>
+			["id128"] = <
+				text = <"حالة الطلب">
+				description = <"حالة طلب الخدمة كما تتم الإشارة إليه بواسطة من طلب الأمر. 
+تستخدم الحالة للإشارة إلى ما إذا كان هذا هو الطلب المبدئي أم أنه طلب متابعة لتغيير معلومات أو التزويد بمعلومات تكميلية.">
+			>
+			["id129"] = <
+				text = <"قائمة التوزيع للاستجابة">
+				description = <"قائمة من الأشخاص أو المؤسسات الذين ينبغي أن يستقبلوا نُسَخًا من أي نوع من الاتصال.">
+			>
+			["id133"] = <
+				text = <"التفاصيل المُخصصة">
+				description = <"*Structured additional detail about the service requested.(en)">
+			>
+			["id136"] = <
+				text = <"*Description(en)">
+				description = <"*Narrative description of the service requested.(en)">
+			>
+			["at137"] = <
+				text = <"طارئة">
+				description = <"هذا الطلب هو حالة طارئة">
+			>
+			["at138"] = <
+				text = <"مُلِحّ">
+				description = <"هذا الطلب مُلِحّ">
+			>
+			["at139"] = <
+				text = <"روتيني">
+				description = <"هذا الطلب روتيني">
+			>
+			["id142"] = <
+				text = <"الطالب">
+				description = <"تفاصيل حول مُزَوِّد الخدمة الصحية أو المؤسسة الصحية التي تطلب الخدمة.">
+			>
+			["id143"] = <
+				text = <"المُستقبِل">
+				description = <"تفاصيل حول مُزَوِّد الخدمة الصحية أو المؤسسة الصحية التي تستقبل طلب تقديم الخدمة.">
+			>
+			["id145"] = <
+				text = <"آخر تاريخ لاتزال الخدمة مطلوبة في أثناءه">
+				description = <"آخر تاريخ لا يزال فيه مقبولا أن يتم إكمال/إتمام الخدمة.">
+			>
+			["ac1"] = <
+				text = <"الإلحاح (synthesised)">
+				description = <"إلحاح الطلب (synthesised)">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Healthcare service request">
+				description = <"Request for a healthcare service to be supplied by another healthcare provider or support agency.">
+			>
+			["id2"] = <
+				text = <"Request">
+				description = <"Current Activity.">
+			>
+			["id11"] = <
+				text = <"Requestor Identifier">
+				description = <"The local ID assigned to the order by the healthcare provider or organisation requesting the service. This is also referred to as Placer Order Identifier.">
+			>
+			["id12"] = <
+				text = <"Receiver identifier">
+				description = <"The ID assigned to the order by the healthcare provider or organisation receiving the request for service. This is also referred to as Filler Order Identifier.">
+			>
+			["id41"] = <
+				text = <"Date/time service due">
+				description = <"The date and/or time when the service is due.">
+			>
+			["id63"] = <
+				text = <"Reason for request">
+				description = <"Phrase or code providing the reason or indication for the request.">
+			>
+			["id65"] = <
+				text = <"Reason description">
+				description = <"Narrative description about the reason or indication for request.">
+			>
+			["id66"] = <
+				text = <"Intent">
+				description = <"Stated intent for the request by the referrer.">
+			>
+			["id69"] = <
+				text = <"Urgency">
+				description = <"Urgency of the request.">
+			>
+			["id77"] = <
+				text = <"Supplementary information to follow">
+				description = <"True indicates that additional information has been identified and will be forwarded when available eg incomplete pathology test results.">
+			>
+			["id79"] = <
+				text = <"Supplementary information expected">
+				description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
+			>
+			["id113"] = <
+				text = <"Extension">
+				description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+			>
+			["id117"] = <
+				text = <"Patient requirements">
+				description = <"Language, transport or other personal requirements to support the patient's attendance or participation in provision of the service.">
+			>
+			["id122"] = <
+				text = <"Service name">
+				description = <"Identification of the service requested, by name.">
+			>
+			["id128"] = <
+				text = <"Request status">
+				description = <"The status of the request for service as indicated by the requester. Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.">
+			>
+			["id129"] = <
+				text = <"Distribution list for response">
+				description = <"A list of person's or organisation who should receive copies of any communication.">
+			>
+			["id133"] = <
+				text = <"Specific details">
+				description = <"Structured additional detail about the service requested.">
+			>
+			["id136"] = <
+				text = <"Description">
+				description = <"Narrative description of the service requested.">
+			>
+			["at137"] = <
+				text = <"Emergency">
+				description = <"The request is an emergency.">
+			>
+			["at138"] = <
+				text = <"Urgent">
+				description = <"The request is urgent.">
+			>
+			["at139"] = <
+				text = <"Routine">
+				description = <"The request is routine.">
+			>
+			["id142"] = <
+				text = <"Requestor">
+				description = <"Details about the healthcare provider or organisation requesting the service.">
+			>
+			["id143"] = <
+				text = <"Receiver">
+				description = <"Details about the healthcare provider or organisation receiving the request for service.">
+			>
+			["id145"] = <
+				text = <"Latest date service required">
+				description = <"The latest date that is acceptable for the service to be completed.">
+			>
+			["ac1"] = <
+				text = <"Urgency (synthesised)">
+				description = <"Urgency of the request. (synthesised)">
+			>
+		>
+		["nb"] = <
+			["id1"] = <
+				text = <"Helsetjeneste rekvisisjon">
+				description = <"*Request for a healthcare service to be supplied by another healthcare provider or support agency.(en)">
+			>
+			["id2"] = <
+				text = <"Rekvisisjon">
+				description = <"Aktuell aktivitet.">
+			>
+			["id11"] = <
+				text = <"Rekvirent identifikator">
+				description = <"En lokal ID tillagt rekvisisjonen av rekvirent eller organisasjonen som rekvirerer tjenesten. Dette kalles også 'Rekvirent Bestiller Identifikator'.">
+			>
+			["id12"] = <
+				text = <"Rekvisisjons mottaker">
+				description = <"En ID som tillegges rekvisisjonen av helsetjeneste yter eller organisasjon som mottaker rekvisisjon for en helsetjenesten. Dette kalles også Tjeneste Leverandør Identifikator.">
+			>
+			["id41"] = <
+				text = <"*Date/time service due(en)">
+				description = <"*The date and/or time when the service is due.(en)">
+			>
+			["id63"] = <
+				text = <"Begrunnelse">
+				description = <"*Phrase or code providing the reason or indication for the request.(en)">
+			>
+			["id65"] = <
+				text = <"Beskrivelse av begrunnelsen">
+				description = <"*Narrative description about the reason or indication for request.(en)">
+			>
+			["id66"] = <
+				text = <"Hensikt">
+				description = <"Rekvirentens hensikt med rekvisisjonen.">
+			>
+			["id69"] = <
+				text = <"Haste grad">
+				description = <"Graden av hast med hensyn til rekvisisjonen.">
+			>
+			["id77"] = <
+				text = <"Supplerende informasjon følger">
+				description = <"Sann: indikerer at der er identifisert ytterligere informasjon som vil bli fremsendt når dette er tilgjengelig, fx inkomplette lab resultater.">
+			>
+			["id79"] = <
+				text = <"Supplerende informasjon forventes">
+				description = <"Detaljer om de supplerende opplysninger som vil følge, fx navnet på lab test resultatet.">
+			>
+			["id113"] = <
+				text = <"*Extension(en)">
+				description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+			>
+			["id117"] = <
+				text = <"Pasient behov">
+				description = <"Språk, transport eller annen personlige behov for at støtte pasientens fremmøte eller deltakelse i utførelsen av helsetjenesten.">
+			>
+			["id122"] = <
+				text = <"*Service name(en)">
+				description = <"*Identification of the service requested, by name.(en)">
+			>
+			["id128"] = <
+				text = <"Rekvisisjons status">
+				description = <"Status for rekvisisjon av en tjeneste som angitt av rekvirent. Status anvendes til at vise om dette er den opprinnelige rekvisisjon eller en oppfølgende rekvisisjon for at endre eller gi supplerende informasjon.">
+			>
+			["id129"] = <
+				text = <"Distribusjonsliste for svar">
+				description = <"En liste av personer eller organisasjon som bør motta kopier av noen kommunikasjon.">
+			>
+			["id133"] = <
+				text = <"Spesifikke detaljer">
+				description = <"*Structured additional detail about the service requested.(en)">
+			>
+			["id136"] = <
+				text = <"*Description(en)">
+				description = <"*Narrative description of the service requested.(en)">
+			>
+			["at137"] = <
+				text = <"Akutt (ØH)">
+				description = <"Rekvisisjonen er haster.">
+			>
+			["at138"] = <
+				text = <"Haster">
+				description = <"Rekvisisjonen haster.">
+			>
+			["at139"] = <
+				text = <"Rutine">
+				description = <"Rutine rekvisisjon.">
+			>
+			["id142"] = <
+				text = <"Rekvirent">
+				description = <"Detaljer om helsetjeneste yter eller organisasjon som rekvirerer tjenesten.">
+			>
+			["id143"] = <
+				text = <"Mottaker">
+				description = <"Detaljer om helsetjeneste yter eller organisasjon som mottar rekvisisjonen for en helsetjeneste.">
+			>
+			["id145"] = <
+				text = <"Seneste dato for tjenestens utførelse">
+				description = <"Den seneste dato for når det er akseptabelt for at tjenesten blir utført.">
+			>
+			["ac1"] = <
+				text = <"Haste grad (synthesised)">
+				description = <"Graden av hast med hensyn til rekvisisjonen. (synthesised)">
+			>
+		>
+		["es-ar"] = <
+			["id1"] = <
+				text = <"Solicitud de servicio de atención de la salud">
+				description = <"*Request for a healthcare service to be supplied by another healthcare provider or support agency.(en)">
+			>
+			["id2"] = <
+				text = <"Solicitud">
+				description = <"Actividad actual.">
+			>
+			["id11"] = <
+				text = <"Identificador del Solicitante">
+				description = <"El ID local asignado a la solicitud por parte del prestador u organización proveedora de servicios de salud que solicita el servicio. También conocido como Identificador del Colocador de la Orden.">
+			>
+			["id12"] = <
+				text = <"Identificador del receptor">
+				description = <"El ID asignado a la solicitud por parte del prestador u organización proveedora de servicios de salud que recibe la solicitud del servicio. También conocido como Identificador del Receptor de la Orden.">
+			>
+			["id41"] = <
+				text = <"*Date/time service due(en)">
+				description = <"*The date and/or time when the service is due.(en)">
+			>
+			["id63"] = <
+				text = <"Motivo de la solicitud">
+				description = <"*Phrase or code providing the reason or indication for the request.(en)">
+			>
+			["id65"] = <
+				text = <"Descripción del motivo">
+				description = <"*Narrative description about the reason or indication for request.(en)">
+			>
+			["id66"] = <
+				text = <"Propósito">
+				description = <"Propósito declarado de la solicitud por parte del solicitante.">
+			>
+			["id69"] = <
+				text = <"Urgencia">
+				description = <"Urgencia de la solicitud.">
+			>
+			["id77"] = <
+				text = <"Información suplementaria a proveer">
+				description = <"\"Verdadero\" indica que se ha identificado información adicional y que será remitida cuando se encuentre disponible. Ej.: resultados de una prueba de patología incompleta.">
+			>
+			["id79"] = <
+				text = <"Información suplementaria prevista">
+				description = <"Detalle de la naturaleza de la información suplementaria que se prevé. Ej.: nombre del resultado de laboratorio.">
+			>
+			["id113"] = <
+				text = <"*Extension(en)">
+				description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+			>
+			["id117"] = <
+				text = <"Requerimientos para el paciente">
+				description = <"Requerimientos de idioma, transporte, u otros, que asistan al paciente para concurrir o participar en la provisión del servicio.">
+			>
+			["id122"] = <
+				text = <"*Service name(en)">
+				description = <"*Identification of the service requested, by name.(en)">
+			>
+			["id128"] = <
+				text = <"Estado de la solicitud">
+				description = <"El estado de la solicitud de servicio según el solicitante. El \"estado\" se utiliza para denotar si se trata de un solicitud inicial, a una solicitud de cambio o provisión de información de la solicitud en curso.">
+			>
+			["id129"] = <
+				text = <"Lista de distribución para la respuesta">
+				description = <"Lista de personas o la organización que debería recibir copias de cualquier comunicación.">
+			>
+			["id133"] = <
+				text = <"Detalles específicos">
+				description = <"*Structured additional detail about the service requested.(en)">
+			>
+			["id136"] = <
+				text = <"*Description(en)">
+				description = <"*Narrative description of the service requested.(en)">
+			>
+			["at137"] = <
+				text = <"Emergencia">
+				description = <"La solicitud es de emergencia.">
+			>
+			["at138"] = <
+				text = <"Urgente">
+				description = <"La solicitud es urgente.">
+			>
+			["at139"] = <
+				text = <"Rutina">
+				description = <"La solicitud es de rutina.">
+			>
+			["id142"] = <
+				text = <"Solicitante">
+				description = <"Detalles del prestador u organización proveedora de servicios de atención de la salud que solicita el servicio.">
+			>
+			["id143"] = <
+				text = <"Receptor">
+				description = <"Detalles del prestador u organización proveedora de servicios de atención de la salud que recibe la solicitud del servicio.">
+			>
+			["id145"] = <
+				text = <"Fecha límite del servicio solicitado">
+				description = <"La fecha mas tardía aceptable para el cumplimiento del servicio.">
+			>
+			["ac1"] = <
+				text = <"Urgencia (synthesised)">
+				description = <"Urgencia de la solicitud. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at137", "at138", "at139">
+		>
+	>

@@ -1,0 +1,199 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.family_prevalence.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2015-05-05">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record information about the prevalence of an identified risk factor or health condition within a family group.">
+			use = <"Use to record information about the prevalence of an identified risk factor or health condition within a family group. 
+
+This archetype has been designed to support assessment of risk in the subject of care for the identified 'Risk factor', if used within 'Family prevalence' SLOT in the EVALUATION.health_risk archetype.
+
+It could also be used to document the presence of affected family in other archetypes in which the index data element has already been identified. For example, it could document the number of affected family members for an identified diagnosis, by insertion into the 'Specific details' SLOT of the EVALUATION.problem_diagnosis archetype.">
+			keywords = <"family history", "prevalence", "affected", "genetic">
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Tomas Alme, DIPS, Norway", "Rita Apelt, Department of Health,NT, Australia", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "John Bennett, NEHTA, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Diego Bosca, IBIME group, Spain", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "David Evans, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Samuel Frade, Marand, Portugal", "Tim Garden, NTG Department of Health, Australia", "Sebastian Garde, Ocean Informatics, Germany", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Andrew Goodchild, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Lars Karlsen, DIPS ASA, Norway", "Mary Kelaher, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Robert L'egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Hallvard Lærum, Oslo University Hospital, Norway", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Bjoern Naess, DIPS ASA, Norway", "Jeremy Oats, NT Health, Australia", "Lynne Parsons, Primary and Community Health Services, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Jussara Rotzsch, UNB, Brazil", "Anoop Shah, University College London, United Kingdom", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "John Taylor, NEHTA, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Donna Truran, ACCTI-UoW, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics<heather.leslie@oceaninformatics.com>">
+		["references"] = <"Risk of condition based on family history, rejected archetype, openEHR Clinical Knowledge Manager [Internet]. openEHR Foundation. Authored: 2006 04 23. Available at: http://www.openehr.org/ckm/#showArchetype_1013.1.125 (last accessed 2015 03 05).">
+		["MD5-CAM-1.0.1"] = <"44B193E88340069460FD27F273A41893">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Family prevalence
+		items matches {
+			ELEMENT[id31] occurrences matches {0..1} matches {	-- Description
+				value matches {
+					DV_TEXT[id57] 
+				}
+			}
+			ELEMENT[id56] occurrences matches {0..1} matches {	-- Genetic predisposition?
+				value matches {
+					DV_BOOLEAN[id58] matches {
+						value matches {True}
+					}
+				}
+			}
+			CLUSTER[id32] matches {	-- Affected ratio
+				items matches {
+					ELEMENT[id33] occurrences matches {0..1} matches {	-- Relationship
+						value matches {
+							DV_CODED_TEXT[id59] matches {
+								defining_code matches {[ac1]}		-- Relationship (synthesised)
+							}
+						}
+					}
+					ELEMENT[id52] occurrences matches {0..1} matches {	-- Family line
+						value matches {
+							DV_CODED_TEXT[id60] matches {
+								defining_code matches {[ac2]}		-- Family line (synthesised)
+							}
+						}
+					}
+					ELEMENT[id34] occurrences matches {0..1} matches {	-- Biological sex
+						value matches {
+							DV_CODED_TEXT[id61] matches {
+								defining_code matches {[ac3]}		-- Biological sex (synthesised)
+							}
+						}
+					}
+					ELEMENT[id35] occurrences matches {0..1} matches {	-- Number affected
+						value matches {
+							DV_COUNT[id62] matches {
+								magnitude matches {|>=1|}
+							}
+						}
+					}
+					ELEMENT[id55] occurrences matches {0..1} matches {	-- Total number
+						value matches {
+							DV_COUNT[id63] matches {
+								magnitude matches {|>=1|}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Family prevalence">
+				description = <"Summary information about the prevalence of a risk factor, problem or diagnosis in family members.">
+			>
+			["id31"] = <
+				text = <"Description">
+				description = <"Narrative description about occurrence in family members.">
+			>
+			["id32"] = <
+				text = <"Affected ratio">
+				description = <"Details about the numbers of family members affected.">
+			>
+			["id33"] = <
+				text = <"Relationship">
+				description = <"The degree of relationship between the subject of care and a selected group of family members.">
+			>
+			["id34"] = <
+				text = <"Biological sex">
+				description = <"The biological sex of the family member/s.">
+			>
+			["id35"] = <
+				text = <"Number affected">
+				description = <"The number of family members known to be affected.">
+			>
+			["at38"] = <
+				text = <"First degree relative">
+				description = <"50% genetic share with the subject - for example, parent, sibling or child.">
+			>
+			["at39"] = <
+				text = <"Second degree relative">
+				description = <"25% genetic share with the subject -  for example, grandparent, aunt, uncle, niece, nephew, grandchildren. and half siblings.">
+			>
+			["at40"] = <
+				text = <"Third degree relative">
+				description = <"12.5% genetic share with the subject - for example, great grandparent, great aunt, great uncle, first cousin, children of nieces and nephews, and great grandchildren.">
+			>
+			["at41"] = <
+				text = <"Maternal line">
+				description = <"Related through the subject's mother.">
+			>
+			["at42"] = <
+				text = <"Paternal line">
+				description = <"Related through the subject's father.">
+			>
+			["at43"] = <
+				text = <"Genetic family">
+				description = <"All genetically-related family members.">
+			>
+			["at44"] = <
+				text = <"Male">
+				description = <"Family member who is biologically male.">
+			>
+			["at45"] = <
+				text = <"Female">
+				description = <"Family member who is biologically female.">
+			>
+			["at51"] = <
+				text = <"Non-genetic family">
+				description = <"All non-genetic family members.">
+			>
+			["id52"] = <
+				text = <"Family line">
+				description = <"Identification of the maternal or paternal family line in the relationship.">
+			>
+			["at53"] = <
+				text = <"Indeterminate/Intersex/Unspecified">
+				description = <"Family member who either has the biological attributes of both sexes or lacks some of the biological attributes considered necessary to be defined as one or the other sex.">
+			>
+			["id55"] = <
+				text = <"Total number">
+				description = <"The number of eligible family members.">
+			>
+			["id56"] = <
+				text = <"Genetic predisposition?">
+				description = <"Is there a genetic basis for the risk factor, problem or diagnosis?">
+			>
+			["ac1"] = <
+				text = <"Relationship (synthesised)">
+				description = <"The degree of relationship between the subject of care and a selected group of family members. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Family line (synthesised)">
+				description = <"Identification of the maternal or paternal family line in the relationship. (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Biological sex (synthesised)">
+				description = <"The biological sex of the family member/s. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at38", "at39", "at40", "at43", "at51">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at41", "at42">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at44", "at45", "at53">
+		>
+	>

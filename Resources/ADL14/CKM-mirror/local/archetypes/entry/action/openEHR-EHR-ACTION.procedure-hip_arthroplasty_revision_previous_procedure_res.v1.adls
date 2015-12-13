@@ -1,0 +1,568 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-ACTION.procedure-hip_arthroplasty_revision_previous_procedure_res.v1.0.0
+
+specialize
+	openEHR-EHR-ACTION.procedure.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"Uroš Rajkovič, Biljana Prinčič">
+				["organisation"] = <"Slovenia">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Art Latyp; Латыпов Артур">
+				["organisation"] = <"RusBITech; РусБИТех, Москва">
+			>
+			accreditation = <"hmm">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Thiago F. F. Dias">
+				["organisation"] = <"FMRP-USP">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-03">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Para registrar os detalhes sobre um procedimento realizado.">
+			use = <"Usado para registrar informações detalhadas sobre o procedimento realizado em um indivíduo.
+Informações sobre atividades relacionadas ao procedimento, como a anestesia ou a administração de medicamentos, devem ser registrados em arquétipos de ACTION separados.">
+			keywords = <"procedimento", ...>
+			misuse = <"">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Za beleženje podrobnosti o izvedeni aktivnosti">
+			use = <"Za beleženje podrobnosto o izvedeni aktivnosti, ki zadeva posameznega pacienta/subjekt">
+			keywords = <"aktivnosti", "postopek">
+			misuse = <"Podrobnosti o aktivnostih povezani z opisano kativnostjo, kot npr. dajanje zdravil, se zabeleži v arhetipih tipa ACTION">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about a procedure that has been performed.">
+			use = <"Use to record detailed information about the procedure that has been carried out on an individual. 
+Information about activities related to the procedure, such as anaesthesia or administration of medications, should be recorded in separate ACTION archetypes.">
+			keywords = <"procedure", ...>
+			misuse = <"">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول إجراء طبي تم بالفعل إجراؤه">
+			use = <"لتسجيل معلومات تفصيلية حول إجراء طبي تم تنفيذه على شخص ما. و ينبغي تسجيل المعلومات حول النشاطات المتعلقة بالنشاطات المتعلقة بالإجراء الطبي, مثل التخدير أو إعطاء الأدوية في نماذج (فعل) منفردة.">
+			keywords = <"الإجراء الطبي", ...>
+			misuse = <"">
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для записи сведений об проведенной процедуре">
+			use = <"Используется для записи подробной информации о процедуре, выполненной пациенту.
+Информация о действиях, связанных с выполнением процедуры, таких как анестезия или применение лекарств, долдно быть записано в отдельных архетипах типа ДЕЙСТВИЕ">
+			keywords = <"процедура, выполнение", ...>
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"342F478FD2EB41F7C081A7F2356CA826">
+	>
+
+definition
+	ACTION[id1.1] matches {	-- Revision hip arthroplasty- previous procedure
+		/ism_transition matches {
+			after [id44]
+			ISM_TRANSITION[id45] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.1] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.2] matches {
+						defining_code matches {[at45]}
+					}
+				}
+			}
+			ISM_TRANSITION[id46] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.3] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.4] matches {
+						defining_code matches {[at46]}
+					}
+				}
+			}
+			ISM_TRANSITION[id47] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.5] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.6] matches {
+						defining_code matches {[at47]}
+					}
+				}
+			}
+		}
+		/description[id2]/items[id3.1]/value matches {
+			DV_CODED_TEXT[id85.1] matches {
+				defining_code matches {[ac0.1]}		-- Previous procedure (synthesised)
+			}
+			DV_TEXT[id85] 
+		}
+		/description[id2]/items matches {
+			before [id50]
+			ELEMENT[id52] matches {
+				value matches {
+					DV_TEXT[id0.7] 
+				}
+			}
+			after [id4]
+			allow_archetype CLUSTER[id51] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+			before [id49]
+			CLUSTER[id31] occurrences matches {0..1} matches {
+				items matches {
+					ELEMENT[id53] occurrences matches {0..1} matches {
+						value matches {
+							DV_TEXT[id0.8] 
+						}
+					}
+					ELEMENT[id32] matches {
+						value matches {
+							DV_TEXT[id0.9] 
+						}
+					}
+					ELEMENT[id33] matches {
+						value matches {
+							DV_EHR_URI[id0.10] 
+						}
+					}
+				}
+			}
+			after [id49]
+			ELEMENT[id5] occurrences matches {0..1} matches {
+				value matches {
+					DV_BOOLEAN[id0.11] matches {
+						value matches {True}
+					}
+				}
+			}
+			ELEMENT[id19] occurrences matches {0..1} 
+			before [id7]
+			ELEMENT[id16] matches {
+				value matches {
+					DV_TEXT[id0.12] 
+				}
+			}
+			after [id6]
+			ELEMENT[id14] matches {
+				value matches {
+					DV_MULTIMEDIA[id0.14] matches {
+						media_type 
+					}
+				}
+			}
+		}
+		/description[id2]/items[id59]/value matches {
+			DV_BOOLEAN[id0.13] matches {
+				value matches {True, False}
+			}
+		}
+		/protocol[id54]/items matches {
+			allow_archetype CLUSTER[id58] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["at0.60"] = <
+				text = <"*Primary Total Standard hip arthroplasty(en)">
+				description = <"*Primary Total Standard hip arthroplasty.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of Acetabular component(en)">
+				description = <"*Replacement of Acetabular component.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Femoral component(en)">
+				description = <"*Replacement of Femoral component.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Replacement of Head(en)">
+				description = <"*Replacement of Head.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone).(en)">
+			>
+			["at0.67"] = <
+				text = <"*Primary Total Resurfacing hip arthroplasty(en)">
+				description = <"*Total resurfacing Hip arthroplasty.(en)">
+			>
+			["at0.68"] = <
+				text = <"*Primary Partial Bipolar Hip arthroplasty(en)">
+				description = <"*Primary Partial Bipolar Hip arthroplasty.(en)">
+			>
+			["at0.69"] = <
+				text = <"*Primary Partial Resurfacing hip arthroplasty(en)">
+				description = <"*Primary Partial Resurfacing hip arthroplasty.(en)">
+			>
+			["at0.70"] = <
+				text = <"*Replacement of bipolar/partial implant(en)">
+				description = <"*Replacement of bipolar/partial implant.(en)">
+			>
+			["at0.71"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone.(en)">
+			>
+			["at0.72"] = <
+				text = <"*Replacement of Acetabular ring(en)">
+				description = <"*Replacement of Acetabular ring.(en)">
+			>
+			["at0.73"] = <
+				text = <"*Replacement of Neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty- previous procedure(en)">
+				description = <"*To record details of a procedure carried out prior to a revision hip arthroplasty (Slovenian RES registry)(en)">
+			>
+			["id3.1"] = <
+				text = <"*Previous procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Previous procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+		>
+		["sl"] = <
+			["at0.60"] = <
+				text = <"*Primary Total Standard hip arthroplasty(en)">
+				description = <"*Primary Total Standard hip arthroplasty.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of Acetabular component(en)">
+				description = <"*Replacement of Acetabular component.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Femoral component(en)">
+				description = <"*Replacement of Femoral component.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Replacement of Head(en)">
+				description = <"*Replacement of Head.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone).(en)">
+			>
+			["at0.67"] = <
+				text = <"*Primary Total Resurfacing hip arthroplasty(en)">
+				description = <"*Total resurfacing Hip arthroplasty.(en)">
+			>
+			["at0.68"] = <
+				text = <"*Primary Partial Bipolar Hip arthroplasty(en)">
+				description = <"*Primary Partial Bipolar Hip arthroplasty.(en)">
+			>
+			["at0.69"] = <
+				text = <"*Primary Partial Resurfacing hip arthroplasty(en)">
+				description = <"*Primary Partial Resurfacing hip arthroplasty.(en)">
+			>
+			["at0.70"] = <
+				text = <"*Replacement of bipolar/partial implant(en)">
+				description = <"*Replacement of bipolar/partial implant.(en)">
+			>
+			["at0.71"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone.(en)">
+			>
+			["at0.72"] = <
+				text = <"*Replacement of Acetabular ring(en)">
+				description = <"*Replacement of Acetabular ring.(en)">
+			>
+			["at0.73"] = <
+				text = <"*Replacement of Neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty- previous procedure(en)">
+				description = <"*To record details of a procedure carried out prior to a revision hip arthroplasty (Slovenian RES registry)(en)">
+			>
+			["id3.1"] = <
+				text = <"*Previous procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Previous procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+		>
+		["en"] = <
+			["at0.60"] = <
+				text = <"Primary Total Standard hip arthroplasty">
+				description = <"Primary Total Standard hip arthroplasty.">
+			>
+			["at0.61"] = <
+				text = <"Replacement of whole system">
+				description = <"Replacement of whole system.">
+			>
+			["at0.62"] = <
+				text = <"Replacement of Acetabular component">
+				description = <"Replacement of Acetabular component.">
+			>
+			["at0.63"] = <
+				text = <"Replacement of Femoral component">
+				description = <"Replacement of Femoral component.">
+			>
+			["at0.64"] = <
+				text = <"Replacement of Head">
+				description = <"Replacement of Head.">
+			>
+			["at0.65"] = <
+				text = <"Replacement of Inlay">
+				description = <"Replacement of Inlay.">
+			>
+			["at0.66"] = <
+				text = <"Prosthesis removal (Girdlestone)">
+				description = <"Prosthesis removal (Girdlestone).">
+			>
+			["at0.67"] = <
+				text = <"Primary Total Resurfacing hip arthroplasty">
+				description = <"Total resurfacing Hip arthroplasty.">
+			>
+			["at0.68"] = <
+				text = <"Primary Partial Bipolar Hip arthroplasty">
+				description = <"Primary Partial Bipolar Hip arthroplasty.">
+			>
+			["at0.69"] = <
+				text = <"Primary Partial Resurfacing hip arthroplasty">
+				description = <"Primary Partial Resurfacing hip arthroplasty.">
+			>
+			["at0.70"] = <
+				text = <"Replacement of bipolar/partial implant">
+				description = <"Replacement of bipolar/partial implant.">
+			>
+			["at0.71"] = <
+				text = <"Re-implantation after Girdlestone">
+				description = <"Re-implantation after Girdlestone.">
+			>
+			["at0.72"] = <
+				text = <"Replacement of Acetabular ring">
+				description = <"Replacement of Acetabular ring.">
+			>
+			["at0.73"] = <
+				text = <"Replacement of Neck">
+				description = <"Replacement of neck.">
+			>
+			["id1.1"] = <
+				text = <"Revision hip arthroplasty- previous procedure">
+				description = <"To record details of a procedure carried out prior to a revision hip arthroplasty (Slovenian RES registry)">
+			>
+			["id3.1"] = <
+				text = <"Previous procedure">
+				description = <"The name of the procedure.">
+			>
+			["ac0.1"] = <
+				text = <"Previous procedure (synthesised)">
+				description = <"The name of the procedure. (synthesised)">
+			>
+		>
+		["pt-br"] = <
+			["at0.60"] = <
+				text = <"*Primary Total Standard hip arthroplasty(en)">
+				description = <"*Primary Total Standard hip arthroplasty.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of Acetabular component(en)">
+				description = <"*Replacement of Acetabular component.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Femoral component(en)">
+				description = <"*Replacement of Femoral component.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Replacement of Head(en)">
+				description = <"*Replacement of Head.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone).(en)">
+			>
+			["at0.67"] = <
+				text = <"*Primary Total Resurfacing hip arthroplasty(en)">
+				description = <"*Total resurfacing Hip arthroplasty.(en)">
+			>
+			["at0.68"] = <
+				text = <"*Primary Partial Bipolar Hip arthroplasty(en)">
+				description = <"*Primary Partial Bipolar Hip arthroplasty.(en)">
+			>
+			["at0.69"] = <
+				text = <"*Primary Partial Resurfacing hip arthroplasty(en)">
+				description = <"*Primary Partial Resurfacing hip arthroplasty.(en)">
+			>
+			["at0.70"] = <
+				text = <"*Replacement of bipolar/partial implant(en)">
+				description = <"*Replacement of bipolar/partial implant.(en)">
+			>
+			["at0.71"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone.(en)">
+			>
+			["at0.72"] = <
+				text = <"*Replacement of Acetabular ring(en)">
+				description = <"*Replacement of Acetabular ring.(en)">
+			>
+			["at0.73"] = <
+				text = <"*Replacement of Neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty- previous procedure(en)">
+				description = <"*To record details of a procedure carried out prior to a revision hip arthroplasty (Slovenian RES registry)(en)">
+			>
+			["id3.1"] = <
+				text = <"*Previous procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Previous procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+		>
+		["ru"] = <
+			["at0.60"] = <
+				text = <"*Primary Total Standard hip arthroplasty(en)">
+				description = <"*Primary Total Standard hip arthroplasty.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Replacement of whole system(en)">
+				description = <"*Replacement of whole system.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Replacement of Acetabular component(en)">
+				description = <"*Replacement of Acetabular component.(en)">
+			>
+			["at0.63"] = <
+				text = <"*Replacement of Femoral component(en)">
+				description = <"*Replacement of Femoral component.(en)">
+			>
+			["at0.64"] = <
+				text = <"*Replacement of Head(en)">
+				description = <"*Replacement of Head.(en)">
+			>
+			["at0.65"] = <
+				text = <"*Replacement of Inlay(en)">
+				description = <"*Replacement of Inlay.(en)">
+			>
+			["at0.66"] = <
+				text = <"*Prosthesis removal (Girdlestone)(en)">
+				description = <"*Prosthesis removal (Girdlestone).(en)">
+			>
+			["at0.67"] = <
+				text = <"*Primary Total Resurfacing hip arthroplasty(en)">
+				description = <"*Total resurfacing Hip arthroplasty.(en)">
+			>
+			["at0.68"] = <
+				text = <"*Primary Partial Bipolar Hip arthroplasty(en)">
+				description = <"*Primary Partial Bipolar Hip arthroplasty.(en)">
+			>
+			["at0.69"] = <
+				text = <"*Primary Partial Resurfacing hip arthroplasty(en)">
+				description = <"*Primary Partial Resurfacing hip arthroplasty.(en)">
+			>
+			["at0.70"] = <
+				text = <"*Replacement of bipolar/partial implant(en)">
+				description = <"*Replacement of bipolar/partial implant.(en)">
+			>
+			["at0.71"] = <
+				text = <"*Re-implantation after Girdlestone(en)">
+				description = <"*Re-implantation after Girdlestone.(en)">
+			>
+			["at0.72"] = <
+				text = <"*Replacement of Acetabular ring(en)">
+				description = <"*Replacement of Acetabular ring.(en)">
+			>
+			["at0.73"] = <
+				text = <"*Replacement of Neck(en)">
+				description = <"*Replacement of neck.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Revision hip arthroplasty- previous procedure(en)">
+				description = <"*To record details of a procedure carried out prior to a revision hip arthroplasty (Slovenian RES registry)(en)">
+			>
+			["id3.1"] = <
+				text = <"*Previous procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Previous procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac0.1"] = <
+			id = <"ac0.1">
+			members = <"at0.60", "at0.67", "at0.68", "at0.69", "at0.61", "at0.62", "at0.72", "at0.63", "at0.64", "at0.65", "at0.73", "at0.70", "at0.66", "at0.71">
+		>
+	>

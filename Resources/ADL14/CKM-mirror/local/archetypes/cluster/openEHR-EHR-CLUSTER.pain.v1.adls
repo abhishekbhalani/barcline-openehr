@@ -1,0 +1,66 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.pain.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2015-03-11">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record specific details about pain experienced by the subject of care.">
+			use = <"Use to record specific details about pain experienced by the subject of care.
+
+This archetype is designed to be inserted into the 'Specific details' SLOT within the CLUSTER.symptom archetype.">
+			keywords = <"pain", ...>
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["MD5-CAM-1.0.1"] = <"B91890457A6E071152E0B0912F34F249">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Pain
+		items matches {
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Visual analogue scale
+				value matches {
+					DV_COUNT[id4] matches {
+						magnitude matches {|0..10|}
+					}
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Radiation
+				value matches {
+					DV_TEXT[id5] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Pain">
+				description = <"Unpleasant and subjective physical sensation, often caused by illness or injury.">
+			>
+			["id2"] = <
+				text = <"Visual analogue scale">
+				description = <"Numeric rating scale to record the level of pain experienced by the subject of care.">
+			>
+			["id3"] = <
+				text = <"Radiation">
+				description = <"Narrative description of the radiation of the pain.">
+			>
+		>
+	>

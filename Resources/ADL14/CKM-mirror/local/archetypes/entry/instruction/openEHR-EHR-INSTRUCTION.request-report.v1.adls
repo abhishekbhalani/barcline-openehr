@@ -1,0 +1,87 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-INSTRUCTION.request-report.v1.0.0
+
+specialize
+	openEHR-EHR-INSTRUCTION.request.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Alan March">
+				["organisation"] = <"Hospital Universitario Austral, Buenos Aires, Argentina">
+				["email"] = <"amarch@cas.austral.edu.ar">
+			>
+			accreditation = <"MD">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-06-30">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"طلب جنيس (غير محدود الملكية) لمدى من الخدمات الطبية المختلفة, مثل الإحالة, الاختبار المعملي و طلب المُعِدَّات.">
+			use = <"">
+			keywords = <"الطلب", "يُحيل", "الأمر", "الخدمة", "المُزَوِّد">
+			misuse = <"">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Solicitud formal para el estudio de una serie de pruebas diagnósticas concretas.">
+			use = <"">
+			keywords = <"solicitud", "derivar", "referir", "orden", "servicio", "proveer">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Formal request for the study of a specific number of diagnostic tests.">
+			use = <"">
+			keywords = <"request", "diagnostic tests", "report">
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", "Ian McNicoll, Ocean Informatics, United Kingdom">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"471E4F9B213608AEEFD868B5459F06D3">
+	>
+
+definition
+	INSTRUCTION[id1.1] 	-- Diagnostic report request
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["id1.1"] = <
+				text = <"*Healthcare service request!(en)">
+				description = <"*Generic request for a range of different healthcare services e.g referral, lab request, equipment request.!(en)">
+			>
+		>
+		["en"] = <
+			["id1.1"] = <
+				text = <"Diagnostic report request">
+				description = <"Request for a diagnostic report involving the study of specific diagnostic tests.">
+			>
+		>
+		["es-ar"] = <
+			["id1.1"] = <
+				text = <"Solicitud de informe diagnóstico">
+				description = <"Solicitud de un informe diagnóstico acerca del estudio de pruebas diagnósticas concretas.">
+			>
+		>
+	>

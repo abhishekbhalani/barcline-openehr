@@ -1,0 +1,279 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-EVALUATION.dr_screening_convenient.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-05-26">
+	>
+	copyright = <"*(es)">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar la declaración de admisión de un paciente dentro de un servicio de cribado para una enfermedad específica.">
+			use = <"Se utiliza para registrar la declaración de admisión o exclusión de un paciente para un servicio de cribado, en un punto específico de su historia clínica.
+
+La declaración se considera únicamente para el momento en que ha sido registrada. Es decir, un paciente excluído del cribado más adelante podría ser admitido en caso de darse las condiciones para ello. ">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Register the statement/s about the convenience of a patient within a screening service for a specific disease. ">
+			use = <"Use to record statement/s about the admission or exclusion of a patient for a screening service, at a specific point in time of its clinical history.
+
+The statement is considered only at the time it is registered. That is to say, a patient excluded from the screening service may be admitted in the future if given the right conditions.">
+			keywords = <"admission", "diabetic retinopathy">
+			misuse = <"*(es)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8745B88CA9D0C9DD7623CEEA8577833D">
+	>
+
+definition
+	EVALUATION[id1] matches {	-- DR screening convenient
+		data matches {
+			ITEM_TREE[id2] matches {
+				items matches {
+					ELEMENT[id8] occurrences matches {0..1} matches {	-- Admittance in screening
+						value matches {
+							DV_CODED_TEXT[id23] matches {
+								defining_code matches {[ac1]}		-- Admittance in screening (synthesised)
+							}
+						}
+					}
+					ELEMENT[id3] occurrences matches {0..1} matches {	-- Exclusion statement
+						value matches {
+							DV_CODED_TEXT[id24] matches {
+								defining_code matches {[ac2]}		-- Exclusion statement (synthesised)
+							}
+						}
+					}
+					ELEMENT[id22] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT[id25] 
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id6] matches {
+				items matches {
+					ELEMENT[id7] occurrences matches {0..1} matches {	-- Date last decision
+						value matches {
+							DV_DATE_TIME[id26] 
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Conveniencia del cribado de RD">
+				description = <"Declaración acerca del cumplimiento por parte de un paciente de los requisitos establecidos para acceder a un servicio de cribado específico para retinopatía diabética">
+			>
+			["id3"] = <
+				text = <"Declaración de inclusión">
+				description = <"Descripción del motivo de exclusión del paciente del servicio de cribado en caso en que no haya sido admitido. ">
+			>
+			["id7"] = <
+				text = <"Fecha última decisión">
+				description = <"La fecha en que se confirmó la decisión de admisión o exclusión del cribado.">
+			>
+			["id8"] = <
+				text = <"Admisión en el cribado">
+				description = <"Identifica si el paciente ha sido aceptado o no participar en el servicio de cribado.">
+			>
+			["at9"] = <
+				text = <"Cribado necesario">
+				description = <"El paciente cumple las condiciones para formar parte en el cribado">
+			>
+			["at10"] = <
+				text = <"Cribado no necesario">
+				description = <"El facultativo no considera necesario incluir al paciente en el cribado">
+			>
+			["at11"] = <
+				text = <"Excluido del cribado">
+				description = <"Paciente definitivamente excluido del cribado (no cumple con los requisitos exigidos)">
+			>
+			["at12"] = <
+				text = <"Excluído del cribado por ceguera">
+				description = <"**(es)">
+			>
+			["at13"] = <
+				text = <"Excluído del cribado por fallecimiento">
+				description = <"**(es)">
+			>
+			["at14"] = <
+				text = <"Excluído del cribado por discapacidad del aprendizaje">
+				description = <"**(es)">
+			>
+			["at15"] = <
+				text = <"Excluído del cribado por traslado">
+				description = <"**(es)">
+			>
+			["at16"] = <
+				text = <"Excluído del cribado por no disponer de datos de contacto actualizados">
+				description = <"**(es)">
+			>
+			["at17"] = <
+				text = <"Excluído del cribado por remisión de la diabetes">
+				description = <"**(es)">
+			>
+			["at18"] = <
+				text = <"Excluído del cribado por trastorno físico">
+				description = <"**(es)">
+			>
+			["at19"] = <
+				text = <"Excluído del cribado por enfermedad terminal">
+				description = <"**(es)">
+			>
+			["at20"] = <
+				text = <"Excluído del cribado por asignarle bajo el cuidado directo de un oftalmologo">
+				description = <"**(es)">
+			>
+			["at21"] = <
+				text = <"Otro motivo">
+				description = <"**(es)">
+			>
+			["id22"] = <
+				text = <"Comentarios">
+				description = <"Información narrativa adicional acerca de la inclusión o exclusión del paciente en el servicio de cribado.">
+			>
+			["ac1"] = <
+				text = <"Admisión en el cribado (synthesised)">
+				description = <"Identifica si el paciente ha sido aceptado o no participar en el servicio de cribado. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Declaración de inclusión (synthesised)">
+				description = <"Descripción del motivo de exclusión del paciente del servicio de cribado en caso en que no haya sido admitido.  (synthesised)">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"DR screening convenient">
+				description = <"Statement/s about patient's compliance of the requirements established to access to a service of screening for diabetic retinopathy ">
+			>
+			["id3"] = <
+				text = <"Exclusion statement">
+				description = <"Description of the reason of excluding the patient from the screening service.">
+			>
+			["id7"] = <
+				text = <"Date last decision">
+				description = <"The date at which the decision of admittance or exclusion in screening was confirmed.">
+			>
+			["id8"] = <
+				text = <"Admittance in screening">
+				description = <"Identifies if the patient has been accepted or not to take part in the screening service.">
+			>
+			["at9"] = <
+				text = <"Screening convenient">
+				description = <"The patient meets the criteria be included in the screening">
+			>
+			["at10"] = <
+				text = <"Screening not necessary">
+				description = <"The clinician does not consider necessary including the patient into the screening">
+			>
+			["at11"] = <
+				text = <"Excluded from screening">
+				description = <"Patient definitely excluded from the screening (does not meet the criteria)">
+			>
+			["at12"] = <
+				text = <"Excluded from screening as blind">
+				description = <"*">
+			>
+			["at13"] = <
+				text = <"Excluded from screening as deceased">
+				description = <"*">
+			>
+			["at14"] = <
+				text = <"Excluded from screening as learning disability">
+				description = <"*">
+			>
+			["at15"] = <
+				text = <"Excluded from screening as moved away">
+				description = <"*">
+			>
+			["at16"] = <
+				text = <"Excluded from screening as no current contact details">
+				description = <"*">
+			>
+			["at17"] = <
+				text = <"Excluded from screening as no longer diabetic">
+				description = <"*">
+			>
+			["at18"] = <
+				text = <"Excluded from screening as physical disorder">
+				description = <"*">
+			>
+			["at19"] = <
+				text = <"Excluded from screening as terminal illness">
+				description = <"*">
+			>
+			["at20"] = <
+				text = <"Excluded from screening as under care of ophthalmologist">
+				description = <"*">
+			>
+			["at21"] = <
+				text = <"Other">
+				description = <"*">
+			>
+			["id22"] = <
+				text = <"Comment">
+				description = <"Additional narrative information about the inclusion or exclusion of the patient in the screening service.">
+			>
+			["ac1"] = <
+				text = <"Admittance in screening (synthesised)">
+				description = <"Identifies if the patient has been accepted or not to take part in the screening service. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Exclusion statement (synthesised)">
+				description = <"Description of the reason of excluding the patient from the screening service. (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			["id1"] = <http://snomed.info/id/371781000000108>
+			["at10"] = <http://snomed.info/id/371811000000106>
+			["at11"] = <http://snomed.info/id/374901000000103>
+			["at12"] = <http://snomed.info/id/374691000000100>
+			["at13"] = <http://snomed.info/id/374631000000101>
+			["at14"] = <http://snomed.info/id/374841000000109>
+			["at15"] = <http://snomed.info/id/374601000000107>
+			["at16"] = <http://snomed.info/id/374781000000105>
+			["at17"] = <http://snomed.info/id/374721000000109>
+			["at18"] = <http://snomed.info/id/374871000000103>
+			["at19"] = <http://snomed.info/id/374811000000108>
+			["at20"] = <http://snomed.info/id/374661000000106>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at9", "at10", "at11">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at12", "at13", "at14", "at15", "at16", "at17", "at18", "at19", "at20", "at21">
+		>
+	>

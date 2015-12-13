@@ -1,0 +1,1911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">tony.shannon@nhs.net</original_author>
+    <original_author id="organisation">UK NHS, Connecting for Health</original_author>
+    <original_author id="name">Tony Shannon</original_author>
+    <original_author id="date">2007-02-20</original_author>
+    <other_contributors>Tomas Alme, DIPS, Norway</other_contributors>
+    <other_contributors>Koray Atalag, University of Auckland, New Zealand</other_contributors>
+    <other_contributors>Silje Ljosland Bakke, Bergen Hospital Trust, Norway</other_contributors>
+    <other_contributors>Lars Bitsch-Larsen, Haukeland University hospital, Norway</other_contributors>
+    <other_contributors>Stephen Chu, Queensland Health, Australia</other_contributors>
+    <other_contributors>Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway</other_contributors>
+    <other_contributors>Samuel Frade, Marand, Portugal</other_contributors>
+    <other_contributors>Heather Grain, Llewelyn Grain Informatics, Australia</other_contributors>
+    <other_contributors>Sam Heard, Ocean Informatics</other_contributors>
+    <other_contributors>Lars Karlsen, DIPS ASA, Norway</other_contributors>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway</other_contributors>
+    <other_contributors>Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)</other_contributors>
+    <other_contributors>Bjoern Naess, DIPS ASA, Norway</other_contributors>
+    <other_contributors>Anoop Shah, University College London, United Kingdom</other_contributors>
+    <other_contributors>John Tore Valand, Helse Bergen, Norway</other_contributors>
+    <lifecycle_state>CommitteeDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="MD5-CAM-1.0.1">97849ECA9BC1F7A69713499C5C5D5F96</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ar-sy</code_string>
+      </language>
+      <purpose>*To record detail about a symptom - either self-recorded by an individual or recorded on the behalf of a patient by a clinician. A complete patient history may include varying level of details about a variety of symptoms.(en)</purpose>
+      <use>*Use to record detailed information about a symptom as told to a clinician by a patient or self-recorded by the individual/patient.
+
+This archetype allows a 'nil significant' statement to be explicitly recorded.(en)</use>
+      <misuse>*Not to be used to record details about pain. Use the specialisation of this archetype - the CLUSTER.symptom-pain instead.
+
+Not to be used for diagnoses and problems that form part of a persisting Problem List - use EVALUATION.problem_diagnosis.(en)</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record details about a single symptom as reported by an individual, parent, care-giver or other party.
+
+A complete patient history may include varying level of details about a multiple symptoms.</purpose>
+      <keywords>complaint</keywords>
+      <keywords>symptom</keywords>
+      <keywords>disturbance</keywords>
+      <keywords>problem</keywords>
+      <keywords>discomfort</keywords>
+      <keywords>presenting complaint</keywords>
+      <keywords>presenting symptom</keywords>
+      <use>Use to record detail about a single symptom as reported by an individual, parent, care-giver or other party.  It may be recorded by a clinician as part of a clinical history record as reported to them, or self-recorded as part of a clinical questionnaire or personal health record. 
+
+This archetype has been designed as a generic framework for all symptoms. 
+
+It is intended to be inserted into the 'Details' SLOT within the OBSERVATION.story archetype or in any other ENTRY or CLUSTER archetype requiring capture of symptom-related data. It can also be reused by inserting it within other CLUSTER.symptom archetypes - within either the context of the 'Associated symptoms' SLOT or 'Previous details' SLOT. The specific symptom will be identified by the value for the 'Symptom name' data element, preferably from a selected terminology where available.
+
+The use of 'Not present' in clinical data recording reflects an efficient way for clinicians to explicitly record that a symptom is not causing the patient any discomfort or disturbance, usually without any necessary qualifers or reasons. The possibility of modelling of 'Not present' as an a separate exclusion CLUSTER or ELEMENT archetype within the Symptom archetype, in the same way as 'No examination done' has been modelled within examination CLUSTER archetypes, has been deliberately avoided because of additional, unwarranted overheads to model maintenance, implementation and querying. For these pragmatic reasons 'Not present' has been included as an explicit data element in this Symptom archetype. 
+
+Specific data elements that are uniquely and additionally required for the identified symptom can be included as a separate CLUSTER archetype inserted into the 'Specific Details' SLOT. For example, those required to record details about pain.
+
+Some data elements will have values sets that are in common with all symptoms, for example Severity values as Mild, Moderate and Severe. Others, such as 'Impact' will require unique value sets that are relevant to the identified symptom, for example the functional impacts of hearing loss will be significantly different to pain.</use>
+      <misuse>Not to be used for recording objective observations of a physical or mental disturbance in the body of an individual - use OBSERVATION.exam and related examination CLUSTER archetypes for this purpose.
+
+Not to be used for diagnoses and problems that form part of a persisting Problem List - use EVALUATION.problem_diagnosis.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>de</code_string>
+      </language>
+      <purpose>*To record detail about a symptom - either self-recorded by an individual or recorded on the behalf of a patient by a clinician. A complete patient history may include varying level of details about a variety of symptoms.(en)</purpose>
+      <use>*Use to record detailed information about a symptom as told to a clinician by a patient or self-recorded by the individual/patient.
+
+This archetype allows a 'nil significant' statement to be explicitly recorded.(en)</use>
+      <misuse>*Sollte nur für Symptome benutzt werden. (en)</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>nb</code_string>
+      </language>
+      <purpose>For registrering av detaljer om et symptom - enten registrert av personen selv eller registrert på vegne av pasienten av en klinikker. En fullstendig anamnese kan inkludere forskjellige nivåer av detaljer om forskjellige symptomer.</purpose>
+      <keywords>klage</keywords>
+      <keywords>presenterer</keywords>
+      <keywords>symptom</keywords>
+      <keywords>problem</keywords>
+      <keywords>visuell analog skala</keywords>
+      <keywords>VAS</keywords>
+      <use>Anvendes til registrering av detaljert informasjon om et symptom som det fortelles til en klinikker eller selv-registrert av personen selv. 
+
+Denne arketype tillater spesifikk registrering av et "null signifikant" utsagn.</use>
+      <misuse>Skal ikke anvendes til registrering av detaljer om smerter. Bruk den spesialiserte -the CLUSTER.symptom-pain arketype istedet.
+
+Anvendes ikke til diagnoser og problemstillinger der er en del av den eksisterende Problem list - bruk EVALUATION.problem_diagnosis.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>de</code_string>
+    </language>
+    <author id="organisation">University of Heidelberg, Central Queensland University</author>
+    <author id="name">Jasmin Buck, Sebastian Garde</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <author id="email">lbla@helse-bergen.no</author>
+    <author id="organisation">Haukeland University Hospital of Bergen, Norway</author>
+    <author id="name">Lars Bitsch-Larsen</author>
+    <accreditation>MD, DEAA, MBA, spec in anesthesia, spec in tropical medicine.</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ar-sy</code_string>
+    </language>
+    <author id="name">Mona Saleh</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.symptom.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0035</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_BOOLEAN</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>BOOLEAN</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_BOOLEAN">
+                  <true_valid>true</true_valid>
+                  <false_valid>false</false_valid>
+                </item>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0002</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0151</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0147</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+        <excludes>
+          <string_expression>archetype_id/value matches {/.*/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>.*</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </excludes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0152</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_DATE_TIME</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0028</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_DURATION</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0021</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0023</code_list>
+                <code_list>at0024</code_list>
+                <code_list>at0025</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0026</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_DV_QUANTITY">
+            <rm_type_name>DV_QUANTITY</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <property>
+              <terminology_id>
+                <value>openehr</value>
+              </terminology_id>
+              <code_string>380</code_string>
+            </property>
+            <list>
+              <magnitude>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0.0</lower>
+                <upper>10.0</upper>
+              </magnitude>
+              <precision>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </precision>
+              <units>1</units>
+            </list>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0155</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0153</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.pain(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.pain(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0003</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0004</code_list>
+                <code_list>at0005</code_list>
+                <code_list>at0006</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0037</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0161</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_DATE_TIME</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0057</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0018</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0019</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0017</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>defining_code</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_CODE_PHRASE">
+                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_list>at0156</code_list>
+                    <code_list>at0157</code_list>
+                    <code_list>at0158</code_list>
+                    <code_list>at0159</code_list>
+                    <code_list>at0162</code_list>
+                  </children>
+                </attributes>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0056</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0031</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_COUNT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>magnitude</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>INTEGER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_INTEGER">
+                  <range>
+                    <lower_included>true</lower_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>true</upper_unbounded>
+                    <lower>0</lower>
+                  </range>
+                </item>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0146</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.symptom\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.symptom\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0063</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.symptom(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.symptom(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="ARCHETYPE_SLOT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>0</lower>
+        </occurrences>
+        <node_id>at0154</node_id>
+        <includes>
+          <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.health_event(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+          <expression xsi:type="EXPR_BINARY_OPERATOR">
+            <type>Boolean</type>
+            <operator>2007</operator>
+            <precedence_overridden>false</precedence_overridden>
+            <left_operand xsi:type="EXPR_LEAF">
+              <type>String</type>
+              <item xsi:type="xsd:string">archetype_id/value</item>
+              <reference_type>attribute</reference_type>
+            </left_operand>
+            <right_operand xsi:type="EXPR_LEAF">
+              <type>C_STRING</type>
+              <item xsi:type="C_STRING">
+                <pattern>openEHR-EHR-CLUSTER\.health_event(-[a-zA-Z0-9_]+)*\.v1</pattern>
+              </item>
+              <reference_type>constraint</reference_type>
+            </right_operand>
+          </expression>
+        </includes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0163</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="ar-sy">
+      <items code="at0000">
+        <items id="text">*Symptom(en)</items>
+        <items id="description">*A subjective observation of a physical or mental disturbance in the body of an individual.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Symptom name(en)</items>
+        <items id="description">*The symptom experienced by the subject of care.(en)</items>
+        <items id="comment">*Symptom name should be coded with a terminology, where possible.(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the symptom as perceived by the subject of care.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Variation(en)</items>
+        <items id="description">*The variation of the symptom during its course since onset.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">ثابت</items>
+        <items id="description">العرض موجود بشكل ثابت/مستمر</items>
+      </items>
+      <items code="at0005">
+        <items id="text">متقطع</items>
+        <items id="description">العرض موجود في بعض الأوقات و غائب في البعض الآخر</items>
+      </items>
+      <items code="at0006">
+        <items id="text">متموج</items>
+        <items id="description">العرض يتغير بشكل مؤثر و لكنه موجود في جميع الأوقات</items>
+      </items>
+      <items code="at0017">
+        <items id="text">*Effect(en)</items>
+        <items id="description">*Perceived outcome after exposure of the variable on the symptom.(en)</items>
+      </items>
+      <items code="at0018">
+        <items id="text">*Modifying Factor(en)</items>
+        <items id="description">*Detail about how a specific factor impacts the symptom.(en)</items>
+      </items>
+      <items code="at0019">
+        <items id="text">*Factor(en)</items>
+        <items id="description">*Name of an activity which might impact on the symptom.(en)</items>
+        <items id="comment">*Examples of activities: lying on multiple pillows, eating or administration of medication.(en)</items>
+      </items>
+      <items code="at0021">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*The overall intensity of the symptom as reported by the individual.(en)</items>
+        <items id="comment">*Defining values such as mild, moderate or severe in such a way that is applicable to multiple symptoms plus allows multiple users to interpret and record them consistently is not easy. To extend the value set further with inclusion of additional values such as 'Trivial' and 'Very severe', and/or 'Mild-Moderate' and 'Moderate-Severe', adds to the definitional difficulty and may also worsen inter-recorder reliability issues. Use of 'Life-threatening' and 'Fatal' is also often considered as part of this value set, although from a pure point of view it may actually reflect an outcome rather than a severity. In view of the above, keeping to a well-defined but smaller list is preferred. Note: more specific grading of severity can be recorded using the 'Specific details' SLOT.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The intensity of the symptom does not cause interference with normal activity.(en)</items>
+      </items>
+      <items code="at0024">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The intensity of the symptom causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0025">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The intensity of the symptom causes prevents normal activity.(en)</items>
+      </items>
+      <items code="at0026">
+        <items id="text">*Visual analogue score(en)</items>
+        <items id="description">*Rating scale for severity of the symptom.(en)</items>
+        <items id="comment">*Symptom severity can be rated by the individual by recording a score from 0 (symptom not present) to 10.0 (symptom is as severe as the individual can imagine).(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Duration(en)</items>
+        <items id="description">*The duration of the symptom since onset.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Date/time of resolution' are used in systems, this data element may be calculated, or alternatively, considered redundant.(en)</items>
+      </items>
+      <items code="at0031">
+        <items id="text">*Number of previous episodes(en)</items>
+        <items id="description">*The number of times this symptom has previously occurred.(en)</items>
+      </items>
+      <items code="at0035">
+        <items id="text">*Not present(en)</items>
+        <items id="description">*The individual has not experienced the symptom.(en)</items>
+        <items id="comment">*Record as True if the subject of care has not experienced the symptom.(en)</items>
+      </items>
+      <items code="at0037">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the symptom since onset.(en)</items>
+        <items id="comment">*For example: a text description of the immediate onset of the symptom, activities that worsened or relieved the symptom, whether it is improving or worsening and how it resolved over weeks.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the effect of the modifying factor on the symptom.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Description of previous episodes(en)</items>
+        <items id="description">*Narrative description of any or all previous episodes.(en)</items>
+        <items id="comment">*  May include a comparison to this episode.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Associated symptoms(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0146">
+        <items id="text">*Previous episode(en)</items>
+        <items id="description">*Structured details of the symptom during a previous episode.(en)</items>
+        <items id="comment">*In linked clinical systems, it is possible that previous epsiodes are already recorded within the EHR. Systems can allow the clinician to link to relevant previous episodes.
+In an unlinked system or with a new patient, no previous episodes will be available and additional instances of the symptom archetype could be used to record the previous episodes. (en)</items>
+      </items>
+      <items code="at0147">
+        <items id="text">*Detailed anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Symptom name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0151">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple site on the body where the symptom was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a pain in multiple locations but where all of the other attributes such as impact and duration are identical. If the requirements for recording the body site are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the Detailed anatomical location' SLOT in this archetype. 
+If the anatomical location is included in the Symptom name via precoordinated codes, this data element becomes redundant.(en)</items>
+      </items>
+      <items code="at0152">
+        <items id="text">*Date/time of onset(en)</items>
+        <items id="description">*The timing of the onset for this episode of the symptom.(en)</items>
+        <items id="comment">*While partial dates are permitted, the exact date and time of onset can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0153">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Specific data elements that are additionally required to record as unique attributes of the identified symptom.(en)</items>
+        <items id="comment">*For example: description of pain can require additional data elements describing the radiation and visual analogue rating scales; description of sore throat may include presence of fever or rigors, and difficulty swallowing.(en)</items>
+      </items>
+      <items code="at0154">
+        <items id="text">*Associated events(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0155">
+        <items id="text">*Impact(en)</items>
+        <items id="description">*Description of the functional impact of this symptom.(en)</items>
+        <items id="comment">*Assessment of impact should consider the severity, duration and frequency of the symptom. Examples for hearing loss may include: 'Difficulty Hearing in Quiet Environment'; 'Difficulty Hearing the TV or Radio'; 'Difficulty Hearing Group Conversation'; and 'Difficulty Hearing on Phone'.(en)</items>
+      </items>
+      <items code="at0156">
+        <items id="text">*No effect(en)</items>
+        <items id="description">*Presence of the factor has no impact on the symptom.(en)</items>
+      </items>
+      <items code="at0157">
+        <items id="text">*Precipitates(en)</items>
+        <items id="description">*Presence of the factor causes onset of the symptom.(en)</items>
+      </items>
+      <items code="at0158">
+        <items id="text">*Worsens(en)</items>
+        <items id="description">*Presence of the factor exaccerbates the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0159">
+        <items id="text">*Relieves(en)</items>
+        <items id="description">*Presence of the factor reduces the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0161">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*The timing of the cessation of this episode of the symptom.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Duration' are used in systems, this data element may be calculated, or alternatively, considered redundant. While partial dates are permitted, the exact date and time of resolution can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0162">
+        <items id="text">*Resolves(en)</items>
+        <items id="description">*Presence of the factor resolves the symptom.(en)</items>
+      </items>
+      <items code="at0163">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the symptom not captured in other fields.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Symptom</items>
+        <items id="description">A subjective observation of a physical or mental disturbance in the body of an individual.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Symptom name</items>
+        <items id="description">The symptom experienced by the subject of care.</items>
+        <items id="comment">Symptom name should be coded with a terminology, where possible.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Description</items>
+        <items id="description">Narrative description of the symptom as perceived by the subject of care.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Variation</items>
+        <items id="description">The variation of the symptom during its course since onset.</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Constant</items>
+        <items id="description">The symptom is constantly present.</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Intermittent</items>
+        <items id="description">The symptom is present at times and not at others.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Fluctuating</items>
+        <items id="description">The symptom varys considerably but is almost always present.</items>
+      </items>
+      <items code="at0017">
+        <items id="text">Effect</items>
+        <items id="description">Perceived outcome after exposure of the variable on the symptom.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Modifying Factor</items>
+        <items id="description">Detail about how a specific factor impacts the symptom.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Factor</items>
+        <items id="description">Name of an activity which might impact on the symptom.</items>
+        <items id="comment">Examples of activities: lying on multiple pillows, eating or administration of medication.</items>
+      </items>
+      <items code="at0021">
+        <items id="text">Severity</items>
+        <items id="description">The overall intensity of the symptom as reported by the individual.</items>
+        <items id="comment">Defining values such as mild, moderate or severe in such a way that is applicable to multiple symptoms plus allows multiple users to interpret and record them consistently is not easy. To extend the value set further with inclusion of additional values such as 'Trivial' and 'Very severe', and/or 'Mild-Moderate' and 'Moderate-Severe', adds to the definitional difficulty and may also worsen inter-recorder reliability issues. Use of 'Life-threatening' and 'Fatal' is also often considered as part of this value set, although from a pure point of view it may actually reflect an outcome rather than a severity. In view of the above, keeping to a well-defined but smaller list is preferred. Note: more specific grading of severity can be recorded using the 'Specific details' SLOT.</items>
+      </items>
+      <items code="at0023">
+        <items id="text">Mild</items>
+        <items id="description">The intensity of the symptom does not cause interference with normal activity.</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Moderate</items>
+        <items id="description">The intensity of the symptom causes interference with normal activity.</items>
+      </items>
+      <items code="at0025">
+        <items id="text">Severe</items>
+        <items id="description">The intensity of the symptom causes prevents normal activity.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Visual analogue score</items>
+        <items id="description">Rating scale for severity of the symptom.</items>
+        <items id="comment">Symptom severity can be rated by the individual by recording a score from 0 (symptom not present) to 10.0 (symptom is as severe as the individual can imagine).</items>
+      </items>
+      <items code="at0028">
+        <items id="text">Duration</items>
+        <items id="description">The duration of the symptom since onset.</items>
+        <items id="comment">If 'Date/time of onset' and 'Date/time of resolution' are used in systems, this data element may be calculated, or alternatively, considered redundant.</items>
+      </items>
+      <items code="at0031">
+        <items id="text">Number of previous episodes</items>
+        <items id="description">The number of times this symptom has previously occurred.</items>
+      </items>
+      <items code="at0035">
+        <items id="text">Not present</items>
+        <items id="description">The individual has not experienced the symptom.</items>
+        <items id="comment">Record as True if the subject of care has not experienced the symptom.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Course description</items>
+        <items id="description">Narrative description about the course of the symptom since onset.</items>
+        <items id="comment">For example: a text description of the immediate onset of the symptom, activities that worsened or relieved the symptom, whether it is improving or worsening and how it resolved over weeks.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">Description</items>
+        <items id="description">Narrative description of the effect of the modifying factor on the symptom.</items>
+      </items>
+      <items code="at0057">
+        <items id="text">Description of previous episodes</items>
+        <items id="description">Narrative description of any or all previous episodes.</items>
+        <items id="comment">May include a comparison to this episode.</items>
+      </items>
+      <items code="at0063">
+        <items id="text">Associated symptoms</items>
+        <items id="description">Structured details about any associated symptoms that are concurrent.</items>
+      </items>
+      <items code="at0146">
+        <items id="text">Previous episode</items>
+        <items id="description">Structured details of the symptom during a previous episode.</items>
+        <items id="comment">In linked clinical systems, it is possible that previous epsiodes are already recorded within the EHR. Systems can allow the clinician to link to relevant previous episodes.
+In an unlinked system or with a new patient, no previous episodes will be available and additional instances of the symptom archetype could be used to record the previous episodes.</items>
+      </items>
+      <items code="at0147">
+        <items id="text">Detailed anatomical location</items>
+        <items id="description">Slot to contain detailed and structured anatomical location details.</items>
+        <items id="comment">If the anatomical location is included in the Symptom name via precoordinated codes, use of this SLOT becomes redundant.</items>
+      </items>
+      <items code="at0151">
+        <items id="text">Anatomical location</items>
+        <items id="description">Record of a simple site on the body where the symptom was located.</items>
+        <items id="comment">Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a pain in multiple locations but where all of the other attributes such as impact and duration are identical. If the requirements for recording the body site are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the Detailed anatomical location' SLOT in this archetype. 
+If the anatomical location is included in the Symptom name via precoordinated codes, this data element becomes redundant.</items>
+      </items>
+      <items code="at0152">
+        <items id="text">Date/time of onset</items>
+        <items id="description">The timing of the onset for this episode of the symptom.</items>
+        <items id="comment">While partial dates are permitted, the exact date and time of onset can be recorded, if appropriate.</items>
+      </items>
+      <items code="at0153">
+        <items id="text">Specific details</items>
+        <items id="description">Specific data elements that are additionally required to record as unique attributes of the identified symptom.</items>
+        <items id="comment">For example: description of pain can require additional data elements describing the radiation and visual analogue rating scales; description of sore throat may include presence of fever or rigors, and difficulty swallowing.</items>
+      </items>
+      <items code="at0154">
+        <items id="text">Associated events</items>
+        <items id="description">Structured details about any associated symptoms that are concurrent.</items>
+      </items>
+      <items code="at0155">
+        <items id="text">Impact</items>
+        <items id="description">Description of the functional impact of this symptom.</items>
+        <items id="comment">Assessment of impact should consider the severity, duration and frequency of the symptom. Examples for hearing loss may include: 'Difficulty Hearing in Quiet Environment'; 'Difficulty Hearing the TV or Radio'; 'Difficulty Hearing Group Conversation'; and 'Difficulty Hearing on Phone'.</items>
+      </items>
+      <items code="at0156">
+        <items id="text">No effect</items>
+        <items id="description">Presence of the factor has no impact on the symptom.</items>
+      </items>
+      <items code="at0157">
+        <items id="text">Precipitates</items>
+        <items id="description">Presence of the factor causes onset of the symptom.</items>
+      </items>
+      <items code="at0158">
+        <items id="text">Worsens</items>
+        <items id="description">Presence of the factor exaccerbates the severity or impact of the symptom.</items>
+      </items>
+      <items code="at0159">
+        <items id="text">Relieves</items>
+        <items id="description">Presence of the factor reduces the severity or impact of the symptom.</items>
+      </items>
+      <items code="at0161">
+        <items id="text">Date/time of resolution</items>
+        <items id="description">The timing of the cessation of this episode of the symptom.</items>
+        <items id="comment">If 'Date/time of onset' and 'Duration' are used in systems, this data element may be calculated, or alternatively, considered redundant. While partial dates are permitted, the exact date and time of resolution can be recorded, if appropriate.</items>
+      </items>
+      <items code="at0162">
+        <items id="text">Resolves</items>
+        <items id="description">Presence of the factor resolves the symptom.</items>
+      </items>
+      <items code="at0163">
+        <items id="text">Comment</items>
+        <items id="description">Additional narrative about the symptom not captured in other fields.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="de">
+      <items code="at0000">
+        <items id="text">*Symptom(en)</items>
+        <items id="description">*A subjective observation of a physical or mental disturbance in the body of an individual.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Symptom name(en)</items>
+        <items id="description">*The symptom experienced by the subject of care.(en)</items>
+        <items id="comment">*Symptom name should be coded with a terminology, where possible.(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the symptom as perceived by the subject of care.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Variation(en)</items>
+        <items id="description">*The variation of the symptom during its course since onset.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Dauerhaft</items>
+        <items id="description">das Symptom ist dauerhaft anwesend</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Zeitweise</items>
+        <items id="description">das Symptom ist abwechselnd anwesend und nicht anwesend</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Variabel</items>
+        <items id="description">das Symptom variiert deutlich, ist aber praktisch ständig anwesend</items>
+      </items>
+      <items code="at0017">
+        <items id="text">*Effect(en)</items>
+        <items id="description">*Perceived outcome after exposure of the variable on the symptom.(en)</items>
+      </items>
+      <items code="at0018">
+        <items id="text">*Modifying Factor(en)</items>
+        <items id="description">*Detail about how a specific factor impacts the symptom.(en)</items>
+      </items>
+      <items code="at0019">
+        <items id="text">*Factor(en)</items>
+        <items id="description">*Name of an activity which might impact on the symptom.(en)</items>
+        <items id="comment">*Examples of activities: lying on multiple pillows, eating or administration of medication.(en)</items>
+      </items>
+      <items code="at0021">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*The overall intensity of the symptom as reported by the individual.(en)</items>
+        <items id="comment">*Defining values such as mild, moderate or severe in such a way that is applicable to multiple symptoms plus allows multiple users to interpret and record them consistently is not easy. To extend the value set further with inclusion of additional values such as 'Trivial' and 'Very severe', and/or 'Mild-Moderate' and 'Moderate-Severe', adds to the definitional difficulty and may also worsen inter-recorder reliability issues. Use of 'Life-threatening' and 'Fatal' is also often considered as part of this value set, although from a pure point of view it may actually reflect an outcome rather than a severity. In view of the above, keeping to a well-defined but smaller list is preferred. Note: more specific grading of severity can be recorded using the 'Specific details' SLOT.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The intensity of the symptom does not cause interference with normal activity.(en)</items>
+      </items>
+      <items code="at0024">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The intensity of the symptom causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0025">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The intensity of the symptom causes prevents normal activity.(en)</items>
+      </items>
+      <items code="at0026">
+        <items id="text">*Visual analogue score(en)</items>
+        <items id="description">*Rating scale for severity of the symptom.(en)</items>
+        <items id="comment">*Symptom severity can be rated by the individual by recording a score from 0 (symptom not present) to 10.0 (symptom is as severe as the individual can imagine).(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Duration(en)</items>
+        <items id="description">*The duration of the symptom since onset.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Date/time of resolution' are used in systems, this data element may be calculated, or alternatively, considered redundant.(en)</items>
+      </items>
+      <items code="at0031">
+        <items id="text">*Number of previous episodes(en)</items>
+        <items id="description">*The number of times this symptom has previously occurred.(en)</items>
+      </items>
+      <items code="at0035">
+        <items id="text">*Not present(en)</items>
+        <items id="description">*The individual has not experienced the symptom.(en)</items>
+        <items id="comment">*Record as True if the subject of care has not experienced the symptom.(en)</items>
+      </items>
+      <items code="at0037">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the symptom since onset.(en)</items>
+        <items id="comment">*For example: a text description of the immediate onset of the symptom, activities that worsened or relieved the symptom, whether it is improving or worsening and how it resolved over weeks.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the effect of the modifying factor on the symptom.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Description of previous episodes(en)</items>
+        <items id="description">*Narrative description of any or all previous episodes.(en)</items>
+        <items id="comment">*  May include a comparison to this episode.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Associated symptoms(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0146">
+        <items id="text">*Previous episode(en)</items>
+        <items id="description">*Structured details of the symptom during a previous episode.(en)</items>
+        <items id="comment">*In linked clinical systems, it is possible that previous epsiodes are already recorded within the EHR. Systems can allow the clinician to link to relevant previous episodes.
+In an unlinked system or with a new patient, no previous episodes will be available and additional instances of the symptom archetype could be used to record the previous episodes. (en)</items>
+      </items>
+      <items code="at0147">
+        <items id="text">*Detailed anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Symptom name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0151">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple site on the body where the symptom was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a pain in multiple locations but where all of the other attributes such as impact and duration are identical. If the requirements for recording the body site are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the Detailed anatomical location' SLOT in this archetype. 
+If the anatomical location is included in the Symptom name via precoordinated codes, this data element becomes redundant.(en)</items>
+      </items>
+      <items code="at0152">
+        <items id="text">*Date/time of onset(en)</items>
+        <items id="description">*The timing of the onset for this episode of the symptom.(en)</items>
+        <items id="comment">*While partial dates are permitted, the exact date and time of onset can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0153">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Specific data elements that are additionally required to record as unique attributes of the identified symptom.(en)</items>
+        <items id="comment">*For example: description of pain can require additional data elements describing the radiation and visual analogue rating scales; description of sore throat may include presence of fever or rigors, and difficulty swallowing.(en)</items>
+      </items>
+      <items code="at0154">
+        <items id="text">*Associated events(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0155">
+        <items id="text">*Impact(en)</items>
+        <items id="description">*Description of the functional impact of this symptom.(en)</items>
+        <items id="comment">*Assessment of impact should consider the severity, duration and frequency of the symptom. Examples for hearing loss may include: 'Difficulty Hearing in Quiet Environment'; 'Difficulty Hearing the TV or Radio'; 'Difficulty Hearing Group Conversation'; and 'Difficulty Hearing on Phone'.(en)</items>
+      </items>
+      <items code="at0156">
+        <items id="text">*No effect(en)</items>
+        <items id="description">*Presence of the factor has no impact on the symptom.(en)</items>
+      </items>
+      <items code="at0157">
+        <items id="text">*Precipitates(en)</items>
+        <items id="description">*Presence of the factor causes onset of the symptom.(en)</items>
+      </items>
+      <items code="at0158">
+        <items id="text">*Worsens(en)</items>
+        <items id="description">*Presence of the factor exaccerbates the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0159">
+        <items id="text">*Relieves(en)</items>
+        <items id="description">*Presence of the factor reduces the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0161">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*The timing of the cessation of this episode of the symptom.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Duration' are used in systems, this data element may be calculated, or alternatively, considered redundant. While partial dates are permitted, the exact date and time of resolution can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0162">
+        <items id="text">*Resolves(en)</items>
+        <items id="description">*Presence of the factor resolves the symptom.(en)</items>
+      </items>
+      <items code="at0163">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the symptom not captured in other fields.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="nb">
+      <items code="at0000">
+        <items id="text">*Symptom(en)</items>
+        <items id="description">*A subjective observation of a physical or mental disturbance in the body of an individual.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Symptom name(en)</items>
+        <items id="description">*The symptom experienced by the subject of care.(en)</items>
+        <items id="comment">*Symptom name should be coded with a terminology, where possible.(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the symptom as perceived by the subject of care.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Variation(en)</items>
+        <items id="description">*The variation of the symptom during its course since onset.(en)</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Konstant</items>
+        <items id="description">Symptomet er konstant tilstede.</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Intermitterende</items>
+        <items id="description">Symptomet er tilstede tidvis og fraværende til andre tider.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Fluktuerende</items>
+        <items id="description">Symptomet varierer betydelig, men er tilstede nesten hele tiden.</items>
+      </items>
+      <items code="at0017">
+        <items id="text">*Effect(en)</items>
+        <items id="description">*Perceived outcome after exposure of the variable on the symptom.(en)</items>
+      </items>
+      <items code="at0018">
+        <items id="text">*Modifying Factor(en)</items>
+        <items id="description">*Detail about how a specific factor impacts the symptom.(en)</items>
+      </items>
+      <items code="at0019">
+        <items id="text">*Factor(en)</items>
+        <items id="description">*Name of an activity which might impact on the symptom.(en)</items>
+        <items id="comment">*Examples of activities: lying on multiple pillows, eating or administration of medication.(en)</items>
+      </items>
+      <items code="at0021">
+        <items id="text">*Severity(en)</items>
+        <items id="description">*The overall intensity of the symptom as reported by the individual.(en)</items>
+        <items id="comment">*Defining values such as mild, moderate or severe in such a way that is applicable to multiple symptoms plus allows multiple users to interpret and record them consistently is not easy. To extend the value set further with inclusion of additional values such as 'Trivial' and 'Very severe', and/or 'Mild-Moderate' and 'Moderate-Severe', adds to the definitional difficulty and may also worsen inter-recorder reliability issues. Use of 'Life-threatening' and 'Fatal' is also often considered as part of this value set, although from a pure point of view it may actually reflect an outcome rather than a severity. In view of the above, keeping to a well-defined but smaller list is preferred. Note: more specific grading of severity can be recorded using the 'Specific details' SLOT.(en)</items>
+      </items>
+      <items code="at0023">
+        <items id="text">*Mild(en)</items>
+        <items id="description">*The intensity of the symptom does not cause interference with normal activity.(en)</items>
+      </items>
+      <items code="at0024">
+        <items id="text">*Moderate(en)</items>
+        <items id="description">*The intensity of the symptom causes interference with normal activity.(en)</items>
+      </items>
+      <items code="at0025">
+        <items id="text">*Severe(en)</items>
+        <items id="description">*The intensity of the symptom causes prevents normal activity.(en)</items>
+      </items>
+      <items code="at0026">
+        <items id="text">*Visual analogue score(en)</items>
+        <items id="description">*Rating scale for severity of the symptom.(en)</items>
+        <items id="comment">*Symptom severity can be rated by the individual by recording a score from 0 (symptom not present) to 10.0 (symptom is as severe as the individual can imagine).(en)</items>
+      </items>
+      <items code="at0028">
+        <items id="text">*Duration(en)</items>
+        <items id="description">*The duration of the symptom since onset.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Date/time of resolution' are used in systems, this data element may be calculated, or alternatively, considered redundant.(en)</items>
+      </items>
+      <items code="at0031">
+        <items id="text">*Number of previous episodes(en)</items>
+        <items id="description">*The number of times this symptom has previously occurred.(en)</items>
+      </items>
+      <items code="at0035">
+        <items id="text">*Not present(en)</items>
+        <items id="description">*The individual has not experienced the symptom.(en)</items>
+        <items id="comment">*Record as True if the subject of care has not experienced the symptom.(en)</items>
+      </items>
+      <items code="at0037">
+        <items id="text">*Course description(en)</items>
+        <items id="description">*Narrative description about the course of the symptom since onset.(en)</items>
+        <items id="comment">*For example: a text description of the immediate onset of the symptom, activities that worsened or relieved the symptom, whether it is improving or worsening and how it resolved over weeks.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Description(en)</items>
+        <items id="description">*Narrative description of the effect of the modifying factor on the symptom.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Description of previous episodes(en)</items>
+        <items id="description">*Narrative description of any or all previous episodes.(en)</items>
+        <items id="comment">*  May include a comparison to this episode.(en)</items>
+      </items>
+      <items code="at0063">
+        <items id="text">*Associated symptoms(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0146">
+        <items id="text">*Previous episode(en)</items>
+        <items id="description">*Structured details of the symptom during a previous episode.(en)</items>
+        <items id="comment">*In linked clinical systems, it is possible that previous epsiodes are already recorded within the EHR. Systems can allow the clinician to link to relevant previous episodes.
+In an unlinked system or with a new patient, no previous episodes will be available and additional instances of the symptom archetype could be used to record the previous episodes. (en)</items>
+      </items>
+      <items code="at0147">
+        <items id="text">*Detailed anatomical location(en)</items>
+        <items id="description">*Slot to contain detailed and structured anatomical location details.(en)</items>
+        <items id="comment">*If the anatomical location is included in the Symptom name via precoordinated codes, use of this SLOT becomes redundant.(en)</items>
+      </items>
+      <items code="at0151">
+        <items id="text">*Anatomical location(en)</items>
+        <items id="description">*Record of a simple site on the body where the symptom was located.(en)</items>
+        <items id="comment">*Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a pain in multiple locations but where all of the other attributes such as impact and duration are identical. If the requirements for recording the body site are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the Detailed anatomical location' SLOT in this archetype. 
+If the anatomical location is included in the Symptom name via precoordinated codes, this data element becomes redundant.(en)</items>
+      </items>
+      <items code="at0152">
+        <items id="text">*Date/time of onset(en)</items>
+        <items id="description">*The timing of the onset for this episode of the symptom.(en)</items>
+        <items id="comment">*While partial dates are permitted, the exact date and time of onset can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0153">
+        <items id="text">*Specific details(en)</items>
+        <items id="description">*Specific data elements that are additionally required to record as unique attributes of the identified symptom.(en)</items>
+        <items id="comment">*For example: description of pain can require additional data elements describing the radiation and visual analogue rating scales; description of sore throat may include presence of fever or rigors, and difficulty swallowing.(en)</items>
+      </items>
+      <items code="at0154">
+        <items id="text">*Associated events(en)</items>
+        <items id="description">*Structured details about any associated symptoms that are concurrent.(en)</items>
+      </items>
+      <items code="at0155">
+        <items id="text">*Impact(en)</items>
+        <items id="description">*Description of the functional impact of this symptom.(en)</items>
+        <items id="comment">*Assessment of impact should consider the severity, duration and frequency of the symptom. Examples for hearing loss may include: 'Difficulty Hearing in Quiet Environment'; 'Difficulty Hearing the TV or Radio'; 'Difficulty Hearing Group Conversation'; and 'Difficulty Hearing on Phone'.(en)</items>
+      </items>
+      <items code="at0156">
+        <items id="text">*No effect(en)</items>
+        <items id="description">*Presence of the factor has no impact on the symptom.(en)</items>
+      </items>
+      <items code="at0157">
+        <items id="text">*Precipitates(en)</items>
+        <items id="description">*Presence of the factor causes onset of the symptom.(en)</items>
+      </items>
+      <items code="at0158">
+        <items id="text">*Worsens(en)</items>
+        <items id="description">*Presence of the factor exaccerbates the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0159">
+        <items id="text">*Relieves(en)</items>
+        <items id="description">*Presence of the factor reduces the severity or impact of the symptom.(en)</items>
+      </items>
+      <items code="at0161">
+        <items id="text">*Date/time of resolution(en)</items>
+        <items id="description">*The timing of the cessation of this episode of the symptom.(en)</items>
+        <items id="comment">*If 'Date/time of onset' and 'Duration' are used in systems, this data element may be calculated, or alternatively, considered redundant. While partial dates are permitted, the exact date and time of resolution can be recorded, if appropriate.(en)</items>
+      </items>
+      <items code="at0162">
+        <items id="text">*Resolves(en)</items>
+        <items id="description">*Presence of the factor resolves the symptom.(en)</items>
+      </items>
+      <items code="at0163">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*Additional narrative about the symptom not captured in other fields.(en)</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="at0000">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>19019007</code_string>
+        </value>
+      </items>
+      <items code="at0001">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>19019007</code_string>
+        </value>
+      </items>
+      <items code="at0002">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162408000</code_string>
+        </value>
+      </items>
+      <items code="at0021">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162465004</code_string>
+        </value>
+      </items>
+      <items code="at0023">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162468002</code_string>
+        </value>
+      </items>
+      <items code="at0024">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162469005</code_string>
+        </value>
+      </items>
+      <items code="at0025">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162470006</code_string>
+        </value>
+      </items>
+      <items code="at0028">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>162442009</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

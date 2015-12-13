@@ -1,0 +1,17 @@
+
+Ocean Informatics vEHR Service Interface
+https://openehr.atlassian.net/wiki/display/spec/Ocean+Informatics+vEHR+Service+Interface
+
+Ocean EhrGate - Composition Builder programming example
+https://openehr.atlassian.net/wiki/display/spec/Ocean+EhrGate+-+Composition+Builder+programming+example
+
+Ppazos Groovy Compositions Example
+https://github.com/ppazos/cabolabs-ehrserver/blob/master/test/unit/ehr/RestControllerTests.groovy
+
+REST Api (Sunsvall)
+https://openehr.atlassian.net/wiki/display/spec/openEHR+REST+APIs
+
+OpenEHR Archetypes for CDA documents
+https://openehr.atlassian.net/wiki/display/stds/openEHR+Archetypes+for+HL7+CDA+Documents
+
+

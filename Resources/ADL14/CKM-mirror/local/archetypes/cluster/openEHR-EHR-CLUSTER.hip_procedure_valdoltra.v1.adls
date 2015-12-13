@@ -1,0 +1,220 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.hip_procedure_valdoltra.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"***">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2014-12-04">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record additional hip procedure details to align with Valdoltra hip registry.">
+			use = <"">
+			misuse = <"">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To record additional hip procedure details to align with Valdoltra hip registry.(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"D9F9595442B077FEF19BB08D0DD1FB9B">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Hip procedure registry details (Valdoltra)
+		items matches {
+			ELEMENT[id12] occurrences matches {0..1} matches {	-- Trochanter osteotomy
+				value matches {
+					DV_CODED_TEXT[id13] matches {
+						defining_code matches {[ac1]}		-- Trochanter osteotomy (synthesised)
+					}
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Prophylactic antibiotics
+				value matches {
+					DV_CODED_TEXT[id14] matches {
+						defining_code matches {[ac2]}		-- Prophylactic antibiotics (synthesised)
+					}
+				}
+			}
+			ELEMENT[id6] occurrences matches {0..1} matches {	-- Wound drainage
+				value matches {
+					DV_CODED_TEXT[id15] matches {
+						defining_code matches {[ac3]}		-- Wound drainage (synthesised)
+					}
+				}
+			}
+			ELEMENT[id11] occurrences matches {0..1} matches {	-- Duration of procedure
+				value matches {
+					DV_DURATION[id16] matches {
+						value matches {PTM/|>=PT0S|}
+					}
+				}
+			}
+			allow_archetype CLUSTER[id10] matches {	-- Details
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Hip procedure registry details (Valdoltra)">
+				description = <"Additional hip procedure details to align with Valdoltra hospital hip registry.">
+			>
+			["id3"] = <
+				text = <"Prophylactic antibiotics">
+				description = <"Were prophylactic systemic antibiotics used?">
+			>
+			["at4"] = <
+				text = <"Systemic prophylactic antibiotics used">
+				description = <"Systemic antibiotic prophylaxis was given to the patient.">
+			>
+			["at5"] = <
+				text = <"Systemic prophylactic antibiotics not used">
+				description = <"Systemic antibiotic prophylaxis was not given to the patient.">
+			>
+			["id6"] = <
+				text = <"Wound drainage">
+				description = <"Was wound drainage used?">
+			>
+			["at7"] = <
+				text = <"Wound drainage used">
+				description = <"Wound drainage was used.">
+			>
+			["at8"] = <
+				text = <"Wound drainage not used">
+				description = <"Wound drainage was not used.">
+			>
+			["id10"] = <
+				text = <"Details">
+				description = <"Further procedure details.">
+			>
+			["id11"] = <
+				text = <"Duration of procedure">
+				description = <"The duration of the hip procedure.">
+			>
+			["id12"] = <
+				text = <"Trochanter osteotomy">
+				description = <"Was trochanter osteotomy performed?">
+			>
+			["at13"] = <
+				text = <"Trochanter osteotomy performed">
+				description = <"Trochanter osteotomy was performed.">
+			>
+			["at14"] = <
+				text = <"Trochanter osteotomy not performed">
+				description = <"Trochanter osteotomy was not performed.">
+			>
+			["ac1"] = <
+				text = <"Trochanter osteotomy (synthesised)">
+				description = <"Was trochanter osteotomy performed? (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Prophylactic antibiotics (synthesised)">
+				description = <"Were prophylactic systemic antibiotics used? (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Wound drainage (synthesised)">
+				description = <"Was wound drainage used? (synthesised)">
+			>
+		>
+		["sl"] = <
+			["id1"] = <
+				text = <"*Hip procedure registry details (Valdoltra)(en)">
+				description = <"*Additional hip procedure details to align with Valdoltra hospital hip registry.(en)">
+			>
+			["id3"] = <
+				text = <"*Prophylactic antibiotics(en)">
+				description = <"*Were prophylactic systemic antibiotics used?(en)">
+			>
+			["at4"] = <
+				text = <"*Systemic prophylactic antibiotics used(en)">
+				description = <"*Systemic antibiotic prophylaxis was given to the patient.(en)">
+			>
+			["at5"] = <
+				text = <"*Systemic prophylactic antibiotics not used(en)">
+				description = <"*Systemic antibiotic prophylaxis was not given to the patient.(en)">
+			>
+			["id6"] = <
+				text = <"*Wound drainage(en)">
+				description = <"*Was wound drainage used?(en)">
+			>
+			["at7"] = <
+				text = <"*Wound drainage used(en)">
+				description = <"*Wound drainage was used.(en)">
+			>
+			["at8"] = <
+				text = <"*Wound drainage not used(en)">
+				description = <"*Wound drainage was not used.(en)">
+			>
+			["id10"] = <
+				text = <"*Details(en)">
+				description = <"*Further procedure details.(en)">
+			>
+			["id11"] = <
+				text = <"*Duration of procedure(en)">
+				description = <"*The duration of the hip procedure.(en)">
+			>
+			["id12"] = <
+				text = <"*Trochanter osteotomy(en)">
+				description = <"*Was trochanter osteotomy performed?(en)">
+			>
+			["at13"] = <
+				text = <"*Trochanter osteotomy performed(en)">
+				description = <"*Trochanter osteotomy was performed.(en)">
+			>
+			["at14"] = <
+				text = <"*Trochanter osteotomy not performed(en)">
+				description = <"*Trochanter osteotomy was not performed.(en)">
+			>
+			["ac1"] = <
+				text = <"*Trochanter osteotomy(en) (synthesised)">
+				description = <"*Was trochanter osteotomy performed?(en) (synthesised)">
+			>
+			["ac2"] = <
+				text = <"*Prophylactic antibiotics(en) (synthesised)">
+				description = <"*Were prophylactic systemic antibiotics used?(en) (synthesised)">
+			>
+			["ac3"] = <
+				text = <"*Wound drainage(en) (synthesised)">
+				description = <"*Was wound drainage used?(en) (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at13", "at14">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at4", "at5">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at7", "at8">
+		>
+	>

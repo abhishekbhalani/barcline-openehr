@@ -1,0 +1,813 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-ACTION.procedure-primary_hip_arthroplasty_res.v1.0.0
+
+specialize
+	openEHR-EHR-ACTION.procedure.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"Uroš Rajkovič, Biljana Prinčič">
+				["organisation"] = <"Slovenia">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Art Latyp; Латыпов Артур">
+				["organisation"] = <"RusBITech; РусБИТех, Москва">
+			>
+			accreditation = <"hmm">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Thiago F. F. Dias">
+				["organisation"] = <"FMRP-USP">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-03">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Para registrar os detalhes sobre um procedimento realizado.">
+			use = <"Usado para registrar informações detalhadas sobre o procedimento realizado em um indivíduo.
+Informações sobre atividades relacionadas ao procedimento, como a anestesia ou a administração de medicamentos, devem ser registrados em arquétipos de ACTION separados.">
+			keywords = <"procedimento", ...>
+			misuse = <"">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Za beleženje podrobnosti o izvedeni aktivnosti">
+			use = <"Za beleženje podrobnosto o izvedeni aktivnosti, ki zadeva posameznega pacienta/subjekt">
+			keywords = <"aktivnosti", "postopek">
+			misuse = <"Podrobnosti o aktivnostih povezani z opisano kativnostjo, kot npr. dajanje zdravil, se zabeleži v arhetipih tipa ACTION">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of primary hip arthroplasty constrined to align with Slovenian RES register.">
+			use = <"Use to record detailed information about the procedure that has been carried out on an individual. 
+Information about activities related to the procedure, such as anaesthesia or administration of medications, should be recorded in separate ACTION archetypes.">
+			keywords = <"procedure", ...>
+			misuse = <"">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول إجراء طبي تم بالفعل إجراؤه">
+			use = <"لتسجيل معلومات تفصيلية حول إجراء طبي تم تنفيذه على شخص ما. و ينبغي تسجيل المعلومات حول النشاطات المتعلقة بالنشاطات المتعلقة بالإجراء الطبي, مثل التخدير أو إعطاء الأدوية في نماذج (فعل) منفردة.">
+			keywords = <"الإجراء الطبي", ...>
+			misuse = <"">
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для записи сведений об проведенной процедуре">
+			use = <"Используется для записи подробной информации о процедуре, выполненной пациенту.
+Информация о действиях, связанных с выполнением процедуры, таких как анестезия или применение лекарств, долдно быть записано в отдельных архетипах типа ДЕЙСТВИЕ">
+			keywords = <"процедура, выполнение", ...>
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9FA81628B695F63F049770CA34E38B6C">
+	>
+
+definition
+	ACTION[id1.1] matches {	-- Primary hip arthroplasty
+		/ism_transition matches {
+			after [id44]
+			ISM_TRANSITION[id45] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.1] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.2] matches {
+						defining_code matches {[at45]}
+					}
+				}
+			}
+			ISM_TRANSITION[id46] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.3] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.4] matches {
+						defining_code matches {[at46]}
+					}
+				}
+			}
+			ISM_TRANSITION[id47] matches {
+				current_state matches {
+					DV_CODED_TEXT[id0.5] matches {
+						defining_code matches {[at56]}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT[id0.6] matches {
+						defining_code matches {[at47]}
+					}
+				}
+			}
+		}
+		/description[id2]/items[id3.1]/value matches {
+			DV_CODED_TEXT[id85.1] matches {
+				defining_code matches {[ac0.1]}		-- Current procedure (synthesised)
+			}
+		}
+		/description[id2]/items[id15.1]/value matches {
+			DV_CODED_TEXT[id95.1] matches {
+				defining_code matches {[ac0.2]}		-- Reason for procedure (synthesised)
+			}
+		}
+		/description[id2]/items matches {
+			ELEMENT[id52.1] matches {	-- Prosthesis fixation
+				value matches {
+					DV_CODED_TEXT[id0.7] matches {
+						defining_code matches {[ac0.3]}		-- Prosthesis fixation (synthesised)
+					}
+				}
+			}
+			before [id50]
+			ELEMENT[id52.2] matches {	-- Approach
+				value matches {
+					DV_CODED_TEXT[id0.8] matches {
+						defining_code matches {[ac0.4]}		-- Approach (synthesised)
+					}
+				}
+			}
+			after [id4]
+			allow_archetype CLUSTER[id51] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+			before [id49]
+			CLUSTER[id31] occurrences matches {0..1} matches {
+				items matches {
+					ELEMENT[id53] occurrences matches {0..1} matches {
+						value matches {
+							DV_TEXT[id0.9] 
+						}
+					}
+					ELEMENT[id32] matches {
+						value matches {
+							DV_TEXT[id0.10] 
+						}
+					}
+					ELEMENT[id33] matches {
+						value matches {
+							DV_EHR_URI[id0.11] 
+						}
+					}
+				}
+			}
+			after [id49]
+			ELEMENT[id5] occurrences matches {0..1} matches {
+				value matches {
+					DV_BOOLEAN[id0.12] matches {
+						value matches {True}
+					}
+				}
+			}
+			ELEMENT[id19] occurrences matches {0..1} 
+			before [id7]
+			ELEMENT[id16] matches {
+				value matches {
+					DV_TEXT[id0.13] 
+				}
+			}
+			after [id6]
+			ELEMENT[id14] matches {
+				value matches {
+					DV_MULTIMEDIA[id0.15] matches {
+						media_type 
+					}
+				}
+			}
+		}
+		/description[id2]/items[id59]/value matches {
+			DV_BOOLEAN[id0.14] matches {
+				value matches {True, False}
+			}
+		}
+		/protocol[id54]/items matches {
+			allow_archetype CLUSTER[id58] occurrences matches {0..1} matches {
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["at0.59"] = <
+				text = <"*Total standard hip replacement(en)">
+				description = <"*Total standard hip replacement.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Partial bipolar hip replacement(en)">
+				description = <"*Partial bipolar hip replacement.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Partial resurfacing hip replacement(en)">
+				description = <"*Partial resurfacing hip replacement.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Primary Osteoarthritis(en)">
+				description = <"*ICD codes: M16.0 M16.1(en)">
+			>
+			["at0.63"] = <
+				text = <"*Dysplasia /dysplasia with dislocation(en)">
+				description = <"*ICD Codes M16.2 M16.3(en)">
+			>
+			["at0.64"] = <
+				text = <"*Post-Traumatic(en)">
+				description = <"*(en)">
+			>
+			["at0.65"] = <
+				text = <"*Aseptic Necrosis of Femoral Head(en)">
+				description = <"*(en)">
+			>
+			["at0.67"] = <
+				text = <"*Rheumatoid Arthritis, other arthritis and anylosing spondyilitis(en)">
+				description = <"*ICD codes: M05 M06 M07* M08 M09* M10 M11 M45(en)">
+			>
+			["at0.68"] = <
+				text = <"*Cemented(en)">
+				description = <"**(en)">
+			>
+			["at0.69"] = <
+				text = <"*Uncemented(en)">
+				description = <"**(en)">
+			>
+			["at0.70"] = <
+				text = <"*Hybrid-cemented stem only(en)">
+				description = <"**(en)">
+			>
+			["at0.71"] = <
+				text = <"*Inverse_ Hybrid(en)">
+				description = <"**(en)">
+			>
+			["at0.75"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["at0.76"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.77"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.78"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.79"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.80"] = <
+				text = <"*Other(en)">
+				description = <"*ICD codes M00 M01* M15 M16.6 M16.7 M16.9 M19 M86(en)">
+			>
+			["at0.81"] = <
+				text = <"*Total resurfacing hip replacement(en)">
+				description = <"*Total resurfacing hip replacement.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Primary hip arthroplasty(en)">
+				description = <"*Details of primary hip arthroplasty constrined to align with Slovenian RES register.(en)">
+			>
+			["id3.1"] = <
+				text = <"*Current procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*Reason for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Current procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*Reason for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Prosthesis fixation(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+			["ac0.4"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["sl"] = <
+			["at0.59"] = <
+				text = <"*Total standard hip replacement(en)">
+				description = <"*Total standard hip replacement.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Partial bipolar hip replacement(en)">
+				description = <"*Partial bipolar hip replacement.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Partial resurfacing hip replacement(en)">
+				description = <"*Partial resurfacing hip replacement.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Primary Osteoarthritis(en)">
+				description = <"*ICD codes: M16.0 M16.1(en)">
+			>
+			["at0.63"] = <
+				text = <"*Dysplasia /dysplasia with dislocation(en)">
+				description = <"*ICD Codes M16.2 M16.3(en)">
+			>
+			["at0.64"] = <
+				text = <"*Post-Traumatic(en)">
+				description = <"*(en)">
+			>
+			["at0.65"] = <
+				text = <"*Aseptic Necrosis of Femoral Head(en)">
+				description = <"*(en)">
+			>
+			["at0.67"] = <
+				text = <"*Rheumatoid Arthritis, other arthritis and anylosing spondyilitis(en)">
+				description = <"*ICD codes: M05 M06 M07* M08 M09* M10 M11 M45(en)">
+			>
+			["at0.68"] = <
+				text = <"*Cemented(en)">
+				description = <"**(en)">
+			>
+			["at0.69"] = <
+				text = <"*Uncemented(en)">
+				description = <"**(en)">
+			>
+			["at0.70"] = <
+				text = <"*Hybrid-cemented stem only(en)">
+				description = <"**(en)">
+			>
+			["at0.71"] = <
+				text = <"*Inverse_ Hybrid(en)">
+				description = <"**(en)">
+			>
+			["at0.75"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["at0.76"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.77"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.78"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.79"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.80"] = <
+				text = <"*Other(en)">
+				description = <"*ICD codes M00 M01* M15 M16.6 M16.7 M16.9 M19 M86(en)">
+			>
+			["at0.81"] = <
+				text = <"*Total resurfacing hip replacement(en)">
+				description = <"*Total resurfacing hip replacement.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Primary hip arthroplasty(en)">
+				description = <"*Details of primary hip arthroplasty constrined to align with Slovenian RES register.(en)">
+			>
+			["id3.1"] = <
+				text = <"*Current procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*Reason for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Current procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*Reason for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Prosthesis fixation(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+			["ac0.4"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["en"] = <
+			["at0.59"] = <
+				text = <"Total standard hip replacement">
+				description = <"Total standard hip replacement.">
+			>
+			["at0.60"] = <
+				text = <"Partial bipolar hip replacement">
+				description = <"Partial bipolar hip replacement.">
+			>
+			["at0.61"] = <
+				text = <"Partial resurfacing hip replacement">
+				description = <"Partial resurfacing hip replacement.">
+			>
+			["at0.62"] = <
+				text = <"Primary Osteoarthritis">
+				description = <"ICD codes: M16.0 M16.1">
+			>
+			["at0.63"] = <
+				text = <"Dysplasia /dysplasia with dislocation">
+				description = <"ICD Codes M16.2 M16.3">
+			>
+			["at0.64"] = <
+				text = <"Post-Traumatic">
+				description = <"*">
+			>
+			["at0.65"] = <
+				text = <"Aseptic Necrosis of Femoral Head">
+				description = <"*">
+			>
+			["at0.67"] = <
+				text = <"Rheumatoid Arthritis, other arthritis and anylosing spondyilitis">
+				description = <"ICD codes: M05 M06 M07* M08 M09* M10 M11 M45">
+			>
+			["at0.68"] = <
+				text = <"Cemented">
+				description = <"*">
+			>
+			["at0.69"] = <
+				text = <"Uncemented">
+				description = <"*">
+			>
+			["at0.70"] = <
+				text = <"Hybrid-cemented stem only">
+				description = <"*">
+			>
+			["at0.71"] = <
+				text = <"Inverse_ Hybrid">
+				description = <"*">
+			>
+			["at0.75"] = <
+				text = <"Anterior">
+				description = <"Anterior.">
+			>
+			["at0.76"] = <
+				text = <"Anterolateral">
+				description = <"Anterolateral.">
+			>
+			["at0.77"] = <
+				text = <"Direct lateral">
+				description = <"Direct lateral.">
+			>
+			["at0.78"] = <
+				text = <"Posterolateral">
+				description = <"Posterolateral.">
+			>
+			["at0.79"] = <
+				text = <"Minimally Invasive">
+				description = <"Minimally Invasive.">
+			>
+			["at0.80"] = <
+				text = <"Other">
+				description = <"ICD codes M00 M01* M15 M16.6 M16.7 M16.9 M19 M86">
+			>
+			["at0.81"] = <
+				text = <"Total resurfacing hip replacement">
+				description = <"Total resurfacing hip replacement.">
+			>
+			["id1.1"] = <
+				text = <"Primary hip arthroplasty">
+				description = <"Details of primary hip arthroplasty constrined to align with Slovenian RES register.">
+			>
+			["id3.1"] = <
+				text = <"Current procedure">
+				description = <"The name of the procedure.">
+			>
+			["id15.1"] = <
+				text = <"Reason for procedure">
+				description = <"The reason or indication for the procedure.">
+			>
+			["id52.1"] = <
+				text = <"Prosthesis fixation">
+				description = <"Identification of specific method or technique used for procedure.">
+			>
+			["id52.2"] = <
+				text = <"Approach">
+				description = <"Identification of specific method or technique used for procedure.">
+			>
+			["ac0.1"] = <
+				text = <"Current procedure (synthesised)">
+				description = <"The name of the procedure. (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"Reason for procedure (synthesised)">
+				description = <"The reason or indication for the procedure. (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"Prosthesis fixation (synthesised)">
+				description = <"Identification of specific method or technique used for procedure. (synthesised)">
+			>
+			["ac0.4"] = <
+				text = <"Approach (synthesised)">
+				description = <"Identification of specific method or technique used for procedure. (synthesised)">
+			>
+		>
+		["pt-br"] = <
+			["at0.59"] = <
+				text = <"*Total standard hip replacement(en)">
+				description = <"*Total standard hip replacement.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Partial bipolar hip replacement(en)">
+				description = <"*Partial bipolar hip replacement.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Partial resurfacing hip replacement(en)">
+				description = <"*Partial resurfacing hip replacement.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Primary Osteoarthritis(en)">
+				description = <"*ICD codes: M16.0 M16.1(en)">
+			>
+			["at0.63"] = <
+				text = <"*Dysplasia /dysplasia with dislocation(en)">
+				description = <"*ICD Codes M16.2 M16.3(en)">
+			>
+			["at0.64"] = <
+				text = <"*Post-Traumatic(en)">
+				description = <"*(en)">
+			>
+			["at0.65"] = <
+				text = <"*Aseptic Necrosis of Femoral Head(en)">
+				description = <"*(en)">
+			>
+			["at0.67"] = <
+				text = <"*Rheumatoid Arthritis, other arthritis and anylosing spondyilitis(en)">
+				description = <"*ICD codes: M05 M06 M07* M08 M09* M10 M11 M45(en)">
+			>
+			["at0.68"] = <
+				text = <"*Cemented(en)">
+				description = <"**(en)">
+			>
+			["at0.69"] = <
+				text = <"*Uncemented(en)">
+				description = <"**(en)">
+			>
+			["at0.70"] = <
+				text = <"*Hybrid-cemented stem only(en)">
+				description = <"**(en)">
+			>
+			["at0.71"] = <
+				text = <"*Inverse_ Hybrid(en)">
+				description = <"**(en)">
+			>
+			["at0.75"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["at0.76"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.77"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.78"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.79"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.80"] = <
+				text = <"*Other(en)">
+				description = <"*ICD codes M00 M01* M15 M16.6 M16.7 M16.9 M19 M86(en)">
+			>
+			["at0.81"] = <
+				text = <"*Total resurfacing hip replacement(en)">
+				description = <"*Total resurfacing hip replacement.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Primary hip arthroplasty(en)">
+				description = <"*Details of primary hip arthroplasty constrined to align with Slovenian RES register.(en)">
+			>
+			["id3.1"] = <
+				text = <"*Current procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*Reason for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Current procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*Reason for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Prosthesis fixation(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+			["ac0.4"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+		["ru"] = <
+			["at0.59"] = <
+				text = <"*Total standard hip replacement(en)">
+				description = <"*Total standard hip replacement.(en)">
+			>
+			["at0.60"] = <
+				text = <"*Partial bipolar hip replacement(en)">
+				description = <"*Partial bipolar hip replacement.(en)">
+			>
+			["at0.61"] = <
+				text = <"*Partial resurfacing hip replacement(en)">
+				description = <"*Partial resurfacing hip replacement.(en)">
+			>
+			["at0.62"] = <
+				text = <"*Primary Osteoarthritis(en)">
+				description = <"*ICD codes: M16.0 M16.1(en)">
+			>
+			["at0.63"] = <
+				text = <"*Dysplasia /dysplasia with dislocation(en)">
+				description = <"*ICD Codes M16.2 M16.3(en)">
+			>
+			["at0.64"] = <
+				text = <"*Post-Traumatic(en)">
+				description = <"*(en)">
+			>
+			["at0.65"] = <
+				text = <"*Aseptic Necrosis of Femoral Head(en)">
+				description = <"*(en)">
+			>
+			["at0.67"] = <
+				text = <"*Rheumatoid Arthritis, other arthritis and anylosing spondyilitis(en)">
+				description = <"*ICD codes: M05 M06 M07* M08 M09* M10 M11 M45(en)">
+			>
+			["at0.68"] = <
+				text = <"*Cemented(en)">
+				description = <"**(en)">
+			>
+			["at0.69"] = <
+				text = <"*Uncemented(en)">
+				description = <"**(en)">
+			>
+			["at0.70"] = <
+				text = <"*Hybrid-cemented stem only(en)">
+				description = <"**(en)">
+			>
+			["at0.71"] = <
+				text = <"*Inverse_ Hybrid(en)">
+				description = <"**(en)">
+			>
+			["at0.75"] = <
+				text = <"*Anterior(en)">
+				description = <"*Anterior.(en)">
+			>
+			["at0.76"] = <
+				text = <"*Anterolateral(en)">
+				description = <"*Anterolateral.(en)">
+			>
+			["at0.77"] = <
+				text = <"*Direct lateral(en)">
+				description = <"*Direct lateral.(en)">
+			>
+			["at0.78"] = <
+				text = <"*Posterolateral(en)">
+				description = <"*Posterolateral.(en)">
+			>
+			["at0.79"] = <
+				text = <"*Minimally Invasive(en)">
+				description = <"*Minimally Invasive.(en)">
+			>
+			["at0.80"] = <
+				text = <"*Other(en)">
+				description = <"*ICD codes M00 M01* M15 M16.6 M16.7 M16.9 M19 M86(en)">
+			>
+			["at0.81"] = <
+				text = <"*Total resurfacing hip replacement(en)">
+				description = <"*Total resurfacing hip replacement.(en)">
+			>
+			["id1.1"] = <
+				text = <"*Primary hip arthroplasty(en)">
+				description = <"*Details of primary hip arthroplasty constrined to align with Slovenian RES register.(en)">
+			>
+			["id3.1"] = <
+				text = <"*Current procedure(en)">
+				description = <"*The name of the procedure.(en)">
+			>
+			["id15.1"] = <
+				text = <"*Reason for procedure(en)">
+				description = <"*The reason or indication for the procedure.(en)">
+			>
+			["id52.1"] = <
+				text = <"*Prosthesis fixation(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["id52.2"] = <
+				text = <"*Approach(en)">
+				description = <"*Identification of specific method or technique used for procedure.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Current procedure(en) (synthesised)">
+				description = <"*The name of the procedure.(en) (synthesised)">
+			>
+			["ac0.2"] = <
+				text = <"*Reason for procedure(en) (synthesised)">
+				description = <"*The reason or indication for the procedure.(en) (synthesised)">
+			>
+			["ac0.3"] = <
+				text = <"*Prosthesis fixation(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+			["ac0.4"] = <
+				text = <"*Approach(en) (synthesised)">
+				description = <"*Identification of specific method or technique used for procedure.(en) (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac0.2"] = <
+			id = <"ac0.2">
+			members = <"at0.62", "at0.63", "at0.64", "at0.65", "at0.67", "at0.80">
+		>
+		["ac0.1"] = <
+			id = <"ac0.1">
+			members = <"at0.59", "at0.81", "at0.60", "at0.61">
+		>
+		["ac0.3"] = <
+			id = <"ac0.3">
+			members = <"at0.68", "at0.69", "at0.70", "at0.71">
+		>
+		["ac0.4"] = <
+			id = <"ac0.4">
+			members = <"at0.75", "at0.76", "at0.77", "at0.78", "at0.79">
+		>
+	>

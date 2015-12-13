@@ -1,0 +1,76 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.healthcare_professional_parent.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"freshEHR Clinical Informatics">
+		["email"] = <"ian@freshehr.com">
+		["date"] = <"2014-07-11">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of a healthcare professional.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"27AA4FECE054607F867F11C8498CD34F">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Healthcare professional (PARENT)
+		items matches {
+			allow_archetype CLUSTER[id2] occurrences matches {0..1} matches {	-- Professional Name
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id3] matches {	-- Professional Identifier
+				value matches {
+					DV_IDENTIFIER[id6] 
+				}
+			}
+			allow_archetype CLUSTER[id4] matches {	-- Provider Organisation
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id5] matches {	-- Contact details
+				value matches {
+					DV_TEXT[id7] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Healthcare professional (PARENT)">
+				description = <"Details of a healthcare professional.">
+			>
+			["id2"] = <
+				text = <"Professional Name">
+				description = <"The healthcare worker's professional name.">
+			>
+			["id3"] = <
+				text = <"Professional Identifier">
+				description = <"The healthcare worker's profesional identifier.">
+			>
+			["id4"] = <
+				text = <"Provider Organisation">
+				description = <"The healthcare worker's provider organisation.">
+			>
+			["id5"] = <
+				text = <"Contact details">
+				description = <"Contact details for the heathcare worker.">
+			>
+		>
+	>

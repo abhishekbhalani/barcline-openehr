@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">aitor.eguzkiza@unavarra.es</original_author>
+    <original_author id="organisation">Universidad Pública de Navarra - Complejo Hospitalario de Navarra</original_author>
+    <original_author id="name">Aitor Eguzkitza</original_author>
+    <original_author id="date">2014-12-05</original_author>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="current_contact">Aitor Eguzkitza, Universidad Pública de Navarra - Complejo Hospitalario de Navarra, aitor.eguzkiza@unavarra.es</other_details>
+    <other_details id="MD5-CAM-1.0.1">640B64C8A22013D090E0400473D7F35F</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es</code_string>
+      </language>
+      <purpose>Registrar una sugerencia, consejo o propuesta sobre el tratamiento más adecuado para cada paciente con degeneración macular asociada a la edad.</purpose>
+      <keywords>Tratamiento</keywords>
+      <keywords>Degeneración macular asociada a la edad</keywords>
+      <keywords>sugerencia</keywords>
+      <keywords>consejo</keywords>
+      <keywords>propuesta</keywords>
+      <use>Se utiliza para registrar una sugerencia, consejo o propuesta sobre el tratamiento de la degeneración macular asociada a la edad, para un instante específico de su historial clínico.
+
+La declaración se considera sólo en el momento en que se registra. Es decir, el tratamiento puede cambiar con el tiempo en función de la progresión de la enfermedad.</use>
+      <misuse>*(en)</misuse>
+      <copyright>© openEHR Foundation(en)</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record a suggestion, advice or proposal about the most suitable treatment for each patient with age-related macular degeneration.</purpose>
+      <keywords>advice</keywords>
+      <keywords>proposal</keywords>
+      <keywords>suggestion</keywords>
+      <keywords>treatment</keywords>
+      <keywords>age-related macular degeneration</keywords>
+      <use>Use to record a suggestion, advice or proposal about the treatment of age-related macular degeneration, at a specific point in time of its clinical history.
+
+The statement is considered only at the time it is registered. That is to say, the treatment can change over time depending on the progression of the disease.</use>
+      <misuse />
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>es</code_string>
+    </language>
+    <author id="name">?</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-EVALUATION.recommendation-amd_treatment.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000.1</concept>
+  <parent_archetype_id>
+    <value>openEHR-EHR-EVALUATION.recommendation.v1</value>
+  </parent_archetype_id>
+  <definition>
+    <rm_type_name>EVALUATION</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000.1</node_id>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>data</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ITEM_TREE</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0002.1</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>defining_code</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_CODE_PHRASE">
+                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <assumed_value>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0.4</code_string>
+                    </assumed_value>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_list>at0.4</code_list>
+                    <code_list>at0.12</code_list>
+                    <code_list>at0.5</code_list>
+                    <code_list>at0.11</code_list>
+                    <code_list>at0.14</code_list>
+                  </children>
+                </attributes>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0003.1</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="es">
+      <items code="at0.11">
+        <items id="text">Terapia fotodinámica (PDT)</items>
+        <items id="description">Un medicamento sensible a la luz se inyecta en el torrente sanguíneo, y bloquea selectivamente los vasos sanguíneos anormales debajo de la mácula en respuesta a la luz láser. La PDT es aplicable para detener el avance de la AMD húmeda, pero no puede revertir el daño.</items>
+      </items>
+      <items code="at0.12">
+        <items id="text">Suplementos de alta dosis de vitaminas y minerales antioxidantes</items>
+        <items id="description">La ingesta diaria de ciertos antioxidantes y minerales puede ayudar a retardar la progresión de la degeneración macular asociada a la edad (DMAE).</items>
+      </items>
+      <items code="at0.14">
+        <items id="text">Cirugía de fotocoagulación térmica con láser</items>
+        <items id="description">La cirugía láser puede retrasar el avance de la enfermedad, por medio del tratamiento de los vasos sanguíneos anormales que se forman en la retina.</items>
+      </items>
+      <items code="at0.4">
+        <items id="text">No tratar</items>
+        <items id="description">Se recomienda observar la enfermedad cuando no se ha indicado tratamiento, o la afection no es tratable.</items>
+      </items>
+      <items code="at0.5">
+        <items id="text">Inyección intravítrea de antiangiogénicos</items>
+        <items id="description">La inhibición de la neovascularización puede retrasar o incluso detener la progresión de la enfermedad.</items>
+      </items>
+      <items code="at0000">
+        <items id="text">*Recommendation(en)</items>
+        <items id="description">*A suggestion, advice or proposal for current healthcare management or for future action.(en)</items>
+      </items>
+      <items code="at0000.1">
+        <items id="text">Recomendación de tratamiento para la DMAE</items>
+        <items id="description">Una sugerencia, consejo o propuesta para gestionar el tratamiento de la degeneración macular asociada a la edad.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Recommendation(en)</items>
+        <items id="description">*Narrative description of the recommendation.(en)</items>
+      </items>
+      <items code="at0002.1">
+        <items id="text">Recomendación terapéutica</items>
+        <items id="description">Descripción narrativa del tratamiento más eficaz basado en una evaluación previa de DR.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Rationale(en)</items>
+        <items id="description">*Justification for the recommendation.(en)</items>
+      </items>
+      <items code="at0003.1">
+        <items id="text">Justificación</items>
+        <items id="description">Justificación o motivo de la recomendación.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0.11">
+        <items id="text">Photodynamic Therapy (PDT)</items>
+        <items id="description">A light-sensitive medicine is injected into the bloodstream, and blocks selectively abnormal blood vessels under the macula in response to laser light. PDT is applicable to stop further formation of wet AMD, but it cannot reverse damage.</items>
+      </items>
+      <items code="at0.12">
+        <items id="text">High dose Antioxidant Vitamin and Mineral Supplements</items>
+        <items id="description">Daily intake of certain antioxidants and minerals can help slow the progression of age-related macular degeneration (AMD).</items>
+      </items>
+      <items code="at0.14">
+        <items id="text">Thermal Laser Photocoagulation Surgery</items>
+        <items id="description">By treating the abnormal blood vessels that have formed on the retina, laser surgery can delay advancement of the disease.</items>
+      </items>
+      <items code="at0.4">
+        <items id="text">Do not treat</items>
+        <items id="description">Observation of the condition is recommended when no treatment is indicated or the afection is not tratable.</items>
+      </items>
+      <items code="at0.5">
+        <items id="text">Intravitreal injection: anti-VEGF agents</items>
+        <items id="description">Inhibition of neovascularization may delay or even halt disease progression.</items>
+      </items>
+      <items code="at0000">
+        <items id="text">Recommendation</items>
+        <items id="description">A suggestion, advice or proposal for current healthcare management or for future action.</items>
+      </items>
+      <items code="at0000.1">
+        <items id="text">Recommendation of treatment for AMD</items>
+        <items id="description">A suggestion, advice or proposal to manage the treatment regarding age-related macular degeneration.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Recommendation</items>
+        <items id="description">Narrative description of the recommendation.</items>
+      </items>
+      <items code="at0002.1">
+        <items id="text">Therapeutic recommendation</items>
+        <items id="description">Narrative description of the most effective treatment based on a previous assessment of AMD.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Rationale</items>
+        <items id="description">Justification for the recommendation.</items>
+      </items>
+      <items code="at0003.1">
+        <items id="text">Rationale</items>
+        <items id="description">Justification for the recommendation.</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="at0.11">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>257891001</code_string>
+        </value>
+      </items>
+      <items code="at0.14">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>399867007</code_string>
+        </value>
+      </items>
+      <items code="at0.4">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>183964008</code_string>
+        </value>
+      </items>
+      <items code="at0002.1">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>118910000</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

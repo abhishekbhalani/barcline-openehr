@@ -1,0 +1,131 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-INSTRUCTION.request-imaging_exam.v1.0.0
+
+specialize
+	openEHR-EHR-INSTRUCTION.request.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			author = <
+				["name"] = <"Alan March">
+				["organisation"] = <"Hospital Universitario Austral, Buenos Aires, Argentina">
+				["email"] = <"amarch@cas.austral.edu.ar">
+			>
+			accreditation = <"MD">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			author = <
+				["name"] = <"Tiago Araujo">
+				["email"] = <"tiago.veloso@unifesp.br">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2009-12-08">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To request an imaging examination to be performed and convey supporting clinical details.">
+			use = <"Use in most requests for an imaging examination to be performed on a patient.
+
+If there are more details about the examination required, include this information in more detailed CLUSTER archetypes appropriate for the purpose in the 'Specific details' SLOT.">
+			keywords = <"request", "refer", "order", "service", "provide", "imaging", "service", "radiology">
+			misuse = <"">
+		>
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Solicitar um exame de imagem a ser realizado e convém detalhes clínicos para suporte.">
+			use = <"Uso na maioria das solicitações para um exame de imagem a ser realizado em um paciente.
+
+Se houverem mais detalhes sobre o exame solicitado, incluir essa informação em um arquétipo CLUSTER mais detalhado apropriado para o objetivo no SLOT ' Detalhes específicos'. ">
+			keywords = <"pedido", "referir", "pedir", "serviço", "prover", "imagem", "serviço", "radiologia">
+			misuse = <"">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para solicitar la realización de un estudio de imágenes y transmitir los detalles clínicos de apoyo.">
+			use = <"Uso en la mayoría de los estudios de imágenes a ser realizados sobre un paciente.
+Si existen detalles mas específicos acerca del estudio requerido, incluir esta información en un arquetipo CLUSTER de mayor detalle, apropiado al propósito.">
+			keywords = <"solicitud", "derivar", "referir", "orden", "servicio", "proveer", "imágenes", "radiología">
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_details = <
+		["references"] = <"Partially derived from 'Healthcare Service Request', draft archetype, National eHealth Transition Authority [Internet]. NEHTA Clinical Knowledge Manager. Authored: 08 Dec 2009. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.857  (accessed Jan 16, 2012).">
+		["MD5-CAM-1.0.1"] = <"E7A5630F1BCEEFD089E22F29630ABD44">
+	>
+
+definition
+	INSTRUCTION[id1.1] matches {	-- Imaging Examination Request
+		activities matches {
+			ACTIVITY[id2] matches {
+				description matches {
+					ITEM_TREE[id10] matches {
+						items matches {
+							ELEMENT[id122.1] 	-- Examination requested
+							ELEMENT[id136.1] 	-- Description of examination
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1.1"] = <
+				text = <"Imaging Examination Request">
+				description = <"Generic request for an imaging examination request.">
+			>
+			["id122.1"] = <
+				text = <"Examination requested">
+				description = <"Identification of the examination requested. This is often coded with an external terminology.">
+			>
+			["id136.1"] = <
+				text = <"Description of examination">
+				description = <"A detailed narrative description of the examination requested.">
+			>
+		>
+		["pt-br"] = <
+			["id1.1"] = <
+				text = <"Solicitação de Exame de Imagem">
+				description = <"Pedido genérico para uma solicitação de exame de imagem. ">
+			>
+			["id122.1"] = <
+				text = <"Exame solicitado">
+				description = <"Identificação do exame solicitado. Isso geralmente é codificado com uma terminologia externa.">
+			>
+			["id136.1"] = <
+				text = <"Descrição do exame">
+				description = <"Uma descrição narrativa detalhada do exame solicitado.">
+			>
+		>
+		["es-ar"] = <
+			["id1.1"] = <
+				text = <"Solicitud de estudio de imágenes">
+				description = <"Solicitud genérica para un estudio de imágenes">
+			>
+			["id122.1"] = <
+				text = <"Exámen solicitado">
+				description = <"Identificación del exámen solicitado. A menudo se lo codifica mediante una terminología externa.">
+			>
+			["id136.1"] = <
+				text = <"Descripción del exámen">
+				description = <"Descripción narrativa detallada del exámen solicitado.">
+			>
+		>
+	>

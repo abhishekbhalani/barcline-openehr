@@ -1,0 +1,217 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.diagnostic_evidence_summary.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2015-01-23">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a summary of available evidence in support of a diagnosis.">
+			use = <"Use to record an explicit summary of available evidence in support of a diagnosis.
+
+This archetype has been designed to allow gathering of evidence, over time, that support the diagnosis for a given condition or disease. It is intended to be nested within a SLOT in the EVALUATION.problem_diagnosis, or similar summary archetypes, where the name of the condition or diagnosis has already been specified in the EVALUATION, in order to extend its content with this additional and optional dataset. While links within the openEHR Reference Model allow for this linkage to data held elsewhere within the health record, this archetype has been developed to make this functionality explicit, and to enable clinical visibiity and review of this data, where it may be relevant in a template or specification.
+
+The evidence can be entered into the archetype, or the citations can be used to explicitly point to data with the extent of the health record.">
+			keywords = <"diagnosis", "evidence", "condition", "disease", "infectious", "problem">
+			misuse = <"Not to be used to record summary details about an identified problem or diagnosis - use the EVALUATION.problem_diagnosis for this purpose.">
+		>
+	>
+	other_contributors = <"Ian McNicoll, freshEHR, UK", ...>
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["MD5-CAM-1.0.1"] = <"62C2E5ADB72E235AF8863AC9202BEB73">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Diagnostic Evidence Summary
+		items matches {
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Clinical Description
+				value matches {
+					DV_TEXT[id23] 
+				}
+			}
+			CLUSTER[id3] matches {	-- Physical Examination Evidence
+				items matches {
+					ELEMENT[id4] occurrences matches {0..1} matches {	-- Examination Finding
+						value matches {
+							DV_TEXT[id24] 
+						}
+					}
+					ELEMENT[id5] occurrences matches {0..1} matches {	-- Finding Description
+						value matches {
+							DV_TEXT[id25] 
+						}
+					}
+					ELEMENT[id6] occurrences matches {0..1} 	-- Result
+					ELEMENT[id7] occurrences matches {0..1} matches {	-- Date of Examination
+						value matches {
+							DV_DATE_TIME[id26] 
+						}
+					}
+					allow_archetype CLUSTER[id8] matches {	-- Physical Examination Citation
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-a-zA-Z0-9_]+)*\.v1/}
+					}
+					allow_archetype CLUSTER[id19] matches {	-- Image
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			CLUSTER[id9] matches {	-- Laboratory Evidence
+				items matches {
+					ELEMENT[id15] occurrences matches {0..1} matches {	-- Laboratory Diagnosis
+						value matches {
+							DV_TEXT[id27] 
+						}
+					}
+					ELEMENT[id10] 	-- Test Result
+					ELEMENT[id11] occurrences matches {0..1} matches {	-- Date of Test
+						value matches {
+							DV_DATE_TIME[id28] 
+						}
+					}
+					allow_archetype CLUSTER[id12] matches {	-- Laboratory Citation
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-a-zA-Z0-9_]+)*\.v1/}
+					}
+					allow_archetype CLUSTER[id20] matches {	-- Image
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+			CLUSTER[id13] matches {	-- Imaging Evidence
+				items matches {
+					ELEMENT[id14] occurrences matches {0..1} matches {	-- Radiological Diagnosis
+						value matches {
+							DV_TEXT[id29] 
+						}
+					}
+					ELEMENT[id16] 	-- Test Result
+					ELEMENT[id17] occurrences matches {0..1} matches {	-- Date of Test
+						value matches {
+							DV_DATE_TIME[id30] 
+						}
+					}
+					allow_archetype CLUSTER[id18] matches {	-- Imaging Citation
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-a-zA-Z0-9_]+)*\.v1/}
+					}
+					allow_archetype CLUSTER[id21] matches {	-- Image
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+			ELEMENT[id22] occurrences matches {0..1} matches {	-- Date Last Updated
+				value matches {
+					DV_DATE_TIME[id31] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Diagnostic Evidence Summary">
+				description = <"Summary of available evidence in support of a diagnosis.">
+			>
+			["id2"] = <
+				text = <"Clinical Description">
+				description = <"Narrative description of the evidence for the diagnosis.">
+			>
+			["id3"] = <
+				text = <"Physical Examination Evidence">
+				description = <"Details about a finding or observation on physical examination that support the diagnosis.">
+			>
+			["id4"] = <
+				text = <"Examination Finding">
+				description = <"Identification of the finding that supports the diagnosis.">
+			>
+			["id5"] = <
+				text = <"Finding Description">
+				description = <"Narrative description of the physical finding.">
+			>
+			["id6"] = <
+				text = <"Result">
+				description = <"Measurement or value associated with the finding.">
+			>
+			["id7"] = <
+				text = <"Date of Examination">
+				description = <"The date on which the physical examination was performed.">
+			>
+			["id8"] = <
+				text = <"Physical Examination Citation">
+				description = <"Detailed data available about the physical examination held in another part of the health record.">
+			>
+			["id9"] = <
+				text = <"Laboratory Evidence">
+				description = <"Details about a laboratory result that support the diagnosis.">
+			>
+			["id10"] = <
+				text = <"Test Result">
+				description = <"The laboratory result that supports the diagnosis.">
+			>
+			["id11"] = <
+				text = <"Date of Test">
+				description = <"The date on which the laboratory sample was collected for testing.">
+			>
+			["id12"] = <
+				text = <"Laboratory Citation">
+				description = <"Detailed data available about the laboratory result held in another part of the health record.">
+			>
+			["id13"] = <
+				text = <"Imaging Evidence">
+				description = <"Details about a imaging result that support the diagnosis.">
+			>
+			["id14"] = <
+				text = <"Radiological Diagnosis">
+				description = <"Diagnosis made by clinician on the basis of the imaging test result alone.">
+			>
+			["id15"] = <
+				text = <"Laboratory Diagnosis">
+				description = <"Diagnosis made by clinician on the basis of the laboratory test result alone.">
+			>
+			["id16"] = <
+				text = <"Test Result">
+				description = <"The imaging result that supports the diagnosis.">
+			>
+			["id17"] = <
+				text = <"Date of Test">
+				description = <"The date on which the image was taken.">
+			>
+			["id18"] = <
+				text = <"Imaging Citation">
+				description = <"Detailed data available about the imaging result held in another part of the health record.">
+			>
+			["id19"] = <
+				text = <"Image">
+				description = <"Details about an multimedia representation of the physical examination.">
+			>
+			["id20"] = <
+				text = <"Image">
+				description = <"Details about an multimedia representation of the laboratory data.">
+			>
+			["id21"] = <
+				text = <"Image">
+				description = <"Details about an multimedia representation of the imaging data.">
+			>
+			["id22"] = <
+				text = <"Date Last Updated">
+				description = <"The date at which the diagnostic evidence summary was last clinically asserted, affirmed or confirmed.">
+			>
+		>
+	>

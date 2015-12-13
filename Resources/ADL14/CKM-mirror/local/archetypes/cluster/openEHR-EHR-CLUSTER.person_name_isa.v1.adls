@@ -1,0 +1,96 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.person_name_isa.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"freshEHR Clinical Informatics">
+		["email"] = <"ian@freshehr.com">
+		["date"] = <"2014-07-11">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"05B27C76383002F3959B99CEEF20E1BA">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Person name (ISA)
+		items matches {
+			ELEMENT[id5] occurrences matches {0..1} matches {	-- Full Name
+				value matches {
+					DV_TEXT[id8] 
+				}
+			}
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Family Name
+				value matches {
+					DV_TEXT[id9] 
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Given Name
+				value matches {
+					DV_TEXT[id10] 
+				}
+			}
+			ELEMENT[id6] occurrences matches {0..1} matches {	-- Patronymic Name
+				value matches {
+					DV_TEXT[id11] 
+				}
+			}
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Birth Name
+				value matches {
+					DV_TEXT[id12] 
+				}
+			}
+			ELEMENT[id7] occurrences matches {0..1} matches {	-- Alternative Name
+				value matches {
+					DV_TEXT[id13] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Person name (ISA)">
+				description = <"Personal name compliant with European ISA standard.">
+			>
+			["id2"] = <
+				text = <"Family Name">
+				description = <"A family name is usually shared by members of a family. This attribute also carries prefixes or suffixes which are part of the Family Name, e.g. “de Boer”, “van de Putte”, “von und zu Orlow”.">
+			>
+			["id3"] = <
+				text = <"Given Name">
+				description = <"A given name, or multiple given names, are the denominator(s) that identify an individual within a family. These are given to a person by his or her parents at birth or may be legally recognised as 'given names' through a formal process.">
+			>
+			["id4"] = <
+				text = <"Birth Name">
+				description = <"Name given to the person at birth.">
+			>
+			["id5"] = <
+				text = <"Full Name">
+				description = <"The full name (fullName) property contains the complete name of a person as one string. In addition to the content of given name, family name and, in some systems, patronymic name, this can carry additional parts of a person’s name such as titles, middle names or suffixes like “the third” or names which are neither a given nor a family name.">
+			>
+			["id6"] = <
+				text = <"Patronymic Name">
+				description = <"Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Mangnus, irrespective of his patronymic name. In Bulgaria and Russia, patronymic names are in every day usage, for example, the Sergeyevich in 'Mikhail Sergeyevich Gorbachev.'">
+			>
+			["id7"] = <
+				text = <"Alternative Name">
+				description = <"Any name by which an individual is known other than their full name.">
+			>
+		>
+	>

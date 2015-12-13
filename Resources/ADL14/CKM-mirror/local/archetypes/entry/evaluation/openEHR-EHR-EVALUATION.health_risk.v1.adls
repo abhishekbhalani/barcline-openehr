@@ -1,0 +1,452 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-EVALUATION.health_risk.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Jasmin Buck, Sebastian Garde">
+				["organisation"] = <"University of Heidelberg, Cental Queensland University">
+			>
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"sam.heard@oceaninformatics.com">
+		["date"] = <"2006-04-23">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل التخاطر/احتمالية الخطر لظرف صحي قد يحدث في المستقبل">
+			use = <"">
+			keywords = <"تقييم", ...>
+			misuse = <"">
+		>
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Dokumentation des Vorhandenseins eines Risikos mit möglichen Auswirkungen jetzt oder in der Zukunft">
+			use = <"">
+			keywords = <"Einschätzung", ...>
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the subject experiencing it in the future.
+
+This archetype has been deliberately left open and broad in scope. The 'Health Risk' could be determined from risk factors from any or all of: medical; biomarker; lifestyle; social; occupational hazard; or environmental domains.
+
+The intent of this archetype is to document potential risk at a point in time, and to support decision-making that may reduce the identified risk, whether by clinicians or the individual themselves.">
+			use = <"Use to record known risk factors for an identified disease, condition, or other potentially adverse health issue, and/or an evaluation of the likelihood of the subject experiencing it in the future.">
+			keywords = <"assessment", "risk", "evaluation", "adverse", "factor", "health", "issue", "estimated", "management", "risk factor", "risk stratification">
+			misuse = <"">
+		>
+	>
+	other_contributors = <"Tomas Alme, DIPS, Norway", "Nadim Anani, Karolinska Institutet, Sweden", "Vebjoern Arntzen, Oslo university hospital, Norway", "Koray Atalag, University of Auckland, New Zealand", "Silje Ljosland Bakke, Bergen Hospital Trust, Norway", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Einar Fosse, National Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Heather Grain, Llewelyn Grain Informatics, Australia", "Anca Heyd, DIPS ASA, Norway", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hallvard Lærum, Oslo University Hospital, Norway", "Luis Marco Ruiz, Norwegian Center for Integrated Care and Telemedicine, Norway", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Jussara Rotzsch, UNB, Brazil", "John Tore Valand, Helse Bergen, Norway">
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["references"] = <"Health Risk, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. Australia: National eHealth Transition Authority. Authored: 2006 Apr 23. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1276 (accessed 2015 Mar 04). Archetype originated from the openEHR CKM.">
+		["MD5-CAM-1.0.1"] = <"E631B10CF6590DB844CC0ECA1F5CC682">
+	>
+
+definition
+	EVALUATION[id1] matches {	-- Health risk assessment
+		data matches {
+			ITEM_TREE[id2] matches {
+				items cardinality matches {1..*; ordered} matches {
+					ELEMENT[id3] matches {	-- Health risk
+						value matches {
+							DV_TEXT[id29] 
+						}
+					}
+					CLUSTER[id17] matches {	-- Risk factors
+						items matches {
+							ELEMENT[id14] matches {	-- Risk factor
+								value matches {
+									DV_TEXT[id30] 
+								}
+							}
+							ELEMENT[id18] occurrences matches {0..1} matches {	-- Presence
+								value matches {
+									DV_CODED_TEXT[id31] matches {
+										defining_code matches {[ac1]}		-- Presence (synthesised)
+									}
+								}
+							}
+							ELEMENT[id15] occurrences matches {0..1} matches {	-- Description
+								value matches {
+									DV_TEXT[id32] 
+								}
+							}
+							ELEMENT[id13] matches {	-- Link to evidence
+								value matches {
+									DV_URI[id33] 
+								}
+							}
+							allow_archetype CLUSTER[id28] matches {	-- Detail
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.family_prevalence(-a-zA-Z0-9_]+)*\.v1/}
+							}
+						}
+					}
+					ELEMENT[id4] occurrences matches {0..1} matches {	-- Risk assessment
+						value matches {
+							DV_TEXT[id34] 
+							DV_PROPORTION[id35] 
+						}
+					}
+					ELEMENT[id21] occurrences matches {0..1} matches {	-- Assessment type
+						value matches {
+							DV_CODED_TEXT[id36] matches {
+								defining_code matches {[ac2]}		-- Assessment type (synthesised)
+							}
+						}
+					}
+					ELEMENT[id24] occurrences matches {0..1} matches {	-- Relevant timeframe
+						value matches {
+							DV_DURATION[id37] 
+						}
+					}
+					ELEMENT[id5] occurrences matches {0..1} matches {	-- Rationale
+						value matches {
+							DV_TEXT[id38] 
+						}
+					}
+					ELEMENT[id16] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT[id39] 
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id11] matches {
+				items matches {
+					ELEMENT[id25] occurrences matches {0..1} matches {	-- Last Updated
+						value matches {
+							DV_DATE_TIME[id40] 
+						}
+					}
+					ELEMENT[id26] occurrences matches {0..1} matches {	-- Assessment method
+						value matches {
+							DV_TEXT[id41] 
+						}
+					}
+					allow_archetype CLUSTER[id12] matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["ar-sy"] = <
+			["id1"] = <
+				text = <"*Health risk assessment(en)">
+				description = <"*Assessment of the potential and likelihood of future adverse health effects as determined by identified risk factors.(en)">
+			>
+			["id3"] = <
+				text = <"*Health risk(en)">
+				description = <"*Identification of the potential future disease, condition or health issue for which the risk is being assessed, by name.(en)">
+			>
+			["id4"] = <
+				text = <"*Risk assessment(en)">
+				description = <"*Evaluation of the likelihood that the subject will be affected by the disease, condition or health issue in the future.(en)">
+			>
+			["id5"] = <
+				text = <"*Rationale(en)">
+				description = <"*Justification for this risk assessment.(en)">
+			>
+			["id12"] = <
+				text = <"*Extension(en)">
+				description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+			>
+			["id13"] = <
+				text = <"*Link to evidence(en)">
+				description = <"*Identification of the path to the archetype or data node for the evidence of risk.(en)">
+			>
+			["id14"] = <
+				text = <"*Risk factor(en)">
+				description = <"*Identification of the risk factor, by name.(en)">
+			>
+			["id15"] = <
+				text = <"*Description(en)">
+				description = <"*Narrative description about the risk factor.(en)">
+			>
+			["id16"] = <
+				text = <"*Comment(en)">
+				description = <"*Additional narrative about the risk assessment not captured in other fields.(en)">
+			>
+			["id17"] = <
+				text = <"*Risk factors(en)">
+				description = <"*Details about each possible risk factor.(en)">
+			>
+			["id18"] = <
+				text = <"*Presence(en)">
+				description = <"*Presence of the risk factor.(en)">
+			>
+			["at19"] = <
+				text = <"*Present(en)">
+				description = <"The risk factor has been identified for this subject.">
+			>
+			["at20"] = <
+				text = <"*Absent(en)">
+				description = <"*The risk factor has not been identified for this subject.(en)">
+			>
+			["id21"] = <
+				text = <"*Assessment type(en)">
+				description = <"*Record of whether the risk assessment is a relative or absolute.(en)">
+			>
+			["at22"] = <
+				text = <"*Relative risk(en)">
+				description = <"*Ratio of probability of a health event or condition occurring compared to a population with similar characteristics eg same age and sex.(en)">
+			>
+			["at23"] = <
+				text = <"*Absolute risk(en)">
+				description = <"*Ratio of probability of a health event or condition occurring compared to the population as a whole.(en)">
+			>
+			["id24"] = <
+				text = <"*Relevant timeframe(en)">
+				description = <"*The future timeframe in which the predicted health risk applies.(en)">
+			>
+			["id25"] = <
+				text = <"*Last Updated(en)">
+				description = <"*The date this health risk assessment was last updated.(en)">
+			>
+			["id26"] = <
+				text = <"*Assessment method(en)">
+				description = <"*Identification of the algorithm or guideline used to make the assessment of risk.(en)">
+			>
+			["at27"] = <
+				text = <"*Indeterminate(en)">
+				description = <"*The risk factor has been identified or eliminated for this subject.(en)">
+			>
+			["id28"] = <
+				text = <"*Detail(en)">
+				description = <"*Structured detail about other aspects of the risk factor assessment.(en)">
+			>
+			["ac1"] = <
+				text = <"*Presence(en) (synthesised)">
+				description = <"*Presence of the risk factor.(en) (synthesised)">
+			>
+			["ac2"] = <
+				text = <"*Assessment type(en) (synthesised)">
+				description = <"*Record of whether the risk assessment is a relative or absolute.(en) (synthesised)">
+			>
+		>
+		["de"] = <
+			["id1"] = <
+				text = <"*Health risk assessment(en)">
+				description = <"*Assessment of the potential and likelihood of future adverse health effects as determined by identified risk factors.(en)">
+			>
+			["id3"] = <
+				text = <"*Health risk(en)">
+				description = <"*Identification of the potential future disease, condition or health issue for which the risk is being assessed, by name.(en)">
+			>
+			["id4"] = <
+				text = <"*Risk assessment(en)">
+				description = <"*Evaluation of the likelihood that the subject will be affected by the disease, condition or health issue in the future.(en)">
+			>
+			["id5"] = <
+				text = <"*Rationale(en)">
+				description = <"*Justification for this risk assessment.(en)">
+			>
+			["id12"] = <
+				text = <"*Extension(en)">
+				description = <"*Additional information required to capture local content or to align with other reference models/formalisms.(en)">
+			>
+			["id13"] = <
+				text = <"*Link to evidence(en)">
+				description = <"*Identification of the path to the archetype or data node for the evidence of risk.(en)">
+			>
+			["id14"] = <
+				text = <"*Risk factor(en)">
+				description = <"*Identification of the risk factor, by name.(en)">
+			>
+			["id15"] = <
+				text = <"*Description(en)">
+				description = <"*Narrative description about the risk factor.(en)">
+			>
+			["id16"] = <
+				text = <"*Comment(en)">
+				description = <"*Additional narrative about the risk assessment not captured in other fields.(en)">
+			>
+			["id17"] = <
+				text = <"*Risk factors(en)">
+				description = <"*Details about each possible risk factor.(en)">
+			>
+			["id18"] = <
+				text = <"*Presence(en)">
+				description = <"*Presence of the risk factor.(en)">
+			>
+			["at19"] = <
+				text = <"*Present(en)">
+				description = <"The risk factor has been identified for this subject.">
+			>
+			["at20"] = <
+				text = <"*Absent(en)">
+				description = <"*The risk factor has not been identified for this subject.(en)">
+			>
+			["id21"] = <
+				text = <"*Assessment type(en)">
+				description = <"*Record of whether the risk assessment is a relative or absolute.(en)">
+			>
+			["at22"] = <
+				text = <"*Relative risk(en)">
+				description = <"*Ratio of probability of a health event or condition occurring compared to a population with similar characteristics eg same age and sex.(en)">
+			>
+			["at23"] = <
+				text = <"*Absolute risk(en)">
+				description = <"*Ratio of probability of a health event or condition occurring compared to the population as a whole.(en)">
+			>
+			["id24"] = <
+				text = <"*Relevant timeframe(en)">
+				description = <"*The future timeframe in which the predicted health risk applies.(en)">
+			>
+			["id25"] = <
+				text = <"*Last Updated(en)">
+				description = <"*The date this health risk assessment was last updated.(en)">
+			>
+			["id26"] = <
+				text = <"*Assessment method(en)">
+				description = <"*Identification of the algorithm or guideline used to make the assessment of risk.(en)">
+			>
+			["at27"] = <
+				text = <"*Indeterminate(en)">
+				description = <"*The risk factor has been identified or eliminated for this subject.(en)">
+			>
+			["id28"] = <
+				text = <"*Detail(en)">
+				description = <"*Structured detail about other aspects of the risk factor assessment.(en)">
+			>
+			["ac1"] = <
+				text = <"*Presence(en) (synthesised)">
+				description = <"*Presence of the risk factor.(en) (synthesised)">
+			>
+			["ac2"] = <
+				text = <"*Assessment type(en) (synthesised)">
+				description = <"*Record of whether the risk assessment is a relative or absolute.(en) (synthesised)">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Health risk assessment">
+				description = <"Assessment of the potential and likelihood of future adverse health effects as determined by identified risk factors.">
+			>
+			["id3"] = <
+				text = <"Health risk">
+				description = <"Identification of the potential future disease, condition or health issue for which the risk is being assessed, by name.">
+			>
+			["id4"] = <
+				text = <"Risk assessment">
+				description = <"Evaluation of the likelihood that the subject will be affected by the disease, condition or health issue in the future.">
+			>
+			["id5"] = <
+				text = <"Rationale">
+				description = <"Justification for this risk assessment.">
+			>
+			["id12"] = <
+				text = <"Extension">
+				description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+			>
+			["id13"] = <
+				text = <"Link to evidence">
+				description = <"Identification of the path to the archetype or data node for the evidence of risk.">
+			>
+			["id14"] = <
+				text = <"Risk factor">
+				description = <"Identification of the risk factor, by name.">
+			>
+			["id15"] = <
+				text = <"Description">
+				description = <"Narrative description about the risk factor.">
+			>
+			["id16"] = <
+				text = <"Comment">
+				description = <"Additional narrative about the risk assessment not captured in other fields.">
+			>
+			["id17"] = <
+				text = <"Risk factors">
+				description = <"Details about each possible risk factor.">
+			>
+			["id18"] = <
+				text = <"Presence">
+				description = <"Presence of the risk factor.">
+			>
+			["at19"] = <
+				text = <"Present">
+				description = <"The risk factor has been identified for this subject.">
+			>
+			["at20"] = <
+				text = <"Absent">
+				description = <"The risk factor has not been identified for this subject.">
+			>
+			["id21"] = <
+				text = <"Assessment type">
+				description = <"Record of whether the risk assessment is a relative or absolute.">
+			>
+			["at22"] = <
+				text = <"Relative risk">
+				description = <"Ratio of probability of a health event or condition occurring compared to a population with similar characteristics eg same age and sex.">
+			>
+			["at23"] = <
+				text = <"Absolute risk">
+				description = <"Ratio of probability of a health event or condition occurring compared to the population as a whole.">
+			>
+			["id24"] = <
+				text = <"Relevant timeframe">
+				description = <"The future timeframe in which the predicted health risk applies.">
+			>
+			["id25"] = <
+				text = <"Last Updated">
+				description = <"The date this health risk assessment was last updated.">
+			>
+			["id26"] = <
+				text = <"Assessment method">
+				description = <"Identification of the algorithm or guideline used to make the assessment of risk.">
+			>
+			["at27"] = <
+				text = <"Indeterminate">
+				description = <"The risk factor has been identified or eliminated for this subject.">
+			>
+			["id28"] = <
+				text = <"Detail">
+				description = <"Structured detail about other aspects of the risk factor assessment.">
+			>
+			["ac1"] = <
+				text = <"Presence (synthesised)">
+				description = <"Presence of the risk factor. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Assessment type (synthesised)">
+				description = <"Record of whether the risk assessment is a relative or absolute. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at19", "at27", "at20">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at22", "at23">
+		>
+	>

@@ -1,0 +1,141 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-OBSERVATION.reported_blood_group.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2013-03-07">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record blood group information captured separately from the original laboratory blood grouping report. ">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"0B15B95D7F1E38DA6AD2C76A7787010D">
+	>
+
+definition
+	OBSERVATION[id1] matches {	-- Reported blood group
+		data matches {
+			HISTORY[id2] matches {
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[id3] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[id4] matches {
+								items matches {
+									ELEMENT[id5] occurrences matches {0..1} matches {	-- ABO group
+										value matches {
+											DV_TEXT[id12] 
+										}
+									}
+									ELEMENT[id6] occurrences matches {0..1} matches {	-- Rhesus
+										value matches {
+											DV_TEXT[id13] 
+										}
+									}
+									ELEMENT[id11] occurrences matches {0..1} matches {	-- Description
+										value matches {
+											DV_TEXT[id14] 
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id7] matches {
+				items matches {
+					ELEMENT[id10] occurrences matches {0..1} matches {	-- Information source
+						value matches {
+							DV_CODED_TEXT[id15] matches {
+								defining_code matches {[ac1]}		-- Information source (synthesised)
+							}
+						}
+					}
+					ELEMENT[id8] occurrences matches {0..1} matches {	-- Link to Original Lab Report
+						value matches {
+							DV_EHR_URI[id16] 
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Reported blood group">
+				description = <"Blood group information reported or recorded spearately from the original laboratory blood grouping report.">
+			>
+			["id3"] = <
+				text = <"Any event">
+				description = <"*">
+			>
+			["id5"] = <
+				text = <"ABO group">
+				description = <"*">
+			>
+			["id6"] = <
+				text = <"Rhesus">
+				description = <"*">
+			>
+			["id8"] = <
+				text = <"Link to Original Lab Report">
+				description = <"A link to the original lab report documenting the Blood group.">
+			>
+			["id10"] = <
+				text = <"Information source">
+				description = <"The source of the information about blood group.">
+			>
+			["id11"] = <
+				text = <"Description">
+				description = <"*">
+			>
+			["at12"] = <
+				text = <"Transcription from Lab report">
+				description = <"*">
+			>
+			["at13"] = <
+				text = <"Medical referral letter">
+				description = <"*">
+			>
+			["at14"] = <
+				text = <"Pregnancy Health Record">
+				description = <"Pregnancy record card, electronic, or paper health record">
+			>
+			["at15"] = <
+				text = <"Blood donor card">
+				description = <"*">
+			>
+			["at16"] = <
+				text = <"Electronic messaging">
+				description = <"*">
+			>
+			["ac1"] = <
+				text = <"Information source (synthesised)">
+				description = <"The source of the information about blood group. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at12", "at13", "at14", "at15", "at16">
+		>
+	>

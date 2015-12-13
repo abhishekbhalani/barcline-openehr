@@ -1,0 +1,337 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-OBSERVATION.heart_failure_symptom_questionnaire.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2012-09-03">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"FE62255FD9B42A0B4147571BD31640F7">
+	>
+
+definition
+	OBSERVATION[id1] matches {	-- Heart failure symptom questionnaire
+		data matches {
+			HISTORY[id2] matches {
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[id3] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[id4] matches {
+								items matches {
+									CLUSTER[id46] occurrences matches {0..1} matches {	-- Breathlessness
+										items matches {
+											ELEMENT[id27] matches {	-- Lying flat
+												value matches {
+													DV_COUNT[id59] matches {
+														magnitude matches {|0..9|}
+													}
+												}
+											}
+											ELEMENT[id47] occurrences matches {0..1} matches {	-- Slight exertion
+												value matches {
+													DV_COUNT[id60] 
+												}
+											}
+											ELEMENT[id49] occurrences matches {0..1} matches {	-- Moderate exertion
+												value matches {
+													DV_COUNT[id61] 
+												}
+											}
+											ELEMENT[id48] occurrences matches {0..1} matches {	-- Mild exertion
+												value matches {
+													DV_COUNT[id62] 
+												}
+											}
+										}
+									}
+									CLUSTER[id50] occurrences matches {0..1} matches {	-- Symptoms
+										items matches {
+											ELEMENT[id28] occurrences matches {0..9} matches {	-- Swelling of ankles
+												value matches {
+													DV_COUNT[id63] matches {
+														magnitude matches {|0..9|}
+													}
+												}
+											}
+											ELEMENT[id51] occurrences matches {0..1} matches {	-- Swelling of legs above ankles
+												value matches {
+													DV_COUNT[id64] 
+												}
+											}
+											ELEMENT[id52] occurrences matches {0..1} matches {	-- Chest pain at rest
+												value matches {
+													DV_COUNT[id65] 
+												}
+											}
+											ELEMENT[id53] occurrences matches {0..1} matches {	-- Chest pain on exercise
+												value matches {
+													DV_COUNT[id66] 
+												}
+											}
+											ELEMENT[id54] occurrences matches {0..1} matches {	-- Indigestion or heartburn
+												value matches {
+													DV_COUNT[id67] 
+												}
+											}
+											ELEMENT[id55] occurrences matches {0..1} matches {	-- Cough and/or wheeze
+												value matches {
+													DV_COUNT[id68] 
+												}
+											}
+											ELEMENT[id56] occurrences matches {0..1} matches {	-- Dizziness
+												value matches {
+													DV_COUNT[id69] 
+												}
+											}
+											ELEMENT[id57] occurrences matches {0..1} matches {	-- Palpitations
+												value matches {
+													DV_COUNT[id70] 
+												}
+											}
+											ELEMENT[id58] occurrences matches {0..1} matches {	-- Muscle Aches and pains
+												value matches {
+													DV_COUNT[id71] 
+												}
+											}
+											ELEMENT[id29] occurrences matches {0..2} matches {	-- Other symptoms
+												value matches {
+													DV_TEXT[id72] 
+												}
+											}
+										}
+									}
+									ELEMENT[id31] occurrences matches {0..1} matches {	-- Quality of life
+										value matches {
+											DV_COUNT[id73] matches {
+												magnitude matches {|1..9|}
+											}
+										}
+									}
+									ELEMENT[id32] occurrences matches {0..1} matches {	-- Personal rating of health
+										value matches {
+											DV_COUNT[id74] matches {
+												magnitude matches {|1..9|}
+											}
+										}
+									}
+									ELEMENT[id33] occurrences matches {0..1} matches {	-- Pillows used for sleeping
+										value matches {
+											DV_COUNT[id75] matches {
+												magnitude matches {|0..10|}
+											}
+										}
+									}
+									CLUSTER[id34] occurrences matches {0..1} matches {	-- Severe breathlessness at night
+										items matches {
+											ELEMENT[id35] occurrences matches {0..1} matches {	-- Breathlessness experienced?
+												value matches {
+													DV_CODED_TEXT[id76] matches {
+														defining_code matches {[ac1]}		-- Breathlessness experienced? (synthesised)
+													}
+												}
+											}
+											ELEMENT[id38] occurrences matches {0..1} matches {	-- Episodes in past 2 months
+												value matches {
+													DV_COUNT[id77] matches {
+														magnitude matches {|0..100|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[id40] occurrences matches {0..1} matches {	-- Blackouts
+										items matches {
+											ELEMENT[id42] occurrences matches {0..1} matches {	-- Blackouts experienced?
+												value matches {
+													DV_TEXT[id78] 
+												}
+											}
+											ELEMENT[id43] occurrences matches {0..1} matches {	-- Episodes in past 2 month
+												value matches {
+													DV_COUNT[id79] 
+												}
+											}
+										}
+									}
+									CLUSTER[id39] occurrences matches {0..1} matches {	-- Falls
+										items matches {
+											ELEMENT[id44] occurrences matches {0..1} matches {	-- Falls experienced?
+												value matches {
+													DV_TEXT[id80] 
+												}
+											}
+											ELEMENT[id45] occurrences matches {0..1} matches {	-- Episodes in past 2 month
+												value matches {
+													DV_COUNT[id81] 
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Heart failure symptom questionnaire">
+				description = <"unknown">
+			>
+			["id3"] = <
+				text = <"Any event">
+				description = <"*">
+			>
+			["id27"] = <
+				text = <"Lying flat">
+				description = <"For each type of breathlessness, score each of these between 0 and 9, With 0 meaning no or none, 5 meaning troublesome and 9 being severe.">
+			>
+			["id28"] = <
+				text = <"Swelling of ankles">
+				description = <"*">
+			>
+			["id29"] = <
+				text = <"Other symptoms">
+				description = <"*">
+			>
+			["id31"] = <
+				text = <"Quality of life">
+				description = <"*">
+			>
+			["id32"] = <
+				text = <"Personal rating of health">
+				description = <"*">
+			>
+			["id33"] = <
+				text = <"Pillows used for sleeping">
+				description = <"*">
+			>
+			["id34"] = <
+				text = <"Severe breathlessness at night">
+				description = <"*">
+			>
+			["id35"] = <
+				text = <"Breathlessness experienced?">
+				description = <"*">
+			>
+			["at36"] = <
+				text = <"Episodes of severe breathlessness at night experienced.">
+				description = <"*">
+			>
+			["at37"] = <
+				text = <"Episodes of severe breathlessness at night not experienced.">
+				description = <"*">
+			>
+			["id38"] = <
+				text = <"Episodes in past 2 months">
+				description = <"*">
+			>
+			["id39"] = <
+				text = <"Falls">
+				description = <"*">
+			>
+			["id40"] = <
+				text = <"Blackouts">
+				description = <"*">
+			>
+			["id42"] = <
+				text = <"Blackouts experienced?">
+				description = <"*">
+			>
+			["id43"] = <
+				text = <"Episodes in past 2 month">
+				description = <"*">
+			>
+			["id44"] = <
+				text = <"Falls experienced?">
+				description = <"*">
+			>
+			["id45"] = <
+				text = <"Episodes in past 2 month">
+				description = <"*">
+			>
+			["id46"] = <
+				text = <"Breathlessness">
+				description = <"*">
+			>
+			["id47"] = <
+				text = <"Slight exertion">
+				description = <"*">
+			>
+			["id48"] = <
+				text = <"Mild exertion">
+				description = <"*">
+			>
+			["id49"] = <
+				text = <"Moderate exertion">
+				description = <"*">
+			>
+			["id50"] = <
+				text = <"Symptoms">
+				description = <"*">
+			>
+			["id51"] = <
+				text = <"Swelling of legs above ankles">
+				description = <"*">
+			>
+			["id52"] = <
+				text = <"Chest pain at rest">
+				description = <"*">
+			>
+			["id53"] = <
+				text = <"Chest pain on exercise">
+				description = <"*">
+			>
+			["id54"] = <
+				text = <"Indigestion or heartburn">
+				description = <"*">
+			>
+			["id55"] = <
+				text = <"Cough and/or wheeze">
+				description = <"*">
+			>
+			["id56"] = <
+				text = <"Dizziness">
+				description = <"*">
+			>
+			["id57"] = <
+				text = <"Palpitations">
+				description = <"*">
+			>
+			["id58"] = <
+				text = <"Muscle Aches and pains">
+				description = <"*">
+			>
+			["ac1"] = <
+				text = <"Breathlessness experienced? (synthesised)">
+				description = <"* (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at36", "at37">
+		>
+	>

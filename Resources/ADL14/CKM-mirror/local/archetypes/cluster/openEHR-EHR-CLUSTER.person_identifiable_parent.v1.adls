@@ -1,0 +1,110 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.person_identifiable_parent.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2015-02-21">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Identifiable details of a person compliant with European ISA standard.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"44C831CF11C3BB6A501B53726A545993">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Identifiable Person (PARENT)
+		items matches {
+			ELEMENT[id2] matches {	-- Person Identifier
+				value matches {
+					DV_IDENTIFIER[id11] 
+				}
+			}
+			allow_archetype CLUSTER[id3] matches {	-- Person Name
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id9] occurrences matches {0..1} matches {	-- Date of Birth
+				value matches {
+					DV_DATE_TIME[id12] 
+				}
+			}
+			allow_archetype CLUSTER[id4] matches {	-- Current Residence
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[id5] occurrences matches {0..1} matches {	-- Birth Address
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id7] matches {	-- Contact Details
+				value matches {
+					DV_TEXT[id13] 
+				}
+			}
+			ELEMENT[id8] occurrences matches {0..1} matches {	-- Language needs / preferences
+				value matches {
+					DV_TEXT[id14] 
+				}
+			}
+			allow_archetype CLUSTER[id10] matches {	-- Other details
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Identifiable Person (PARENT)">
+				description = <"Identifiable details of a person compliant with European ISA standard.">
+			>
+			["id2"] = <
+				text = <"Person Identifier">
+				description = <"A unique personal identifier.">
+			>
+			["id3"] = <
+				text = <"Person Name">
+				description = <"The person's name.">
+			>
+			["id4"] = <
+				text = <"Current Residence">
+				description = <"The person's address.">
+			>
+			["id5"] = <
+				text = <"Birth Address">
+				description = <"Details of the person's birth.">
+			>
+			["id7"] = <
+				text = <"Contact Details">
+				description = <"Contact details for the person e.g telephone numbers, email etc.">
+			>
+			["id8"] = <
+				text = <"Language needs / preferences">
+				description = <"Persons language needs and preferences.">
+			>
+			["id9"] = <
+				text = <"Date of Birth">
+				description = <"The person's date of birth.">
+			>
+			["id10"] = <
+				text = <"Other details">
+				description = <"Other personal details.">
+			>
+		>
+	>

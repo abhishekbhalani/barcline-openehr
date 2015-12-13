@@ -1,0 +1,2532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>en</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">Ian.mcnicoll@oceaninformatics.com</original_author>
+    <original_author id="organisation">Ocean Informatics, United Kingdom</original_author>
+    <original_author id="name">Ian McNicoll</original_author>
+    <original_author id="date">2010-10-26</original_author>
+    <other_contributors>Marja Buur, Medisch Centrum Alkmaar, Netherlands</other_contributors>
+    <other_contributors>Sergio Carmona, Chile</other_contributors>
+    <other_contributors>Stephen Chu, NeHTA, Australia</other_contributors>
+    <other_contributors>Tamsin Cockayne, Australia</other_contributors>
+    <other_contributors>Ed Conley, Cardiff University</other_contributors>
+    <other_contributors>Graham Denyer, Australian Antarctic Division, Australia</other_contributors>
+    <other_contributors>Paul Donaldson, Nursing Informatics Australia, Australia</other_contributors>
+    <other_contributors>Shahla Foozonkhah, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Sebastian Garde, Ocean Informatics, Germany (Editor)</other_contributors>
+    <other_contributors>Sam Heard, Ocean Informatics, Australia</other_contributors>
+    <other_contributors>Karsten Heusser, Hannover Medical School, Germany</other_contributors>
+    <other_contributors>Omer Hotomaroglu, Turkey (Editor)</other_contributors>
+    <other_contributors>Evelyn Hovenga, EJSH Consulting, Australia</other_contributors>
+    <other_contributors>Pieter Hummel, Medisch Centrum Alkmaar, Netherlands</other_contributors>
+    <other_contributors>Eugene Igras, IRIS Systems, Inc., Canada</other_contributors>
+    <other_contributors>Sundaresan Jagannathan, Scottish NHS, United Kingdom</other_contributors>
+    <other_contributors>Gorazd Kalan, University Medical Centre Ljubljana, Slovenia</other_contributors>
+    <other_contributors>Heather Leslie, Ocean Informatics, Australia (Editor)</other_contributors>
+    <other_contributors>Rikard Lovstrom, Swedish Medical Association, Sweden</other_contributors>
+    <other_contributors>Ian McNicoll, Ocean Informatics, United Kingdom (Editor)</other_contributors>
+    <other_contributors>Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands</other_contributors>
+    <other_contributors>Udo Müller, CompuGROUP Software, Germany</other_contributors>
+    <other_contributors>Andrej Orel, Marand d.o.o., Slovenia</other_contributors>
+    <other_contributors>Arturo Romero, SESCAM, Spain</other_contributors>
+    <other_contributors>Tony Shannon, NHS, United Kingdom</other_contributors>
+    <lifecycle_state>CommitteeDraft</lifecycle_state>
+    <other_details id="current_contact">Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com</other_details>
+    <other_details id="references">Indirect Oximetry, published archetype, openEHR Clinical Knowledge Manager [Internet]. London: openEHR Foundation. Authored: 26 Jan 2010. Available at: http://www.openehr.org/knowledge/OKM.html#showarchetype_1013.1.188 (accessed 2013 Feb 26). 
+
+AARC (American Association for Respiratory Care) clinical practice guideline. Pulse oximetry. Respir Care. Respir Care 1992;37(8):891–897. Available from: http://www.rcjournal.com/cpgs/pulsecpg.html (accessed 2013 Feb 26). 
+
+Baldwin KM. Transcutaneous oximetry and skin surface temperature as objective measures of pressure ulcer risk. Adv Skin Wound Care. 2001 Jan-Feb;14(1):26-31. PubMed PMID: 11905453. Available from: http://journals.lww.com/aswcjournal/Fulltext/2001/01000/Transcutaneous_Oximetry_and_Skin_Surface.14.aspx (accessed 2013 Feb 26).
+
+Barker SJ, Badal JJ. The measurement of dyshemoglobins and total hemoglobin by pulse oximetry. Curr Opin Anaesthesiol. 2008 Dec;21(6):805-10. doi: 10.1097/ACO.0b013e328316bb6f. Review. PubMed PMID: 18997533. Available from: http://journals.lww.com/co-anesthesiology/Abstract/2008/12000/The_measurement_of_dyshemoglobins_and_total.20.aspx (accessed 2013 Feb 26).
+
+Hanning CD, Alexander-Williams JM. Pulse oximetry: a practical review. BMJ. 1995 Aug 5;311(7001):367-70. Review. PubMed PMID: 7640545; PubMed Central PMCID: PMC2550433. Available from: http://www.bmj.com/cgi/content/abstract/311/7001/367 (accessed 2013 Feb 26).
+
+Jubran A. Pulse oximetry. Crit Care. 1999;3(2):R11-R17. PubMed PMID: 11094477; PubMed Central PMCID: PMC137227. Available from: http://ccforum.com/content/3/2/R11 (accessed 2013 Feb 26).</other_details>
+    <other_details id="MD5-CAM-1.0.1">4388FC26E8F584CF143244AF68A6147B</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ar-sy</code_string>
+      </language>
+      <purpose>لتسجيل قياسات غازات الدم غير المباشرة, بطريقة غير باضِعة, مثل تشبع الدم الطرفي بالأكسجين, و الضغط الجزئي للأكسجين في الدم الطرفي, عن طريق قياس تأكسج الدم عند النبض, أو قياس تأكسج الدم بطريق الجلد أو طرق أخرى.
+
+عادة ما يستخدم هذا النموذج لتسجيل تقديرات التأكسج, و لكن قياسات الغازات الأخرى قد يتم تضمينها أو تضاف مع الوقت.</purpose>
+      <keywords>الأكسجين</keywords>
+      <keywords>التأكسج</keywords>
+      <keywords>تشبع الدم الطرفي بالأكسجين</keywords>
+      <keywords>الضغط الجزئي لثاني أكسيد الكربون في الدم الطرفي</keywords>
+      <keywords>الضغط الجزئي لثاني أكسيد الكربون في الدم الطرفي</keywords>
+      <keywords>تشبع الميثوكسيهيموغلوبين في الدم الطرفي</keywords>
+      <keywords>تشبع الكاربوكسي هيموغلوبين في الدم الطرفي</keywords>
+      <keywords>المحتوى الأكسجيني في الدم الطرفي</keywords>
+      <keywords>التشبع</keywords>
+      <keywords>كربوكسي هيموغلوبين</keywords>
+      <keywords>الميتهيموغلوبين</keywords>
+      <keywords>عن طريق الجلد</keywords>
+      <keywords>النبض</keywords>
+      <keywords>مقياس التأكسج</keywords>
+      <keywords>قياس التأكسج</keywords>
+      <keywords>التركيز</keywords>
+      <keywords>جزئي</keywords>
+      <keywords>الضغط</keywords>
+      <keywords>غير باضع</keywords>
+      <keywords>حيوي - حياتي</keywords>
+      <keywords>الأكسجين</keywords>
+      <keywords>ثاني أكسيد الكربون</keywords>
+      <use>يستخدم لتسجيل القياسات غير المباشرة لغازات الدم, باستخدام الطرق غير الباضعة. ينبغي أن يتم إضافة القياسات الجديدة لغازات الدم إلى هذا النموذج.
+
+كما تضيف الجهيزة المستخدمة طريقة أخرى للقياس, مثل سرعة النبض, و لكن ينبغي تسجيل ذلك في نموذج منفرد, يتناسب مع العلامة التي يتم قياسها, مثل: نموذج ملاحظة. القلب - معدل النبض, للسماح بالاستعلام عن البيانات بشكل متجانس.
+
+يهدف ذلك إلى وضع نموذج لمفهوم سريري, أكثر من كونه وضعا لنموذج نتاج (مُخرَج) جهيزة, حيث إن الجهائز عادة ما تكون متعددة الوظائف و تقوم بقياسات متراكبة قد تحتاج أن يتم تسجيلها في عدد من النماذج المنفردة.
+
+ينبغي تسجيل التموجات في هذا النموذج عند استخدامها لتوثيق جودة قراءة غاز الدم. و على العكس, إذا استخدمت لأغراض تشخيصية أولية, مثل النتاج (المخرج) القلبي, و الـ 
+plesmythography 
+فينبغي تسجيلها باستخدام النموذج الجوهري: ملاحظة. القلب - معدل النبض.</use>
+      <misuse>لا ينبغي أن يستخدم هذا النموذج في قياس غازات الدم التي تتضمن تماس مباشر مع الدم, و قياس ضغط الأكسجين في الدم الشرياني, و ضغط ثاني أكسيد الكربون في الدم 
+الشرياني, و ينبغي استخدام نموذج ملاحظة. الاختبار المعملي - غازات الدم, لذلك.
+
+ينبغي إضافة القياسات المباشرة لغازات الدم لنموذج ملاحظة. الاختبار المعملي. غازات الدم.
+
+لا ينبغي أن يستخدم لقياس قياسات غازات الدم المباشرة, مثل تشبع الدم شرياني بالأكسجين و تشبع الدم الوريدي بالأكسجين, أو المحتوى الأكسجيني, التي يتم تحديدها باستخدام الطرق الباضعة, مثل استخدام الأجهزة المعملية لقياس غازات الدم أو القثطار الوريدي 
+و ينبغي تسجيل هذه القياسات باستخدام نموذج ملاحظة. الاختبار المعملي. غازات الدم.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es-ar</code_string>
+      </language>
+      <purpose>Para registrar la medición indirecta y habitualmente no invasiva de los gases en sangre tales como SpO2 y PtCO2, por medio de un oxímetro de pulso (o saturómetro de pulso), oximetría transcutánea u otros métodos.
+
+Es probable que este arquetipo será usado usado primariamente para registrar estimaciones de oxigenación, pero otras mediciones de gases pueden ser incluidas o agregadas en el futuro.</purpose>
+      <keywords>oxígeno</keywords>
+      <keywords>oxigenación</keywords>
+      <keywords>saturación</keywords>
+      <keywords>SpO2</keywords>
+      <keywords>ptcCO2</keywords>
+      <keywords>ptcO2</keywords>
+      <keywords>spMet</keywords>
+      <keywords>spCO</keywords>
+      <keywords>spOC</keywords>
+      <keywords>carboxi-hemoglobina</keywords>
+      <keywords>meta-hemoglobina</keywords>
+      <keywords>transcutáneo</keywords>
+      <keywords>pulso</keywords>
+      <keywords>oxímetro</keywords>
+      <keywords>oximetría</keywords>
+      <keywords>saturómetro</keywords>
+      <keywords>concentración</keywords>
+      <keywords>parcial</keywords>
+      <keywords>presión</keywords>
+      <keywords>no invasivo</keywords>
+      <keywords>vital</keywords>
+      <keywords>O2</keywords>
+      <keywords>CO2</keywords>
+      <keywords>anhídrido carbónico</keywords>
+      <keywords>dióxido de carbono</keywords>
+      <use>Usado para registrar la medición indirecta de gases en sangre, comúnmente por técnicas no invasivas. Nuevas mediciones indirectas de gases en sangres deberían ser incorporadas a este arquetipo.
+
+Cuando el dispositivo de registro también provea otro tipo de medida, tal como la frecuencia del pulso, esto debe ser registrado en un arquetipo separado, adecuado para esa medida en particular. Ej. el arquetipo OBSERVATION.heart_rate-pulse, para permitir una consulta consistente.
+
+El objetivo es modelar consistentemente un concepto clínico, más que la salida del modelo del dispositivo; los dispositivos son cada vez más multi-funcionales y proporcionan mediciones redundantes, que pueden requerir el registro por medio de arquetipos discretos.
+
+Las formas de onda deben ser registradas aquí cuando se utiliza para documentar la calidad de la medición de gases en sangre. Por el contrario, si se utiliza primariamente con fines diagnósticos (Ej. del gasto cardíaco), debe registrarse en el arquetipo OBSERVATION.heart_rate-pulse.</use>
+      <misuse>Cualquier medición de gases en sangre que involucra contacto directo con la sangre y la medición de la PaO2, PaCO2 no deberían ser registradas usando este arquetipo. Usar el arquetipo OBSERVATION.lab_test-blood_gases.v1. Mediciones directas de gases arteriales nuevas, deberían ser agregadas a OBSERVATION.lab_test-blood_gases.v1.
+
+No usar para registrar medidas directas de gases en sangre. Ej. SaO2 (saturación arterial), SvO2 (saturación venosa) o CaO2 (contenido de Oxígeno), usualmente determinados por métodos invasivos. Ej. laboratorio de gases en sangre o dispositivos catheter vascular. Estos deberían ser registrados en el arquetipo OBSERVATION.lab_test-blood_gases.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>de</code_string>
+      </language>
+      <purpose>Zur Dokumentation der Sauerstoffsättigung im Blut unter Benutzung eines Pulsoxymeters.</purpose>
+      <keywords>Sauerstoff</keywords>
+      <keywords>Behandlung mit Sauerstoff</keywords>
+      <keywords>Pulsoxymeter</keywords>
+      <keywords>Pulsoxymetrie</keywords>
+      <use>*</use>
+      <misuse>*</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>To record indirect, currently non-invasive, blood gas measurements, such as Spo2 and pTCO2, via pulse oximetry, transcutaneous oximetry or other methods.
+
+It is likely that this archetype will be used primarily to record oxygenation estimations, but other gas measurements may be included, or added over time.</purpose>
+      <keywords>oxygen</keywords>
+      <keywords>oxygenation</keywords>
+      <keywords>saturation</keywords>
+      <keywords>SpO2</keywords>
+      <keywords>ptcCO2</keywords>
+      <keywords>ptcO2</keywords>
+      <keywords>spMet</keywords>
+      <keywords>spCO</keywords>
+      <keywords>spOC</keywords>
+      <keywords>carboxyhaemoglobin</keywords>
+      <keywords>methaemoglobin</keywords>
+      <keywords>transcutaneous</keywords>
+      <keywords>pulse</keywords>
+      <keywords>oximeter</keywords>
+      <keywords>oximetry</keywords>
+      <keywords>concentration</keywords>
+      <keywords>partial</keywords>
+      <keywords>pressure</keywords>
+      <keywords>non-invasive</keywords>
+      <keywords>vital</keywords>
+      <keywords>O2</keywords>
+      <keywords>CO2</keywords>
+      <keywords>carbon dioxide</keywords>
+      <use>Used to record indirect blood gas measurement, currently by non-invasive techniques. New indirect blood gas measurements should be added to this archetype.
+
+Where the recording device also provides another type of measurement, such as pulse rate, this should be recorded in a separate archetype, appropriate for that particular measurement to allow consistent querying. In this example, record the pulse rate in the OBSERVATION.pulse archetype. 
+
+The aim is to consistently model a clinical concept, rather than to model device output ; devices are increasingly multi-functional and provide overlapping measurements which may need to be recorded using a number of discrete archetypes.
+
+Waveforms should be recorded here when used to document quality of the blood gas measurement. In contrast, if used for primary diagnostic purposes e.g. of cardiac output, plesmythography should be recorded in the key associated clinical archetype - OBSERVATION.pulse.</use>
+      <misuse>Not to be used to record any peripheral blood gas measurement that involves direct contact with blood. For example, PaO2, PaCO2 should be recorded using the OBSERVATION.pathology_test archetype suitable for recording blood gases.
+
+Not to be used to record invasive blood gas measurement. For example, arterial (SaO2), venous (SvO2) oxygen saturation or Oxygen content (CaOC) which are usually determined by invasive methods such as laboratory blood gases or vascular catheter devices. These should also be recorded within the OBSERVATION.lab_test-blood_gases archetype.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>fa</code_string>
+      </language>
+      <purpose>برای ثبت اندازه گیری گاز خون بطور غیر مستقیم ،در حال حاضر غیر تهاجمی و غیر مستقیم بکار می رود، نظیر ....و ... از طریق اندازه گیری اکسیژن نبضی ، اندازه گیری اکسیژن زیر پوستی یا سایر روشها 
+این احتمال بالاست که از این الگو ساز بطور اولیه در ثبت برآوردهای تولید اکسیژن استفاده شوداما سایر اندازه گیری های گاز ممکن است در طول زمان اضافه شود  .</purpose>
+      <keywords>اکسیژن</keywords>
+      <keywords>تولید اکسیژن</keywords>
+      <keywords>اشباع</keywords>
+      <keywords>اشباع اکسیژن خون</keywords>
+      <keywords>SpO2</keywords>
+      <keywords>ptcCO2</keywords>
+      <keywords>ptcO2</keywords>
+      <keywords>spMet</keywords>
+      <keywords>spCO</keywords>
+      <keywords>spOC</keywords>
+      <keywords>ترکیب مونو اکسید کربن و هموگلوبین در گلبولهای قرمز</keywords>
+      <keywords>پروتیین حمل کننده اکسیژن در هموگلوبین</keywords>
+      <keywords>زیر پوستی</keywords>
+      <keywords>وسیله اندازه گیری اکسیژن خون</keywords>
+      <keywords>روش اندازه گیری اکسیژن خون</keywords>
+      <keywords>غلظت</keywords>
+      <keywords>جزیی</keywords>
+      <keywords>فشار</keywords>
+      <keywords>غیر تهاجمی</keywords>
+      <keywords>حیاتی</keywords>
+      <keywords>O2</keywords>
+      <keywords>CO2</keywords>
+      <keywords>کربن دی اکسید</keywords>
+      <use>برای ثبت اندازه گیری غیر مستقیم گاز خون، که در حال حاضر با تکنیک های غیر تهاجمی انجام می شود، بکار می رود. داده های جدید اندازه گیری های غیر مستقیم گاز خون بایستی به این الگوساز افزوده شوند
+
+از انجایی که وسایل ثبت انواع دیگری از اندازه گیری مانند میزان نبض را فراهم می کنند، بایستی در یک الگوساز جداگانه، مناسب با آن اندازه گیری مانند
+OBSERVATION.heart_rate-pulse
+برای اجازه دادن به پرسجوی مشروط، ثبت شوند
+ 
+هدف همواره مدل کردن یک مفهوم بالینی به جای مدل کردن خروجی یک وسیله است
+وسایل چند کاره بوده و پیوسته قابلیت های آنها در حال افزایش است و اندازه گیری ها همپوشانی دارند که ممکن است نیاز شوند تا با بکارگیری یک تعداد از الگوساز های گسسته ثبت شوند
+
+شکل موج ها هنگامی که برای مستند کردن کیفیت اندازه گیری گاز خون استفاده می شوند بایستی در اینجا ثبت شوند. و در مقابل اگر برای اهداف تشخیصی اولیه مانند برونده قلبی بکار روند، "پلسمیتوگرافی" باید در الگوساز بالینی کلیدی مرتبط
+OBSERVATION.heart_rate-pulse
+ثبت شود</use>
+      <misuse>هر گونه اندازه گیری گاز خون که شامل تماس مستقیم با خون و اندازه گیری .... و .... نباید با استفاده از این الگو ساز ثبت شود . ازالگو ساز ..... استفاده کنید . اندازه گیری جدید فشار خو.ن باید به ... اضافه شود
+نباید در ثبت اندازه گیری فشار گاز خون مستقیم استفاده شود به عنوان مثال .... ، .... اشباع اکسیژن یا محتوای اکسیژن .... که معمولا با روشهای غیر تهاجمی تعیین می شود.به عنوان مثال گازههای خونی آزمایشگاهی یا وسایل کاتتر عروقی . این موارد باید در الگو ساز ... ثبت شوند</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>ru</code_string>
+      </language>
+      <purpose>Для записи результатов непрямых,в настоящее время неинвазивных, измерений газового состава крови, таких как SpO2 (насыщение кислородом периферической крови) и pTCO2 (насыщение углекислым газом), полученных методами пульсовой оксиметрии, чрескожной оксиметрии или другими методами.
+
+Вполне вероятно, что этот архетип будет использоваться, в основном, для записи оценок оксигенации, однако в него могут быть включены или добавлены со временем измерения и других газов.</purpose>
+      <keywords>парциальное давление</keywords>
+      <keywords>насыщение</keywords>
+      <keywords>карбоксигемоглобин</keywords>
+      <keywords>метгемоглобин</keywords>
+      <keywords>чрескожный</keywords>
+      <keywords>пульс</keywords>
+      <keywords>оксиметр</keywords>
+      <keywords>оксиметрия</keywords>
+      <keywords>концентрация</keywords>
+      <keywords>неинвазивный</keywords>
+      <keywords>жизненный</keywords>
+      <keywords>кислород</keywords>
+      <keywords>углекислый газ</keywords>
+      <keywords>О2</keywords>
+      <keywords>СО2</keywords>
+      <keywords>оксигенация</keywords>
+      <use>Используется для записи результатов непрямых,в настоящее время неинвазивных, измерений газового состава крови. Новые непрямые измерения газов крови должны добавляться к этому архетипу.
+
+Если записывающее устройство также обеспечивает другой тип измерения,например, такой как частота пульса, то это должно быть записано в отдельный архетип, соответствующий данному измерению, например, OBSERVATION.heart_rate, для обеспечения последовательных запросов.
+
+Цель состоит в том, чтобы последовательно моделировать клиническое понятие, а не моделировать вывод данных с устройства. Устройства становятся все более многофункциональными и обеспечивают дублирование измерений, которые, возможно, придется записывать с помощью ряда отдельных архетипов.
+
+Осциллограммы должны быть зарегистрированы здесь, когда используются для документирования качества измерений газов крови. В отличие от этого, если они используется для первичной диагностики, например, сердечного выброса, плетизмограммы должны быть записаны в ключевом клиническом архетипе - OBSERVATION.heart_rate-pulse.</use>
+      <misuse>Любые измерения газов крови, который включает прямой контакт с кровью, а также измерения PaO2 (парциальное давление кислорода), PaCO2 (парциальное давление углекислого газа) не должны записываться с помощью этого архетипа - для таких измерений используется архетип OBSERVATION.lab_test-blood_gases. Новые прямые измерения газов крови должны быть добавлены к архетипу OBSERVATION.lab_test-blood_gases.v1.
+
+НЕ использовать для записи прямого измерения газов крови. Например, насыщение кислородом артериальной (SaO2) или венозной (SvO2) крови, или содержание кислорода (CAOC), которые обычно определяются инвазивными методами, например, специальными лабораториями газов крови или с помощью сосудистых катетеров. Такие измерения должны быть записаны в архетип OBSERVATION.lab_test-blood_gases.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>de</code_string>
+    </language>
+    <author id="organisation">University of Heidelberg, Central Queensland University</author>
+    <author id="name">Jasmin Buck, Sebastian Garde</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>es-ar</code_string>
+    </language>
+    <author id="organisation">Bitios.com</author>
+    <author id="name">Dr. Leonardo Der Jachadurian</author>
+    <accreditation>Medical Doctor (Internal Medicine Specialist)</accreditation>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>fa</code_string>
+    </language>
+    <author id="organisation">Ocean Informatics</author>
+    <author id="name">Shahla Foozonkhah</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ar-sy</code_string>
+    </language>
+    <author id="name">Mona Saleh</author>
+  </translations>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>ru</code_string>
+    </language>
+    <author id="organisation">JSC Comsoft</author>
+    <author id="name">Vyacheslav Mavrin</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-OBSERVATION.indirect_oximetry.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>OBSERVATION</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>data</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>HISTORY</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>events</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>EVENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0002</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>data</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ITEM_TREE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0003</node_id>
+                <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                  <rm_attribute_name>items</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0006</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_PROPORTION</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>numerator</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>REAL</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_REAL">
+                              <range>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>0.0</lower>
+                                <upper>100.0</upper>
+                              </range>
+                            </item>
+                          </children>
+                        </attributes>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>type</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>INTEGER</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_INTEGER">
+                              <list>2</list>
+                            </item>
+                          </children>
+                        </attributes>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0044</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_DV_QUANTITY">
+                        <rm_type_name>DV_QUANTITY</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <property>
+                          <terminology_id>
+                            <value>openehr</value>
+                          </terminology_id>
+                          <code_string>119</code_string>
+                        </property>
+                        <list>
+                          <magnitude>
+                            <lower_included>true</lower_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>true</upper_unbounded>
+                            <lower>0.0</lower>
+                          </magnitude>
+                          <units>ml/ml</units>
+                        </list>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0045</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_PROPORTION</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>numerator</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>REAL</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_REAL">
+                              <range>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>0.0</lower>
+                                <upper>100.0</upper>
+                              </range>
+                            </item>
+                          </children>
+                        </attributes>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>is_integral</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>BOOLEAN</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_BOOLEAN">
+                              <true_valid>false</true_valid>
+                              <false_valid>true</false_valid>
+                            </item>
+                          </children>
+                        </attributes>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>type</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>INTEGER</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_INTEGER">
+                              <list>2</list>
+                            </item>
+                          </children>
+                        </attributes>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0046</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_PROPORTION</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>numerator</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>REAL</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_REAL">
+                              <range>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>0.0</lower>
+                                <upper>100.0</upper>
+                              </range>
+                            </item>
+                          </children>
+                        </attributes>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>is_integral</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>BOOLEAN</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_BOOLEAN">
+                              <true_valid>false</true_valid>
+                              <false_valid>true</false_valid>
+                            </item>
+                          </children>
+                        </attributes>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>type</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>INTEGER</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_INTEGER">
+                              <list>2</list>
+                            </item>
+                          </children>
+                        </attributes>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0039</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_DV_QUANTITY">
+                        <rm_type_name>DV_QUANTITY</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <property>
+                          <terminology_id>
+                            <value>openehr</value>
+                          </terminology_id>
+                          <code_string>125</code_string>
+                        </property>
+                        <list>
+                          <magnitude>
+                            <lower_included>true</lower_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>true</upper_unbounded>
+                            <lower>0.0</lower>
+                          </magnitude>
+                          <precision>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </precision>
+                          <units>mm[Hg]</units>
+                        </list>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0040</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_DV_QUANTITY">
+                        <rm_type_name>DV_QUANTITY</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <property>
+                          <terminology_id>
+                            <value>openehr</value>
+                          </terminology_id>
+                          <code_string>125</code_string>
+                        </property>
+                        <list>
+                          <magnitude>
+                            <lower_included>true</lower_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>true</upper_unbounded>
+                            <lower>0.0</lower>
+                          </magnitude>
+                          <precision>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </precision>
+                          <units>mm[Hg]</units>
+                        </list>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="ARCHETYPE_SLOT">
+                    <rm_type_name>CLUSTER</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0054</node_id>
+                    <includes>
+                      <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.waveform(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+                      <expression xsi:type="EXPR_BINARY_OPERATOR">
+                        <type>Boolean</type>
+                        <operator>2007</operator>
+                        <precedence_overridden>false</precedence_overridden>
+                        <left_operand xsi:type="EXPR_LEAF">
+                          <type>String</type>
+                          <item xsi:type="xsd:string">archetype_id/value</item>
+                          <reference_type>attribute</reference_type>
+                        </left_operand>
+                        <right_operand xsi:type="EXPR_LEAF">
+                          <type>C_STRING</type>
+                          <item xsi:type="C_STRING">
+                            <pattern>openEHR-EHR-CLUSTER\.waveform(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                          </item>
+                          <reference_type>constraint</reference_type>
+                        </right_operand>
+                      </expression>
+                    </includes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0019</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_MULTIMEDIA</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>media_type</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_CODE_PHRASE">
+                            <rm_type_name>CODE_PHRASE</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <terminology_id>
+                              <value>openEHR</value>
+                            </terminology_id>
+                          </children>
+                        </attributes>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0058</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0036</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <cardinality>
+                    <is_ordered>false</is_ordered>
+                    <is_unique>false</is_unique>
+                    <interval>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </interval>
+                  </cardinality>
+                </attributes>
+              </children>
+            </attributes>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>state</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ITEM_TREE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0014</node_id>
+                <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                  <rm_attribute_name>items</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="ARCHETYPE_SLOT">
+                    <rm_type_name>CLUSTER</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0034</node_id>
+                    <includes>
+                      <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.level_of_exertion(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+                      <expression xsi:type="EXPR_BINARY_OPERATOR">
+                        <type>Boolean</type>
+                        <operator>2007</operator>
+                        <precedence_overridden>false</precedence_overridden>
+                        <left_operand xsi:type="EXPR_LEAF">
+                          <type>String</type>
+                          <item xsi:type="xsd:string">archetype_id/value</item>
+                          <reference_type>attribute</reference_type>
+                        </left_operand>
+                        <right_operand xsi:type="EXPR_LEAF">
+                          <type>C_STRING</type>
+                          <item xsi:type="C_STRING">
+                            <pattern>openEHR-EHR-CLUSTER\.level_of_exertion(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                          </item>
+                          <reference_type>constraint</reference_type>
+                        </right_operand>
+                      </expression>
+                    </includes>
+                  </children>
+                  <children xsi:type="ARCHETYPE_SLOT">
+                    <rm_type_name>CLUSTER</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0015</node_id>
+                    <includes>
+                      <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.ambient_oxygen(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+                      <expression xsi:type="EXPR_BINARY_OPERATOR">
+                        <type>Boolean</type>
+                        <operator>2007</operator>
+                        <precedence_overridden>false</precedence_overridden>
+                        <left_operand xsi:type="EXPR_LEAF">
+                          <type>String</type>
+                          <item xsi:type="xsd:string">archetype_id/value</item>
+                          <reference_type>attribute</reference_type>
+                        </left_operand>
+                        <right_operand xsi:type="EXPR_LEAF">
+                          <type>C_STRING</type>
+                          <item xsi:type="C_STRING">
+                            <pattern>openEHR-EHR-CLUSTER\.ambient_oxygen(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                          </item>
+                          <reference_type>constraint</reference_type>
+                        </right_operand>
+                      </expression>
+                    </includes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0057</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0016</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <cardinality>
+                    <is_ordered>false</is_ordered>
+                    <is_unique>false</is_unique>
+                    <interval>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </interval>
+                  </cardinality>
+                </attributes>
+              </children>
+            </attributes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+    </attributes>
+    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+      <rm_attribute_name>protocol</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ITEM_TREE</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>1</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0007</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0009</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0020</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>defining_code</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_CODE_PHRASE">
+                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_list>at0048</code_list>
+                    <code_list>at0049</code_list>
+                    <code_list>at0050</code_list>
+                    <code_list>at0051</code_list>
+                    <code_list>at0052</code_list>
+                  </children>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0037</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_DV_QUANTITY">
+                <rm_type_name>DV_QUANTITY</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <property>
+                  <terminology_id>
+                    <value>openehr</value>
+                  </terminology_id>
+                  <code_string>127</code_string>
+                </property>
+                <list>
+                  <magnitude>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0.0</lower>
+                    <upper>100.0</upper>
+                  </magnitude>
+                  <precision>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </precision>
+                  <units>Cel</units>
+                </list>
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0038</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_DATE_TIME</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+              </children>
+            </attributes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>0</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id>at0018</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0056</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <children xsi:type="ARCHETYPE_SLOT">
+            <rm_type_name>CLUSTER</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0059</node_id>
+            <includes>
+              <string_expression>archetype_id/value matches {/.*/}</string_expression>
+              <expression xsi:type="EXPR_BINARY_OPERATOR">
+                <type>Boolean</type>
+                <operator>2007</operator>
+                <precedence_overridden>false</precedence_overridden>
+                <left_operand xsi:type="EXPR_LEAF">
+                  <type>String</type>
+                  <item xsi:type="xsd:string">archetype_id/value</item>
+                  <reference_type>attribute</reference_type>
+                </left_operand>
+                <right_operand xsi:type="EXPR_LEAF">
+                  <type>C_STRING</type>
+                  <item xsi:type="C_STRING">
+                    <pattern>.*</pattern>
+                  </item>
+                  <reference_type>constraint</reference_type>
+                </right_operand>
+              </expression>
+            </includes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="ar-sy">
+      <items code="at0000">
+        <items id="text">قياس التأكسج غير المباشر</items>
+        <items id="description">طريقة لمراقبة قياسات غازات الدم مثل تشبع الدم الطرفي بالأكسجين و الضغط الجزئي للأكسجين في الدم الطرفي, بطريقة غير مباشرة و غير باضعة.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Event Series(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">إحدى الوقائع</items>
+        <items id="description">واقعة زمنية</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0006">
+        <items id="text">تشبع الدم الطرفي بالأكسجين</items>
+        <items id="description">يتم قياسه باستخدام قياس التأكسج عند النبض, و هو يمثل تشبع الأكسجين في الدم الطرفي.</items>
+        <items id="comment">يُعَرَّف تشبع الدم الطرفي بالأكسجين على أنه النسبة بين الأكسي هيموغلوبين إلى إجمالي تركيز الهيموغلوبين الذي يمثل مجموع الأكسي هيموغلوبين و الديوكسي هيموغلوبين.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">*List(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">مكان المجس – الحاسة</items>
+        <items id="description">مكان مجس (حاسة) القياس.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0015">
+        <items id="text">الأكسجين المحيط</items>
+        <items id="description">تفاصيل حول كمية الأكسجين المتاحة للمريض في وقت الملاحظة. في وجود قيم مفترضة من 21% تركيز للأكسجين, و نسبة من الأكسجين المستنشق تساوي 0.21 و معدل لسريان الأكسجين يساوي 0 ليتر لكل دقيقة أو 0 ميلليليتر لكل دقيقة.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">العوامل المربكة</items>
+        <items id="description">تعليق حول و تسجيل للعوامل الأخرى التي قد تطرأ و تؤثر على تفسير الملاحظة. مثل الحركة, الألم, ضعف الإرواء, و إرضاع الطفل.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">الجهيزة</items>
+        <items id="description">تفاصيل حول جهيزة قياس التأكسج بطريقة غير باضعة.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">صورة الوسائط المتعدةة</items>
+        <items id="description">تفاصيل سلسلة قراءات التأكسج, بخلاف التموجات, و يتم التعبير عنها على هيئة صورة أو سلسلة من الصور. 
+ينبغي تسجيل التموجات في شرفة التموجات التي يتم ربطها بعنقود نماذج مناسبة.</items>
+      </items>
+      <items code="at0020">
+        <items id="text">نوع المجس – الحاسة</items>
+        <items id="description">نوع مجس (حاسة) القياس الذي يتم استخدامه, مثل الامتراق, الانعكاس, الملقاط, الشريط أو المَسْرى - الكهربي.</items>
+        <items id="comment">*For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.(en)</items>
+      </items>
+      <items code="at0034">
+        <items id="text">المجهود</items>
+        <items id="description">تفاصيل حول النشاط البدني الذي تتم ممارسته في وقت القياس.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">تعليق</items>
+        <items id="description">تعليق نَصي حول نتيجة قياس التأكسج غير المباشر.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">درجة حرارة تشغيل المسرى الكهربي</items>
+        <items id="description">درجة حرارة تشغيل المسرى الكهربي الذي يقيس من خلال الجلد.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">وقت وضع المجس</items>
+        <items id="description">التاريخ و الوقت الذي تم فيه وضع المجس. و هو معتدّ (هام) في قياس التأكسج عبر الجلد.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">الضغط الجزئي للأكسجين في الدم الطرفي</items>
+        <items id="description">يتم قياسه عن طريق قياس التأكسج بالمَسْرى (الكهربي) بطريق الجلد, و هو يمثل الضغط الجزئي للأكسجين في الدم الطرفي.</items>
+      </items>
+      <items code="at0040">
+        <items id="text">الضغط الجزئي لثاني أكسيد الكربون في الدم الطرفي</items>
+        <items id="description">يتم قياسه عن طريق قياس التأكسج بالمَسْرى (الكهربي) بطريق الجلد, و هو يمثل الضغط الجزئي لثاني أكسيد الكربون في الدم الطرفي.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">المحتوى الأكسجيني في الدم الطرفي</items>
+        <items id="description">يتم قياسه عن طريق قياس التأكسج عند النبض, و هو يمثل المحتوى الأكسجيني للدم الطرفي.</items>
+      </items>
+      <items code="at0045">
+        <items id="text">تشبع الكاربوكسي هيموغلوبين في الدم الطرفي</items>
+        <items id="description">يتم قياسه عن طريق قياس التأكسج عند النبض, و هو يمثل تشبع الكاربوكسي هيموغلوبين في الدم الطرفي.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">تشبع الميثوكسيهيموغلوبين في الدم الطرفي</items>
+        <items id="description">يتم قياسه عن طريق قياس التأكسج عند النبض, و هو يمثل تشبع الميثوكسيهيموغلوبين في الدم الطرفي.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">الامتراق</items>
+        <items id="description">تم استخدام مجس لقياس التأكسج عند النبض يعمل بالامتراق.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">الانعكاس</items>
+        <items id="description">تم استخدام مجس لقياس التأكسج عند النبض يعمل بالانعكاس.</items>
+      </items>
+      <items code="at0050">
+        <items id="text">الملقاط</items>
+        <items id="description">تم استخدام مجس لقياس التأكسج عند النبض يعمل كملقاط.</items>
+      </items>
+      <items code="at0051">
+        <items id="text">شريط</items>
+        <items id="description">تم استخدام مجس لقياس التأكسج عند النبض على هيئة شريط.</items>
+      </items>
+      <items code="at0052">
+        <items id="text">مَسْرى</items>
+        <items id="description">تم استخدام مجس لقياس التأكسج عند النبض يعمل عن طريق مَسْرى كهربي.</items>
+      </items>
+      <items code="at0054">
+        <items id="text">التموج</items>
+        <items id="description">قراءة تموجية متعلقة بقياس التأكسج.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Oxygen Delivery Device(en)</items>
+        <items id="description">*Details of the oxygen delivery device used.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Method of Oxygen Delivery(en)</items>
+        <items id="description">*Method of oxygen delivery device used to supply supplemental oxygen.(en)</items>
+        <items id="comment">*For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Interpretation(en)</items>
+        <items id="description">*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)</items>
+        <items id="comment">*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local context or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="es-ar">
+      <items code="at0000">
+        <items id="text">Oximetría de pulso (indirecta)</items>
+        <items id="description">Método para monitorear las mediciones de gases arteriales tales como SpO2 y PtcO2 por medios indirectos y habitualmente no invasivos.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Event Series(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Cualquier evento.</items>
+        <items id="description">Tiempo del evento.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0006">
+        <items id="text">SpO2</items>
+        <items id="description">Determinado a través de un oxímetro de pulso: la saturación de oxígeno en sangre periférica.</items>
+        <items id="comment">SpO2 se define como la relación entre la oxi-hemoglobina (HbO2) con la concentración total de hemoglobina (HbO2 + desoxihemoglobina).</items>
+      </items>
+      <items code="at0007">
+        <items id="text">*List(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Sitio del sensor</items>
+        <items id="description">El sitio del sensor de medición.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0015">
+        <items id="text">Oxígeno ambiental</items>
+        <items id="description">Detalles sobre la cantidad de oxígeno disponible por el sujeto en el momento de la determinación. Se asumen valores de concentración de oxígeno del 21%, FiO2 de 0,21 y flujo de oxígeno de 0Lt/min o 0 mLt/min.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Factores de confusión</items>
+        <items id="description">Comentario y registro sobre factores incidentales que pueden afectar la interpretación de la observación. Ej. movimiento, dolor, mala perfusión distal, alimentación del lactante, etc.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Dispositivo</items>
+        <items id="description">Detalles del dispositivo de oximetría no invasiva utilizado.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Imágen multimedia</items>
+        <items id="description">Detalles de series de lecturas de oximetría, diferentes de las formas de ondas, expresados como una imágen multimedia o una serie de imágenes. Las formas de onda deberían ser registradas usando el slot Waveform y el arquetipo cluster asociado.</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Tipo de sensor</items>
+        <items id="description">El tipo de sensor de medición usado. Ej. transmisión, reflectivo, pinza o banda, electrodos, etc.</items>
+        <items id="comment">*For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.(en)</items>
+      </items>
+      <items code="at0034">
+        <items id="text">Esfuerzo</items>
+        <items id="description">Detalles sobre la actividad física realizada en el momento de la medición.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Comentarios</items>
+        <items id="description">Un texto de comentarios acerca del resultado de la oximetría indirecta.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Temperatura de operación del electródo</items>
+        <items id="description">La temperatura de operación del electrodo transcutáneo de oximetría.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Fecha de colocación del sensor</items>
+        <items id="description">La fecha y hora en las cuales se colocó el sensor; es significativo para la oximetría transcutánea.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">PtcO2</items>
+        <items id="description">Medida por medio de un electrodo transcutáneo de oximetría , la presión parcial de oxígeno en la sangre periférica.</items>
+      </items>
+      <items code="at0040">
+        <items id="text">PtcCO2</items>
+        <items id="description">Medida por medio de un electrodo transcutáneo de oximetría , la presión parcial de anhídrido carbónico en la sangre periférica.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">SpOC</items>
+        <items id="description">Medido a través de co-oximetría de pulso, el contenido de oxígeno de la sangre periférica.</items>
+      </items>
+      <items code="at0045">
+        <items id="text">SpCO</items>
+        <items id="description">Medido por medio de co-oximetría de pulso, la saturación de carboxi-hemoglobina en la sangre periférica.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">SpMet</items>
+        <items id="description">Medido a través de co-oximetría de pulso, la saturación de meta-hemoglobina en la sangre periférica.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Transmisión</items>
+        <items id="description">Se utilizó un sensor transmisor, de oximetría de pulso.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Reflectivo</items>
+        <items id="description">Se utilizó un sensor reflectivo, de oximetría de pulso.</items>
+      </items>
+      <items code="at0050">
+        <items id="text">Pinza</items>
+        <items id="description">Se utilizó un sensor tipo abrazadera, de oximetría de pulso.</items>
+      </items>
+      <items code="at0051">
+        <items id="text">Tira</items>
+        <items id="description">Se utilizó un sensor tipo tira o banda, de oximetría de pulso.</items>
+      </items>
+      <items code="at0052">
+        <items id="text">Electrodo</items>
+        <items id="description">Se utilizó un sensor electrodo transcutáneo.</items>
+      </items>
+      <items code="at0054">
+        <items id="text">Forma de onda de pulso</items>
+        <items id="description">La lectura o el registro de la forma de onda con la medición de oximetría.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Oxygen Delivery Device(en)</items>
+        <items id="description">*Details of the oxygen delivery device used.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Method of Oxygen Delivery(en)</items>
+        <items id="description">*Method of oxygen delivery device used to supply supplemental oxygen.(en)</items>
+        <items id="comment">*For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Interpretation(en)</items>
+        <items id="description">*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)</items>
+        <items id="comment">*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local context or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="de">
+      <items code="at0000">
+        <items id="text">*Oximetry(en)</items>
+        <items id="description">*Method of monitoring blood gas measurements such as Spo2 and pTCO2 by indirect, currently non-invasive, means.(en)</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Event Series</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">*Any event(en)</items>
+        <items id="description">*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Baum</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0006">
+        <items id="text">*spO2(en)</items>
+        <items id="description">*Measured via pulse oximetry, the saturation of oxygen in the peripheral blood.(en)</items>
+        <items id="comment">*spO2 is defined as the ratio of oxyhaemoglobin (HbO2) to the total concentration of haemoglobin (HbO2 + deoxyhaemoglobin).(en)</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Liste</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0009">
+        <items id="text">*Sensor Site(en)</items>
+        <items id="description">*The site of the measurement sensor.(en)</items>
+      </items>
+      <items code="at0014">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0015">
+        <items id="text">*Ambient oxygen(en)</items>
+        <items id="description">*Details of the amount of oxygen being delivered to the subject at the time of observation.  Assumed values of 21% oxygen concentration, Fi02 of 0.21 and oxygen flow rate of 0 l/min or 0 ml/min.(en)</items>
+      </items>
+      <items code="at0016">
+        <items id="text">*Confounding factors(en)</items>
+        <items id="description">*Comment on and record other incidental factors that may be affect interpretation of the observation. For example, motion, pain, feeding in infants, tracheostomy.(en)</items>
+      </items>
+      <items code="at0018">
+        <items id="text">*Device(en)</items>
+        <items id="description">*Details of the non-invasive oximetry device used.(en)</items>
+      </items>
+      <items code="at0019">
+        <items id="text">*Multimedia image(en)</items>
+        <items id="description">*Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.(en)</items>
+      </items>
+      <items code="at0020">
+        <items id="text">*Sensor Type(en)</items>
+        <items id="description">*The type of measurement sensor used.(en)</items>
+        <items id="comment">*For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.(en)</items>
+      </items>
+      <items code="at0034">
+        <items id="text">*Exertion(en)</items>
+        <items id="description">*Details about physical activity undertaken at the time of measurement.(en)</items>
+      </items>
+      <items code="at0036">
+        <items id="text">*Comment(en)</items>
+        <items id="description">*A text comment about the indirect oximetry result.(en)</items>
+      </items>
+      <items code="at0037">
+        <items id="text">*Electrode Operating Temperature(en)</items>
+        <items id="description">*The operating temperature of a transcutaneous oximeter electrode.(en)</items>
+      </items>
+      <items code="at0038">
+        <items id="text">*Time of Sensor Application(en)</items>
+        <items id="description">*The date and time at which the sensor was applied. Significant for transcutaneous oximetry.(en)</items>
+      </items>
+      <items code="at0039">
+        <items id="text">*ptcO2(en)</items>
+        <items id="description">*Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.(en)</items>
+      </items>
+      <items code="at0040">
+        <items id="text">*ptcCO2(en)</items>
+        <items id="description">*Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.(en)</items>
+      </items>
+      <items code="at0044">
+        <items id="text">*spOC(en)</items>
+        <items id="description">*Measured via pulse CO-oximetry, the oxygen content of the peripheral blood.(en)</items>
+      </items>
+      <items code="at0045">
+        <items id="text">*spCO(en)</items>
+        <items id="description">*Measured via pulse CO-oximetry, the saturation of carboxyhaemoglobin in the perpiheral blood.(en)</items>
+      </items>
+      <items code="at0046">
+        <items id="text">*spMet(en)</items>
+        <items id="description">*Measured via pulse CO-oximetry, the saturation of methoxyhaemoglobin in the peripheral blood.(en)</items>
+      </items>
+      <items code="at0048">
+        <items id="text">*Transmittal(en)</items>
+        <items id="description">*A pulse oximetry transmittal sensor was applied.(en)</items>
+      </items>
+      <items code="at0049">
+        <items id="text">*Reflective(en)</items>
+        <items id="description">*A pulse oximetry reflective sensor was applied.(en)</items>
+      </items>
+      <items code="at0050">
+        <items id="text">*Clamp(en)</items>
+        <items id="description">*A pulse oximetry clamp sensor was applied.(en)</items>
+      </items>
+      <items code="at0051">
+        <items id="text">*Strip(en)</items>
+        <items id="description">*A pulse oximetry strip sensor was applied.(en)</items>
+      </items>
+      <items code="at0052">
+        <items id="text">*Electrode(en)</items>
+        <items id="description">*A transcutaneous electrode sensor was applied.(en)</items>
+      </items>
+      <items code="at0054">
+        <items id="text">*Waveform(en)</items>
+        <items id="description">*A waveform reading associated with the oximetry measurement.(en)</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Cluster(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Method of Oxygen Delivery(en)</items>
+        <items id="description">*Method of oxygen delivery device used to supply supplemental oxygen.(en)</items>
+        <items id="comment">*For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Interpretation(en)</items>
+        <items id="description">*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)</items>
+        <items id="comment">*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Cluster(en)</items>
+        <items id="description">**(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Indirect Oximetry</items>
+        <items id="description">Method of monitoring blood gas measurements such as Spo2 and pTCO2 by indirect, currently non-invasive, means.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Event Series</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Any Event</items>
+        <items id="description">Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0006">
+        <items id="text">spO2</items>
+        <items id="description">Measured via pulse oximetry, the saturation of oxygen in the peripheral blood.</items>
+        <items id="comment">spO2 is defined as the ratio of oxyhaemoglobin (HbO2) to the total concentration of haemoglobin (HbO2 + deoxyhaemoglobin).</items>
+      </items>
+      <items code="at0007">
+        <items id="text">List</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Sensor Site</items>
+        <items id="description">The site of the measurement sensor.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Tree</items>
+        <items id="description">@ internal @</items>
+      </items>
+      <items code="at0015">
+        <items id="text">Ambient Oxygen</items>
+        <items id="description">Details of the amount of oxygen available to the subject at the time of observation.  Assumed values of 21% oxygen concentration, Fi02 of 0.21 and oxygen flow rate of 0 l/min or 0 ml/min.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Confounding Factors</items>
+        <items id="description">Comment on and record other incidental factors that may be affect interpretation of the observation. For example, motion, pain, poor perfusion, infant feeding.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Oximetry Device</items>
+        <items id="description">Details of the non-invasive oximetry device used.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Multimedia Image</items>
+        <items id="description">Details of a series of oximetry readings, other than waveforms, expressed as a multimedia image or series of images. Waveforms should be recorded using the Waveform slot and associated cluster archetype.</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Sensor Type</items>
+        <items id="description">The type of measurement sensor used.</items>
+        <items id="comment">For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.</items>
+      </items>
+      <items code="at0034">
+        <items id="text">Exertion</items>
+        <items id="description">Details about physical activity undertaken at the time of measurement.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Comment</items>
+        <items id="description">A text comment about the indirect oximetry result.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Electrode Operating Temperature</items>
+        <items id="description">The operating temperature of a transcutaneous oximeter electrode.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Time of Sensor Application</items>
+        <items id="description">The date and time at which the sensor was applied. Significant for transcutaneous oximetry.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">ptcO2</items>
+        <items id="description">Measured via transcutaneous electrode oximetry, the partial pressure of oxygen in the peripheral blood.</items>
+      </items>
+      <items code="at0040">
+        <items id="text">ptcCO2</items>
+        <items id="description">Measured via transcutaneous electrode oximetry, the partial pressure of carbon dioxide in the peripheral blood.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">spOC</items>
+        <items id="description">Measured via pulse CO-oximetry, the oxygen content of the peripheral blood.</items>
+      </items>
+      <items code="at0045">
+        <items id="text">spCO</items>
+        <items id="description">Measured via pulse CO-oximetry, the saturation of carboxyhaemoglobin in the perpiheral blood.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">spMet</items>
+        <items id="description">Measured via pulse CO-oximetry, the saturation of methoxyhaemoglobin in the peripheral blood.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Transmittal</items>
+        <items id="description">A pulse oximetry transmittal sensor was applied.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Reflective</items>
+        <items id="description">A pulse oximetry reflective sensor was applied.</items>
+      </items>
+      <items code="at0050">
+        <items id="text">Clamp</items>
+        <items id="description">A pulse oximetry clamp sensor was applied.</items>
+      </items>
+      <items code="at0051">
+        <items id="text">Strip</items>
+        <items id="description">A pulse oximetry strip sensor was applied.</items>
+      </items>
+      <items code="at0052">
+        <items id="text">Electrode</items>
+        <items id="description">A transcutaneous electrode sensor was applied.</items>
+      </items>
+      <items code="at0054">
+        <items id="text">Waveform</items>
+        <items id="description">A waveform reading associated with the oximetry measurement.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">Oxygen Delivery Device</items>
+        <items id="description">Details of the oxygen delivery device used.</items>
+      </items>
+      <items code="at0057">
+        <items id="text">Method of Oxygen Delivery</items>
+        <items id="description">Method of oxygen delivery device used to supply supplemental oxygen.</items>
+        <items id="comment">For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.</items>
+      </items>
+      <items code="at0058">
+        <items id="text">Interpretation</items>
+        <items id="description">Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.</items>
+        <items id="comment">Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.</items>
+      </items>
+      <items code="at0059">
+        <items id="text">Extension</items>
+        <items id="description">Additional information required to capture local context or to align with other reference models/formalisms.</items>
+        <items id="comment">e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="fa">
+      <items code="at0000">
+        <items id="text">روش اندازه گیری اکسیژن خون غیر مستقیم</items>
+        <items id="description">روش کنترل اندازه گیری گاز خون نظیر ... و .... به روش غیر مستقیم ، در حال حاضر غیر تهاجمی</items>
+      </items>
+      <items code="at0001">
+        <items id="text">*Event Series(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0002">
+        <items id="text">هر رویداد</items>
+        <items id="description">رویداد زمان بندی شده</items>
+      </items>
+      <items code="at0003">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0006">
+        <items id="text">SpO2</items>
+        <items id="description">از طریق اندازه گیری اکسیژن نبضی ، اشباع اکسیژن در خون محیطی سنجیده می شود</items>
+        <items id="comment">؟؟به عنوان نسبت ترکیب هموگلوبین و اکسیژن به غلظت کلی هموگلوبین تعریف می شود</items>
+      </items>
+      <items code="at0007">
+        <items id="text">*List(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0009">
+        <items id="text">نوع سنسور</items>
+        <items id="description">محل قرار دهی سنسور اندازه گیری</items>
+      </items>
+      <items code="at0014">
+        <items id="text">*Tree(en)</items>
+        <items id="description">*@ internal @(en)</items>
+      </items>
+      <items code="at0015">
+        <items id="text">اکسیژن محیطی</items>
+        <items id="description">جزییات میزان اکسیژن موجود فرد در زمان مشاهده.مقدار فرض شده غلظت اکسیژن 21 درصد ، ...از .... ومیزان جریان  اکسیژن ...   .</items>
+      </items>
+      <items code="at0016">
+        <items id="text">عوامل جانبی</items>
+        <items id="description">نظر و ثبت سایر عوامل اتفاقی که ممکن استبر تفسیر مشاهدات تاثیر بگذارد برای مثال حرکت ، درد، تزریق ضعیف ، تغذیه شیرخوار</items>
+      </items>
+      <items code="at0018">
+        <items id="text">تجهیز</items>
+        <items id="description">جزییاتی در مورد تجهیزات غیر تهاجمی استفاده شده</items>
+      </items>
+      <items code="at0019">
+        <items id="text">تصویر چند رسانه ای</items>
+        <items id="description">جزییات مربوط به یک سری از موارد خوانده شده اندازه گیری اکسیژن ، غیر ازشکل موجی ، بیان شده بصورت تصویر چند رسانه ای یا سریهایی از تصاویر. شکل موجی باید با استفاده  گره شکل موجی و الگوساز خوشه ای مربوطه ثبت شوند</items>
+      </items>
+      <items code="at0020">
+        <items id="text">نوع سنسور</items>
+        <items id="description">نوع سنسور اندازه گیری استفاده شده به عنوان مثال انتقالی ، بازتابی ، گیره ای یا نواری ، الکترود</items>
+        <items id="comment">*For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.(en)</items>
+      </items>
+      <items code="at0034">
+        <items id="text">تقلا</items>
+        <items id="description">جزییاتی درباره فعالیت فیزیکی به عهده گرفته شده در زمان اندازه گیری</items>
+      </items>
+      <items code="at0036">
+        <items id="text">نظر</items>
+        <items id="description">نظرکتبی درباره نتیجه اندازه گیری غیر مستقیم اکسیژن</items>
+      </items>
+      <items code="at0037">
+        <items id="text">درجه حررت الکترود عامل</items>
+        <items id="description">درجه حرارت الکترود اندازه گیری اکسیژن زیر پوستی عامل</items>
+      </items>
+      <items code="at0038">
+        <items id="text">زمان کاربرد حسگر</items>
+        <items id="description">تاریخ و زمانی که حسگر بکار برده شد.برای اندازه گیری اکسیژن زیر پوستی مهم است</items>
+      </items>
+      <items code="at0039">
+        <items id="text">ptcO2</items>
+        <items id="description">از طریق الکترود اندازه گیری اکسیژن زیر پوستی اندازه گیری شده ،فشار جزیی اکسیژن در خون محیطی</items>
+      </items>
+      <items code="at0040">
+        <items id="text">ptcCO2</items>
+        <items id="description">از طریق الکترود اندازه گیری اکسیژن زیر پوستی اندازه گیری شده ،فشار جزیی دی اکسید کربن در خون محیطی</items>
+      </items>
+      <items code="at0044">
+        <items id="text">spOC</items>
+        <items id="description">از طریق اکسیژن نبضی؟؟ ، اکسیژن در خون محیطی سنجیده می شود</items>
+      </items>
+      <items code="at0045">
+        <items id="text">spCO</items>
+        <items id="description">از طریق اندازه گیری همراه نبضی اندازه گیری شده ، اشباع پروتیین حمل کننده کربن در هموگلوبین در خون محیطی</items>
+      </items>
+      <items code="at0046">
+        <items id="text">spMet</items>
+        <items id="description">از طریق اندازه گیری همراه نبضی اندازه گیری شده ، اشباع پروتیین حمل کننده اکسیژن در هموگلوبین در خون محیطی</items>
+      </items>
+      <items code="at0048">
+        <items id="text">انتقالی</items>
+        <items id="description">سنسور انتقالی اندازه گیری اکسیژن نبضی بکار برده شد</items>
+      </items>
+      <items code="at0049">
+        <items id="text">بازتابنده</items>
+        <items id="description">سنسور بازتابنده اندازه گیری اکسیژن نبضی بکار برده شد</items>
+      </items>
+      <items code="at0050">
+        <items id="text">گیره ای</items>
+        <items id="description">سنسور گیره ای اندازه گیری اکسیژن نبضی بکار برده شد</items>
+      </items>
+      <items code="at0051">
+        <items id="text">نوار</items>
+        <items id="description">سنسور نواری اندازه گیری اکسیژن نبضی بکار برده شد</items>
+      </items>
+      <items code="at0052">
+        <items id="text">الکترود</items>
+        <items id="description">سنسور الکترود زیر پوستی بکار برده شد</items>
+      </items>
+      <items code="at0054">
+        <items id="text">شکل موجی</items>
+        <items id="description">شکل موجی خوانده شده در ارتباط با اندازه گیری میزان اکسیژن</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Oxygen Delivery Device(en)</items>
+        <items id="description">*Details of the oxygen delivery device used.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Method of Oxygen Delivery(en)</items>
+        <items id="description">*Method of oxygen delivery device used to supply supplemental oxygen.(en)</items>
+        <items id="comment">*For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Interpretation(en)</items>
+        <items id="description">*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)</items>
+        <items id="comment">*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local context or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="ru">
+      <items code="at0000">
+        <items id="text">Непрямая оксиметрия</items>
+        <items id="description">Неинвазивный метод непрерывного контроля насыщения крови кислородом путём измерения таких показателей как SpO2 (насыщение кислородом периферической крови) и pTCO2 (насыщение углекислым газом).</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Событие серии</items>
+        <items id="description">@ внутренний @</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Любое событие</items>
+        <items id="description">Сроки события</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Дерево</items>
+        <items id="description">@ внутренний @</items>
+      </items>
+      <items code="at0006">
+        <items id="text">SpO2</items>
+        <items id="description">Насыщение кислородом периферической крови, измеренное с помощью пульсовой  оксиметрии.</items>
+        <items id="comment">SpO2 (насыщение кислородом) определяется как отношение оксигемоглобина (HbO2) к общей концентрации гемоглобина (HbO2 + деоксигемоглобин).</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Дерево</items>
+        <items id="description">@ внутренний @</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Положение датчика</items>
+        <items id="description">Месторасположение измерительного датчика.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Дерево</items>
+        <items id="description">@ внутренний @</items>
+      </items>
+      <items code="at0015">
+        <items id="text">Окружающий кислород</items>
+        <items id="description">Информация о количестве кислорода, поступающего пациенту на момент наблюдения. Допустимые значения  концентрации  кислорода - 21% , Fi02 (вдыхаемого кислорода)  - 0,21,  и расход кислорода 0 л/мин или 0 мл/мин.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Искажающие факторы</items>
+        <items id="description">Комментирование и запись других случайных факторов, которые могут влиять на интерпретацию наблюдений. Например, движение, боль, плохая перфузия, грудное вскармливание.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Устройство</items>
+        <items id="description">Информация об используемом неинвазивном оксиметрическом устройстве.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Мультимедийное изображение</items>
+        <items id="description">Информация о серии оксиметрических считываний, кроме осциллограмм, выраженная в виде мультимедийного изображения или серии изображений. Графические изображения волн должны быть записаны с помощью слота волнового сигнала и связаны архетипом типа кластер.</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Тип датчика</items>
+        <items id="description">Тип используемого измерительного датчика, например, передающий, отражающий, зажим или полоса, электрод.</items>
+        <items id="comment">*For example: transmittal electrode; reflective electrode; clamp electrode; or strip electrode.(en)</items>
+      </items>
+      <items code="at0034">
+        <items id="text">Нагрузка</items>
+        <items id="description">Информация о физической деятельности, осуществляемой во время измерения.</items>
+      </items>
+      <items code="at0036">
+        <items id="text">Комментарий</items>
+        <items id="description">Текстовый комментарий о результатах непрямой оксиметрии.</items>
+      </items>
+      <items code="at0037">
+        <items id="text">Рабочая температура электрода</items>
+        <items id="description">Рабочая температура чрескожного оксиметрического электрода.</items>
+      </items>
+      <items code="at0038">
+        <items id="text">Время наложения датчика</items>
+        <items id="description">Дата и время, когда был наложен датчик. Важно для чрескожной оксиметрии.</items>
+      </items>
+      <items code="at0039">
+        <items id="text">ptcO2</items>
+        <items id="description">Парциальное давление кислорода в периферической крови, измеренное с помощью чрескожной электродной оксиметрии.</items>
+      </items>
+      <items code="at0040">
+        <items id="text">ptcCO2</items>
+        <items id="description">Парциальное давление углекислого газа в периферической крови, измеренное с помощью чрескожной электродной оксиметрии.</items>
+      </items>
+      <items code="at0044">
+        <items id="text">spOC</items>
+        <items id="description">Содержание кислорода в периферической крови, измеренное с помощью пульсовой  СО-оксиметрии.</items>
+      </items>
+      <items code="at0045">
+        <items id="text">spCO</items>
+        <items id="description">Насыщение карбоксигемоглобина  в периферической крови, измеренное с помощью пульсовой  СО-оксиметрии.</items>
+      </items>
+      <items code="at0046">
+        <items id="text">spMet</items>
+        <items id="description">Насыщение метоксигемоглобина  в периферической крови, измеренное с помощью пульсовой  СО-оксиметрии.</items>
+      </items>
+      <items code="at0048">
+        <items id="text">Передающий</items>
+        <items id="description">Применён передающий датчик пульсовой оксиметрии.</items>
+      </items>
+      <items code="at0049">
+        <items id="text">Отражающий</items>
+        <items id="description">Применён отражающий датчик пульсовой оксиметрии.</items>
+      </items>
+      <items code="at0050">
+        <items id="text">Зажим</items>
+        <items id="description">Применён датчик пульсовой оксиметрии в форме зажима.</items>
+      </items>
+      <items code="at0051">
+        <items id="text">Полоска</items>
+        <items id="description">Применён датчик пульсовой оксиметрии в форме полоски.</items>
+      </items>
+      <items code="at0052">
+        <items id="text">Электрод</items>
+        <items id="description">Применён датчик в виде чрескожного электрода</items>
+      </items>
+      <items code="at0054">
+        <items id="text">Осциллограмма</items>
+        <items id="description">Графическое изображение волны, связанное с оксиметрическим измерением.</items>
+      </items>
+      <items code="at0056">
+        <items id="text">*Oxygen Delivery Device(en)</items>
+        <items id="description">*Details of the oxygen delivery device used.(en)</items>
+      </items>
+      <items code="at0057">
+        <items id="text">*Method of Oxygen Delivery(en)</items>
+        <items id="description">*Method of oxygen delivery device used to supply supplemental oxygen.(en)</items>
+        <items id="comment">*For example: nasal cannulae; Venturi mask; non-rebreathing mask with reservoir; or ventilator.(en)</items>
+      </items>
+      <items code="at0058">
+        <items id="text">*Interpretation(en)</items>
+        <items id="description">*Single word, phrase or brief description represents the clinical meaning and significance of the physical examination findings.(en)</items>
+        <items id="comment">*Coding with a terminology is preferred, if possible. For example, normal oxygen saturation or hypoxaemia.(en)</items>
+      </items>
+      <items code="at0059">
+        <items id="text">*Extension(en)</items>
+        <items id="description">*Additional information required to capture local context or to align with other reference models/formalisms.(en)</items>
+        <items id="comment">*e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.(en)</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="at0000">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>252465000</code_string>
+        </value>
+      </items>
+      <items code="at0006">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>431314004</code_string>
+        </value>
+      </items>
+      <items code="at0015">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>16206004</code_string>
+        </value>
+      </items>
+      <items code="at0018">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>448703006</code_string>
+        </value>
+      </items>
+      <items code="at0054">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>277923006</code_string>
+        </value>
+      </items>
+    </term_bindings>
+    <term_bindings terminology="LOINC">
+      <items code="at0006">
+        <value>
+          <terminology_id>
+            <value>LOINC</value>
+          </terminology_id>
+          <code_string>59408-5</code_string>
+        </value>
+      </items>
+      <items code="at0009">
+        <value>
+          <terminology_id>
+            <value>LOINC</value>
+          </terminology_id>
+          <code_string>20081-6</code_string>
+        </value>
+      </items>
+      <items code="at0039">
+        <value>
+          <terminology_id>
+            <value>LOINC</value>
+          </terminology_id>
+          <code_string>33437-5</code_string>
+        </value>
+      </items>
+      <items code="at0040">
+        <value>
+          <terminology_id>
+            <value>LOINC</value>
+          </terminology_id>
+          <code_string>33022-5</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

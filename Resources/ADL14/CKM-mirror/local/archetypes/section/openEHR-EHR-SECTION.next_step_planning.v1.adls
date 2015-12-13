@@ -1,0 +1,91 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-SECTION.next_step_planning.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-08-18">
+	>
+	copyright = <"*(es)">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar la solicitud de informes de evaluación acerca de pruebas diagnósticas específicas.">
+			use = <"Se utiliza para registrar la solicitud de informes para revisar las pruebas diagnósticas realizadas. La declaración se considera únicamente para el momento en que ha sido registrada. Es decir, se pueden planificar varios informes a lo largo del tiempo para evaluar las mismas pruebas diagnósticas, en caso de requerirse una segunda opinión.">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Register the statement/s about the request of a report of assessment about specific diagnostic tests.">
+			use = <"Use to record statement/s about asking reports to review the diagnostic tests carried out. The statement is considered only at the time it is registered. That is to say, other reports can be planned along the time, if second opinion is required.">
+			keywords = <"review", "diagnostic test", "report">
+			misuse = <"*(es)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9766771F8C2A18A836788849E5AC980E">
+	>
+
+definition
+	SECTION[id1] matches {	-- Next step planning
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype INSTRUCTION[id3] matches {	-- Report request
+				include
+					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-report(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype INSTRUCTION[id4] matches {	-- Referral request
+				include
+					archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-referral(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Pianificación del siguiente paso">
+				description = <"Proceso de toma de decisiones con respecto a la petición de un informe de evaluación de pruebas diagnósticas específicas.">
+			>
+			["id3"] = <
+				text = <"Solicitud de informe diagnóstico">
+				description = <"Solicitud de un informe diagnóstico acerca del estudio de pruebas diagnósticas concretas.">
+			>
+			["id4"] = <
+				text = <"Solicitud de volante">
+				description = <"Solicitud de la prestación de un servicio especificado por otro proveedor de salud u organización.">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Next step planning">
+				description = <"Decision-making concerning the planning of next assessment for the diagnostic tests carried out.">
+			>
+			["id3"] = <
+				text = <"Report request">
+				description = <"Request for a diagnostic report involving the study of specific diagnostic tests.">
+			>
+			["id4"] = <
+				text = <"Referral request">
+				description = <"Request for provision of a specified service by another healthcare provider or organisation.">
+			>
+		>
+	>

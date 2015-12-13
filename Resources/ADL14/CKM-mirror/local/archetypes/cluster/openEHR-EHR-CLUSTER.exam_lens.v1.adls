@@ -1,0 +1,302 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.exam_lens.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2013-03-01">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For recording the findings on physical examination of the lens.">
+			use = <"Use to record the findings on physical examination of the lens of the eye.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Description' data element.
+
+Specifically designed to be used within the OBSERVATION.exam archetype, but may be used within any clinically appropriate ENTRY or CLUSTER archetype.">
+			keywords = <"eye", "examination", "physical", "cataract">
+			misuse = <"Not to be used to record findings of the physical examination of other parts of the eye, such as the retina or conjunctiva - use other specific archetypes for this purpose.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9416B8BF7089D7E5681BD12DC0FC005A">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Examination Findings  -  Lens
+		items matches {
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Eye Examined
+				value matches {
+					DV_CODED_TEXT[id39] matches {
+						defining_code matches {[ac1]}		-- Eye Examined (synthesised)
+					}
+				}
+			}
+			ELEMENT[id9] matches {	-- Lens Opacity
+				value matches {
+					DV_CODED_TEXT[id40] matches {
+						defining_code matches {[ac2]}		-- Lens Opacity (synthesised)
+					}
+					DV_TEXT[id41] 
+				}
+			}
+			ELEMENT[id34] occurrences matches {0..1} matches {	-- Lens Position
+				value matches {
+					DV_CODED_TEXT[id42] matches {
+						defining_code matches {[ac3]}		-- Lens Position (synthesised)
+					}
+				}
+			}
+			ELEMENT[id22] occurrences matches {0..1} matches {	-- Cataract Maturity
+				value matches {
+					DV_CODED_TEXT[id43] matches {
+						defining_code matches {[ac4]}		-- Cataract Maturity (synthesised)
+					}
+				}
+			}
+			ELEMENT[id38] occurrences matches {0..1} matches {	-- Posterior Capsule Fibrosis
+				value matches {
+					DV_CODED_TEXT[id44] matches {
+						defining_code matches {[ac5]}		-- Posterior Capsule Fibrosis (synthesised)
+					}
+				}
+			}
+			ELEMENT[id27] occurrences matches {0..1} matches {	-- Cataract Location
+				value matches {
+					DV_CODED_TEXT[id45] matches {
+						defining_code matches {[ac6]}		-- Cataract Location (synthesised)
+					}
+				}
+			}
+			ELEMENT[id3] matches {	-- Interpretation
+				value matches {
+					DV_TEXT[id46] 
+				}
+			}
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Description
+				value matches {
+					DV_TEXT[id47] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Examination Findings  -  Lens">
+				description = <"Findings on physical examination of the lens of the eye.">
+			>
+			["id2"] = <
+				text = <"Description">
+				description = <"An overall narrative description of  findings of examination of the lens.">
+			>
+			["id3"] = <
+				text = <"Interpretation">
+				description = <"An interpretation of the lens examination findings, preferably coded.">
+			>
+			["id4"] = <
+				text = <"Eye Examined">
+				description = <"The eye examined.">
+			>
+			["at5"] = <
+				text = <"Left eye">
+				description = <"The left eye was examined.">
+			>
+			["at6"] = <
+				text = <"Right eye">
+				description = <"The right eye was examined.">
+			>
+			["id9"] = <
+				text = <"Lens Opacity">
+				description = <"The morphology of the lens / or cataract.">
+			>
+			["at10"] = <
+				text = <"Normal, clear crystalline lens">
+				description = <"The lens is normal, clear and crystalline.">
+			>
+			["at11"] = <
+				text = <"Nuclear sclerosis">
+				description = <"Nucelar sclerosia is present.">
+			>
+			["at12"] = <
+				text = <"Brunescent nucleus">
+				description = <"A brunescent catract nucleus is present.">
+			>
+			["at13"] = <
+				text = <"Cortical cataract">
+				description = <"A cortical cataract is present.">
+			>
+			["at14"] = <
+				text = <"Posterior sub capsular cataract">
+				description = <"A posterior sub-capsular cataract is present.">
+			>
+			["at15"] = <
+				text = <"Mature (white cortex) cataract">
+				description = <"A mature cataract is present.">
+			>
+			["at16"] = <
+				text = <"Hypermature / Morgagnian cataract">
+				description = <"A hypermature, Morgagnian catarct is present.">
+			>
+			["at17"] = <
+				text = <"Watercleft cataract">
+				description = <"A watercleft cataract is present.">
+			>
+			["at18"] = <
+				text = <"Retrodot cataract">
+				description = <"A retrodot cataract is present.">
+			>
+			["at19"] = <
+				text = <"Coronary cataract">
+				description = <"A coronary cataract is present.">
+			>
+			["at20"] = <
+				text = <"Polar cataract">
+				description = <"A polar cataract is present.">
+			>
+			["at21"] = <
+				text = <"Lamellar cataract">
+				description = <"A lamellar cataract is present.">
+			>
+			["id22"] = <
+				text = <"Cataract Maturity">
+				description = <"The maturity of cataract development.">
+			>
+			["at23"] = <
+				text = <"None">
+				description = <"There is no cataract present.">
+			>
+			["at24"] = <
+				text = <"Early">
+				description = <"The cataract is at an early stage of maturity.">
+			>
+			["at25"] = <
+				text = <"Moderate">
+				description = <"A moderate cataract is present.">
+			>
+			["at26"] = <
+				text = <"Mature">
+				description = <"A mature cataract is present.">
+			>
+			["id27"] = <
+				text = <"Cataract Location">
+				description = <"The location of the catract identified.">
+			>
+			["at29"] = <
+				text = <"Nuclear cataract">
+				description = <"The cataract is located in the nucleus.">
+			>
+			["at30"] = <
+				text = <"Nucelo-cortical cataract">
+				description = <"The cataract is located in a nucelo-cortical position.">
+			>
+			["at31"] = <
+				text = <"Early opacity">
+				description = <"A hazy, early opacity is visible.">
+			>
+			["at32"] = <
+				text = <"Diffuse opacities">
+				description = <"Multiple diffuse lens opacities are visible.">
+			>
+			["at33"] = <
+				text = <"Pseudophakia">
+				description = <"Psedophakia is present.">
+			>
+			["id34"] = <
+				text = <"Lens Position">
+				description = <"The position of the lens.">
+			>
+			["at35"] = <
+				text = <"Normal">
+				description = <"The lens is in a normal position.">
+			>
+			["at36"] = <
+				text = <"Subluxation">
+				description = <"The lens shows subluxation.">
+			>
+			["at37"] = <
+				text = <"Dislocation">
+				description = <"The lens is dislocated into the vitreous.">
+			>
+			["id38"] = <
+				text = <"Posterior Capsule Fibrosis">
+				description = <"The degree of posterior lens capsule fibrosis.">
+			>
+			["at39"] = <
+				text = <"Absent / clear">
+				description = <"There is no evidence of posterior capsule fibrosis">
+			>
+			["at40"] = <
+				text = <"Mild fibrosis (+)">
+				description = <"Mild posterior capsule fibrosis is evident.">
+			>
+			["at41"] = <
+				text = <"Moderate fibrosis (++)">
+				description = <"Moderate posterior capsule fibrosis is evident.">
+			>
+			["at42"] = <
+				text = <"Severe fibrosis (+++)">
+				description = <"Severe posterior capsule fibrosis is evident.">
+			>
+			["ac1"] = <
+				text = <"Eye Examined (synthesised)">
+				description = <"The eye examined. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Lens Opacity (synthesised)">
+				description = <"The morphology of the lens / or cataract. (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Lens Position (synthesised)">
+				description = <"The position of the lens. (synthesised)">
+			>
+			["ac4"] = <
+				text = <"Cataract Maturity (synthesised)">
+				description = <"The maturity of cataract development. (synthesised)">
+			>
+			["ac5"] = <
+				text = <"Posterior Capsule Fibrosis (synthesised)">
+				description = <"The degree of posterior lens capsule fibrosis. (synthesised)">
+			>
+			["ac6"] = <
+				text = <"Cataract Location (synthesised)">
+				description = <"The location of the catract identified. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at5", "at6">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at10", "at31", "at11", "at12", "at15", "at16", "at17", "at18", "at32", "at33">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at35", "at36", "at37">
+		>
+		["ac4"] = <
+			id = <"ac4">
+			members = <"at23", "at24", "at25", "at26">
+		>
+		["ac5"] = <
+			id = <"ac5">
+			members = <"at39", "at40", "at41", "at42">
+		>
+		["ac6"] = <
+			id = <"ac6">
+			members = <"at13", "at14", "at19", "at20", "at21", "at29", "at30">
+		>
+	>

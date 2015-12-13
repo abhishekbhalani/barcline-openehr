@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>es</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">aitor.eguzkiza@unavarra.es</original_author>
+    <original_author id="organisation">Universidad Pública de Navarra - Complejo Hospitalario de Navarra</original_author>
+    <original_author id="name">Aitor Eguzkitza</original_author>
+    <original_author id="date">2014-04-08</original_author>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="references">- Wilkinson C, Ferris F, Klein R, Lee P, Agardh C, Davis M, et al. Proposed international clinical diabetic retinopathy and diabetic macular edema disease severity scales. Ophthalmology. 2003;110:1677-82.
+
+- Li HK, Horton M, Bursell SE, Cavallerano J, Zimmer-Galler I, Tennant M, et al. Telehealth practice recommendations for diabetic retinopathy, second edition. Telemed J E Health. 2011;17:814-37.</other_details>
+    <other_details id="MD5-CAM-1.0.1">9415463EA3D273C72B2039B0E481635A</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es</code_string>
+      </language>
+      <purpose>Registrar la severidad de la retinopatía diabética según la clasificación internacional dispuesta para la misma.</purpose>
+      <keywords>diabetic retinopathy</keywords>
+      <keywords>diabetic macular edema</keywords>
+      <keywords>international classification</keywords>
+      <use>Concretar el diagnóstico de la retinopatía diabética en circuitos de seguimiento de la misma.</use>
+      <misuse>No utilizar para clasificar afecciones diferentes a la retinopatía diabética o el edema macular diabético.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>Register the severity for diabetic retinopathy and diabetic macular edema according to the international scale of that disease.</purpose>
+      <keywords>retinopatía diabética</keywords>
+      <keywords>edema macular diabético</keywords>
+      <keywords>clasificación internacional</keywords>
+      <use>Specify a diagnosis within diabetic retinopathy follow up.</use>
+      <misuse>Do not use to classify diseases besides diabetic retinopathy or diabetic macular edema.</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>en</code_string>
+    </language>
+    <author id="name">?</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.diabetic_retinopathy_classification.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0002</code_list>
+                <code_list>at0003</code_list>
+                <code_list>at0004</code_list>
+                <code_list>at0005</code_list>
+                <code_list>at0006</code_list>
+                <code_list>at0007</code_list>
+                <code_list>at0013</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0008</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0009</code_list>
+                <code_list>at0010</code_list>
+                <code_list>at0011</code_list>
+                <code_list>at0012</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0014</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="es">
+      <items code="at0000">
+        <items id="text">Clasificación de la retinopatía diabética</items>
+        <items id="description">Clasificación internacional de gravedad de la retinopatía diabética y edema macular diabético</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Clasificación RD</items>
+        <items id="description">Escala internacional para la clasificación de la retinopatía diabética</items>
+      </items>
+      <items code="at0002">
+        <items id="text">No RD aparente</items>
+        <items id="description">Niveles 10, 14, 15 en clasificación ETRDS de retinopatía diabética; Ausencia de RD</items>
+      </items>
+      <items code="at0003">
+        <items id="text">RD no proliferativa leve</items>
+        <items id="description">Nivel 20 en clasificación ETRDS de retinopatía diabética; RD no proliferativa muy leve</items>
+      </items>
+      <items code="at0004">
+        <items id="text">RD no proliferativa moderada</items>
+        <items id="description">Niveles 35, 43, 47 en clasificación ETRDS de retinopatía diabética; RD no proliferativa moderada</items>
+      </items>
+      <items code="at0005">
+        <items id="text">RD no proliferativa severa</items>
+        <items id="description">Niveles 53A-E en clasificación ETRDS de retinopatía diabética; RD no proliferativa severa, RD no proliferativa muy severa</items>
+      </items>
+      <items code="at0006">
+        <items id="text">RD proliferativa preliminar</items>
+        <items id="description">Niveles 61,65 en clasificación ETRDS de retinopatía diabética; RD proliferativa</items>
+      </items>
+      <items code="at0007">
+        <items id="text">RD proliferativa de alto riesgo</items>
+        <items id="description">Niveles 71,75,81,85 en clasificación ETRDS de retinopatía diabética; RD proliferativa de alto riesgo, RD proliferativa muy severa o avanzada</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Clasificación del edema macular</items>
+        <items id="description">Niveles de clasificación para la presencia de edema macular definidos por la escala internacional</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Edema macular diabético aparentemente ausente</items>
+        <items id="description">Aparentemente no hay estrechamiento retiniano o exudados duros (ED) en el polo posterior</items>
+      </items>
+      <items code="at0010">
+        <items id="text">Edema macular diabético leve</items>
+        <items id="description">Aparentemente hay estrechamiento o exudados duros en el polo posterior, aunque distantes del centro de la mácula (Clasificación ETDRS: Edema macular diabético aunque no Edema macular clínicamente significativo)</items>
+      </items>
+      <items code="at0011">
+        <items id="text">Edema macular diabético moderado</items>
+        <items id="description">Hay estrechamiento de la retina o exudados duros cercanos a la mácula aunque no la afectan (Clasificación ETDRS: Edema macular clínicamente significativo )</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Edema macular diabético severo</items>
+        <items id="description">estrechamiento de la retina o exudados duros que además afecta a la mácula (Clasificación ETDRS: edema macular clínicamente significativo)</items>
+      </items>
+      <items code="at0013">
+        <items id="text">No valorable</items>
+        <items id="description">Las pruebas no son evaluables por la baja calidad de las capturas o por indecisión en el diagnóstico</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Comentarios</items>
+        <items id="description">Comentarios dirigidos a los revisores especializados en la clasificación de la RD. Se pueden incluir particularidades de la prueba o cuestiones que provocaran incertidumbre al clasificar la afección. Sirve de canal de feedback para mejorar la calidad del servicio de clasificación de la RD.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Diabetic retinopathy classification</items>
+        <items id="description">International clinical disease severity scale for diabetic retinopathy and diabetic macular edema</items>
+      </items>
+      <items code="at0001">
+        <items id="text">DR classification</items>
+        <items id="description">International scale for the classification of diabetic retinopathy</items>
+      </items>
+      <items code="at0002">
+        <items id="text">No apparent DR</items>
+        <items id="description">ETDRS Levels of DR 10, 14, 15; DR absent</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Mild nonproliferative DR</items>
+        <items id="description">ETDRS Level of DR 20; very mild nonproliferative DR</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Moderate nonproliferative DR</items>
+        <items id="description">ETDRS Levels of DR 35, 43, 47; moderate nonproliferative DR</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Severe nonproliferative DR</items>
+        <items id="description">ETDRS Levels of DR 53A-E; very severe nonproliferative DR</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Preliminary proliferative DR</items>
+        <items id="description">ETDRS Levels of DR 61,65; high-risk proliferative DR</items>
+      </items>
+      <items code="at0007">
+        <items id="text">High-risk proliferative DR</items>
+        <items id="description">ETDRS Levels of DR 71,75,81,85; very severe or advanced proliferative DR</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Macular edema classification</items>
+        <items id="description">Classification levels for the presence of macular edema as defined by the international scale</items>
+      </items>
+      <items code="at0009">
+        <items id="text">Diabetic macular edema apparently absent</items>
+        <items id="description">No apparent retinal thickening or hard exudates (HE) in posterior pole</items>
+      </items>
+      <items code="at0010">
+        <items id="text">Mild diabetic macular edema</items>
+        <items id="description">Apparently some retinal thickening or hard exudates in posterior pole but distant from center of the macula. Not clinically significant macular edema</items>
+      </items>
+      <items code="at0011">
+        <items id="text">Moderate diabetic macular edema</items>
+        <items id="description">Apparently retinal thickening or hard exudates approaching but not involving the center of the macula. Clinically significant macular edema</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Severe diabetic macular edema</items>
+        <items id="description">Apparently retinal thickening or hard exudates involving the center of the macula. Clinically significant macular edema</items>
+      </items>
+      <items code="at0013">
+        <items id="text">Not assessable</items>
+        <items id="description">The test is not assessable due to the low quality of acquisitions or uncertainty of the evaluator</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Comments</items>
+        <items id="description">Comments directed to reviewers specialized on classifying DR. It may include test details or issues that provoke uncertainty while classifying the disease. It is useful as feedback channel  to improve the quality of the DR classification service.</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="/items[at0001]">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>59276001</code_string>
+        </value>
+      </items>
+      <items code="at0002">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>201141000000103</code_string>
+        </value>
+      </items>
+      <items code="at0003">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>312903003</code_string>
+        </value>
+      </items>
+      <items code="at0004">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>312904009</code_string>
+        </value>
+      </items>
+      <items code="at0005">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>312905005</code_string>
+        </value>
+      </items>
+      <items code="at0006">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>312906006</code_string>
+        </value>
+      </items>
+      <items code="at0007">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>399865004</code_string>
+        </value>
+      </items>
+      <items code="at0008">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>37231002</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

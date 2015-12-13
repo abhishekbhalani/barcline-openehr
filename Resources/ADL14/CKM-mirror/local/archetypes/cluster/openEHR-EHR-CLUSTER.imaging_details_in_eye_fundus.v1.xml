@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype xmlns="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <original_language>
+    <terminology_id>
+      <value>ISO_639-1</value>
+    </terminology_id>
+    <code_string>es</code_string>
+  </original_language>
+  <is_controlled>false</is_controlled>
+  <description>
+    <original_author id="email">aitor.eguzkiza@unavarra.es</original_author>
+    <original_author id="organisation">Universidad Pública de Navarra - Complejo Hospitalario de Navarra</original_author>
+    <original_author id="name">Aitor Eguzkitza</original_author>
+    <original_author id="date">2014-05-19</original_author>
+    <lifecycle_state>AuthorDraft</lifecycle_state>
+    <other_details id="MD5-CAM-1.0.1">676D6EF79181B4267614DFC0CDFBBBEF</other_details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>es</code_string>
+      </language>
+      <purpose>Registrar los detalles específicos sobre la metodología escogida para llevar a cabo la adquisición de una prueba imagenológica que implique fondo de ojo.</purpose>
+      <keywords>Fondo de ojo</keywords>
+      <use>Por ejemplo definir requisitos específicos de la prueba durante la planificación de la misma.</use>
+      <misuse />
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+    <details>
+      <language>
+        <terminology_id>
+          <value>ISO_639-1</value>
+        </terminology_id>
+        <code_string>en</code_string>
+      </language>
+      <purpose>Registering specific details about how it has to be acquired an imaging test involving eye fundus.</purpose>
+      <keywords>Eye fundus</keywords>
+      <use>For example defining specific requirements during the planning of the imaging test.</use>
+      <misuse>*(es)</misuse>
+      <copyright>© openEHR Foundation</copyright>
+    </details>
+  </description>
+  <translations>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>en</code_string>
+    </language>
+    <author id="name">?</author>
+  </translations>
+  <archetype_id>
+    <value>openEHR-EHR-CLUSTER.imaging_details_in_eye_fundus.v1</value>
+  </archetype_id>
+  <adl_version>1.4</adl_version>
+  <concept>at0000</concept>
+  <definition>
+    <rm_type_name>CLUSTER</rm_type_name>
+    <occurrences>
+      <lower_included>true</lower_included>
+      <upper_included>true</upper_included>
+      <lower_unbounded>false</lower_unbounded>
+      <upper_unbounded>false</upper_unbounded>
+      <lower>1</lower>
+      <upper>1</upper>
+    </occurrences>
+    <node_id>at0000</node_id>
+    <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+      <rm_attribute_name>items</rm_attribute_name>
+      <existence>
+        <lower_included>true</lower_included>
+        <upper_included>true</upper_included>
+        <lower_unbounded>false</lower_unbounded>
+        <upper_unbounded>false</upper_unbounded>
+        <lower>1</lower>
+        <upper>1</upper>
+      </existence>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0023</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0024</code_list>
+                <code_list>at0025</code_list>
+                <code_list>at0026</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0001</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <assumed_value>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0007</code_string>
+                </assumed_value>
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_list>at0002</code_list>
+                <code_list>at0003</code_list>
+                <code_list>at0004</code_list>
+                <code_list>at0005</code_list>
+                <code_list>at0006</code_list>
+                <code_list>at0007</code_list>
+                <code_list>at0008</code_list>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0011</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_COUNT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>magnitude</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>INTEGER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_INTEGER">
+                  <range>
+                    <lower_included>true</lower_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>true</upper_unbounded>
+                    <lower>1</lower>
+                  </range>
+                  <assumed_value>3</assumed_value>
+                </item>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0021</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_COUNT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>magnitude</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>INTEGER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_INTEGER">
+                  <range>
+                    <lower_included>true</lower_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>true</upper_unbounded>
+                    <lower>1</lower>
+                  </range>
+                  <assumed_value>2</assumed_value>
+                </item>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0027</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>defining_code</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_CODE_PHRASE">
+                <rm_type_name>CODE_PHRASE</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>CLUSTER</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0022</node_id>
+        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+          <rm_attribute_name>items</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>ELEMENT</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>0</lower>
+            </occurrences>
+            <node_id>at0012</node_id>
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>defining_code</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_CODE_PHRASE">
+                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_list>at0013</code_list>
+                    <code_list>at0014</code_list>
+                    <code_list>at0015</code_list>
+                    <code_list>at0016</code_list>
+                    <code_list>at0017</code_list>
+                    <code_list>at0018</code_list>
+                    <code_list>at0019</code_list>
+                  </children>
+                </attributes>
+              </children>
+            </attributes>
+          </children>
+          <cardinality>
+            <is_ordered>false</is_ordered>
+            <is_unique>false</is_unique>
+            <interval>
+              <lower_included>true</lower_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>true</upper_unbounded>
+              <lower>1</lower>
+            </interval>
+          </cardinality>
+        </attributes>
+      </children>
+      <children xsi:type="C_COMPLEX_OBJECT">
+        <rm_type_name>ELEMENT</rm_type_name>
+        <occurrences>
+          <lower_included>true</lower_included>
+          <upper_included>true</upper_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>false</upper_unbounded>
+          <lower>0</lower>
+          <upper>1</upper>
+        </occurrences>
+        <node_id>at0020</node_id>
+        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+          <rm_attribute_name>value</rm_attribute_name>
+          <existence>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+          </existence>
+          <children xsi:type="C_COMPLEX_OBJECT">
+            <rm_type_name>DV_BOOLEAN</rm_type_name>
+            <occurrences>
+              <lower_included>true</lower_included>
+              <upper_included>true</upper_included>
+              <lower_unbounded>false</lower_unbounded>
+              <upper_unbounded>false</upper_unbounded>
+              <lower>1</lower>
+              <upper>1</upper>
+            </occurrences>
+            <node_id />
+            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+              <rm_attribute_name>value</rm_attribute_name>
+              <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+              </existence>
+              <children xsi:type="C_PRIMITIVE_OBJECT">
+                <rm_type_name>BOOLEAN</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>1</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id />
+                <item xsi:type="C_BOOLEAN">
+                  <true_valid>true</true_valid>
+                  <false_valid>true</false_valid>
+                  <assumed_value>false</assumed_value>
+                </item>
+              </children>
+            </attributes>
+          </children>
+        </attributes>
+      </children>
+      <cardinality>
+        <is_ordered>false</is_ordered>
+        <is_unique>false</is_unique>
+        <interval>
+          <lower_included>true</lower_included>
+          <lower_unbounded>false</lower_unbounded>
+          <upper_unbounded>true</upper_unbounded>
+          <lower>1</lower>
+        </interval>
+      </cardinality>
+    </attributes>
+  </definition>
+  <ontology>
+    <term_definitions language="es">
+      <items code="at0000">
+        <items id="text">Detalles de imagen en fondo de ojo</items>
+        <items id="description">Define los detalles específicos relativos a la adquisición de imágenes de fondo de ojo.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Método</items>
+        <items id="description">Método elegido para llevar a cabo el examen de fondo de ojo.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Directo</items>
+        <items id="description">Estudio por medio de oftalmoscopia directa.</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Indirecto</items>
+        <items id="description">Estudio del fondo de ojo por medio de oftalmoscopia indirecta.</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Biomicroscopía con lente de contacto</items>
+        <items id="description">Visualización del fondo de ojo por biomicroscopía en contacto con la superficie ocular del paciente.</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Biomicroscopía con lente de no contacto</items>
+        <items id="description">Visualización del fondo de ojo por biomicroscopía sin contacto con la superficie ocular del paciente.</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Retinografía midriática</items>
+        <items id="description">Estudio por medio de imágenes del fondo de ojo requiriendo dilatación previa de la pupila del paciente.</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Retinografías no midriática</items>
+        <items id="description">Estudio por medio de imágenes del fondo de ojo sin necesidad de dilatacr la pupila del paciente.</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Angiografía</items>
+        <items id="description">Observación del fondo de ojo utilizando colorante fluorescente inyectado con objeto de resaltar los vasos sanguíneos de la retina.</items>
+      </items>
+      <items code="at0011">
+        <items id="text">Nº intentos permitidos</items>
+        <items id="description">Nº máximo de intentos permitidos para adquirir imágenes en pacientes complicados antes de remitirlos a consulta de oftalmología.</items>
+      </items>
+      <items code="at0012">
+        <items id="text">Subdivisión por campos ETRDS</items>
+        <items id="description">Especifica los campos de la retina que se quieren fotografiar durante el estudio actual del fondo de ojo, en base a la definición de ETRDS.</items>
+      </items>
+      <items code="at0013">
+        <items id="text">Campo 1 ETRDS</items>
+        <items id="description">Imagen centrada en el nervio óptico o papila.</items>
+      </items>
+      <items code="at0014">
+        <items id="text">Campo 2 ETRDS</items>
+        <items id="description">Imagen centrada en la mácula.</items>
+      </items>
+      <items code="at0015">
+        <items id="text">Campo 3 ETRDS</items>
+        <items id="description">Imagen temporal.</items>
+      </items>
+      <items code="at0016">
+        <items id="text">Campo 4 ETRDS</items>
+        <items id="description">Imagen superior temporal.</items>
+      </items>
+      <items code="at0017">
+        <items id="text">Campo 5 ETRDS</items>
+        <items id="description">Imagen inferior temporal.</items>
+      </items>
+      <items code="at0018">
+        <items id="text">Campo 6 ETRDS</items>
+        <items id="description">Imagen superior nasal.</items>
+      </items>
+      <items code="at0019">
+        <items id="text">Campo 7 ETRDS</items>
+        <items id="description">Imagen inferior nasal.</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Mosaico requerido</items>
+        <items id="description">Identifica si es necesario generar una imagen mosaico a partir de los campos de la retina anteriores.</items>
+      </items>
+      <items code="at0021">
+        <items id="text">Nº de campos</items>
+        <items id="description">Nº de campos del fondo de ojo que van a ser capturados durante la prueba.</items>
+      </items>
+      <items code="at0022">
+        <items id="text">Campos de adquisición</items>
+        <items id="description">Campos del fondo de ojo que son capturados durante la prueba.</items>
+      </items>
+      <items code="at0023">
+        <items id="text">Lateralidad</items>
+        <items id="description">Determina el ojo sobre el cual se realiza la prueba.</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Ojo izquierdo</items>
+        <items id="description">Se observa el ojo izquierdo.</items>
+      </items>
+      <items code="at0025">
+        <items id="text">Ojo derecho</items>
+        <items id="description">Se observa el ojo derecho.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Ambos ojos</items>
+        <items id="description">La prueba se realiza en ambos ojos del paciente.</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Zona de la retina</items>
+        <items id="description">Zona de la retina de interés para el estudio actual del fondo de ojo.</items>
+      </items>
+    </term_definitions>
+    <term_definitions language="en">
+      <items code="at0000">
+        <items id="text">Imaging details in eye fundus</items>
+        <items id="description">Defines specific details concerning the acquisition of images from eye fundus.</items>
+      </items>
+      <items code="at0001">
+        <items id="text">Method</items>
+        <items id="description">Method chosen to perform the funduscopic examination.</items>
+      </items>
+      <items code="at0002">
+        <items id="text">Direct</items>
+        <items id="description">Study performed by direct ophthalmoscopy</items>
+      </items>
+      <items code="at0003">
+        <items id="text">Indirect</items>
+        <items id="description">Study of eye fundus by indirect ophthalmoscopy method</items>
+      </items>
+      <items code="at0004">
+        <items id="text">Contact lens biomicroscopy</items>
+        <items id="description">Eye fundus viewing through biomicroscopy lens in contact to patient's eye surface</items>
+      </items>
+      <items code="at0005">
+        <items id="text">Non-contact lens biomicroscopy</items>
+        <items id="description">Eye fundus viewing through biomicroscopy lens without contact to patient's eye surface</items>
+      </items>
+      <items code="at0006">
+        <items id="text">Mydriatic retinography</items>
+        <items id="description">Observation of retina through funduscopic images acquired by previous dilatation of patient's pupils</items>
+      </items>
+      <items code="at0007">
+        <items id="text">Non-mydriatic retinography</items>
+        <items id="description">Observation of retina through funduscopic images acquired without previous dilatation of patient's pupils</items>
+      </items>
+      <items code="at0008">
+        <items id="text">Angiography</items>
+        <items id="description">Observation of the eye fundus using a fluorescent dye inyected to emphasize the blood vessels in the eye retina</items>
+      </items>
+      <items code="at0011">
+        <items id="text">Number of attempts allowed</items>
+        <items id="description">Maximum number of attempts allowed to acquire images for complicated patients before remitting them to consultation of ophthalmology.</items>
+      </items>
+      <items code="at0012">
+        <items id="text">ETRDS subdivision fields</items>
+        <items id="description">Specifies which fields of the retina must be photographed during the current study of eye fundus, based on the definition from ETRDS.</items>
+      </items>
+      <items code="at0013">
+        <items id="text">ETRDS field 1</items>
+        <items id="description">Image centered on the optic nerve or papilla</items>
+      </items>
+      <items code="at0014">
+        <items id="text">ETRDS field 2</items>
+        <items id="description">Image centered on the macula</items>
+      </items>
+      <items code="at0015">
+        <items id="text">ETRDS field 3</items>
+        <items id="description">Temporal image</items>
+      </items>
+      <items code="at0016">
+        <items id="text">ETRDS field 4</items>
+        <items id="description">Upper temporal image</items>
+      </items>
+      <items code="at0017">
+        <items id="text">ETRDS field 5</items>
+        <items id="description">Lower temporal image</items>
+      </items>
+      <items code="at0018">
+        <items id="text">ETRDS field 6</items>
+        <items id="description">Upper nasal image</items>
+      </items>
+      <items code="at0019">
+        <items id="text">ETRDS field 7</items>
+        <items id="description">Lower nasal image</items>
+      </items>
+      <items code="at0020">
+        <items id="text">Mosaic required</items>
+        <items id="description">If true, identifies the need to generate a mosaic image from the previously acquired fields of the retina.</items>
+      </items>
+      <items code="at0021">
+        <items id="text">Number of fields</items>
+        <items id="description">Number of fields acquired from the retina.</items>
+      </items>
+      <items code="at0022">
+        <items id="text">Acquisition fields</items>
+        <items id="description">Eye fundus fields that are captured during the test.</items>
+      </items>
+      <items code="at0023">
+        <items id="text">Laterality</items>
+        <items id="description">Eye/s from which will be acquired the fundus.</items>
+      </items>
+      <items code="at0024">
+        <items id="text">Left eye</items>
+        <items id="description">Left eye observation.</items>
+      </items>
+      <items code="at0025">
+        <items id="text">Right eye</items>
+        <items id="description">Right eye observation.</items>
+      </items>
+      <items code="at0026">
+        <items id="text">Both eyes</items>
+        <items id="description">Test acquired on both eyes of the patient.</items>
+      </items>
+      <items code="at0027">
+        <items id="text">Zone of retina</items>
+        <items id="description">Zone of interest from retina for the current study of eye fundus.</items>
+      </items>
+    </term_definitions>
+    <term_bindings terminology="SNOMED-CT">
+      <items code="at0012">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>408733002</code_string>
+        </value>
+      </items>
+      <items code="at0013">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>408734008</code_string>
+        </value>
+      </items>
+      <items code="at0014">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410434001</code_string>
+        </value>
+      </items>
+      <items code="at0015">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410435000</code_string>
+        </value>
+      </items>
+      <items code="at0016">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410436004</code_string>
+        </value>
+      </items>
+      <items code="at0017">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410437008</code_string>
+        </value>
+      </items>
+      <items code="at0018">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410438003</code_string>
+        </value>
+      </items>
+      <items code="at0019">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>410439006</code_string>
+        </value>
+      </items>
+      <items code="at0023">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>272741003</code_string>
+        </value>
+      </items>
+      <items code="at0024">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>362503005</code_string>
+        </value>
+      </items>
+      <items code="at0025">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>362502000</code_string>
+        </value>
+      </items>
+      <items code="at0026">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>362508001</code_string>
+        </value>
+      </items>
+      <items code="at0027">
+        <value>
+          <terminology_id>
+            <value>SNOMED-CT</value>
+          </terminology_id>
+          <code_string>280611009</code_string>
+        </value>
+      </items>
+    </term_bindings>
+  </ontology>
+</archetype>
+

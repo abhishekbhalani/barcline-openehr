@@ -1,0 +1,90 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-SECTION.image_test_analysis.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-05-26">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Administrar el proceso de análisis de hallazgos clínicos en pruebas clínicas basadas en imagen.">
+			use = <"">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Manage the process of analysis for clinical findings in clinical tests based on imaging.">
+			use = <"*(es)">
+			misuse = <"*(es)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"7DA89955F57ADAFD066E68030FA22605">
+	>
+
+definition
+	SECTION[id1] matches {	-- Image test analysis
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype OBSERVATION[id2] matches {	-- Funduscopic examination of eyes
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.fundoscopic_examination(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype OBSERVATION[id3] matches {	-- Ophthalmic tomography examination
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.ophthalmic_tomography_examination(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Análisis de pruebas de imagen">
+				description = <"Describe el análisis de las pruebas diagnósticas basadas en imagen, para encontrar hallazgos clínicos que puedan ser relevantes en la decisión diagnóstica para una enfermedad específica. ">
+			>
+			["id2"] = <
+				text = <"Exámen de fondo de ojo">
+				description = <"Registra hallazgos clínicos en imágenes de fondo de ojo.">
+			>
+			["id3"] = <
+				text = <"Exámen de tomografía oftálmica">
+				description = <"Registra hallazgos clínicos en tomografía oftálmica.">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Image test analysis">
+				description = <"Describes the analysis of image based diagnostic tests, to find clinical findings which can be relevant to decide a diagnosis for a specific disease.">
+			>
+			["id2"] = <
+				text = <"Funduscopic examination of eyes">
+				description = <"Record of clinical findings on fundoscopy of eyes">
+			>
+			["id3"] = <
+				text = <"Ophthalmic tomography examination">
+				description = <"Record of clinical findings on ophthalmic tomography.">
+			>
+		>
+	>

@@ -1,0 +1,284 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-OBSERVATION.lab_test-pregnancy-blood_match.v1.0.0
+
+specialize
+	openEHR-EHR-OBSERVATION.lab_test.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["pt"] = <
+			language = <[ISO_639-1::pt]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"sam.heard@oceaninformatics.com">
+		["date"] = <"07/11/2009">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record blood group and antibody findings.">
+			use = <"Reporting by blood transfusion laboratory.
+">
+			keywords = <"lab", "pathology", "haematology", "group", "transfusion", "cross-match">
+			misuse = <"">
+		>
+		["pt"] = <
+			language = <[ISO_639-1::pt]>
+			purpose = <"*To record blood group and antibody findings.(en)">
+			use = <"*Reporting by blood transfusion laboratory.
+(en)">
+			keywords = <"*lab(en)", "*pathology(en)", "*haematology(en)", "*group(en)", "*transfusion(en)", "*cross-match(en)">
+			misuse = <"*(en)">
+		>
+	>
+	other_contributors = <"Ian McNicoll, Ocean Informatics, UK", ...>
+	other_details = <
+		["references"] = <"NEHTA, Australia. Pathology Episode v1.0 - Data Group library [Internet]. 2009;[cited 2009 Dec 8 ] Available from: http://www.nehta.gov.au/data-group-library/data-specifications/dgl-pathology
+
+IHE. IHE, Laboratory Technical Framework, Volume 3 Content [Internet]. 2008;Available from: http://www.ihe.net/Technical_Framework/upload/ihe_lab_TF_rel2_1-Vol-3_FT_2008-08-08.pdf.">
+		["MD5-CAM-1.0.1"] = <"3382147F1369D5949C4755E94D5ACBC7">
+	>
+
+definition
+	OBSERVATION[id1.1] matches {	-- Blood matching
+		/data[id2]/events[id3]/data[id4]/items matches {
+			ELEMENT[id79] 
+			ELEMENT[id79.3] occurrences matches {0..1} matches {	-- ABO
+				value matches {
+					DV_TEXT[id0.94] 
+				}
+			}
+			ELEMENT[id79.2] occurrences matches {0..1} matches {	-- Rhesus
+				value matches {
+					DV_TEXT[id0.95] 
+				}
+			}
+			ELEMENT[id0.90] occurrences matches {0..1} matches {	-- Antibodies detected
+				value matches {
+					DV_BOOLEAN[id0.96] matches {
+						value matches {True, False}
+					}
+				}
+			}
+			before [id58]
+			CLUSTER[id0.91] occurrences matches {0..1} matches {	-- Antibodies
+				items matches {
+					ELEMENT[id79.1] occurrences matches {0..1} matches {	-- Antibody
+						value matches {
+							DV_TEXT[id0.97] 
+						}
+					}
+					ELEMENT[id0.92] occurrences matches {0..1} matches {	-- Details
+						value matches {
+							DV_TEXT[id0.98] 
+						}
+					}
+				}
+			}
+		}
+		/protocol[id5]/items matches {
+			after [id76]
+			ELEMENT[id0.93] occurrences matches {0..1} matches {	-- Result source
+				value matches {
+					DV_CODED_TEXT[id0.99] matches {
+						defining_code matches {[ac0.1]}		-- Result source (synthesised)
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id0.90"] = <
+				text = <"Antibodies detected">
+				description = <"Antibodies have been detected.">
+			>
+			["id0.91"] = <
+				text = <"Antibodies">
+				description = <"Group of findings relating to one antibody.">
+			>
+			["id0.92"] = <
+				text = <"Details">
+				description = <"Details about the antibody.">
+			>
+			["id0.93"] = <
+				text = <"Result source">
+				description = <"Source where the results came from">
+			>
+			["at0.94"] = <
+				text = <"Transcription from Lab report">
+				description = <"*">
+			>
+			["at0.95"] = <
+				text = <"Medical referral letter">
+				description = <"*">
+			>
+			["at0.96"] = <
+				text = <"Pregnancy Health Record">
+				description = <"Pregnancy record card, electronic, or paper health record">
+			>
+			["at0.97"] = <
+				text = <"Blood donor card">
+				description = <"*">
+			>
+			["at0.98"] = <
+				text = <"Electronic messaging">
+				description = <"*">
+			>
+			["id1.1"] = <
+				text = <"Blood matching">
+				description = <"Blood group information including ABO, Rhesus and antibodies etc.">
+			>
+			["id79.1"] = <
+				text = <"Antibody">
+				description = <"The nature of the antibody.">
+			>
+			["id79.2"] = <
+				text = <"Rhesus">
+				description = <"Rhesus blood group information.">
+			>
+			["id79.3"] = <
+				text = <"ABO">
+				description = <"ABO blood group information.">
+			>
+			["ac0.1"] = <
+				text = <"Result source (synthesised)">
+				description = <"Source where the results came from (synthesised)">
+			>
+		>
+		["pt"] = <
+			["id0.90"] = <
+				text = <"*Antibodies detected(en)">
+				description = <"*Antibodies have been detected.(en)">
+			>
+			["id0.91"] = <
+				text = <"*Antibodies(en)">
+				description = <"*Group of findings relating to one antibody.(en)">
+			>
+			["id0.92"] = <
+				text = <"*Details(en)">
+				description = <"*Details about the antibody.(en)">
+			>
+			["id0.93"] = <
+				text = <"*Result source(en)">
+				description = <"*Source where the results came from(en)">
+			>
+			["at0.94"] = <
+				text = <"*Transcription from Lab report(en)">
+				description = <"**(en)">
+			>
+			["at0.95"] = <
+				text = <"*Medical referral letter(en)">
+				description = <"**(en)">
+			>
+			["at0.96"] = <
+				text = <"*Pregnancy Health Record(en)">
+				description = <"*Pregnancy record card, electronic, or paper health record(en)">
+			>
+			["at0.97"] = <
+				text = <"*Blood donor card(en)">
+				description = <"**(en)">
+			>
+			["at0.98"] = <
+				text = <"*Electronic messaging(en)">
+				description = <"**(en)">
+			>
+			["id1.1"] = <
+				text = <"*Blood matching(en)">
+				description = <"*Blood group information including ABO, Rhesus and antibodies etc.(en)">
+			>
+			["id79.1"] = <
+				text = <"*Antibody(en)">
+				description = <"*The nature of the antibody.(en)">
+			>
+			["id79.2"] = <
+				text = <"*Rhesus(en)">
+				description = <"*Rhesus blood group information.(en)">
+			>
+			["id79.3"] = <
+				text = <"*ABO(en)">
+				description = <"*ABO blood group information.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Result source(en) (synthesised)">
+				description = <"*Source where the results came from(en) (synthesised)">
+			>
+		>
+		["pt-br"] = <
+			["id0.90"] = <
+				text = <"*Antibodies detected(en)">
+				description = <"*Antibodies have been detected.(en)">
+			>
+			["id0.91"] = <
+				text = <"*Antibodies(en)">
+				description = <"*Group of findings relating to one antibody.(en)">
+			>
+			["id0.92"] = <
+				text = <"*Details(en)">
+				description = <"*Details about the antibody.(en)">
+			>
+			["id0.93"] = <
+				text = <"*Result source(en)">
+				description = <"*Source where the results came from(en)">
+			>
+			["at0.94"] = <
+				text = <"*Transcription from Lab report(en)">
+				description = <"**(en)">
+			>
+			["at0.95"] = <
+				text = <"*Medical referral letter(en)">
+				description = <"**(en)">
+			>
+			["at0.96"] = <
+				text = <"*Pregnancy Health Record(en)">
+				description = <"*Pregnancy record card, electronic, or paper health record(en)">
+			>
+			["at0.97"] = <
+				text = <"*Blood donor card(en)">
+				description = <"**(en)">
+			>
+			["at0.98"] = <
+				text = <"*Electronic messaging(en)">
+				description = <"**(en)">
+			>
+			["id1.1"] = <
+				text = <"*Blood matching(en)">
+				description = <"*Blood group information including ABO, Rhesus and antibodies etc.(en)">
+			>
+			["id79.1"] = <
+				text = <"*Antibody(en)">
+				description = <"*The nature of the antibody.(en)">
+			>
+			["id79.2"] = <
+				text = <"*Rhesus(en)">
+				description = <"*Rhesus blood group information.(en)">
+			>
+			["id79.3"] = <
+				text = <"*ABO(en)">
+				description = <"*ABO blood group information.(en)">
+			>
+			["ac0.1"] = <
+				text = <"*Result source(en) (synthesised)">
+				description = <"*Source where the results came from(en) (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac0.1"] = <
+			id = <"ac0.1">
+			members = <"at0.94", "at0.95", "at0.96", "at0.97", "at0.98">
+		>
+	>

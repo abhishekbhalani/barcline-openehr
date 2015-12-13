@@ -1,0 +1,610 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-EVALUATION.adverse_reaction_fhir.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2010-11-08">
+	>
+	copyright = <"© openEHR Foundation / HL7">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a clinical assessment of a propensity, or potential risk to an individual, of an adverse reaction upon future exposure to the specified substance, or class of substance.
+
+Where a propensity is identified, to record information or evidence about a reaction event that is characterised by any harmful or undesirable, physiological response that is unique to the individual, and triggered by exposure of an individual to the identified substance or class of substance.">
+			use = <"Use to provide a single place within the health record to document a range of clinical statements about adverse reactions, including:
+- record a clinical assessment of the individual’s propensity to a potential future reaction upon re-exposure; and
+- record cumulative information about the reaction to each exposure, including ‘no reaction’ if appropriate.
+
+Use to record information about the positive presence of the risk of an adverse reaction:
+- to support direct clinical care of an individual; 
+- as part of a managed adverse reaction or allergy/intolerance list; 
+- to support exchange of information about the propensity and events related to adverse reactions; 
+- to inform adverse reaction reporting; and 
+- to assist computerised knowledge-based activities such as clinical decision support and alerts.
+
+Use to record information about adverse reactions to a broad range of substances, including: biological & blood products; incipients and excipients in medicinal preparations; metal salts; and organic chemical compounds.  
+
+Adverse reactions may be:
+- an immune mediated reaction - Types I-VI (including allergic reactions and hypersensitivities); or 
+- a non-immune mediated reaction - including pseudo-allergic reactions, side effects, intolerances, drug toxicities (eg to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.
+In clinical practice distinguishing between immune-mediated and non-immune mediated reactions is difficult and often not practical. Identification of the type of reaction is not a proxy for seriousness or risk of harm to the patient, which is better expressed by the manifestation in clinical practice.
+
+The risk of an adverse reaction event or manifestation should not be recorded without identifying a proposed causative substance or class of substance. If there is uncertainty that a specific substance is the cause, this uncertainty can be recorded using the ‘Status’ data element. If there are multiple possible substances that may have caused a reaction/manifestation, each substance should be recorded using a separate instance of this adverse reaction archetype/FHIR resource with the ‘Status’ set to an initial state of ‘Unconfirmed’ so that adverse reaction checking can be supported in clinical systems. If a substance, agent or class is later proven not to be the cause for a given reaction then the ‘Status’ can be modified to ‘Refuted’.
+
+This archetype/FHIR resource has been designed to allow recording of information about a specific substance (amoxycillin, oysters, or bee sting venom) or, alternatively, a class of substance (eg Penicillins)). If a class of substance is recorded then identification of the exact substance can be recorded on a per exposure basis.
+
+The scope of this archetype/FHIR resource has deliberately focused on identifying a pragmatic data set that are used in most clinical systems or will be suitable for most common clinical scenarios, however it permits extension of the model when additional detail is required, for example 'Reaction details', 'Exposure details', and 'Reporting details' slots. Examples of clinical situations where the extension may be required include: a detailed allergist/immunologist assessment, for reporting to regulatory bodies or use in a clinical trial.
+
+The act of recording any adverse reaction in a health record involves the clinical assessment that a potential hazard exists for an individual if they are exposed to the same substance/agent/class in the future – that is, a relative contraindication - and the default ‘Criticality’ value should be set to ‘Low risk’. If a clinician considers that it is not safe for the individual to be deliberately re-exposed to the substance/agent again, for example, following a manifestation of a life-threatening anaphylaxis, then the 'Criticality' data element should be amended to ‘High risk’. 
+
+A formal Adverse Event Report to regulatory bodies is a document that will contain a broad range of information in addition to the specific details about the adverse reaction. The report could utilise parts of this Risk of adverse reaction archetype/FHIR resource plus include additional data as required per jurisdiction.
+
+An adverse reaction or allergy/intolerance list is a record of all identified propensities for an adverse reaction for the individual upon future exposure to the substance or class, plus provides potential access to the evidence provided by details about each reaction event, such as manifestation.
+
+Valuable first-level information that could be presented to the clinician when they need to assess propensity for future reactions are:
+- statements about previous clinical manifestations following exposure;
+- source of the information/reporter; and
+- the ‘Criticality’ flag.
+Second-level information can be drawn from each exposure event and links to additional detailed information such as history, examination and diagnoses stored elsewhere in the record, if it is available.
+
+openEHR only: Links to other parts of the health record where further details may be located, such as consultation notes, is allowed by the openEHR reference model, but not modelled explicitly in this archetype.">
+			keywords = <"reaction", "allergy", "allergic", "adverse", "event", "effect", "sensitivity", "intolerance", "hypersensitivity", "side effect", "toxicity", "interaction", "drug", "food", "medication", "agent", "substance", "immune", "non-immune", "chemical">
+			misuse = <"Not to be used for recording physiological reactions to physical agents, such as heat, cold, sunlight, vibration, exercise activity, by infectious agents or food contaminants. Use archetypes/FHIR resources for Problem/Diagnosis (openEHR) or Conditions (FHIR).
+
+Not to be used to record adverse events, including failures of clinical process, interventions or products. For example: abnormal use or mistakes/errors made in maladministration of an agent or substance; incorrect dosage; mislabelling; harm or injury caused by an intervention or procedure; overdose/poisoning etc.
+
+Not to be used as a proxy for an Adverse Event Report. See above for how it may be used as one component of an Adverse Event Report.
+
+Not to be used for recording alerts.
+
+Not to be used for recording failed therapy.
+
+openEHR only: Not to be used for the explicit recording of an absence (or negative presence) of a reaction to 'any substances' or to identified substances, for example ‘No known allergies or adverse reactions’ or ‘No known allergies to Penicillin’. Use the EVALUATION. exclusion-adverse_reaction archetype to express a positive statement of adverse reaction exclusion.
+
+openEHR only: Not to be used for the explicit recording that no information was able to be obtained about the adverse reaction status of a patient. Use the EVALUATION.absence archetype to record that a positive statement that information was not able to be obtained, for example, if a non-cooperative patient refuses to answer questions.">
+		>
+	>
+	other_contributors = <"Elaine Ayres, US National Institutes of Health, United States", "John Bennett, NEHTA, Australia", "Steve Bentley, NHS CfH, United Kingdom", "Sharmila Biswas, Dr Sharmila Biswas GP, Australia", "Rong Chen, Cambio Healthcare System, Sweden", "Stephen Chu, NeHTA, Australia", "Matthew Cordell, NEHTA, Australia", "Brett Esler, Oridashi, Australia", "David Evans, Queensland Health, Australia", "Jerry Fahrni, Kaweah Delta Health Care District, United States", "Shahla Foozonkhah, Ocean Informatics, Australia", "Joanne Foster, School of Nursing & Midwifery, QLD University of Technology & Nursing Informatics Australia, Australia", "Jacquie Garton-Smith, Royal Perth Hospital and DoHWA, Australia", "Sarah Gaunt, NEHTA, Australia", "Andrew Goodchild, NEHTA, Australia", "Heather Grain, Llewelyn Grain Informatics, Australia", "Trina Gregory, cpc, Australia", "Grahame Grieve, Health Intersections, Australia (Editor)", "Sam Heard, Ocean Informatics, Australia", "Andrew James, University of Toronto, Canada", "Julie James, Blue Wave Informatics LLP, United Kingdom", "Ivor Jones, Queensalnd Helath, Australia", "Mary Kelaher, NEHTA, Australia", "Diane Kirkham, NEHTA, Australia", "Shinji Kobayashi, Kyoto University, Japan", "Robert L'egan, NEHTA, Australia", "Jobst Landgrebe, ii4sm, Switzerland", "Russell Leftwich, Russell B Leftwich MD, United States (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Hugh Leslie, Ocean Informatics, Australia", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Sarah Mahoney, Australia", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Lloyd McKenzie, Gordon Point Informatics, Canada", "David McKillop, NEHTA, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jörg Niggemann, Compugroup, Germany", "Tom Oniki, Intermountain Healthcare, United States", "Chris Pearce, Melbourne East GP Network, Australia", "General Practice Computing Group, Australia", "Camilla Preeston, Royal Australian College of General Practitioners, Australia", "Margaret Prichard, NEHTA, Australia", "Jodie Pycroft, Adelaide Northern Division of General Practice Ltd, Australia", "Cathy Richardson, NEHTA, Australia", "Robyn Richards, NEHTA - Clinical Terminology, Australia", "Stefan Sauermann, University of Applied Sciences Technikum Wien, Austria", "Thilo Schuler, Australia", "Peter Scott, Medical Objects, Australia", "Elena Shabanova, UMMSSOft, Russian Federation", "Elizabeth Stanick, Hobart Anaesthetic Group, Australia", "Hwei-Yee Tai, Tan Tock Seng Hospital, Singapore", "John Taylor, NEHTA, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Ines Vaz, UFN, Portugal", "Kylie Young, The Royal Australian College of General Practitioners, Australia">
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, Australia">
+		["references"] = <"Adverse Reaction, draft archetype, National eHealth Transition Authority [Internet]. NEHTA Clinical Knowledge Manager. Authored: 08 Nov 2010. Available at: http://dcm.nehta.org.au/ckm/OKM.html#showarchetype_1013.1.868_7 (accessed Jan 16, 2012).
+
+Allergy and Intolerance Domain Analysis Model, Release 1, HL7 [Internet]. Publication pending, expected August 2014; Available at http://wiki.hl7.org/images/1/1b/Allergy_and_Intolerance_INFORM_2013_MAY.pdf (accessed 06 July 2014). 
+
+Allergy, clinical element model, GE/Intermountain Healthcare. Clinical Element Model Search. Available at: http://intermountainhealthcare.org/cem/Pages/Detail.aspx?NCID=520861661&k=allergy (accessed Jan 16, 2012).
+
+Edwards IR, Aronson JK. Adverse drug reactions: definitions, diagnosis, and management. Lancet. 2000 Oct 7;356(9237):1255-9. PubMed PMID: 11072960. 
+
+FHIR Resource AllergyIntolerance, HL7 [Internet]. Available at: http://www.hl7.org/implement/standards/fhir/allergyintolerance.html (accessed 06 Jul 2014).
+
+Horsfield P, Sibeko S. Representation in Electronic Patient Records of Allergic Reactions, Adverse Reactions, and Intolerance of Pharmaceutical Products [Internet]. London, UK: National Health Service; 2006 Sep 07 [cited 2011 Jun 21]; Available at https://svn.connectingforhealth.nhs.uk/svn/public/nhscontentmodels/TRUNK/ref/NPfIT/Allergy_ADR_Intolerance%20v%201.2Final.doc.
+
+Long R, Bentley S. SCG Guidance on the Representation of Allergies and Adverse Reaction Information Using NHS Message Templates [Internet]. London, UK: National Health Service; 2008 Apr 30 [cited 2011 Jun 21]; Available at http://www.connectingforhealth.nhs.uk/systemsandservices/data/scg/scg0001.pdf.
+
+Microsoft. Design Guidance: Displaying Adverse Drug Reaction Risks [Internet]. 2009 January 28 [cited 2011 Jun 21]; Available at www.mscui.net/DesignGuide/DisplayingAllergies.aspx.
+
+Microsoft. Design Guidance: Recording Adverse Drug Reaction Risks [Internet]. 2009 March 27 [cited 2011 Jun 21]; Available at www.mscui.net/DesignGuide/RecordingAllergies.aspx.
+
+Mosby. Mosby's Pocket Dictionary of Medicine, Nursing and Health Professions. 6th Edition. USA: Mosby Elsevier; 2010
+
+National E-Health Transition Authority. Adverse Reactions (Data Specifications) Version 1.1 [Internet]. Sydney, Australia: NEHTA; 2008 Feb 29 [cited 2011 Jun 21]; Available at http://www.nehta.gov.au/component/docman/doc_download/453-adverse-reaction-data-specification-v11.
+
+Riedl MA, Casillas AM. Adverse drug reactions: types and treatment options. Am Fam Physician. 2003 Nov 1;68(9):1781-90. Review. PubMed PMID: 14620598.
+
+Royal Australian College of General Practitioners. Fact Sheet: Allergies & Adverse Reactions (Draft). 2010.
+
+Thien FC. Drug hypersensitivity. Med J Aust. 2006 Sep 18;185(6):333-8. Review. PubMed PMID: 16999678.
+
+- Uppsala Monitoring Centre (WHO): http://www.who-umc.org/
+
+- European Medicines Agency: http://www.ema.europa.eu/ema/
+
+- DIRECTIVE 2010/84/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL, of 15 December 2010, amending, as regards pharmacovigilance, Directive 2001/83/EC on the Community code relating to medicinal products for human use: http://ec.europa.eu/health/files/eudralex/vol-1/dir_2010_84/dir_2010_84_en.pdf">
+		["MD5-CAM-1.0.1"] = <"81B52EA3027DC4FEAEDEE9B3ABA965F0">
+	>
+
+definition
+	EVALUATION[id1] matches {	-- Adverse Reaction Risk(FHIR/openEHR)
+		data matches {
+			ITEM_TREE[id2] matches {
+				items cardinality matches {2..*; unordered} matches {
+					ELEMENT[id3] matches {	-- Substance
+						value matches {
+							DV_TEXT[id122] 
+						}
+					}
+					ELEMENT[id64] occurrences matches {0..1} matches {	-- Status
+						value matches {
+							DV_CODED_TEXT[id123] matches {
+								defining_code matches {[ac1]}		-- Status (synthesised)
+							}
+						}
+						null_flavour matches {
+							DV_CODED_TEXT[id124] matches {
+								defining_code matches {[at125]}
+							}
+						}
+					}
+					ELEMENT[id102] occurrences matches {0..1} matches {	-- Criticality
+						value matches {
+							DV_CODED_TEXT[id125] matches {
+								defining_code matches {[ac2]}		-- Criticality (synthesised)
+							}
+						}
+					}
+					ELEMENT[id59] occurrences matches {0..1} matches {	-- Reaction type
+						value matches {
+							DV_CODED_TEXT[id126] matches {
+								defining_code matches {[ac3]}		-- Reaction type (synthesised)
+							}
+						}
+						null_flavour matches {
+							DV_CODED_TEXT[id127] matches {
+								defining_code matches {[at125]}
+							}
+						}
+					}
+					ELEMENT[id121] occurrences matches {0..1} matches {	-- Substance category
+						value matches {
+							DV_CODED_TEXT[id128] matches {
+								defining_code matches {[ac4]}		-- Substance category (synthesised)
+							}
+						}
+					}
+					ELEMENT[id118] occurrences matches {0..1} matches {	-- Date of last reaction
+						value matches {
+							DV_DATE_TIME[id129] 
+						}
+					}
+					ELEMENT[id7] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT[id130] 
+						}
+					}
+					CLUSTER[id10] matches {	-- Reaction event
+						items matches {
+							ELEMENT[id11] occurrences matches {0..1} matches {	-- Specific substance
+								value matches {
+									DV_TEXT[id131] 
+								}
+							}
+							ELEMENT[id22] occurrences matches {0..1} matches {	-- Certainty
+								value matches {
+									DV_CODED_TEXT[id132] matches {
+										defining_code matches {[ac5]}		-- Certainty (synthesised)
+									}
+								}
+								null_flavour matches {
+									DV_CODED_TEXT[id133] matches {
+										defining_code matches {[at125]}
+									}
+								}
+							}
+							ELEMENT[id12] occurrences matches {1..*} matches {	-- Manifestation
+								value matches {
+									DV_TEXT[id134] 
+								}
+							}
+							ELEMENT[id13] occurrences matches {0..1} matches {	-- Reaction description
+								value matches {
+									DV_TEXT[id135] 
+								}
+							}
+							ELEMENT[id28] occurrences matches {0..1} matches {	-- Onset of the reaction
+								value matches {
+									DV_DATE_TIME[id136] 
+								}
+							}
+							ELEMENT[id29] occurrences matches {0..1} matches {	-- Duration of reaction
+								value matches {
+									DV_DURATION[id137] 
+								}
+							}
+							ELEMENT[id90] occurrences matches {0..1} matches {	-- Severity of reaction
+								value matches {
+									DV_CODED_TEXT[id138] matches {
+										defining_code matches {[ac6]}		-- Severity of reaction (synthesised)
+									}
+								}
+							}
+							allow_archetype CLUSTER[id30] matches {	-- Reaction details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.multimedia(-a-zA-Z0-9_]+)*\.v1/}
+							}
+							ELEMENT[id21] occurrences matches {0..1} matches {	-- Initial exposure
+								value matches {
+									DV_DATE_TIME[id139] 
+								}
+							}
+							ELEMENT[id26] occurrences matches {0..1} matches {	-- Duration of exposure
+								value matches {
+									DV_DURATION[id140] 
+								}
+							}
+							ELEMENT[id107] occurrences matches {0..1} matches {	-- Route of exposure
+								value matches {
+									DV_TEXT[id141] 
+								}
+							}
+							ELEMENT[id19] occurrences matches {0..1} matches {	-- Exposure description
+								value matches {
+									DV_TEXT[id142] 
+								}
+							}
+							allow_archetype CLUSTER[id97] matches {	-- Exposure details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.citation(-a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.amount(-a-zA-Z0-9_]+)*\.v1/}
+							}
+							ELEMENT[id41] occurrences matches {0..1} matches {	-- Clinical management description
+								value matches {
+									DV_TEXT[id143] 
+								}
+							}
+							allow_archetype CLUSTER[id120] matches {	-- Clinical management details
+								include
+									archetype_id/value matches {/.*/}
+							}
+							allow_archetype CLUSTER[id42] matches {	-- Reporting details
+								include
+									archetype_id/value matches {/.*/}
+							}
+							allow_archetype CLUSTER[id117] matches {	-- Information source
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[id33] occurrences matches {0..1} matches {	-- Reaction comment
+								value matches {
+									DV_TEXT[id144] 
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id43] matches {
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[id63] occurrences matches {0..1} matches {	-- Date recorded
+						value matches {
+							DV_DATE_TIME[id145] 
+						}
+					}
+					ELEMENT[id48] occurrences matches {0..1} matches {	-- Supporting clinical record information
+						value matches {
+							DV_EHR_URI[id146] 
+						}
+					}
+					CLUSTER[id100] occurrences matches {0..1} matches {	-- Reporting details
+						items matches {
+							ELEMENT[id45] occurrences matches {0..1} matches {	-- Reaction reported?
+								value matches {
+									DV_BOOLEAN[id147] matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[id49] occurrences matches {0..1} matches {	-- Report comment
+								value matches {
+									DV_TEXT[id148] 
+								}
+							}
+							ELEMENT[id46] matches {	-- Adverse reaction report
+								value matches {
+									DV_URI[id149] 
+								}
+							}
+						}
+					}
+					CLUSTER[id99] occurrences matches {0..1} matches {	-- FHIR record provenance
+						items matches {
+							ELEMENT[id69] matches {	-- Subject
+								value matches {
+									DV_URI[id150] 
+								}
+							}
+							ELEMENT[id51] matches {	-- Identifier
+								value matches {
+									DV_IDENTIFIER[id151] 
+								}
+							}
+							ELEMENT[id70] occurrences matches {0..1} matches {	-- Recorder
+								value matches {
+									DV_URI[id152] 
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Adverse Reaction Risk(FHIR/openEHR)">
+				description = <"Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.">
+			>
+			["ac4"] = <
+				text = <"Substance category (synthesised)">
+				description = <"Category of the identified 'Substance'. (synthesised)">
+			>
+			["id3"] = <
+				text = <"Substance">
+				description = <"Identification of a substance, or a class of substances, that is considered to be responsible for the adverse reaction.">
+			>
+			["id7"] = <
+				text = <"Comment">
+				description = <"Additional narrative about the propensity for the adverse reaction, not captured in other fields.">
+			>
+			["id10"] = <
+				text = <"Reaction event">
+				description = <"Details about each adverse reaction event linked to exposure to the identified 'Substance'.">
+			>
+			["id11"] = <
+				text = <"Specific substance">
+				description = <"Identification of the specific substance considered to be responsible for the adverse reaction event.">
+			>
+			["id12"] = <
+				text = <"Manifestation">
+				description = <"Clinical symptoms and/or signs that are observed or associated with the adverse reaction.">
+			>
+			["id13"] = <
+				text = <"Reaction description">
+				description = <"Narrative description about the adverse reaction as a whole, including details of the manifestation if required.">
+			>
+			["id19"] = <
+				text = <"Exposure description">
+				description = <"Narrative description about exposure to the identified 'Specific substance'.">
+			>
+			["id21"] = <
+				text = <"Initial exposure">
+				description = <"Record of the date and/or time of the first exposure to the Substance for this Reaction Event.">
+			>
+			["id22"] = <
+				text = <"Certainty">
+				description = <"Statement about the degree of clinical certainty that the identified'Specific substance' was the cause of the 'Manifestation' in this reaction event.">
+			>
+			["at24"] = <
+				text = <"Likely">
+				description = <"There is a high level of clinical certainty that the reaction was caused by the identified 'Specific substance'.">
+			>
+			["id26"] = <
+				text = <"Duration of exposure">
+				description = <"The total amount of time the individual was exposed to the identified 'Specific substance'.">
+			>
+			["id28"] = <
+				text = <"Onset of the reaction">
+				description = <"Record of the date and/or time of the onset of the reaction.">
+			>
+			["id29"] = <
+				text = <"Duration of reaction">
+				description = <"The total amount of time that the manifestation of the adverse reaction persisted.">
+			>
+			["id30"] = <
+				text = <"Reaction details">
+				description = <"Additional details about the adverse reaction, including anatomical location and Common Toxicity Criteria, can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id33"] = <
+				text = <"Reaction comment">
+				description = <"Additional narrative about the adverse reaction event not captured in other fields.">
+			>
+			["id41"] = <
+				text = <"Clinical management description">
+				description = <"Narrative description about the clinical management provided.">
+			>
+			["id42"] = <
+				text = <"Reporting details">
+				description = <"Additional structured details required for reporting to regulatory bodies can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id45"] = <
+				text = <"Reaction reported?">
+				description = <"Was the adverse reaction reported to a regulatory body?">
+			>
+			["id46"] = <
+				text = <"Adverse reaction report">
+				description = <"Link to an adverse reaction Report sent to a regulatory body.">
+			>
+			["id48"] = <
+				text = <"Supporting clinical record information">
+				description = <"Link to further information about the presentation and findings that exist elsewhere in the health record, including allergy test reports.">
+			>
+			["id49"] = <
+				text = <"Report comment">
+				description = <"Additional narrative about the adverse reaction report or reporting process.">
+			>
+			["id51"] = <
+				text = <"Identifier">
+				description = <"External Ids for this item.">
+			>
+			["id59"] = <
+				text = <"Reaction type">
+				description = <"Identification of the underlying physiological mechanism for the adverse reaction.">
+			>
+			["at60"] = <
+				text = <"Immune mediated">
+				description = <"Immune mediated reaction, including allergic reactions and hypersensitivities.">
+			>
+			["at61"] = <
+				text = <"Non-immune mediated">
+				description = <"A non-immune mediated reaction, which can include pseudo-allergic reactions, side effects, intolerances, drug toxicities (for example, to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.">
+			>
+			["id63"] = <
+				text = <"Date recorded">
+				description = <"Date when the propensity/reaction event was recorded or revised.">
+			>
+			["id64"] = <
+				text = <"Status">
+				description = <"Assertion about the propensity, or potential risk, of a reaction to the identified 'Substance'.">
+			>
+			["at65"] = <
+				text = <"Unconfirmed">
+				description = <"A low level of certainty about the propensity for a reaction to the identified 'Substance'.">
+			>
+			["at66"] = <
+				text = <"Confirmed">
+				description = <"A high level of certainty about the propensity for a reaction to the identified 'Substance', which may include clinical evidence by testing or re-challenge.">
+			>
+			["at67"] = <
+				text = <"Refuted">
+				description = <"A propensity for a reaction to the identified 'Substance' has been reassessed by testing and/or re-challenge, and has been disproved with a high level of clinical certainty.">
+			>
+			["at68"] = <
+				text = <"Resolved">
+				description = <"A previously known reaction to the identified 'Substance' has been clinically reassessed by testing and/or re-challenge and considered no longer to be an active risk.">
+			>
+			["id69"] = <
+				text = <"Subject">
+				description = <"The patient who has the allergy or intolerance.">
+			>
+			["id70"] = <
+				text = <"Recorder">
+				description = <"Indicates who has responsibility for the record.">
+			>
+			["id90"] = <
+				text = <"Severity of reaction">
+				description = <"Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.">
+			>
+			["at91"] = <
+				text = <"Severe">
+				description = <"Causes severe physiological effects.">
+			>
+			["at93"] = <
+				text = <"Moderate">
+				description = <"Causes moderate physiological effects.">
+			>
+			["at94"] = <
+				text = <"Mild">
+				description = <"Causes mild physiological effects.">
+			>
+			["at96"] = <
+				text = <"Unlikely">
+				description = <"There is a low level of clinical certainty that the reaction was caused by the identified 'Specific substance'.">
+			>
+			["id97"] = <
+				text = <"Exposure details">
+				description = <"Additional details about exposure to the 'Specific substance', especially in situations where there may have been multiple or cumulative exposures can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id99"] = <
+				text = <"FHIR record provenance">
+				description = <"FHIR elements that are carried implicitly in the openEHR reference model.">
+			>
+			["id100"] = <
+				text = <"Reporting details">
+				description = <"Additional structured details required for reporting to regulatory bodies can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id102"] = <
+				text = <"Criticality">
+				description = <"Estimate of the potential clinical harm, or seriousness, of the reaction to the identified 'Substance'.">
+			>
+			["at103"] = <
+				text = <"Low risk">
+				description = <"The potential clinical impact of a future reaction is estimated as low risk. Future exposure to the identified 'Substance' is considered a relative contra-indication.">
+			>
+			["at104"] = <
+				text = <"High risk">
+				description = <"The potential clinical impact of a future reaction is estimated as high risk. Future exposure to the identified 'Substance' may be considered an absolute contra-indication.">
+			>
+			["id107"] = <
+				text = <"Route of exposure">
+				description = <"Identification of the route by which the subject was exposed to the identified 'Specific substance'.">
+			>
+			["id117"] = <
+				text = <"Information source">
+				description = <"Details about the provenance of the information can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id118"] = <
+				text = <"Date of last reaction">
+				description = <"Represents the date and/or time of the last known occurrence of a reaction event.">
+			>
+			["at119"] = <
+				text = <"Confirmed">
+				description = <"There is a very high level of clinical certainty that the reaction was due to the identified 'Substance', which may include clinical evidence by testing or re-challenge.">
+			>
+			["id120"] = <
+				text = <"Clinical management details">
+				description = <"Additional structured details about clinical management for this reaction event can be provided by inclusion of specific archetypes in this SLOT.">
+			>
+			["id121"] = <
+				text = <"Substance category">
+				description = <"Category of the identified 'Substance'.">
+			>
+			["at122"] = <
+				text = <"Food">
+				description = <"Any substance consumed to provide nutritional support for the body.">
+			>
+			["at123"] = <
+				text = <"Medication">
+				description = <"Any substance administered to achieve a physiological effect.">
+			>
+			["at124"] = <
+				text = <"Environment">
+				description = <"Any substance encountered in the environment.">
+			>
+			["at125"] = <
+				text = <"unknown">
+				description = <"unknown">
+			>
+			["ac1"] = <
+				text = <"Status (synthesised)">
+				description = <"Assertion about the propensity, or potential risk, of a reaction to the identified 'Substance'. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Criticality (synthesised)">
+				description = <"Estimate of the potential clinical harm, or seriousness, of the reaction to the identified 'Substance'. (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Reaction type (synthesised)">
+				description = <"Identification of the underlying physiological mechanism for the adverse reaction. (synthesised)">
+			>
+			["ac5"] = <
+				text = <"Certainty (synthesised)">
+				description = <"Statement about the degree of clinical certainty that the identified'Specific substance' was the cause of the 'Manifestation' in this reaction event. (synthesised)">
+			>
+			["ac6"] = <
+				text = <"Severity of reaction (synthesised)">
+				description = <"Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations. (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["openehr"] = <
+			["at125"] = <http://openehr.org/id/253>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at65", "at66", "at68", "at67">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at103", "at104">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at60", "at61">
+		>
+		["ac4"] = <
+			id = <"ac4">
+			members = <"at122", "at123", "at124">
+		>
+		["ac5"] = <
+			id = <"ac5">
+			members = <"at96", "at24", "at119">
+		>
+		["ac6"] = <
+			id = <"ac6">
+			members = <"at94", "at93", "at91">
+		>
+	>

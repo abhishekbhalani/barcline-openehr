@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67FD94DE-1E52-4138-9E6C-2756AD92BF29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Barcline.OpenEhr</RootNamespace>
+    <AssemblyName>Barcline.OpenEhr</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\BarclineAssemblyInfo.cs">
+      <Link>Properties\BarclineAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="DTO.Terminology.cs" />
+    <Compile Include="DTO.Versioning.cs" />
+    <Compile Include="Model\Autogenerated\ACCESS_GROUP_REF.cs" />
+    <Compile Include="Model\Autogenerated\ACCESS_GROUP_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\ACTION.cs" />
+    <Compile Include="Model\Autogenerated\ACTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\ACTIVITY.cs" />
+    <Compile Include="Model\Autogenerated\ACTIVITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ACTOR.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ACTORCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ADDRESS.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ADDRESSCollection.cs" />
+    <Compile Include="Model\Autogenerated\ADMIN_ENTRY.cs" />
+    <Compile Include="Model\Autogenerated\ADMIN_ENTRYCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\AGENT.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\AGENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPECollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPED.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPEDCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_CONSTRAINT.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_CONSTRAINTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_ID.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_INTERNAL_REF.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_INTERNAL_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_ONTOLOGY.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_ONTOLOGYCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_SLOT.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_SLOTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_TERM.cs" />
+    <Compile Include="Model\Autogenerated\ARCHETYPE_TERMCollection.cs" />
+    <Compile Include="Model\Autogenerated\ASSERTION.cs" />
+    <Compile Include="Model\Autogenerated\ASSERTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\ASSERTION_VARIABLE.cs" />
+    <Compile Include="Model\Autogenerated\ASSERTION_VARIABLECollection.cs" />
+    <Compile Include="Model\Autogenerated\ATTESTATION.cs" />
+    <Compile Include="Model\Autogenerated\ATTESTATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\AUDIT_DETAILS.cs" />
+    <Compile Include="Model\Autogenerated\AUDIT_DETAILSCollection.cs" />
+    <Compile Include="Model\Autogenerated\AUTHORED_RESOURCE.cs" />
+    <Compile Include="Model\Autogenerated\AUTHORED_RESOURCECollection.cs" />
+    <Compile Include="Model\Autogenerated\CAPABILITY.cs" />
+    <Compile Include="Model\Autogenerated\CAPABILITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\CARDINALITY.cs" />
+    <Compile Include="Model\Autogenerated\CARDINALITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\CARE_ENTRY.cs" />
+    <Compile Include="Model\Autogenerated\CARE_ENTRYCollection.cs" />
+    <Compile Include="Model\Autogenerated\CLUSTER.cs" />
+    <Compile Include="Model\Autogenerated\CLUSTERCollection.cs" />
+    <Compile Include="Model\Autogenerated\CodeDefinitionSet.cs" />
+    <Compile Include="Model\Autogenerated\CodeDefinitionSetCollection.cs" />
+    <Compile Include="Model\Autogenerated\CODE_PHRASE.cs" />
+    <Compile Include="Model\Autogenerated\CODE_PHRASECollection.cs" />
+    <Compile Include="Model\Autogenerated\COMPOSITION.cs" />
+    <Compile Include="Model\Autogenerated\COMPOSITIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\ConstraintBindingSet.cs" />
+    <Compile Include="Model\Autogenerated\ConstraintBindingSetCollection.cs" />
+    <Compile Include="Model\Autogenerated\CONSTRAINT_BINDING_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\CONSTRAINT_BINDING_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\CONSTRAINT_REF.cs" />
+    <Compile Include="Model\Autogenerated\CONSTRAINT_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\CONTACT.cs" />
+    <Compile Include="Model\Autogenerated\CONTACTCollection.cs" />
+    <Compile Include="Model\Autogenerated\CONTENT_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\CONTENT_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_ARCHETYPE_ROOT.cs" />
+    <Compile Include="Model\Autogenerated\C_ARCHETYPE_ROOTCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_ATTRIBUTE.cs" />
+    <Compile Include="Model\Autogenerated\C_ATTRIBUTECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_BOOLEAN.cs" />
+    <Compile Include="Model\Autogenerated\C_BOOLEANCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_CODE_PHRASE.cs" />
+    <Compile Include="Model\Autogenerated\C_CODE_PHRASECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_CODE_REFERENCE.cs" />
+    <Compile Include="Model\Autogenerated\C_CODE_REFERENCECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_COMPLEX_OBJECT.cs" />
+    <Compile Include="Model\Autogenerated\C_COMPLEX_OBJECTCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DATE.cs" />
+    <Compile Include="Model\Autogenerated\C_DATECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DATE_TIME.cs" />
+    <Compile Include="Model\Autogenerated\C_DATE_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DEFINED_OBJECT.cs" />
+    <Compile Include="Model\Autogenerated\C_DEFINED_OBJECTCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DOMAIN_TYPE.cs" />
+    <Compile Include="Model\Autogenerated\C_DOMAIN_TYPECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DURATION.cs" />
+    <Compile Include="Model\Autogenerated\C_DURATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_ORDINAL.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_ORDINALCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_QUANTITY.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_QUANTITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_STATE.cs" />
+    <Compile Include="Model\Autogenerated\C_DV_STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_INTEGER.cs" />
+    <Compile Include="Model\Autogenerated\C_INTEGERCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_MULTIPLE_ATTRIBUTE.cs" />
+    <Compile Include="Model\Autogenerated\C_MULTIPLE_ATTRIBUTECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_OBJECT.cs" />
+    <Compile Include="Model\Autogenerated\C_OBJECTCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_PRIMITIVE.cs" />
+    <Compile Include="Model\Autogenerated\C_PRIMITIVECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_PRIMITIVE_OBJECT.cs" />
+    <Compile Include="Model\Autogenerated\C_PRIMITIVE_OBJECTCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_QUANTITY_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\C_QUANTITY_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_REAL.cs" />
+    <Compile Include="Model\Autogenerated\C_REALCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_SINGLE_ATTRIBUTE.cs" />
+    <Compile Include="Model\Autogenerated\C_SINGLE_ATTRIBUTECollection.cs" />
+    <Compile Include="Model\Autogenerated\C_STRING.cs" />
+    <Compile Include="Model\Autogenerated\C_STRINGCollection.cs" />
+    <Compile Include="Model\Autogenerated\C_TIME.cs" />
+    <Compile Include="Model\Autogenerated\C_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\DATA_VALUE.cs" />
+    <Compile Include="Model\Autogenerated\DATA_VALUECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_BOOLEAN.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_BOOLEANCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_CODE_PHRASE.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_CODE_PHRASECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DATE.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DATECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DATE_TIME.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DATE_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DURATION.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DURATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_ORDINAL.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_ORDINALCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_QUANTITY.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_QUANTITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_STATE.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_DV_STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_INTEGER.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_INTEGERCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_REAL.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_REALCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_STRING.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_STRINGCollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_TIME.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_VALUE.cs" />
+    <Compile Include="Model\Autogenerated\DEFAULT_VALUECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_AMOUNT.cs" />
+    <Compile Include="Model\Autogenerated\DV_AMOUNTCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_BOOLEAN.cs" />
+    <Compile Include="Model\Autogenerated\DV_BOOLEANCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_CODED_TEXT.cs" />
+    <Compile Include="Model\Autogenerated\DV_CODED_TEXTCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_COUNT.cs" />
+    <Compile Include="Model\Autogenerated\DV_COUNTCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_DATE.cs" />
+    <Compile Include="Model\Autogenerated\DV_DATECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_DATE_TIME.cs" />
+    <Compile Include="Model\Autogenerated\DV_DATE_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_DURATION.cs" />
+    <Compile Include="Model\Autogenerated\DV_DURATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_EHR_URI.cs" />
+    <Compile Include="Model\Autogenerated\DV_EHR_URICollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_ENCAPSULATED.cs" />
+    <Compile Include="Model\Autogenerated\DV_ENCAPSULATEDCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_GENERAL_TIME_SPECIFICATION.cs" />
+    <Compile Include="Model\Autogenerated\DV_GENERAL_TIME_SPECIFICATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_IDENTIFIER.cs" />
+    <Compile Include="Model\Autogenerated\DV_IDENTIFIERCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_INTERVAL.cs" />
+    <Compile Include="Model\Autogenerated\DV_INTERVALCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_MULTIMEDIA.cs" />
+    <Compile Include="Model\Autogenerated\DV_MULTIMEDIACollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_ORDERED.cs" />
+    <Compile Include="Model\Autogenerated\DV_ORDEREDCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_ORDINAL.cs" />
+    <Compile Include="Model\Autogenerated\DV_ORDINALCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_PARAGRAPH.cs" />
+    <Compile Include="Model\Autogenerated\DV_PARAGRAPHCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_PARSABLE.cs" />
+    <Compile Include="Model\Autogenerated\DV_PARSABLECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_PERIODIC_TIME_SPECIFICATION.cs" />
+    <Compile Include="Model\Autogenerated\DV_PERIODIC_TIME_SPECIFICATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_PROPORTION.cs" />
+    <Compile Include="Model\Autogenerated\DV_PROPORTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_QUANTIFIED.cs" />
+    <Compile Include="Model\Autogenerated\DV_QUANTIFIEDCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_QUANTITY.cs" />
+    <Compile Include="Model\Autogenerated\DV_QUANTITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_STATE.cs" />
+    <Compile Include="Model\Autogenerated\DV_STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_TEMPORAL.cs" />
+    <Compile Include="Model\Autogenerated\DV_TEMPORALCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_TEXT.cs" />
+    <Compile Include="Model\Autogenerated\DV_TEXTCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_TIME.cs" />
+    <Compile Include="Model\Autogenerated\DV_TIMECollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_TIME_SPECIFICATION.cs" />
+    <Compile Include="Model\Autogenerated\DV_TIME_SPECIFICATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\DV_URI.cs" />
+    <Compile Include="Model\Autogenerated\DV_URICollection.cs" />
+    <Compile Include="Model\Autogenerated\EHR_EXTRACT_CONTENT.cs" />
+    <Compile Include="Model\Autogenerated\EHR_EXTRACT_CONTENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ELEMENT.cs" />
+    <Compile Include="Model\Autogenerated\ELEMENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ENTRY.cs" />
+    <Compile Include="Model\Autogenerated\ENTRYCollection.cs" />
+    <Compile Include="Model\Autogenerated\EVALUATION.cs" />
+    <Compile Include="Model\Autogenerated\EVALUATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\EVENT.cs" />
+    <Compile Include="Model\Autogenerated\EVENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EVENT_CONTEXT.cs" />
+    <Compile Include="Model\Autogenerated\EVENT_CONTEXTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_BINARY_OPERATOR.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_BINARY_OPERATORCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_LEAF.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_LEAFCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_OPERATOR.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_OPERATORCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_UNARY_OPERATOR.cs" />
+    <Compile Include="Model\Autogenerated\EXPR_UNARY_OPERATORCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_CHAPTER.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_CHAPTERCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_CONTENT.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_CONTENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ENTITY_IDENTIFIER.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ENTITY_IDENTIFIERCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ENTITY_MANIFEST.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ENTITY_MANIFESTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_FOLDER.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_FOLDERCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_MANIFEST.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_MANIFESTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_REQUEST.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_REQUESTCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_SPEC.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_SPECCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_UPDATE_SPEC.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_UPDATE_SPECCollection.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_VERSION_SPEC.cs" />
+    <Compile Include="Model\Autogenerated\EXTRACT_VERSION_SPECCollection.cs" />
+    <Compile Include="Model\Autogenerated\FEEDER_AUDIT.cs" />
+    <Compile Include="Model\Autogenerated\FEEDER_AUDITCollection.cs" />
+    <Compile Include="Model\Autogenerated\FEEDER_AUDIT_DETAILS.cs" />
+    <Compile Include="Model\Autogenerated\FEEDER_AUDIT_DETAILSCollection.cs" />
+    <Compile Include="Model\Autogenerated\FOLDER.cs" />
+    <Compile Include="Model\Autogenerated\FOLDERCollection.cs" />
+    <Compile Include="Model\Autogenerated\GENERIC_ENTRY.cs" />
+    <Compile Include="Model\Autogenerated\GENERIC_ENTRYCollection.cs" />
+    <Compile Include="Model\Autogenerated\GENERIC_ID.cs" />
+    <Compile Include="Model\Autogenerated\GENERIC_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\GROUP.cs" />
+    <Compile Include="Model\Autogenerated\GROUPCollection.cs" />
+    <Compile Include="Model\Autogenerated\HIER_OBJECT_ID.cs" />
+    <Compile Include="Model\Autogenerated\HIER_OBJECT_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\HISTORY.cs" />
+    <Compile Include="Model\Autogenerated\HISTORYCollection.cs" />
+    <Compile Include="Model\Autogenerated\IMPORTED_VERSION.cs" />
+    <Compile Include="Model\Autogenerated\IMPORTED_VERSIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\INSTRUCTION.cs" />
+    <Compile Include="Model\Autogenerated\INSTRUCTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\INSTRUCTION_DETAILS.cs" />
+    <Compile Include="Model\Autogenerated\INSTRUCTION_DETAILSCollection.cs" />
+    <Compile Include="Model\Autogenerated\Interval.cs" />
+    <Compile Include="Model\Autogenerated\IntervalCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDate.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDateCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDateTime.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDateTimeCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDuration.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfDurationCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfInteger.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfIntegerCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfReal.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfRealCollection.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfTime.cs" />
+    <Compile Include="Model\Autogenerated\IntervalOfTimeCollection.cs" />
+    <Compile Include="Model\Autogenerated\INTERVAL_EVENT.cs" />
+    <Compile Include="Model\Autogenerated\INTERVAL_EVENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ISM_TRANSITION.cs" />
+    <Compile Include="Model\Autogenerated\ISM_TRANSITIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM.cs" />
+    <Compile Include="Model\Autogenerated\ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_LIST.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_LISTCollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_SINGLE.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_SINGLECollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_STRUCTURE.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_STRUCTURECollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_TABLE.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_TABLECollection.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_TREE.cs" />
+    <Compile Include="Model\Autogenerated\ITEM_TREECollection.cs" />
+    <Compile Include="Model\Autogenerated\LINK.cs" />
+    <Compile Include="Model\Autogenerated\LINKCollection.cs" />
+    <Compile Include="Model\Autogenerated\LOCATABLE.cs" />
+    <Compile Include="Model\Autogenerated\LOCATABLECollection.cs" />
+    <Compile Include="Model\Autogenerated\LOCATABLE_REF.cs" />
+    <Compile Include="Model\Autogenerated\LOCATABLE_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\NON_TERMINAL_STATE.cs" />
+    <Compile Include="Model\Autogenerated\NON_TERMINAL_STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_ID.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_REF.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_VERSION_ID.cs" />
+    <Compile Include="Model\Autogenerated\OBJECT_VERSION_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\OBSERVATION.cs" />
+    <Compile Include="Model\Autogenerated\OBSERVATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\OPERATIONAL_TEMPLATE.cs" />
+    <Compile Include="Model\Autogenerated\OPERATIONAL_TEMPLATECollection.cs" />
+    <Compile Include="Model\Autogenerated\OPERATOR_KIND.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ORGANISATION.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ORGANISATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\ORIGINAL_VERSION.cs" />
+    <Compile Include="Model\Autogenerated\ORIGINAL_VERSIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTICIPATION.cs" />
+    <Compile Include="Model\Autogenerated\PARTICIPATIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\PARTY.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\PARTYCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_IDENTIFIED.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_IDENTIFIEDCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_IDENTITY.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_IDENTITYCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_PROXY.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_PROXYCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_REF.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_REFCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_RELATED.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_RELATEDCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_RELATIONSHIP.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_RELATIONSHIPCollection.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_SELF.cs" />
+    <Compile Include="Model\Autogenerated\PARTY_SELFCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\PERSON.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\PERSONCollection.cs" />
+    <Compile Include="Model\Autogenerated\POINT_EVENT.cs" />
+    <Compile Include="Model\Autogenerated\POINT_EVENTCollection.cs" />
+    <Compile Include="Model\Autogenerated\PROPORTION_KIND.cs" />
+    <Compile Include="Model\Autogenerated\REFERENCE_RANGE.cs" />
+    <Compile Include="Model\Autogenerated\REFERENCE_RANGECollection.cs" />
+    <Compile Include="Model\Autogenerated\RESOURCE_DESCRIPTION.cs" />
+    <Compile Include="Model\Autogenerated\RESOURCE_DESCRIPTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\RESOURCE_DESCRIPTION_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\RESOURCE_DESCRIPTION_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\REVISION_HISTORY.cs" />
+    <Compile Include="Model\Autogenerated\REVISION_HISTORYCollection.cs" />
+    <Compile Include="Model\Autogenerated\REVISION_HISTORY_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\REVISION_HISTORY_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ROLE.cs" />
+    <Compile Include="Model\Autogenerated\Demographic\ROLECollection.cs" />
+    <Compile Include="Model\Autogenerated\SECTION.cs" />
+    <Compile Include="Model\Autogenerated\SECTIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\STATE.cs" />
+    <Compile Include="Model\Autogenerated\STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\STATE_MACHINE.cs" />
+    <Compile Include="Model\Autogenerated\STATE_MACHINECollection.cs" />
+    <Compile Include="Model\Autogenerated\StringDictionaryItem.cs" />
+    <Compile Include="Model\Autogenerated\StringDictionaryItemCollection.cs" />
+    <Compile Include="Model\Autogenerated\TEMPLATE_ID.cs" />
+    <Compile Include="Model\Autogenerated\TEMPLATE_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\TermBindingSet.cs" />
+    <Compile Include="Model\Autogenerated\TermBindingSetCollection.cs" />
+    <Compile Include="Model\Autogenerated\TERMINAL_STATE.cs" />
+    <Compile Include="Model\Autogenerated\TERMINAL_STATECollection.cs" />
+    <Compile Include="Model\Autogenerated\TERMINOLOGY_ID.cs" />
+    <Compile Include="Model\Autogenerated\TERMINOLOGY_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\TERM_BINDING_ITEM.cs" />
+    <Compile Include="Model\Autogenerated\TERM_BINDING_ITEMCollection.cs" />
+    <Compile Include="Model\Autogenerated\TERM_MAPPING.cs" />
+    <Compile Include="Model\Autogenerated\TERM_MAPPINGCollection.cs" />
+    <Compile Include="Model\Autogenerated\TRANSITION.cs" />
+    <Compile Include="Model\Autogenerated\TRANSITIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\TRANSLATION_DETAILS.cs" />
+    <Compile Include="Model\Autogenerated\TRANSLATION_DETAILSCollection.cs" />
+    <Compile Include="Model\Autogenerated\UID_BASED_ID.cs" />
+    <Compile Include="Model\Autogenerated\UID_BASED_IDCollection.cs" />
+    <Compile Include="Model\Autogenerated\VALIDITY_KIND.cs" />
+    <Compile Include="Model\Autogenerated\VERSION.cs" />
+    <Compile Include="Model\Autogenerated\VERSIONCollection.cs" />
+    <Compile Include="Model\Autogenerated\X_VERSIONED_OBJECT.cs" />
+    <Compile Include="Model\Autogenerated\X_VERSIONED_OBJECTCollection.cs" />
+    <Compile Include="Model\Model.Base.cs" />
+    <Compile Include="DTO.cs" />
+    <Compile Include="ArchetypeCodeGenerator.cs" />
+    <Compile Include="ArchetypeTraverser.cs" />
+    <Compile Include="Model\Model.Partial.cs" />
+    <Compile Include="Model\Model.Helpers.cs" />
+    <Compile Include="Model\Model.Terminology.cs" />
+    <Compile Include="Model\XmlTimeSpan.cs" />
+    <Compile Include="OpenEhrConstants.cs" />
+    <Compile Include="OpenEhrValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Barcline.Core\Barcline.Core.csproj">
+      <Project>{71b9414a-10d0-4f45-8fae-4cec57a91f0b}</Project>
+      <Name>Barcline.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Barcline.OpenEhr.licenseheader" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

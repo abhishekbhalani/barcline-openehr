@@ -1,0 +1,353 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.dermatology_therapy_summary_detail.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2015-02-18">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of specifc dermatology therapies for registry purposes.">
+			use = <"">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"00E62B454A60D1BD6382CE9098D74226">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Dermatology  therapy summary details 
+		items matches {
+			CLUSTER[id3] occurrences matches {0..1} matches {	-- Phototherapy
+				items matches {
+					ELEMENT[id2] occurrences matches {0..1} matches {	-- Phototherapy type
+						value matches {
+							DV_CODED_TEXT[id46] matches {
+								defining_code matches {[ac1]}		-- Phototherapy type (synthesised)
+							}
+						}
+					}
+					ELEMENT[id6] occurrences matches {0..1} matches {	-- Maximum dose
+						value matches {
+							DV_TEXT[id47] 
+						}
+					}
+					ELEMENT[id7] occurrences matches {0..1} matches {	-- Cumulative dose
+						value matches {
+							DV_TEXT[id48] 
+						}
+					}
+				}
+			}
+			CLUSTER[id8] occurrences matches {0..1} matches {	-- Systemic therapy
+				items matches {
+					ELEMENT[id9] occurrences matches {0..1} matches {	-- Sytemic therapy type
+						value matches {
+							DV_CODED_TEXT[id49] matches {
+								defining_code matches {[ac2]}		-- Sytemic therapy type (synthesised)
+							}
+							DV_TEXT[id50] 
+						}
+					}
+					ELEMENT[id17] occurrences matches {0..1} matches {	-- Route
+						value matches {
+							DV_CODED_TEXT[id51] matches {
+								defining_code matches {[ac3]}		-- Route (synthesised)
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[id21] occurrences matches {0..1} matches {	-- Topical therapy
+				items matches {
+					ELEMENT[id22] occurrences matches {0..1} matches {	-- Topical therapy type
+						value matches {
+							DV_CODED_TEXT[id52] matches {
+								defining_code matches {[ac4]}		-- Topical therapy type (synthesised)
+							}
+						}
+					}
+					ELEMENT[id23] occurrences matches {0..1} matches {	-- Potency
+						value matches {
+							DV_CODED_TEXT[id53] matches {
+								defining_code matches {[ac5]}		-- Potency (synthesised)
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[id29] occurrences matches {0..1} matches {	-- Antihistamines
+				items matches {
+					ELEMENT[id30] occurrences matches {0..1} matches {	-- Antihistamine type
+						value matches {
+							DV_CODED_TEXT[id54] matches {
+								defining_code matches {[ac6]}		-- Antihistamine type (synthesised)
+							}
+							DV_TEXT[id55] 
+						}
+					}
+					ELEMENT[id44] occurrences matches {0..1} matches {	-- Dose
+						value matches {
+							DV_TEXT[id56] 
+						}
+					}
+					ELEMENT[id45] occurrences matches {0..1} matches {	-- Adverse effects
+						value matches {
+							DV_TEXT[id57] 
+						}
+					}
+				}
+			}
+			CLUSTER[id39] occurrences matches {0..1} matches {	-- Hospitalisation
+				items matches {
+					ELEMENT[id38] occurrences matches {0..1} matches {	-- Reason for hospitalisation
+						value matches {
+							DV_TEXT[id58] 
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Dermatology  therapy summary details ">
+				description = <"Details of specifc dermatology therapies for registry purposes.">
+			>
+			["id2"] = <
+				text = <"Phototherapy type">
+				description = <"The type of phototherapy.">
+			>
+			["id3"] = <
+				text = <"Phototherapy">
+				description = <"Details of phototherapy.">
+			>
+			["at4"] = <
+				text = <"UVA-1">
+				description = <"UVA-1.">
+			>
+			["at5"] = <
+				text = <"NB-UVB">
+				description = <"NB-UVB.">
+			>
+			["id6"] = <
+				text = <"Maximum dose">
+				description = <"The maximum dose of phototherapy.">
+			>
+			["id7"] = <
+				text = <"Cumulative dose">
+				description = <"The cumulative dose of phototherapy.">
+			>
+			["id8"] = <
+				text = <"Systemic therapy">
+				description = <"Details of systemic therapy.">
+			>
+			["id9"] = <
+				text = <"Sytemic therapy type">
+				description = <"The type of systemic therapy.">
+			>
+			["at10"] = <
+				text = <"Glucocorticosteroids">
+				description = <"Glucocorticosteroids.">
+			>
+			["at11"] = <
+				text = <"CsA">
+				description = <"CsA.">
+			>
+			["at12"] = <
+				text = <"MTX">
+				description = <"MTX.">
+			>
+			["at13"] = <
+				text = <"AZA">
+				description = <"AZA.">
+			>
+			["at14"] = <
+				text = <"MMF">
+				description = <"MMF.">
+			>
+			["at15"] = <
+				text = <"MPS">
+				description = <"MPS.">
+			>
+			["at16"] = <
+				text = <"IVIG">
+				description = <"IVIG.">
+			>
+			["id17"] = <
+				text = <"Route">
+				description = <"The systemic therapy route.">
+			>
+			["at18"] = <
+				text = <"Oral">
+				description = <"Oral.">
+			>
+			["at19"] = <
+				text = <"Intramuscular">
+				description = <"Intramuscular.">
+			>
+			["at20"] = <
+				text = <"Intravenous">
+				description = <"Intravenous.">
+			>
+			["id21"] = <
+				text = <"Topical therapy">
+				description = <"Details of topical therapy.">
+			>
+			["id22"] = <
+				text = <"Topical therapy type">
+				description = <"The type of topical therapy.">
+			>
+			["id23"] = <
+				text = <"Potency">
+				description = <"Potency of topical therapy.">
+			>
+			["at24"] = <
+				text = <"I">
+				description = <"I.">
+			>
+			["at25"] = <
+				text = <"II">
+				description = <"II">
+			>
+			["at26"] = <
+				text = <"III">
+				description = <"III.">
+			>
+			["at27"] = <
+				text = <"IV">
+				description = <"IV.">
+			>
+			["at28"] = <
+				text = <"Not applicable">
+				description = <"Not applicable.">
+			>
+			["id29"] = <
+				text = <"Antihistamines">
+				description = <"Details of antihistamine therapy.">
+			>
+			["id30"] = <
+				text = <"Antihistamine type">
+				description = <"Type of antihistamine.">
+			>
+			["at31"] = <
+				text = <"Aerius">
+				description = <"Aerius.">
+			>
+			["at32"] = <
+				text = <"Atarax">
+				description = <"Atarax.">
+			>
+			["at33"] = <
+				text = <"Xyzal">
+				description = <"Xyzal.">
+			>
+			["at34"] = <
+				text = <"Zyrtec">
+				description = <"Zyrtec.">
+			>
+			["at35"] = <
+				text = <"Fenistil">
+				description = <"Fenistil.">
+			>
+			["at36"] = <
+				text = <"Nedeltran">
+				description = <"Nedeltran.">
+			>
+			["id38"] = <
+				text = <"Reason for hospitalisation">
+				description = <"The reason for hospitalisation.">
+			>
+			["id39"] = <
+				text = <"Hospitalisation">
+				description = <"Details of hospitalisation.">
+			>
+			["at40"] = <
+				text = <"Corticosteroïd">
+				description = <"Corticosteroïd.">
+			>
+			["at41"] = <
+				text = <"Protopic">
+				description = <"Protopic.">
+			>
+			["at42"] = <
+				text = <"Elidel">
+				description = <"Elidel.">
+			>
+			["at43"] = <
+				text = <"Coal tar">
+				description = <"Coal tar.">
+			>
+			["id44"] = <
+				text = <"Dose">
+				description = <"The dose of antihistamines.">
+			>
+			["id45"] = <
+				text = <"Adverse effects">
+				description = <"Adverse effects of antihistamines.">
+			>
+			["ac1"] = <
+				text = <"Phototherapy type (synthesised)">
+				description = <"The type of phototherapy. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Sytemic therapy type (synthesised)">
+				description = <"The type of systemic therapy. (synthesised)">
+			>
+			["ac3"] = <
+				text = <"Route (synthesised)">
+				description = <"The systemic therapy route. (synthesised)">
+			>
+			["ac4"] = <
+				text = <"Topical therapy type (synthesised)">
+				description = <"The type of topical therapy. (synthesised)">
+			>
+			["ac5"] = <
+				text = <"Potency (synthesised)">
+				description = <"Potency of topical therapy. (synthesised)">
+			>
+			["ac6"] = <
+				text = <"Antihistamine type (synthesised)">
+				description = <"Type of antihistamine. (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at4", "at5">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at10", "at11", "at12", "at13", "at14", "at15", "at16">
+		>
+		["ac3"] = <
+			id = <"ac3">
+			members = <"at18", "at19", "at20">
+		>
+		["ac4"] = <
+			id = <"ac4">
+			members = <"at40", "at41", "at42", "at43">
+		>
+		["ac5"] = <
+			id = <"ac5">
+			members = <"at24", "at25", "at26", "at27", "at28">
+		>
+		["ac6"] = <
+			id = <"ac6">
+			members = <"at31", "at32", "at33", "at34", "at35", "at36">
+		>
+	>

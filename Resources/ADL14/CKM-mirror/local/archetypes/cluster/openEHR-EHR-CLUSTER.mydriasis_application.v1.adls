@@ -1,0 +1,226 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-CLUSTER.mydriasis_application.v1.0.0
+
+language
+	original_language = <[ISO_639-1::es]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Aitor Eguzkitza">
+		["organisation"] = <"Universidad Pública de Navarra - Complejo Hospitalario de Navarra">
+		["email"] = <"aitor.eguzkiza@unavarra.es">
+		["date"] = <"2014-05-22">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar las características de dilatación en la pupila, si se aplica midriasis.">
+			use = <"">
+			misuse = <"">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Register the characteristics of pupil's dilation if mydriasis is applied.">
+			use = <"*(es)">
+			keywords = <"Mydriasis", ...>
+			misuse = <"*(es)">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"489D59842CF7F0DDDFF1DD139B02F2AB">
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Mydriasis application
+		items matches {
+			ELEMENT[id9] occurrences matches {0..1} matches {	-- Pupil dilated
+				value matches {
+					DV_BOOLEAN[id16] matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[id15] occurrences matches {0..1} matches {	-- Degree of dilation
+				value matches {
+					DV_QUANTITY[id17] matches {
+						property matches {[at15]}
+						magnitude matches {|0.0..3.0|}
+						precision matches {1}
+						units matches {"mm"}
+					}
+				}
+			}
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Mydriatic delivery method
+				value matches {
+					DV_TEXT[id18] 
+				}
+			}
+			ELEMENT[id2] occurrences matches {0..1} matches {	-- Mydriatic agent
+				value matches {
+					DV_CODED_TEXT[id19] matches {
+						defining_code matches {[ac1; at14]}		-- Mydriatic agent (synthesised)
+					}
+				}
+			}
+			allow_archetype CLUSTER[id3] occurrences matches {0..1} matches {	-- Quantity
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_amount(-a-zA-Z0-9_]+)*\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[id5] occurrences matches {0..1} matches {	-- Comments
+				value matches {
+					DV_TEXT[id20] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["es"] = <
+			["id1"] = <
+				text = <"Aplicación de midriasis">
+				description = <"Define las características del procedimiento midriático cuando se lleva a cabo sobre un paciente.">
+			>
+			["id2"] = <
+				text = <"Agente midriático">
+				description = <"Nombre químico del compuesto empleado para llevar a cabo la midriasis.">
+			>
+			["id3"] = <
+				text = <"Cantidad">
+				description = <"La cantidad del fármaco utilizado durante la midriasis.">
+			>
+			["id4"] = <
+				text = <"Método adminsitración">
+				description = <"Especifica el método por el cual se aplica el fármaco midriático (p.ej. vía nebulizador o gotas).">
+			>
+			["id5"] = <
+				text = <"Comentarios">
+				description = <"Descripción de otros aspectos de interés para el procedimiento midriático.">
+			>
+			["id9"] = <
+				text = <"Dilatación de pupila">
+				description = <"Identifica si las pupilas del paciente fueron farmacológicamente dilatadas para llevar a cabo la adquisición. ">
+			>
+			["at10"] = <
+				text = <"*Atropine(es)">
+				description = <"**(es)">
+			>
+			["at11"] = <
+				text = <"*Homatropine(es)">
+				description = <"**(es)">
+			>
+			["at12"] = <
+				text = <"*Cyclopentolate(es)">
+				description = <"**(es)">
+			>
+			["at13"] = <
+				text = <"*Cyclopentolate(es)">
+				description = <"**(es)">
+			>
+			["at14"] = <
+				text = <"*Tropicamide(es)">
+				description = <"**(es)">
+			>
+			["id15"] = <
+				text = <"Grado de dilatación ">
+				description = <"El grado de la dilatación en mm.">
+			>
+			["at15"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["ac1"] = <
+				text = <"Agente midriático (synthesised)">
+				description = <"Nombre químico del compuesto empleado para llevar a cabo la midriasis. (synthesised)">
+			>
+		>
+		["en"] = <
+			["id1"] = <
+				text = <"Mydriasis application">
+				description = <"Defines the characteristics of mydriasis procedure when carried out on a patient.">
+			>
+			["id2"] = <
+				text = <"Mydriatic agent">
+				description = <"Chemical name of the compound used to apply midriasis.">
+			>
+			["id3"] = <
+				text = <"Quantity">
+				description = <"The quantity of drug used during the mydriasis.">
+			>
+			["id4"] = <
+				text = <"Mydriatic delivery method">
+				description = <"The method of delivery if this should be specified (e.g. via a nebuliser or drops).">
+			>
+			["id5"] = <
+				text = <"Comments">
+				description = <"Other comments of interest about mydriasis procedure.">
+			>
+			["id9"] = <
+				text = <"Pupil dilated">
+				description = <"Whether or not the patient’s pupils were pharmacologically dilated for the current acquisition.">
+			>
+			["at10"] = <
+				text = <"Atropine">
+				description = <"*">
+			>
+			["at11"] = <
+				text = <"Homatropine">
+				description = <"*">
+			>
+			["at12"] = <
+				text = <"Cyclopentolate">
+				description = <"*">
+			>
+			["at13"] = <
+				text = <"Phenylephrine">
+				description = <"*">
+			>
+			["at14"] = <
+				text = <"Tropicamide">
+				description = <"*">
+			>
+			["id15"] = <
+				text = <"Degree of dilation">
+				description = <"The degree of the dilation in mm.">
+			>
+			["at15"] = <
+				text = <"*(added by post-parse processor)(es)">
+				description = <"*(added by post-parse processor)(es)">
+			>
+			["ac1"] = <
+				text = <"Mydriatic agent (synthesised)">
+				description = <"Chemical name of the compound used to apply midriasis. (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			["id2"] = <http://snomed.info/id/33682005>
+			["at10"] = <http://snomed.info/id/349947003>
+			["at11"] = <http://snomed.info/id/430036003>
+			["at12"] = <http://snomed.info/id/8348002>
+			["at13"] = <http://snomed.info/id/386693003>
+			["at14"] = <http://snomed.info/id/9190005>
+		>
+		["openehr"] = <
+			["at15"] = <http://openehr.org/id/122>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at10", "at11", "at12", "at13", "at14">
+		>
+	>

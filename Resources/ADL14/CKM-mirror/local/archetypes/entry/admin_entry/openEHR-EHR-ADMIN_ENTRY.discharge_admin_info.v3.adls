@@ -1,0 +1,335 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-ADMIN_ENTRY.discharge_admin_info.v3.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"D B Hutchinson">
+		["organisation"] = <"NHS CFH">
+		["date"] = <"14/11/2007">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record general administrative information required to discharge a patient">
+			use = <"">
+			keywords = <"administration", "discharge">
+			misuse = <"">
+		>
+	>
+	other_details = <
+		["references"] = <"">
+	>
+
+definition
+	ADMIN_ENTRY[id1] matches {	-- Discharge administrative information
+		data matches {
+			ITEM_TREE[id4] matches {
+				items matches {
+					ELEMENT[id5] occurrences matches {0..1} matches {	-- Date of discharge
+						value matches {
+							DV_DATE_TIME[id86] matches {
+								value matches {yyyy-??-??T??:??:??}
+							}
+						}
+					}
+					CLUSTER[id58] occurrences matches {0..1} matches {	-- Discharge details
+						items matches {
+							CLUSTER[id73] occurrences matches {0..1} matches {	-- Discharge procedure discussed and agreed with Parent/Carer
+								items matches {
+									allow_archetype CLUSTER[id87] occurrences matches {0..1} matches {	-- (added by post-parse processor)
+										include
+											archetype_id/value matches {/checklist_item-general\.v1/}
+										exclude
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							CLUSTER[id66] occurrences matches {0..1} matches {	-- Discharging Consultant
+								items matches {
+									allow_archetype CLUSTER[id88] occurrences matches {0..1} matches {	-- (added by post-parse processor)
+										include
+											archetype_id/value matches {/individual_professional\.v1/}
+										exclude
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							CLUSTER[id69] occurrences matches {0..1} matches {	-- Discharging Organisation
+								items matches {
+									allow_archetype CLUSTER[id89] occurrences matches {0..1} matches {	-- (added by post-parse processor)
+										include
+											archetype_id/value matches {/organisation\.v2/}
+										exclude
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							ELEMENT[id67] occurrences matches {0..1} matches {	-- Discharging ward
+								value matches {
+									DV_TEXT[id90] 
+								}
+							}
+							ELEMENT[id61] occurrences matches {0..1} matches {	-- Discharging Specialty/Department
+								value matches {
+									DV_TEXT[id91] 
+								}
+							}
+							ELEMENT[id85] occurrences matches {0..1} matches {	-- Further Action
+								value matches {
+									DV_TEXT[id92] 
+								}
+							}
+						}
+					}
+					CLUSTER[id70] occurrences matches {0..1} matches {	-- Discharge Destination
+						items matches {
+							ELEMENT[id31] occurrences matches {0..1} matches {	-- Discharge destination type
+								value matches {
+									DV_CODED_TEXT[id93] matches {
+										defining_code matches {[ac1]}		-- Discharge destination type (synthesised)
+									}
+								}
+							}
+							CLUSTER[id71] occurrences matches {0..1} matches {	-- Discharge destination
+								items matches {
+									allow_archetype CLUSTER[id94] occurrences matches {0..1} matches {	-- (added by post-parse processor)
+										include
+											archetype_id/value matches {/organisation\.v2/}
+										exclude
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							CLUSTER[id63] occurrences matches {0..1} matches {	-- Reason for Discharge
+								items matches {
+									CLUSTER[id84] occurrences matches {0..1} matches {	-- Discharge Method
+										items matches {
+											allow_archetype CLUSTER[id95] matches {	-- (added by post-parse processor)
+												include
+													archetype_id/value matches {/checklist_item-discharge_method_hospital\.v2/}
+													archetype_id/value matches {/checklist_item-discharge_method_mental_health\.v2/}
+													archetype_id/value matches {/checklist_item-discharge_method_community\.v2/}
+												exclude
+													archetype_id/value matches {/.*/}
+											}
+										}
+									}
+									ELEMENT[id57] occurrences matches {0..1} matches {	-- Outline of decision to discharge
+										value matches {
+											DV_TEXT[id96] 
+										}
+									}
+									CLUSTER[id72] occurrences matches {0..1} matches {	-- Discharge delayed
+										items matches {
+											allow_archetype CLUSTER[id97] occurrences matches {0..1} matches {	-- (added by post-parse processor)
+												include
+													archetype_id/value matches {/checklist_item-general\.v1/}
+												exclude
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[id82] occurrences matches {0..1} matches {	-- Date patient/carer informed of Planned Discharge
+												value matches {
+													DV_DATE_TIME[id98] matches {
+														value matches {yyyy-??-??T??:??:??}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Discharge administrative information">
+				description = <"The administrative information required at the time of discharge of a patient from a period of care">
+			>
+			["id5"] = <
+				text = <"Date of discharge">
+				description = <"The date of discharge for this care episode">
+			>
+			["id31"] = <
+				text = <"Discharge destination type">
+				description = <"The destination of a patient on completion of a hospital provder spell">
+			>
+			["at32"] = <
+				text = <"Usual place of residence, includes patients with no fixed abode">
+				description = <"Includes patients with no fixed abode">
+			>
+			["at33"] = <
+				text = <"Temporary place of residence">
+				description = <"*">
+			>
+			["at34"] = <
+				text = <"Repatriation from high security psychiatric accommodation">
+				description = <"*">
+			>
+			["at35"] = <
+				text = <"Court">
+				description = <"*">
+			>
+			["at36"] = <
+				text = <"Penal establishment or police station">
+				description = <"*">
+			>
+			["at37"] = <
+				text = <"High security psychiatric hospital, Scotland">
+				description = <"*">
+			>
+			["at38"] = <
+				text = <"NHS other - high security psychiatric accommodation">
+				description = <"*">
+			>
+			["at39"] = <
+				text = <"NHS other - medium secure unit">
+				description = <"*">
+			>
+			["at40"] = <
+				text = <"NHS other - general ward/younger physically disabled ward">
+				description = <"*">
+			>
+			["at41"] = <
+				text = <"NHS other - maternity patients or neonates">
+				description = <"*">
+			>
+			["at42"] = <
+				text = <"NHS other - mentally ill/learning disabilities">
+				description = <"*">
+			>
+			["at43"] = <
+				text = <"NHS-run care home">
+				description = <"*">
+			>
+			["at44"] = <
+				text = <"Local authority residential accommodation, care provided">
+				description = <"*">
+			>
+			["at45"] = <
+				text = <"Local authority foster care">
+				description = <"*">
+			>
+			["at46"] = <
+				text = <"Not applicable - patient died or still birth">
+				description = <"*">
+			>
+			["at47"] = <
+				text = <"Non-NHS medium secure unit">
+				description = <"*">
+			>
+			["at48"] = <
+				text = <"Non-NHS care home">
+				description = <"*">
+			>
+			["at49"] = <
+				text = <"Non-NHS hospital">
+				description = <"*">
+			>
+			["at50"] = <
+				text = <"Non-NHS hospice">
+				description = <"*">
+			>
+			["id57"] = <
+				text = <"Outline of decision to discharge">
+				description = <"An outline of the decision to discharge the patient (if applicable)">
+			>
+			["id58"] = <
+				text = <"Discharge details">
+				description = <"*">
+			>
+			["id61"] = <
+				text = <"Discharging Specialty/Department">
+				description = <"The department or specialty with responsibility for the patient at the time of discharge">
+			>
+			["id63"] = <
+				text = <"Reason for Discharge">
+				description = <"The details of the discharge">
+			>
+			["id66"] = <
+				text = <"Discharging Consultant">
+				description = <"The name of the consultant responsible for care of the patient at the time of discharge">
+			>
+			["id67"] = <
+				text = <"Discharging ward">
+				description = <"The ward from which the patient was discharged">
+			>
+			["id69"] = <
+				text = <"Discharging Organisation">
+				description = <"The organisation with responsibility for the patient at the time of discharge">
+			>
+			["id70"] = <
+				text = <"Discharge Destination">
+				description = <"The details of the destination of the patient on discharge">
+			>
+			["id71"] = <
+				text = <"Discharge destination">
+				description = <"The details of the organisation to which the patient is to be discharged if not the usual place of residence">
+			>
+			["id72"] = <
+				text = <"Discharge delayed">
+				description = <"Was the discharge delayed for any reason">
+			>
+			["id73"] = <
+				text = <"Discharge procedure discussed and agreed with Parent/Carer">
+				description = <"Discharge procedure discussed and agreed with Parent/Carer?">
+			>
+			["id82"] = <
+				text = <"Date patient/carer informed of Planned Discharge">
+				description = <"*">
+			>
+			["id84"] = <
+				text = <"Discharge Method">
+				description = <"*">
+			>
+			["id85"] = <
+				text = <"Further Action">
+				description = <"*">
+			>
+			["id87"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["id88"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["id89"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["id94"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["id95"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["id97"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+			["ac1"] = <
+				text = <"Discharge destination type (synthesised)">
+				description = <"The destination of a patient on completion of a hospital provder spell (synthesised)">
+			>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at32", "at33", "at34", "at35", "at36", "at37", "at38", "at39", "at40", "at41", "at42", "at43", "at44", "at45", "at46", "at47", "at48", "at49", "at50">
+		>
+	>

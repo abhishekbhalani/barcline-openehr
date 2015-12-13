@@ -1,0 +1,257 @@
+archetype (adl_version=2.0.5; rm_release=1.0.2; generated)
+	openEHR-EHR-EVALUATION.alcohol_use_summary.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2011-07-15">
+	>
+	copyright = <"© openEHR Foundation">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record summary and persisting information about the consumption of alcohol.">
+			use = <"Use to record summary and persisting information about the consumption of alcohol.
+
+Data that might be used to assess the risk of alcohol abuse or dependence will be recorded using two archetypes: this EVALUATION archetype (recording the summary and persisting data) and in the OBSERVATION.alcohol_use archetype (recording the repeatable observations/measurements).">
+			keywords = <"alcohol", "beer", "wine", "spirits", "fortified", "consumption", "use", "status", "abuse", "binge">
+			misuse = <"Not to be used to record event-or period-based information about alcohol use or consumption, such as actual daily use or the average use over a specified period of time - use the OBSERVATION.alcohol_use archetype.
+
+Not to be used to record information about consumption of other substances other than alcohol.">
+		>
+	>
+	other_contributors = <"Rita Apelt, Department of Health,NT, Australia", "Stephen Chu, NEHTA, Australia", "Matthew Cordell, NEHTA, Australia", "David Evans, Queensland Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Andrew Goodchild, NEHTA, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Mary Kelaher, NEHTA, Australia", "Robert L'Egan, NEHTA, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Jeremy Oats, NT Health, Australia", "Rosalie Schultz, Central Australia Remote Health, Australia", "John Taylor, NEHTA, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
+	other_details = <
+		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
+		["references"] = <"openEHR Clinical Knowledge Manager [Internet]. London: openEHR Foundation. [Draft EVALUATION archetype] Alcohol Use Summary; [authored 2009 Jun 21, cited 2011 Jul 15]. Available from: http://www.openehr.org/knowledge/OKM.html#showArchetype_1013.1.362_1.
+
+NEHTA Clinical Knowledge Manager [Internet]. : NEHTA. [Draft EVALUATION archetype] Alcohol Use Summary; [authored 2009 Jun 21, cited 2013 Nov 02].
+Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.1028_3">
+		["MD5-CAM-1.0.1"] = <"B380D590E3A1AA1FFEDD68F7B061FAB4">
+	>
+
+definition
+	EVALUATION[id1] matches {	-- Alcohol Use Summary
+		data matches {
+			ITEM_TREE[id2] matches {
+				items matches {
+					ELEMENT[id3] occurrences matches {0..1} matches {	-- Status
+						value matches {
+							DV_CODED_TEXT[id35] matches {
+								defining_code matches {[ac1]}		-- Status (synthesised)
+							}
+						}
+					}
+					ELEMENT[id25] occurrences matches {0..1} matches {	-- Typical Alcohol Consumption
+						value matches {
+							DV_QUANTITY[id36] matches {
+								property matches {[at34]}
+								magnitude matches {|>=0.0|}
+								precision matches {0}
+								units matches {"/d"}
+							}
+							DV_INTERVAL<DV_QUANTITY>[id37] matches {
+								upper matches {
+									DV_QUANTITY[id38] matches {
+										property matches {[at34]}
+										magnitude matches {|>=0.0|}
+										precision matches {0}
+										units matches {"/d"}
+									}
+								}
+								lower matches {
+									DV_QUANTITY[id39] matches {
+										property matches {[at34]}
+										magnitude matches {|>=0.0|}
+										precision matches {0}
+										units matches {"/d"}
+									}
+								}
+							}
+							DV_TEXT[id40] 
+						}
+					}
+					ELEMENT[id26] matches {	-- Form
+						value matches {
+							DV_TEXT[id41] 
+						}
+					}
+					ELEMENT[id28] occurrences matches {0..1} matches {	-- Pattern of Use
+						value matches {
+							DV_TEXT[id42] 
+						}
+					}
+					ELEMENT[id27] occurrences matches {0..1} matches {	-- Binge Drinking Pattern
+						value matches {
+							DV_CODED_TEXT[id43] matches {
+								defining_code matches {[ac2]}		-- Binge Drinking Pattern (synthesised)
+							}
+						}
+					}
+					ELEMENT[id16] occurrences matches {0..1} matches {	-- Date Commenced
+						value matches {
+							DV_DATE_TIME[id44] 
+						}
+					}
+					ELEMENT[id17] occurrences matches {0..1} matches {	-- Date Ceased
+						value matches {
+							DV_DATE_TIME[id45] 
+						}
+					}
+					allow_archetype CLUSTER[id24] matches {	-- Cessation Attempts
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.cessation_attempts(-a-zA-Z0-9_]+)*\.v1/}
+					}
+					ELEMENT[id20] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT[id46] 
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[id22] matches {
+				items matches {
+					ELEMENT[id23] occurrences matches {0..1} matches {	-- Date Last Updated
+						value matches {
+							DV_DATE_TIME[id47] 
+						}
+					}
+					ELEMENT[id34] occurrences matches {0..1} matches {	-- Standard Drink Definition
+						value matches {
+							DV_QUANTITY[id48] matches {
+								property matches {[at35]}
+								magnitude matches {|>=0.0|}
+								units matches {"gm"}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Alcohol Use Summary">
+				description = <"Summary or persisting information about alcohol use or consumption.">
+			>
+			["id3"] = <
+				text = <"Status">
+				description = <"Statement about the individual's overall pattern of usage or consumption of alcohol.">
+			>
+			["at4"] = <
+				text = <"Current drinker">
+				description = <"Individual is a current consumer of alcohol.">
+			>
+			["at5"] = <
+				text = <"Ex-drinker">
+				description = <"Individual is a former or ex-consumer of alcohol.">
+			>
+			["at7"] = <
+				text = <"Lifetime non-drinker">
+				description = <"Individual has never consumed alcohol.">
+			>
+			["id16"] = <
+				text = <"Date Commenced">
+				description = <"Date that any consumption of alcohol commenced.">
+			>
+			["id17"] = <
+				text = <"Date Ceased">
+				description = <"Date that all consumption of alcohol ceased.">
+			>
+			["id20"] = <
+				text = <"Comment">
+				description = <"Additional narrative about the alcohol use or consumption pattern not captured in other fields.">
+			>
+			["id23"] = <
+				text = <"Date Last Updated">
+				description = <"The date this alcohol consumption summary was last updated.">
+			>
+			["id24"] = <
+				text = <"Cessation Attempts">
+				description = <"Details about attempts to cease use of alcohol.">
+			>
+			["id25"] = <
+				text = <"Typical Alcohol Consumption">
+				description = <"Estimate of typical alcohol consumption, in number of standard drinks/units per day - either as a whole number, a range, or as a term, normally coded. Definitions of standard units/drinks vary considerably.">
+			>
+			["id26"] = <
+				text = <"Form">
+				description = <"The form or type of alcohol consumed.">
+			>
+			["id27"] = <
+				text = <"Binge Drinking Pattern">
+				description = <"The subject's pattern of heavy, episodic drinking.">
+			>
+			["id28"] = <
+				text = <"Pattern of Use">
+				description = <"The typical pattern of the subject's use of alcohol.">
+			>
+			["at29"] = <
+				text = <"None">
+				description = <"The subject does not binge drink.">
+			>
+			["at30"] = <
+				text = <"Less than once per month">
+				description = <"The subject binge drinks less than once per month.">
+			>
+			["at31"] = <
+				text = <"Monthly">
+				description = <"The subject binge drinks on a monthly basis.">
+			>
+			["at32"] = <
+				text = <"Weekly">
+				description = <"The subject binge drinks on a weekly basis.">
+			>
+			["at33"] = <
+				text = <"Daily">
+				description = <"The subject binge drinks on a daily or almost daily basis.">
+			>
+			["id34"] = <
+				text = <"Standard Drink Definition">
+				description = <"Amount of alcohol defining a standard drink or unit.">
+			>
+			["at34"] = <
+				text = <"Frequency">
+				description = <"Frequency">
+			>
+			["at35"] = <
+				text = <"Mass">
+				description = <"Mass">
+			>
+			["ac1"] = <
+				text = <"Status (synthesised)">
+				description = <"Statement about the individual's overall pattern of usage or consumption of alcohol. (synthesised)">
+			>
+			["ac2"] = <
+				text = <"Binge Drinking Pattern (synthesised)">
+				description = <"The subject's pattern of heavy, episodic drinking. (synthesised)">
+			>
+		>
+	>
+	term_bindings = <
+		["openehr"] = <
+			["at34"] = <http://openehr.org/id/382>
+			["at35"] = <http://openehr.org/id/124>
+		>
+	>
+	value_sets = <
+		["ac1"] = <
+			id = <"ac1">
+			members = <"at4", "at5", "at7">
+		>
+		["ac2"] = <
+			id = <"ac2">
+			members = <"at29", "at30", "at31", "at32", "at33">
+		>
+	>
