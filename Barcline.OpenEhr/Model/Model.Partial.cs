@@ -410,7 +410,38 @@ namespace Barcline.OpenEhr.Model
 
     partial class CARDINALITY : OpenEhrUuidBasedObject
     {
+        [NotMapped]
+        [XmlIgnore]
+        [JsonIgnore]
+        public bool is_bag
+        {
+            get
+            {
+                return !is_ordered && !is_unique;
+            }
+        }
 
+        [NotMapped]
+        [XmlIgnore]
+        [JsonIgnore]
+        public bool is_list
+        {
+            get
+            {
+                return is_ordered && !is_unique;
+            }
+        }
+
+        [NotMapped]
+        [XmlIgnore]
+        [JsonIgnore]
+        public bool is_set
+        {
+            get
+            {
+                return !is_ordered && is_unique;
+            }
+        }
     }
 
     partial class CLUSTER
@@ -461,6 +492,15 @@ namespace Barcline.OpenEhr.Model
 
     partial class DV_CODED_TEXT
     {
+    }
+
+    partial class DV_PROPORTION
+    {
+        /// <remarks>Not present in RM</remarks>
+        [XmlIgnore]
+        [JsonIgnore]
+        [NotMapped]
+        public virtual bool is_integral { get; set; }
     }
 
     partial class DV_DATE_TIME
@@ -587,6 +627,21 @@ namespace Barcline.OpenEhr.Model
             folder.uid.value = uid;
             return folder;
         }
+    }
+
+    partial class ITEM_TABLE
+    {
+        /// <remarks>Not present in RM</remarks>
+        [NotMapped]
+        [XmlIgnore]
+        [JsonIgnore]
+        public virtual bool rotated { get; set; }
+
+        /// <remarks>Not present in RM</remarks>
+        [NotMapped]
+        [XmlIgnore]
+        [JsonIgnore]
+        public virtual int number_key_columns { get; set; }
     }
 
     partial class HIER_OBJECT_ID

@@ -1,17 +1,19 @@
 ﻿using Barcline.OpenEhr.Model;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Reflection;
+using System.Diagnostics.Contracts;
 
 namespace Barcline.OpenEhr.Generator
 {
     public class InstanceFactory
     {
-        private ARCHETYPE _archetype;
-        private LOCATABLE _result;
-        private InstanceFactoryOptions options = new InstanceFactoryOptions();
-
         public InstanceFactory(ARCHETYPE archetype)
         {
+            Contract.Requires(archetype != null);
             this._archetype = archetype;
         }
 
@@ -23,7 +25,7 @@ namespace Barcline.OpenEhr.Generator
             }
         }
 
-        public static LOCATABLE CreateRootItem(C_COMPLEX_OBJECT complexObject)
+        private LOCATABLE CreateRootItem(C_COMPLEX_OBJECT complexObject)
         {
             LOCATABLE item = (LOCATABLE)CreateInstance(complexObject.rm_type_name);
             return item;
@@ -31,38 +33,17 @@ namespace Barcline.OpenEhr.Generator
 
         public LOCATABLE Create()
         {
+            Contract.Requires(_archetype.definition != null);
+
             this._result = CreateRootItem(_archetype.definition);
             InitRootItem(_result, _archetype.definition);
             TraverseComplexObject(_result, _archetype.definition);
             return _result;
         }
 
-        private void InitRootItem(LOCATABLE item, C_COMPLEX_OBJECT complexObject)
-        {
-            // 519
-            item.archetype_details = new ARCHETYPED();
-            item.archetype_details.archetype_id = new ARCHETYPE_ID() { value = _archetype.archetype_id.value };
-            item.archetype_details.template_id = new TEMPLATE_ID() { };
-            item.archetype_details.rm_version = "1.0.1";
-
-            // ITEM->(CLUSTER|ELEMENT)
-            if (item is ITEM)
-            {
-                var itemItem = item as ITEM;
-            }
-            else if (item is CONTENT_ITEM)
-            {
-                var contentItem = item as CONTENT_ITEM;
-
-                if (contentItem is ENTRY)
-                {
-                    ENTRY entry = (ENTRY)contentItem;
-                    entry.subject = new PARTY_IDENTIFIED() { name = "Identified Patient" };
-                    entry.encoding = new CODE_PHRASE() { code_string = "UTF-8", terminology_id = new TERMINOLOGY_ID() { value = "IANA_character-sets" } };
-                    entry.language = new CODE_PHRASE() { code_string = "en" };
-                }
-            }
-        }
+        private ARCHETYPE _archetype;
+        private LOCATABLE _result;
+        private InstanceFactoryOptions options = new InstanceFactoryOptions();
 
         private static Object CreateInstance(String rm_type_name)
         {
@@ -98,7 +79,7 @@ namespace Barcline.OpenEhr.Generator
                 case "DV_INTERVAL<DV_TIME>":
                     return typeof(DV_INTERVAL);
                 case "DV_INTERVAL<DV_ORDINAL>":
-                    return typeof(DV_INTERVAL);    
+                    return typeof(DV_INTERVAL);
                 default:
                     var ns = typeof(LOCATABLE).Namespace;
                     var asm = typeof(LOCATABLE).Assembly.FullName;
@@ -106,10 +87,8 @@ namespace Barcline.OpenEhr.Generator
                     Type type = Type.GetType(typeName, false);
                     return type;
             }
-            
-        }
 
-        
+        }
 
         private void InitArchetypeInternalRef(OpenEhrObject obj, ARCHETYPE_INTERNAL_REF cArchetypeInternalRef)
         {
@@ -203,23 +182,136 @@ namespace Barcline.OpenEhr.Generator
             }
         }
 
-        private void InitPrimitive(ACTIVITY obj, C_STRING constraint)
-        {
-            
-        }
-
-        private void InitPrimitive(ITEM_TABLE obj, C_INTEGER constraint)
-        {
-
-        }
-
-        private void InitPrimitive(ITEM_TABLE obj, C_BOOLEAN constraint)
-        {
-
-        }
-
         private void InitDvState(OpenEhrObject obj, C_DV_STATE c_DV_STATE)
         {
+        }
+
+        private void InitRootItem(LOCATABLE item, C_COMPLEX_OBJECT complexObject)
+        {
+            // 519
+            item.archetype_details = new ARCHETYPED();
+            item.archetype_details.archetype_id = new ARCHETYPE_ID() { value = _archetype.archetype_id.value };
+            item.archetype_details.template_id = new TEMPLATE_ID() { };
+            item.archetype_details.rm_version = "1.0.1";
+
+            // ITEM->(CLUSTER|ELEMENT)
+            if (item is ITEM)
+            {
+                var itemItem = item as ITEM;
+            }
+            else if (item is CONTENT_ITEM)
+            {
+                var contentItem = item as CONTENT_ITEM;
+
+                if (contentItem is ENTRY)
+                {
+                    ENTRY entry = (ENTRY)contentItem;
+                    entry.subject = new PARTY_IDENTIFIED() { name = "Identified Patient" };
+                    entry.encoding = new CODE_PHRASE() { code_string = "UTF-8", terminology_id = new TERMINOLOGY_ID() { value = "IANA_character-sets" } };
+                    entry.language = new CODE_PHRASE() { code_string = "en" };
+                }
+            }
+        }
+        private void Log(String message, params object[] args)
+        {
+            Trace.WriteLine(String.Format(message, args));
+        }
+
+        private void InitPrimitive(OpenEhrObject obj, PropertyInfo propertyInfo, C_PRIMITIVE cPrimitive)
+        {
+            INotifyPropertyChanged propertyChanged = obj as INotifyPropertyChanged;
+
+            String pp = String.Format("{0} {1}", propertyInfo.PropertyType.Name, cPrimitive.GetType().Name);
+            var propertyType = propertyInfo.PropertyType;
+            if (propertyType.Equals(typeof(String)) && cPrimitive is C_STRING)
+            {
+                var cString = cPrimitive as C_STRING;
+                if (cString.assumed_value != null)
+                {
+                    propertyInfo.SetValue(obj, cString.assumed_value);
+                }
+                if (propertyChanged != null)
+                {
+                    // TODO: list constraint
+                    // TODO: pattern constraint
+                    // TODO: list_open constraint
+                }
+            }
+            else if (propertyType.Equals(typeof(Single)) && cPrimitive is C_REAL)
+            {
+                var cReal = cPrimitive as C_REAL;
+                if (cReal.assumed_valueSpecified)
+                {
+                    // TODO cReal.list constraint
+                    // TODO cReal.range constraint
+                    propertyInfo.SetValue(obj, cReal.assumed_value);
+                }
+            }
+            else if (propertyType.Equals(typeof(Boolean)) && cPrimitive is C_BOOLEAN)
+            {
+                var cBoolean = cPrimitive as C_BOOLEAN;
+                if (cBoolean.assumed_valueSpecified)
+                {
+                    propertyInfo.SetValue(obj, cBoolean.assumed_value);
+                    // TODO: cBoolean.false_valid
+                    // TODO: cBoolean.true_valid
+                }
+            }
+            else if (propertyType.Equals(typeof(PROPORTION_KIND)) && cPrimitive is C_INTEGER)
+            {
+                var cInteger = cPrimitive as C_INTEGER;
+                if (cInteger.assumed_valueSpecified)
+                {
+                    propertyInfo.SetValue(obj, (PROPORTION_KIND)cInteger.assumed_value);
+                    // TODO: cInteger.list
+                    // TODO: cInteger.range
+                }
+            }
+            else if (propertyType.Equals(typeof(int)) && cPrimitive is C_INTEGER)
+            {
+                var cInteger = cPrimitive as C_INTEGER;
+                if (cInteger.assumed_valueSpecified)
+                {
+                    propertyInfo.SetValue(obj, cInteger.assumed_value);
+                    // TODO: cInteger.list
+                    // TODO: cInteger.range
+                }
+            }
+            else if (propertyType.Equals(typeof(Int64)) && cPrimitive is C_INTEGER)
+            {
+                var cInteger = cPrimitive as C_INTEGER;
+                if (cInteger.assumed_valueSpecified)
+                {
+                    propertyInfo.SetValue(obj, cInteger.assumed_value);
+                    // TODO: cInteger.list
+                    // TODO: cInteger.range
+                }
+            }
+            else if (propertyType.Equals(typeof(TimeSpan)) && cPrimitive is C_DURATION)
+            {
+                var cDuration = cPrimitive as C_DURATION;
+                if (cDuration.assumed_value != null)
+                {
+                    propertyInfo.SetValue(obj, cDuration.assumed_value.Value);
+                    // TODO: cDuration.pattern
+                    // TODO: cDuration.range
+                }
+            }
+            else if (propertyType.Equals(typeof(DateTime)) && cPrimitive is C_DATE_TIME)
+            {
+                var cDateTime = cPrimitive as C_DATE_TIME;
+                if (cDateTime.assumed_value != null)
+                {
+                    propertyInfo.SetValue(obj, cDateTime.assumed_value.Value);
+                    // TODO: cDateTime.pattern
+                    // TODO: cDateTime.range
+                    // TODO: cDateTime.timezone_validity
+                }
+            }
+            else
+            {
+                throw new Exception(String.Format("Cannot initialize {0}.{1} with primitive {2}", obj.GetType().Name, propertyInfo.Name, cPrimitive.GetType().Name));
+            }
         }
 
         private void TraverseComplexObject(OpenEhrObject obj, C_COMPLEX_OBJECT cobj)
@@ -248,7 +340,6 @@ namespace Barcline.OpenEhr.Generator
                         if (list != null)
                         {
                             list.Add(propertyValue);
-                            break;
                         }
                         else
                         {
@@ -266,7 +357,9 @@ namespace Barcline.OpenEhr.Generator
                         var cPrimitiveObject = attr_child_object as C_PRIMITIVE_OBJECT;
                         var cPrimitive = cPrimitiveObject.item;
                         if (cPrimitive != null)
-                            InitPrimitive((dynamic)obj, (dynamic)cPrimitive);
+                        {
+                            InitPrimitive(obj, propertyInfo, cPrimitive);
+                        }
                     }
                     else if (attr_child_object is C_DOMAIN_TYPE)
                     {
@@ -311,87 +404,6 @@ namespace Barcline.OpenEhr.Generator
                 }
             }
         }
-
-        private void InitPrimitive(DV_PARSABLE obj, C_STRING constraint)
-        {
-            // TODO:
-        }
-
-        private void InitPrimitive(DV_DURATION obj, C_DURATION constraint)
-        {
-            if (constraint.assumed_value != null)
-            {
-                obj.value = constraint.assumed_value.Value;
-            }
-            if (constraint.range != null)
-            {
-                obj.normal_range = new DV_INTERVAL();
-                if (constraint.range.lower != null)
-                {
-                    obj.normal_range.lower = new DV_TIME() { value = constraint.range.lower.Value };
-                }
-                if (constraint.range.upper != null)
-                {
-                    obj.normal_range.upper = new DV_TIME() { value = constraint.range.upper.Value };
-                }
-            }
-        }
-
-        private void InitPrimitive(DV_BOOLEAN obj, C_BOOLEAN constraint)
-        {
-            obj.value = constraint.assumed_value;
-        }
-
-        private void InitPrimitive(DV_TIME obj, C_TIME constraint)
-        {
-            if (constraint.assumed_value != null)
-                obj.value = constraint.assumed_value.Value;
-            if (constraint.range != null)
-            {
-            }
-        }
-
-        private void InitPrimitive(DV_PROPORTION obj, C_REAL constraint)
-        {
-
-        }
-
-        private void InitPrimitive(DV_PROPORTION obj, C_BOOLEAN constraint)
-        {
-
-        }
-
-        private void InitPrimitive(DV_PROPORTION obj, C_INTEGER constraint)
-        {
-
-        }
-
-        private void InitPrimitive(DV_IDENTIFIER obj, C_STRING constraint)
-        {
-
-        }
-
-        private void InitPrimitive(DV_COUNT obj, C_INTEGER constraint)
-        {
-            if (constraint.assumed_valueSpecified)
-            {
-                obj.magnitude = constraint.assumed_value;
-            }
-        }
-
-        private void InitPrimitive(DV_DATE_TIME obj, C_DATE_TIME constraint)
-        {
-            if (constraint.assumed_value != null)
-            {
-                obj.value = constraint.assumed_value.Value;
-            }
-        }
-
-        private void Log(String message, params object[] args)
-        {
-            Console.WriteLine(message, args);
-        }
-
         private class InstanceFactoryTypeIsAbstractException : Exception
         {
             public InstanceFactoryTypeIsAbstractException(Type type) :

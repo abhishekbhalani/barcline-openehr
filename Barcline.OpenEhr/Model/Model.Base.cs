@@ -1,6 +1,7 @@
 ﻿using Barcline.Core;
 using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
@@ -26,21 +27,21 @@ namespace Barcline.OpenEhr.Model
     /// <summary>
     /// An object which has natural primary key
     /// </summary>
-    public class OpenEhrNaturalKeyBasedObject : OpenEhrObject
+    public abstract class OpenEhrNaturalKeyBasedObject : OpenEhrObject
     {
     }
 
     /// <summary>
     /// Base OpenEHR object
     /// </summary>
-    public class OpenEhrObject : ModelObject, IOpenEhrObject
+    public abstract class OpenEhrObject : ModelObject, IOpenEhrObject
     {
     }
 
     /// <summary>
     /// An object which has artifical primary key
     /// </summary>
-    public class OpenEhrUuidBasedObject : OpenEhrObject
+    public abstract class OpenEhrUuidBasedObject : OpenEhrObject
     {
         public OpenEhrUuidBasedObject()
         {
