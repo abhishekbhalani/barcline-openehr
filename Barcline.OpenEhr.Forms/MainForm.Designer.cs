@@ -50,6 +50,7 @@
             this.mnuOpenArchetypeStorageRecent = new System.Windows.Forms.ToolStripMenuItem();
             this.ctxRecent = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuRecentItemEmpty = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTerminology = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +83,7 @@
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuOpenArchetypeStorage,
             this.mnuOpenArchetypeStorageRecent,
+            this.mnuTerminology,
             this.toolStripMenuItem1,
             this.mnuFileExit});
             this.mnuFile.Name = "mnuFile";
@@ -108,6 +110,7 @@
             this.ctxRecent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuRecentItemEmpty});
             this.ctxRecent.Name = "ctxRecent";
+            this.ctxRecent.OwnerItem = this.mnuOpenArchetypeStorageRecent;
             this.ctxRecent.Size = new System.Drawing.Size(117, 26);
             // 
             // mnuRecentItemEmpty
@@ -116,6 +119,12 @@
             this.mnuRecentItemEmpty.Name = "mnuRecentItemEmpty";
             this.mnuRecentItemEmpty.Size = new System.Drawing.Size(116, 22);
             this.mnuRecentItemEmpty.Text = "(Empty)";
+            // 
+            // mnuTerminology
+            // 
+            this.mnuTerminology.Name = "mnuTerminology";
+            this.mnuTerminology.Size = new System.Drawing.Size(203, 22);
+            this.mnuTerminology.Text = "Terminology";
             // 
             // toolStripMenuItem1
             // 
@@ -263,6 +272,7 @@
         protected internal System.Windows.Forms.FolderBrowserDialog fbd;
         protected internal System.Windows.Forms.ContextMenuStrip ctxRecent;
         private System.Windows.Forms.ToolStripMenuItem mnuRecentItemEmpty;
+        protected internal System.Windows.Forms.ToolStripMenuItem mnuTerminology;
 
     }
 }

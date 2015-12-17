@@ -20,5 +20,7 @@ namespace Barcline.OpenEhr.Storage
         Dictionary<String, ARCHETYPE> LoadArchetypeMap();
 
         void UploadArchetype(String folder, ARCHETYPE archetype);
+
+        bool Cached { get; set; }
     }
 }

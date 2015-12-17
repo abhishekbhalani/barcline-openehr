@@ -22,7 +22,12 @@ namespace Barcline.OpenEhr
             Code = code;
             Name = name;
             Versions = new List<CodeSystemVersion>();
+            Concepts = new List<Concept>();
         }
+
+        public String URI { get; set; }
+
+        public String Issuer { get; set; }
 
         [Required]
         public String CodeSystemId { get; set; }
@@ -35,6 +40,8 @@ namespace Barcline.OpenEhr
         public String Description { get; set; }
 
         public List<CodeSystemVersion> Versions { get; set; }
+
+        public List<Concept> Concepts { get; set; }
 
         protected override void OnValidate(ValidationContext validationContext, List<ValidationResult> vr)
         {

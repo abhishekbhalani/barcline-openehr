@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HL7\Cda\Xsd\cda.cs">
+      <DependentUpon>CDA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -113,30 +116,10 @@
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.examination_details_eye_fundus_images.v1.adls" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_anterior_chamber.v1.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_anterior_chamber.v1.adls" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_anus.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_body_fluid.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_breast.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_breasts.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_burn.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_chest.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_cranial_nerves.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eyes.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_anterior.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_aqueous.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_lens.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_posterior.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_pupil.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_retina.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_eye_vitreous.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_gait.v0.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_generic.v1.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_generic.v1.adls" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_heart.v0.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_lens.v1.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_lens.v1.adls" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_lesion.v0.adl" />
-    <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_lip.v0.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_posterior_chamber.v1.adl" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_posterior_chamber.v1.adls" />
     <None Include="ADL14\CKM-mirror\local\archetypes\cluster\openEHR-EHR-CLUSTER.exam_pupils.v1.adl" />
@@ -1062,6 +1045,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ADL20\Xsd\Version.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\CDA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\datatypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\infrastructureRoot.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\POCD_MT000040.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HL7\Cda\Xsd\voc.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="ReadMe.md" />

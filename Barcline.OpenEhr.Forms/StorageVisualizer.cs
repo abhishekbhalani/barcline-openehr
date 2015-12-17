@@ -28,7 +28,7 @@ namespace Barcline.OpenEhr.Forms
 
         public new void Load(String path)
         {
-            IArchetypeStorage storage = new ArchetypeFileStorage(path);
+            IArchetypeStorage storage = new ArchetypeFileStorage(path, true);
             presenter.Load(storage);
         }
 

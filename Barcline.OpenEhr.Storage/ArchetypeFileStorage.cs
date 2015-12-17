@@ -11,32 +11,49 @@ namespace Barcline.OpenEhr.Storage
     public sealed class ArchetypeFileStorage : IArchetypeStorage
     {
         private DirectoryInfo rootDirectory;
+        private bool cached;
+        private List<String> cachedArchetypeIds = new List<string>();
+        private Dictionary<String, ARCHETYPE> archetypeMap = new Dictionary<string, ARCHETYPE>();
 
-        public ArchetypeFileStorage(String directory)
+        public ArchetypeFileStorage(String directory, bool cached)
         {
             rootDirectory = new DirectoryInfo(directory);
             if (!rootDirectory.Exists)
                 throw new FileNotFoundException(directory);
+
+            if (cached)
+            {
+                this.cachedArchetypeIds = EnumArchetypeIds();
+                this.archetypeMap = LoadArchetypeMap();
+                this.cached = cached;
+            }
         }
 
         public List<String> EnumArchetypeIds()
         {
-            List<FileInfo> files = new List<FileInfo>();
+            if (this.cached)
+            {
+                return this.cachedArchetypeIds;
+            }
+            else
+            {
+                List<FileInfo> files = new List<FileInfo>();
 
-            files.AddRange(rootDirectory.GetFiles("*CLUSTER*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*COMPOSITION*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*DEMOGRAPHIC*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*ELEMENT*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*CLUSTER*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*COMPOSITION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*DEMOGRAPHIC*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*ELEMENT*.xml", SearchOption.AllDirectories));
 
-            files.AddRange(rootDirectory.GetFiles("*ACTION*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*ADMIN_ENTRY*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*EVALUATION*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*INSTRUCTION*.xml", SearchOption.AllDirectories));
-            files.AddRange(rootDirectory.GetFiles("*OBSERVATION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*ACTION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*ADMIN_ENTRY*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*EVALUATION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*INSTRUCTION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*OBSERVATION*.xml", SearchOption.AllDirectories));
 
-            files.AddRange(rootDirectory.GetFiles("*SECTION*.xml", SearchOption.AllDirectories));
+                files.AddRange(rootDirectory.GetFiles("*SECTION*.xml", SearchOption.AllDirectories));
 
-            return files.Select(row => Path.GetFileNameWithoutExtension(row.Name)).Distinct().ToList();
+                return files.Select(row => Path.GetFileNameWithoutExtension(row.Name)).Distinct().ToList();
+            }
         }
 
         private void InternalPopulateFolder(DirectoryInfo di, FOLDER folder)
@@ -67,51 +84,72 @@ namespace Barcline.OpenEhr.Storage
 
         public ARCHETYPE LoadArchetype(String id)
         {
-            String pattern = id;
-            String extension = ("" + Path.GetExtension(id)).ToLower();
-
-            if (!"xml".Equals(extension))
-                pattern = pattern + ".xml";
-
-            var file = rootDirectory.GetFiles(pattern, SearchOption.AllDirectories).FirstOrDefault();
-            if (file == null)
-                throw new FileNotFoundException(pattern);
-
-            using (var stream = file.OpenRead())
+            if (cached)
             {
-                return (ARCHETYPE)(new XmlSerializer(typeof(ARCHETYPE)).Deserialize(stream));
+                return this.archetypeMap[id];
+            }
+            else
+            {
+                String pattern = id;
+                String extension = ("" + Path.GetExtension(id)).ToLower();
+
+                if (!"xml".Equals(extension))
+                    pattern = pattern + ".xml";
+
+                var file = rootDirectory.GetFiles(pattern, SearchOption.AllDirectories).FirstOrDefault();
+                if (file == null)
+                    throw new FileNotFoundException(pattern);
+
+                using (var stream = file.OpenRead())
+                {
+                    return (ARCHETYPE)(new XmlSerializer(typeof(ARCHETYPE)).Deserialize(stream));
+                }
             }
         }
 
         public List<ARCHETYPE> LoadArchetypeList()
         {
-            Dictionary<String, ARCHETYPE> map = LoadArchetypeMap();
-            return map.Values.ToList();
+            if (cached)
+            {
+                return archetypeMap.Values.ToList();
+            }
+            else
+            {
+                Dictionary<String, ARCHETYPE> map = LoadArchetypeMap();
+                return map.Values.ToList();
+            }
         }
 
         public Dictionary<string, ARCHETYPE> LoadArchetypeMap()
         {
-            Dictionary<String, ARCHETYPE> result = new Dictionary<string, ARCHETYPE>();
-            List<String> ids = EnumArchetypeIds();
-
-            XmlSerializer serializer = new XmlSerializer(typeof(ARCHETYPE));
-
-            foreach (var id in ids)
+            if (cached)
             {
-                String fileName = id + ".xml";
-                FileInfo fi = rootDirectory.GetFiles(fileName, SearchOption.AllDirectories).FirstOrDefault();
-                if (fi != null)
+                return this.archetypeMap;
+            }
+            else
+            {
+                Dictionary<String, ARCHETYPE> result = new Dictionary<string, ARCHETYPE>();
+                List<String> ids = EnumArchetypeIds();
+
+                XmlSerializer serializer = new XmlSerializer(typeof(ARCHETYPE));
+
+                foreach (var id in ids)
                 {
-                    using (var fs = fi.OpenRead())
+                    String fileName = id + ".xml";
+                    FileInfo fi = rootDirectory.GetFiles(fileName, SearchOption.AllDirectories).FirstOrDefault();
+                    if (fi != null)
                     {
-                        ARCHETYPE archetype = (ARCHETYPE)serializer.Deserialize(fs);
-                        if (!result.ContainsKey(archetype.archetype_id.value))
-                            result.Add(archetype.archetype_id.value, archetype);
+                        using (var fs = fi.OpenRead())
+                        {
+                            ARCHETYPE archetype = (ARCHETYPE)serializer.Deserialize(fs);
+                            if (!result.ContainsKey(archetype.archetype_id.value))
+                                result.Add(archetype.archetype_id.value, archetype);
+                        }
                     }
                 }
-            }
 
-            return result;
+                return result;
+            }
         }
 
 
@@ -138,6 +176,19 @@ namespace Barcline.OpenEhr.Storage
         public void UploadArchetype(string folder, ARCHETYPE archetype)
         {
             throw new NotImplementedException();
+        }
+
+
+        public bool Cached
+        {
+            get
+            {
+                return this.cached;
+            }
+            set
+            {
+                this.cached = value;
+            }
         }
     }
 }

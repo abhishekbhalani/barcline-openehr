@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barcline.OpenEhr.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,16 @@ namespace Barcline.OpenEhr.Forms
             this.view.ctxRecent.Opening += ctxRecent_Opening;
 
             this.view.m_StorageView.StorageVisualizer.OnCommandArchetypeOpen += StorageVisualizer_OnCommandArchetypeOpen;
+            this.view.mnuTerminology.Click += OnOpenTerminology;
             this.view.mnuFileExit.Click += mnuFileExit_Click;
+        }
+
+        void OnOpenTerminology(object sender, EventArgs e)
+        {
+            var view = new TerminologyVisualizer();
+            view.Show(this.view.dockPanel);
+            view.Presenter.Service = new SimpleTerminologyService();
+            
         }
 
         void ctxRecent_Opening(object sender, CancelEventArgs e)

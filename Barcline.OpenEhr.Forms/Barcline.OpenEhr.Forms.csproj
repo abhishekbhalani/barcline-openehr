@@ -71,8 +71,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking">
-      <HintPath>..\Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.2.9.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +122,12 @@
     <Compile Include="StorageVisualizer.Designer.cs">
       <DependentUpon>StorageVisualizer.cs</DependentUpon>
     </Compile>
+    <Compile Include="TerminologyVisualizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminologyVisualizer.Designer.cs">
+      <DependentUpon>TerminologyVisualizer.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ArchetypeStorageToolWindow.resx">
@@ -141,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StorageVisualizer.resx">
       <DependentUpon>StorageVisualizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminologyVisualizer.resx">
+      <DependentUpon>TerminologyVisualizer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Barcline.OpenEhr.Forms.licenseheader" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Barcline.OpenEhr.CodeSystem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
+    <Content Include="license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

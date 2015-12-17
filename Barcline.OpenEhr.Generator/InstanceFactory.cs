@@ -1,18 +1,26 @@
 ﻿using Barcline.OpenEhr.Model;
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Diagnostics.Contracts;
+using Barcline.OpenEhr.Storage;
+using NLog;
+using System.Text.RegularExpressions;
 
 namespace Barcline.OpenEhr.Generator
 {
     public class InstanceFactory
     {
+        private ILogger logger;
+
         public InstanceFactory(ARCHETYPE archetype)
         {
+            logger = LogManager.GetCurrentClassLogger();
+
             Contract.Requires(archetype != null);
             this._archetype = archetype;
         }
@@ -34,7 +42,6 @@ namespace Barcline.OpenEhr.Generator
         public LOCATABLE Create()
         {
             Contract.Requires(_archetype.definition != null);
-
             this._result = CreateRootItem(_archetype.definition);
             InitRootItem(_result, _archetype.definition);
             TraverseComplexObject(_result, _archetype.definition);
@@ -92,12 +99,62 @@ namespace Barcline.OpenEhr.Generator
 
         private void InitArchetypeInternalRef(OpenEhrObject obj, ARCHETYPE_INTERNAL_REF cArchetypeInternalRef)
         {
-            // TODO:
+            String path = cArchetypeInternalRef.target_path;
         }
 
         private void InitArchetypeSlot(OpenEhrObject obj, ARCHETYPE_SLOT archetypeSlot)
         {
-            // resolve archetype and link to obj
+            if (options.Storage == null)
+            {
+                logger.Warn("Found ARCHETYPE_SLOT but storage was not set");
+            }
+            if (obj is CLUSTER)
+            {
+                CLUSTER cluster = (CLUSTER)obj;
+
+                List<String> allArchetypeIds = options.Storage.EnumArchetypeIds();
+                List<String> appropriateArchetypeIds = new List<string>();
+
+                foreach (ASSERTION include in archetypeSlot.includes)
+                {
+                    var expr = "" + include.string_expression;
+                    if (!String.IsNullOrEmpty(expr))
+                    {
+                        expr = expr.Replace("archetype_id/value matches {", "");
+                        expr = expr.Replace("}", "");
+                        expr = expr.Replace("/", "");
+                        Regex re = new Regex(expr);
+                        appropriateArchetypeIds.AddRange(allArchetypeIds.Where(row => re.IsMatch(row)));
+                    }
+                }
+                foreach (ASSERTION exclude in archetypeSlot.excludes)
+                {
+                    var expr = "" + exclude.string_expression;
+                    if (!String.IsNullOrEmpty(expr))
+                    {
+                        expr = expr.Replace("archetype_id/value matches {", "");
+                        expr = expr.Replace("}", "");
+                        expr = expr.Replace("/", "");
+                        Regex re = new Regex(expr);
+                        appropriateArchetypeIds.RemoveAll(row => re.IsMatch(row));
+                    }
+                }
+                foreach (var appropriateArchetypeId in appropriateArchetypeIds)
+                {
+                    var appropriateArchetype = options.Storage.LoadArchetype(appropriateArchetypeId);
+                    InstanceFactory factory = new InstanceFactory(appropriateArchetype);
+                    factory.options = this.options;
+                    LOCATABLE l = factory.Create();
+                    if (l is ITEM)
+                    {
+                        cluster.items.Add((ITEM)l);    
+                    }
+                }
+            }
+            else
+            {
+                // TODO: handle that
+            }
         }
 
         private void InitCodePhrase(OpenEhrObject obj, C_CODE_PHRASE codePhrase)
@@ -421,5 +478,7 @@ namespace Barcline.OpenEhr.Generator
         }
 
         public String Lang { get; set; }
+
+        public IArchetypeStorage Storage { get; set; }
     }
 }

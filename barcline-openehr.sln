@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{3991538B-248
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.OpenEhr.Storage", "Barcline.OpenEhr.Storage\Barcline.OpenEhr.Storage.csproj", "{78B6AD99-0BEB-4238-ACBB-7D440A5CC441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.Hl7.Cda", "Barcline.Hl7.Cda\Barcline.Hl7.Cda.csproj", "{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,12 @@ Global
 		{78B6AD99-0BEB-4238-ACBB-7D440A5CC441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B6AD99-0BEB-4238-ACBB-7D440A5CC441}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78B6AD99-0BEB-4238-ACBB-7D440A5CC441}.Release|x86.ActiveCfg = Release|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -45,7 +45,9 @@
     </Compile>
     <Compile Include="ArchetypeFileStorage.cs" />
     <Compile Include="IArchetypeStorage.cs" />
+    <Compile Include="ITerminologyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleTerminologyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Barcline.Core\Barcline.Core.csproj">
@@ -56,6 +58,10 @@
       <Project>{67fd94de-1e52-4138-9e6c-2756ad92bf29}</Project>
       <Name>Barcline.OpenEhr</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\external_terminologies_en.xml" />
+    <EmbeddedResource Include="Resources\openehr_terminology_en.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
