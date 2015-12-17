@@ -25,11 +25,10 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class IVL_PPD_PQ : SXCM_PPD_PQ
     {
         
-        private PPD_PQCollection itemsField;
+        private PPD_PQ[] itemsField;
         
         private ItemsChoiceType1[] itemsElementNameField;
         
@@ -39,22 +38,19 @@ namespace Barcline.Hl7.Cda
         [System.Xml.Serialization.XmlElementAttribute("low", typeof(IVXB_PPD_PQ))]
         [System.Xml.Serialization.XmlElementAttribute("width", typeof(PPD_PQ))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public virtual PPD_PQCollection Items
+        public virtual PPD_PQ[] Items
         {
             get
             {
                 if (itemsField == null)
                 {
-                    this.itemsField = new PPD_PQCollection();
+                    this.itemsField = new PPD_PQ[0];
                 }
                 return itemsField;
             }
             set
             {
                 this.itemsField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("Items");
             }
         }
@@ -64,6 +60,10 @@ namespace Barcline.Hl7.Cda
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public virtual ItemsChoiceType1[] ItemsElementName
         {
+            get
+            {
+                return this.itemsElementNameField;
+            }
             set
             {
                 this.itemsElementNameField = value;

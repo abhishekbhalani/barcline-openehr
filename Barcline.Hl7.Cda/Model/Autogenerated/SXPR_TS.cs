@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class SXPR_TS : SXCM_TS
     {
         
@@ -46,9 +45,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.compField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("comp");
             }
         }

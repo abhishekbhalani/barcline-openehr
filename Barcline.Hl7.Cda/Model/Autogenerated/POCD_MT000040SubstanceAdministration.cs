@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="POCD_MT000040.SubstanceAdministration", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("POCD_MT000040.SubstanceAdministration", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class POCD_MT000040SubstanceAdministration : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -111,9 +110,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.realmCodeField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("realmCode");
             }
         }
@@ -148,9 +144,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.templateIdField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("templateId");
             }
         }
@@ -170,9 +163,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.idField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("id");
             }
         }
@@ -237,9 +227,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.effectiveTimeField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("effectiveTime");
             }
         }
@@ -304,9 +291,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.approachSiteCodeField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("approachSiteCode");
             }
         }
@@ -401,9 +385,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.specimenField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("specimen");
             }
         }
@@ -438,9 +419,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.performerField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("performer");
             }
         }
@@ -460,9 +438,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.authorField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("author");
             }
         }
@@ -482,9 +457,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.informantField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("informant");
             }
         }
@@ -504,9 +476,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.participantField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("participant");
             }
         }
@@ -526,9 +495,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.entryRelationshipField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("entryRelationship");
             }
         }
@@ -548,9 +514,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.referenceField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("reference");
             }
         }
@@ -570,9 +533,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.preconditionField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("precondition");
             }
         }
@@ -613,7 +573,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return moodCodeField;
+                return this.moodCodeField;
             }
             set
             {

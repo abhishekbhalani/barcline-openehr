@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="StrucDoc.Thead", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("StrucDoc.Thead", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class StrucDocThead : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -64,9 +63,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.trField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("tr");
             }
         }
@@ -122,7 +118,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return alignField;
+                return this.alignField;
             }
             set
             {
@@ -182,7 +178,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return valignField;
+                return this.valignField;
             }
             set
             {

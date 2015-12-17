@@ -34,7 +34,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class PQ : QTY
     {
         
@@ -64,9 +63,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.translationField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("translation");
             }
         }

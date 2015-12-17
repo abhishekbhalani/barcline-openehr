@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="StrucDoc.List", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("StrucDoc.List", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class StrucDocList : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -76,9 +75,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.itemField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("item");
             }
         }
@@ -135,7 +131,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return listTypeField;
+                return this.listTypeField;
             }
             set
             {

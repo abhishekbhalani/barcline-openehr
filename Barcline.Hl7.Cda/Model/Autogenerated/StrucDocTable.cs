@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="StrucDoc.Table", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("StrucDoc.Table", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class StrucDocTable : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -139,9 +138,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.tbodyField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("tbody");
             }
         }
@@ -242,7 +238,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return frameField;
+                return this.frameField;
             }
             set
             {
@@ -272,7 +268,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return rulesField;
+                return this.rulesField;
             }
             set
             {

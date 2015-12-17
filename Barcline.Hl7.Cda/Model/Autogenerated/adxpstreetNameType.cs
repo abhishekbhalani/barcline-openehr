@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="adxp.streetNameType", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("adxp.streetNameType", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class adxpstreetNameType : ADXP
     {
     }

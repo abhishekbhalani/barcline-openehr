@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="StrucDoc.LinkHtml", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("StrucDoc.LinkHtml", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class StrucDocLinkHtml : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         

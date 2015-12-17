@@ -25,11 +25,10 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class IVL_REAL : SXCM_REAL
     {
         
-        private REALCollection itemsField;
+        private REAL[] itemsField;
         
         private ItemsChoiceType5[] itemsElementNameField;
         
@@ -39,22 +38,19 @@ namespace Barcline.Hl7.Cda
         [System.Xml.Serialization.XmlElementAttribute("low", typeof(IVXB_REAL))]
         [System.Xml.Serialization.XmlElementAttribute("width", typeof(REAL))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public virtual REALCollection Items
+        public virtual REAL[] Items
         {
             get
             {
                 if (itemsField == null)
                 {
-                    this.itemsField = new REALCollection();
+                    this.itemsField = new REAL[0];
                 }
                 return itemsField;
             }
             set
             {
                 this.itemsField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("Items");
             }
         }
@@ -64,6 +60,10 @@ namespace Barcline.Hl7.Cda
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public virtual ItemsChoiceType5[] ItemsElementName
         {
+            get
+            {
+                return this.itemsElementNameField;
+            }
             set
             {
                 this.itemsElementNameField = value;

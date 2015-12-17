@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="en.given", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("en.given", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class engiven : ENXP
     {
     }

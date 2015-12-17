@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="POCD_MT000040.Entry", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("POCD_MT000040.Entry", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class POCD_MT000040Entry : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -66,9 +65,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.realmCodeField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("realmCode");
             }
         }
@@ -103,9 +99,6 @@ namespace Barcline.Hl7.Cda
             set
             {
                 this.templateIdField = value;
-                if (value != null)
-                {
-                }
                 this.RaisePropertyChanged("templateId");
             }
         }
@@ -155,7 +148,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return typeCodeField;
+                return this.typeCodeField;
             }
             set
             {

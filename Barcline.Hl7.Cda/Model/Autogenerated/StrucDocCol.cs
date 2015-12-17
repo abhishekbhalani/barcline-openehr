@@ -25,7 +25,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="StrucDoc.Col", Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute("StrucDoc.Col", Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class StrucDocCol : CdaObject, System.ComponentModel.INotifyPropertyChanged
     {
         
@@ -138,7 +137,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return alignField;
+                return this.alignField;
             }
             set
             {
@@ -198,7 +197,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return valignField;
+                return this.valignField;
             }
             set
             {

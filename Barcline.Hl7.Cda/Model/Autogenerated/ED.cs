@@ -62,7 +62,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class ED : BIN
     {
         
@@ -155,7 +154,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return compressionField;
+                return this.compressionField;
             }
             set
             {
@@ -201,7 +200,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return integrityCheckAlgorithmField;
+                return this.integrityCheckAlgorithmField;
             }
             set
             {

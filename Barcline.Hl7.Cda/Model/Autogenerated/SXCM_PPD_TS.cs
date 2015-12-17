@@ -28,7 +28,6 @@ namespace Barcline.Hl7.Cda
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:hl7-org:v3")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:hl7-org:v3", IsNullable=true)]
     public partial class SXCM_PPD_TS : PPD_TS
     {
         
@@ -46,7 +45,7 @@ namespace Barcline.Hl7.Cda
         {
             get
             {
-                return operatorField;
+                return this.operatorField;
             }
             set
             {
