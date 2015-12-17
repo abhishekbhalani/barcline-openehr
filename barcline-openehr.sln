@@ -18,11 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.OpenEhr.Forms", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.OpenEHR", "Barcline.OpenEhr\Barcline.OpenEHR.csproj", "{67FD94DE-1E52-4138-9E6C-2756AD92BF29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{3991538B-2488-4900-A3AA-6186AF94E23D}"
-	ProjectSection(SolutionItems) = preProject
-		Lib\WeifenLuo.WinFormsUI.Docking.dll = Lib\WeifenLuo.WinFormsUI.Docking.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.OpenEhr.Storage", "Barcline.OpenEhr.Storage\Barcline.OpenEhr.Storage.csproj", "{78B6AD99-0BEB-4238-ACBB-7D440A5CC441}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barcline.Hl7.Cda", "Barcline.Hl7.Cda\Barcline.Hl7.Cda.csproj", "{5AAF11DA-F45F-4E00-8FAF-6D74975F5491}"
