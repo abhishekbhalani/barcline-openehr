@@ -63,9 +63,25 @@ namespace Barcline.OpenEhr.Forms
 
         private void tv_MouseDown(object sender, MouseEventArgs e)
         {
-            var node = tv.GetNodeAt(e.X, e.Y);
+            var node = tvArchetype.GetNodeAt(e.X, e.Y);
             if (node != null)
-                tv.SelectedNode = node;
+                tvArchetype.SelectedNode = node;
+        }
+
+        private void splitContainer_Resize(object sender, EventArgs e)
+        {
+            splitContainer.SplitterDistance = (sender as Control).ClientSize.Width / 2;
+        }
+
+        private void OnSplitterMove(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OnXmlEditorResize(object sender, EventArgs e)
+        {
+            txtInstanceXml.Height = (sender as Control).Height;
+            txtNodeXml.Height = txtInstanceXml.Height;
         }
     }
 
@@ -77,9 +93,9 @@ namespace Barcline.OpenEhr.Forms
         internal ArchetypeVisualizerPresenter(ArchetypeVisualizer view)
         {
             this.view = view;
-            this.view.tv.Nodes.Clear();
-            this.view.tv.BeforeExpand += tv_BeforeExpand;
-            this.view.tv.AfterSelect += tv_AfterSelect;
+            this.view.tvArchetype.Nodes.Clear();
+            this.view.tvArchetype.BeforeExpand += tv_BeforeExpand;
+            this.view.tvArchetype.AfterSelect += tv_AfterSelect;
             this.view.tbbGenerateInstance.Click += mnuGenerateInstance_Click;
             this.view.mnuExpand.Click += mnuExpand_Click;
             this.view.mnuCollapse.Click += mnuCollapse_Click;
@@ -109,7 +125,7 @@ namespace Barcline.OpenEhr.Forms
         private void mnuClipboard_Click(object sender, EventArgs e)
         {
             Bitmap bmp = new Bitmap(600, 1200);
-            this.view.tv.DrawToBitmap(bmp, new Rectangle(0, 0, 600, 1200));
+            this.view.tvArchetype.DrawToBitmap(bmp, new Rectangle(0, 0, 600, 1200));
             Clipboard.SetImage(bmp);
         }
 
@@ -117,7 +133,7 @@ namespace Barcline.OpenEhr.Forms
         {
             this.archetype = archetype;
             view.txtNodeXml.Text = archetype.GetXml();
-            this.view.tv.Nodes.Clear();
+            this.view.tvArchetype.Nodes.Clear();
             this.view.pg.SelectedObject = null;
             if (archetype != null)
             {
@@ -127,7 +143,7 @@ namespace Barcline.OpenEhr.Forms
                 treeNode.Tag = new NodeData(archetype.definition);
                 treeNode.Text = archetype.definition.rm_type_name;
                 treeNode.Nodes.Add("");
-                this.view.tv.Nodes.Add(treeNode);
+                this.view.tvArchetype.Nodes.Add(treeNode);
                 this.view.Text = archetype.archetype_id.value;
                 treeNode.Expand();
             }
@@ -135,14 +151,14 @@ namespace Barcline.OpenEhr.Forms
 
         private void mnuCollapse_Click(object sender, EventArgs e)
         {
-            var node = view.tv.SelectedNode;
+            var node = view.tvArchetype.SelectedNode;
             if (node != null)
                 node.Collapse();
         }
 
         private void mnuExpand_Click(object sender, EventArgs e)
         {
-            var node = view.tv.SelectedNode;
+            var node = view.tvArchetype.SelectedNode;
             if (node != null)
             {
                 node.ExpandAll();
@@ -169,7 +185,7 @@ namespace Barcline.OpenEhr.Forms
             NodeData nodeData = (NodeData)e.Node.Tag;
             try
             {
-                view.tv.BeforeExpand -= tv_BeforeExpand;
+                view.tvArchetype.BeforeExpand -= tv_BeforeExpand;
                 if (nodeData.Data is C_COMPLEX_OBJECT)
                 {
                     C_COMPLEX_OBJECT complexObject = (C_COMPLEX_OBJECT)nodeData.Data;
@@ -204,7 +220,7 @@ namespace Barcline.OpenEhr.Forms
             }
             finally
             {
-                view.tv.BeforeExpand += tv_BeforeExpand;
+                view.tvArchetype.BeforeExpand += tv_BeforeExpand;
             }
         }
     }
@@ -218,9 +234,9 @@ namespace Barcline.OpenEhr.Forms
         {
             this.view = view;
             this.view = view;
-            this.view.tv.Nodes.Clear();
-            this.view.tv.BeforeExpand += tv_BeforeExpand;
-            this.view.tv.AfterSelect += tv_AfterSelect;
+            this.view.tvArchetype.Nodes.Clear();
+            this.view.tvArchetype.BeforeExpand += tv_BeforeExpand;
+            this.view.tvArchetype.AfterSelect += tv_AfterSelect;
             this.view.mnuExpand.Click += mnuExpand_Click;
             this.view.mnuCollapse.Click += mnuCollapse_Click;
         }
@@ -232,14 +248,14 @@ namespace Barcline.OpenEhr.Forms
 
         private void mnuCollapse_Click(object sender, EventArgs e)
         {
-            var node = view.tv.SelectedNode;
+            var node = view.tvArchetype.SelectedNode;
             if (node != null)
                 node.Collapse();
         }
 
         private void mnuExpand_Click(object sender, EventArgs e)
         {
-            var node = view.tv.SelectedNode;
+            var node = view.tvArchetype.SelectedNode;
             if (node != null)
                 node.ExpandAll();
         }

@@ -1,6 +1,7 @@
 ﻿using Barcline.Core;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,11 +16,15 @@ namespace Barcline.OpenEhr.Model
     {
     }
 
+    public interface IOpenEhrCollection: IEnumerable
+    {
+
+    }
     /// <summary>
     /// Base collection of OpenEHR objects
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class OpenEhrCollection<T> : ModelObjectCollection<T>
+    public class OpenEhrCollection<T> : ModelObjectCollection<T>, IOpenEhrCollection
         where T : OpenEhrObject
     {
     }
@@ -34,6 +39,7 @@ namespace Barcline.OpenEhr.Model
     /// <summary>
     /// Base OpenEHR object
     /// </summary>
+    [CLSCompliant(true)]
     public abstract class OpenEhrObject : ModelObject, IOpenEhrObject
     {
     }

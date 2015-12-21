@@ -17,6 +17,8 @@ namespace Barcline.OpenEhr.Generator
     {
         private ILogger logger;
 
+        private List<Tuple<OpenEhrObject, String>> archetypeInternalRefs = new List<Tuple<OpenEhrObject, string>>();
+
         public InstanceFactory(ARCHETYPE archetype)
         {
             logger = LogManager.GetCurrentClassLogger();
@@ -42,10 +44,22 @@ namespace Barcline.OpenEhr.Generator
         public LOCATABLE Create()
         {
             Contract.Requires(_archetype.definition != null);
+
             this._result = CreateRootItem(_archetype.definition);
             InitRootItem(_result, _archetype.definition);
             TraverseComplexObject(_result, _archetype.definition);
+
+            ProcessArchetypeInternalRefs();
             return _result;
+        }
+
+        private void ProcessArchetypeInternalRefs()
+        {
+            foreach (var item in archetypeInternalRefs)
+            {
+                Object target = OpenEhrUtils.SelectSingle(this._result, item.Item2);
+                Object y = this;
+            }
         }
 
         private ARCHETYPE _archetype;
@@ -94,12 +108,15 @@ namespace Barcline.OpenEhr.Generator
                     Type type = Type.GetType(typeName, false);
                     return type;
             }
-
         }
 
         private void InitArchetypeInternalRef(OpenEhrObject obj, ARCHETYPE_INTERNAL_REF cArchetypeInternalRef)
         {
             String path = cArchetypeInternalRef.target_path;
+            if (!String.IsNullOrEmpty(path))
+            {
+                archetypeInternalRefs.Add(new Tuple<OpenEhrObject, string>(obj, path));
+            }
         }
 
         private void InitArchetypeSlot(OpenEhrObject obj, ARCHETYPE_SLOT archetypeSlot)
@@ -141,6 +158,7 @@ namespace Barcline.OpenEhr.Generator
                 }
                 foreach (var appropriateArchetypeId in appropriateArchetypeIds)
                 {
+                    /*
                     var appropriateArchetype = options.Storage.LoadArchetype(appropriateArchetypeId);
                     InstanceFactory factory = new InstanceFactory(appropriateArchetype);
                     factory.options = this.options;
@@ -148,7 +166,7 @@ namespace Barcline.OpenEhr.Generator
                     if (l is ITEM)
                     {
                         cluster.items.Add((ITEM)l);    
-                    }
+                    }*/
                 }
             }
             else
@@ -189,6 +207,7 @@ namespace Barcline.OpenEhr.Generator
                     locatableObj.name = new DV_TEXT();
                     locatableObj.name.value = _archetype.LookupTranslationText(options.Lang, locatableObj.archetype_node_id);
                     locatableObj.name.language = new CODE_PHRASE() { code_string = options.Lang };
+                    // TODO: language terminology
                 }
             }
         }
@@ -207,6 +226,13 @@ namespace Barcline.OpenEhr.Generator
 
         private void InitDvOrdinal(OpenEhrObject obj, C_DV_ORDINAL c_DV_ORDINAL)
         {
+            if (!String.IsNullOrEmpty(c_DV_ORDINAL.node_id))
+            {
+                if (obj is LOCATABLE)
+                {
+                    (obj as LOCATABLE).archetype_node_id = c_DV_ORDINAL.node_id;
+                }
+            }
         }
 
         private void InitDvQuantity(OpenEhrObject obj, C_DV_QUANTITY cDvQuantity)

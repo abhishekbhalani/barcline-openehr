@@ -8,14 +8,16 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.Globalization;
 using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Collections;
 
 namespace Barcline.OpenEhr.Model
 {
     public interface IPATHABLE
     {
-        Object item_at_path(String path);
+        LOCATABLE item_at_path(String path);
 
-        IList<Object> items_at_path(String path);
+        IList<LOCATABLE> items_at_path(String path);
 
         IPATHABLE parent();
         bool path_exists(String path);
@@ -76,6 +78,81 @@ namespace Barcline.OpenEhr.Model
             {
                 _versions = value;
             }
+        }
+    }
+
+    partial class LOCATABLE: IPATHABLE
+    {
+        public LOCATABLE item_at_path(string path)
+        {
+            return items_at_path(path).FirstOrDefault();
+        }
+
+        public IList<LOCATABLE> items_at_path(string path)
+        {
+            List<LOCATABLE> result = new List<LOCATABLE>();
+            LOCATABLE item = this;
+            
+            List<String> pathTokens = ("" + path).Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+            while (pathTokens.Count != 0)
+            {
+                String pathToken = ("" + pathTokens[0]).Trim();
+                String[] keyAndValue = pathToken.Split(new char[] { '[' }, StringSplitOptions.RemoveEmptyEntries);
+                if (keyAndValue.Length == 2)
+                {
+                    keyAndValue[1] = keyAndValue[1].Replace("]", "");
+                }
+
+                var propertyInfo = item.GetType().GetProperty(keyAndValue[0]);
+                var collection = propertyInfo.GetValue(item) as IEnumerable;
+                if (collection != null)
+                {
+                    var targetItem = collection
+                        .OfType<LOCATABLE>()
+                        .FirstOrDefault(row => keyAndValue[1].Equals(row.archetype_node_id));
+                    if (targetItem != null)
+                    {
+
+                    }
+                }
+
+                foreach (var collectionItem in collection)
+                {
+                    if (collectionItem is LOCATABLE &&
+                        keyAndValue[1].Equals( ((LOCATABLE)collectionItem).archetype_node_id))
+                    {
+                        pathTokens.RemoveAt(0);
+                        item = (LOCATABLE)collectionItem;
+                        if (pathTokens.Count == 0)
+                        {
+                            result.Add(item);
+                            return result;
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        public IPATHABLE parent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool path_exists(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string path_of_item(IPATHABLE item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool path_unique(string path)
+        {
+            throw new NotImplementedException();
         }
     }
 

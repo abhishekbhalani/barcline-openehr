@@ -78,7 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\BarclineAssemblyInfo.cs">
-      <Link>BarclineAssemblyInfo.cs</Link>
+      <Link>Properties\BarclineAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="EntityTraverser.cs" />
     <Compile Include="EntityUtil.cs" />

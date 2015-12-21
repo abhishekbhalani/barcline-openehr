@@ -82,21 +82,40 @@ namespace Barcline.OpenEhr.Forms
         private void mnuOpenArchetypeStorage_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(Properties.Settings.Default.MainForm_LastStorage))
+            {
                 view.fbd.SelectedPath = Properties.Settings.Default.MainForm_LastStorage;
+            }
+            else
+            {
+                String path = Application.StartupPath + Path.DirectorySeparatorChar + "CKM-mirror\\local\\archetypes";
+                DirectoryInfo di = new DirectoryInfo(path);
+                if (di.Exists)
+                {
+                    view.fbd.SelectedPath = di.FullName;
+                }
+            }
 
             if (view.fbd.ShowDialog() == DialogResult.OK)
             {
                 if (!String.IsNullOrEmpty(view.fbd.SelectedPath))
                 {
-                    DirectoryInfo di = new DirectoryInfo(view.fbd.SelectedPath);
-                    if (!di.Exists)
-                        return;
-                    this.view.m_StorageView.StorageVisualizer.Load(di.FullName);
-                    if (Properties.Settings.Default.MainForm_Storages == null)
-                        Properties.Settings.Default.MainForm_Storages = new System.Collections.Specialized.StringCollection();
-                    if (!Properties.Settings.Default.MainForm_Storages.Contains(view.fbd.SelectedPath))
-                        Properties.Settings.Default.MainForm_Storages.Insert(0, view.fbd.SelectedPath);
-                    Properties.Settings.Default.MainForm_LastStorage = view.fbd.SelectedPath;
+                    try
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        DirectoryInfo di = new DirectoryInfo(view.fbd.SelectedPath);
+                        if (!di.Exists)
+                            return;
+                        this.view.m_StorageView.StorageVisualizer.Load(di.FullName);
+                        if (Properties.Settings.Default.MainForm_Storages == null)
+                            Properties.Settings.Default.MainForm_Storages = new System.Collections.Specialized.StringCollection();
+                        if (!Properties.Settings.Default.MainForm_Storages.Contains(view.fbd.SelectedPath))
+                            Properties.Settings.Default.MainForm_Storages.Insert(0, view.fbd.SelectedPath);
+                        Properties.Settings.Default.MainForm_LastStorage = view.fbd.SelectedPath;
+                    }
+                    finally
+                    {
+                        Cursor.Current = Cursors.Default;
+                    }
                 }
             }
         }

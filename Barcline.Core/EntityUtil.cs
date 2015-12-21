@@ -24,6 +24,18 @@ namespace Barcline.Core
             foreach (var property in properties)
             {
                 var value = property.GetValue(parent);
+                if (value == null)
+                    continue;
+
+                if (value is IModelObjectCollection)
+                {
+                    foreach (IModelObject collectionItem in (IModelObjectCollection)value)
+                    {
+                        rv.Add(collectionItem);
+                    }
+                    continue;
+                }
+
                 if (IsModelObject(value))
                     rv.Add((IModelObject)value);
             }

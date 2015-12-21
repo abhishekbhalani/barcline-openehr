@@ -5,7 +5,11 @@ using System.Xml.Serialization;
 
 namespace Barcline.Core
 {
-    public interface IModelObjectCollection<T> : IEnumerable, IEnumerable<T>, IList<T>, IModelObject
+    public interface IModelObjectCollection: IEnumerable
+    {
+
+    }
+    public interface IModelObjectCollection<T> : IModelObjectCollection, IEnumerable<T>, IList<T>, IModelObject
         where T : IModelObject
     {
        

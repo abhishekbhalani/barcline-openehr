@@ -14,22 +14,11 @@ using System.ComponentModel.DataAnnotations;
 namespace Barcline.Core
 {
     [Serializable]
+    [CLSCompliant(true)]
     public abstract class ModelObject : IModelObject, IValidatableObject
     {
         public ModelObject()
         {
-        }
-
-        [Browsable(false)]
-        public virtual IReadOnlyList<IModelObject> GetChildren()
-        {
-            return EntityUtil.GetChildren(this);
-        }
-
-        [Browsable(false)]
-        public virtual IModelObject GetParent()
-        {
-            return null;
         }
 
         [NotMapped]
@@ -56,13 +45,17 @@ namespace Barcline.Core
             return EntityUtil.HaveSamePrimaryKey(this, value);
         }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        [Browsable(false)]
+        public virtual IReadOnlyList<IModelObject> GetChildren()
         {
-            return new List<ValidationResult>();
+            return EntityUtil.GetChildren(this);
         }
 
-        protected internal IModelObject _parentField;
-
+        [Browsable(false)]
+        public virtual IModelObject GetParent()
+        {
+            return null;
+        }
         public override string ToString()
         {
             var rv = this.GetType().Name +
@@ -71,5 +64,12 @@ namespace Barcline.Core
                 "]";
             return rv;
         }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return new List<ValidationResult>();
+        }
+
+        protected internal IModelObject parentField;
     }
 }
